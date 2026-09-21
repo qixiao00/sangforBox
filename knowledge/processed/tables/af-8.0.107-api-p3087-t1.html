@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3087-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3087 | table_id=af-8.0.107-api-p3087-t1<br>上下文标题路径：7 系统 / 7.8 导入导出 / 7.8.1 ftp文件上传下载</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>ftp请求参数</td></tr>
+<tr><td>obj.opr</td><td>string</td><td>是</td><td>文件操作类型<br>枚举值:[<br>GET:ftp下载文件<br>PUT:ftp上传文件<br>]</td></tr>
+<tr><td>obj.host</td><td>string</td><td>是</td><td>ftp服务器IP地址<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.userName</td><td>string</td><td>是</td><td>ftp服务器用户名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.password</td><td>string</td><td>是</td><td>ftp服务器密码<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.localFile</td><td>string</td><td>按条件选<br>择</td><td>本地文件名称(ftp上传才起作用)<br>最小长度:1<br>最大长度:255</td></tr>
+<tr><td>obj.remoteFile</td><td>string</td><td>是</td><td>远程文件名称<br>最小长度:1<br>最大长度:255</td></tr>
+</tbody>
+</table>
+</body>
+</html>

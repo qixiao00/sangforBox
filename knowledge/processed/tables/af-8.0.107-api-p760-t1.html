@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p760-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=760 | table_id=af-8.0.107-api-p760-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.12 批量获取后台接口指定信息列表</p>
+<table>
+<thead><tr><th>obj.statusTimestamp</th><th>uint64</th><th>--</th><th>接口ipv4相关配置</th></tr></thead>
+<tbody>
+<tr><td>obj.vlan</td><td>object</td><td>--</td><td>vlan配置</td></tr>
+<tr><td>obj.vlan.vlanMode</td><td>string</td><td>--</td><td>vlan模式<br>枚举值:[<br>ACCESS:access模式<br>TRUNK:trunk模式<br>]</td></tr>
+<tr><td>obj.vlan.accessId</td><td>uint32</td><td>--</td><td>access vlan id</td></tr>
+<tr><td>obj.vlan.trunkConfig</td><td>object</td><td>--</td><td>trunk配置</td></tr>
+<tr><td>obj.vlan.trunkConfig.nativeId</td><td>int32</td><td>--</td><td>trunk native vlanid</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange</td><td>object[]</td><td>--</td><td>trunk vlan 范围</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.start</td><td>uint32</td><td>--</td><td>vlan范围起始值</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.end</td><td>uint32</td><td>--</td><td>vlan范围起始值</td></tr>
+<tr><td>obj.stats</td><td>object</td><td>--</td><td>接口统计信息</td></tr>
+<tr><td>obj.stats.ipackets</td><td>uint64</td><td>--</td><td>in packets</td></tr>
+<tr><td>obj.stats.opackets</td><td>uint64</td><td>--</td><td>out packets</td></tr>
+<tr><td>obj.stats.ibytes</td><td>uint64</td><td>--</td><td>in bytes</td></tr>
+<tr><td>obj.stats.obytes</td><td>uint64</td><td>--</td><td>out bytes</td></tr>
+<tr><td>obj.stats.ierrors</td><td>uint64</td><td>--</td><td>in errors</td></tr>
+<tr><td>obj.stats.oerrors</td><td>uint64</td><td>--</td><td>out errors</td></tr>
+<tr><td>obj.stats.idropeds</td><td>uint64</td><td>--</td><td>in drops</td></tr>
+<tr><td>obj.stats.odropeds</td><td>uint64</td><td>--</td><td>out drops</td></tr>
+<tr><td>obj.stats.iUcastpkts</td><td>uint64</td><td>--</td><td>in ucast pkts</td></tr>
+<tr><td>obj.stats.oUcastpkts</td><td>uint64</td><td>--</td><td>out ucast pkts</td></tr>
+<tr><td>obj.stats.iNUcastpkts</td><td>uint64</td><td>--</td><td>in not ucast pkts</td></tr>
+<tr><td>obj.stats.oNUcastpkts</td><td>uint64</td><td>--</td><td>out not ucast pkts</td></tr>
+<tr><td>obj.stats.iUnkownProtos</td><td>uint64</td><td>--</td><td>in unknown proto pkts</td></tr>
+<tr><td>obj.stats.statTimestamp</td><td>uint64</td><td>--</td><td>time stamp of interface status</td></tr>
+<tr><td>obj.stats.ipv4ipackets</td><td>uint64</td><td>--</td><td>ipv4 in packets</td></tr>
+<tr><td>obj.stats.ipv4ibytes</td><td>uint64</td><td>--</td><td>ipv4 in bytes</td></tr>
+<tr><td>obj.stats.ipv4idropeds</td><td>uint64</td><td>--</td><td>ipv4 in drops</td></tr>
+<tr><td>obj.stats.ipv4opackets</td><td>uint64</td><td>--</td><td>ipv4 out packets</td></tr>
+<tr><td>obj.stats.ipv4obytes</td><td>uint64</td><td>--</td><td>ipv4 out bytes</td></tr>
+<tr><td>obj.stats.ipv4odropeds</td><td>uint64</td><td>--</td><td>ipv4 out drops</td></tr>
+<tr><td>obj.stats.ipv6ipackets</td><td>uint64</td><td>--</td><td>ipv6 in packets</td></tr>
+<tr><td>obj.stats.ipv6ibytes</td><td>uint64</td><td>--</td><td>ipv6 in bytes</td></tr>
+</tbody>
+</table>
+</body>
+</html>

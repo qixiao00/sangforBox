@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1184-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1184 | table_id=af-8.0.107-api-p1184-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.2 BGP对等体 / 5.8.13.1.2.4 获取指定BGP对等体状态</p>
+<table>
+<thead><tr><th>data.items.description</th><th>string</th><th>描述字段<br>最小长度:0<br>最大长度:95</th></tr></thead>
+<tbody>
+<tr><td>data.items.remoteAs</td><td>uint32</td><td>指定对等体（组）的AS号</td></tr>
+<tr><td>data.items.linkType</td><td>string</td><td>链路类型<br>枚举值:[<br>internal:AS内部连接<br>external:AS外部连接<br>]</td></tr>
+<tr><td>data.items.configTimer</td><td>object</td><td>本地配置的定时器</td></tr>
+<tr><td>data.items.configTimer.keepalive</td><td>uint32</td><td>指定发送保持激活信息的频率<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.configTimer.holdtime</td><td>uint32</td><td>指定保持时间<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.configTimer.timersConnect</td><td>uint32</td><td>重连时间间隔<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.items.negotiatedKeepalive</td><td>uint32</td><td>与对等体协商的发送保持激活信息的频率<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.negotiatedHoldtime</td><td>uint32</td><td>与对等体协商的保持时间<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.timersConnect</td><td>uint32</td><td>重连时间间隔<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.items.advertisementInterval</td><td>uint32</td><td>通告时间间隔<br>最小值:0<br>最大值:600</td></tr>
+<tr><td>data.items.shutdown</td><td>bool</td><td>管理员关闭对等体</td></tr>
+<tr><td>data.items.updateSource</td><td>string</td><td>更新源信息</td></tr>
+<tr><td>data.items.ttl</td><td>uint32</td><td>生存时间</td></tr>
+<tr><td>data.items.weight</td><td>uint32</td><td>邻居默认权重</td></tr>
+<tr><td>data.items.bfd</td><td>bool</td><td>关联BFD</td></tr>
+<tr><td>data.items.password</td><td>string</td><td>MD5认证密码字符串<br>最小长度:1<br>最大长度:128</td></tr>
+<tr><td>data.items.addressFamilyIpv4Unicast</td><td>object</td><td>ipv4单播地址族信息</td></tr>
+<tr><td>data.items.addressFamilyIpv4Unicast.inRouteMapName</td><td>string</td><td>入站路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2702-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2702 | table_id=af-8.0.107-api-p2702-t1<br>上下文标题路径：6 策略 / 6.5 流控 / 6.5.3 虚拟线路规则 / 6.5.3.3 创建虚拟线路规则</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>虚拟线路规则</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>虚拟线路规则名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.intranetNet</td><td>object</td><td>--</td><td>内网IP地址<br>格式:ip-range</td></tr>
+<tr><td>obj.intranetNet.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.intranetNet.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.intranetNet.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.internetNet</td><td>object</td><td>--</td><td>外网IP地址<br>格式:ip-range</td></tr>
+<tr><td>obj.internetNet.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.internetNet.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.internetNet.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.services</td><td>string[]</td><td>--</td><td>服务对象列表</td></tr>
+</tbody>
+</table>
+</body>
+</html>

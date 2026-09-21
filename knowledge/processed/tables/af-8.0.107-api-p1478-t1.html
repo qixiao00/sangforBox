@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1478-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1478 | table_id=af-8.0.107-api-p1478-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.4 动态路由RIP / 5.8.13.4.1 RIP实例 / 5.8.13.4.1.1 添加一个rip实例信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>rip实例配置</td></tr>
+<tr><td>data.instanceId</td><td>uint16</td><td>实例ID<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.name</td><td>string</td><td>实例名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.processState</td><td>uint32</td><td>进程状态</td></tr>
+<tr><td>data.version</td><td>uint8</td><td>版本号<br>最小值:1<br>最大值:2</td></tr>
+<tr><td>data.defaultMetric</td><td>uint32</td><td>路由默认度量值<br>最小值:1<br>最大值:15</td></tr>
+<tr><td>data.distance</td><td>uint32</td><td>路由默认管理距离<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.updateTime</td><td>uint32</td><td>路由更新时间<br>最小值:1<br>最大值:16777215</td></tr>
+<tr><td>data.holddownTime</td><td>uint32</td><td>路由保持时间<br>最小值:1<br>最大值:16777215</td></tr>
+<tr><td>data.timeoutTime</td><td>uint32</td><td>路由超时时间<br>最小值:1<br>最大值:16777215</td></tr>
+<tr><td>data.garbageTime</td><td>uint32</td><td>路由垃圾时间<br>最小值:1<br>最大值:16777215</td></tr>
+<tr><td>data.redistributeDefault</td><td>bool</td><td>重发布默认路由开关</td></tr>
+<tr><td>data.redistributeConnected</td><td>object</td><td>重发布直连路由</td></tr>
+<tr><td>data.redistributeConnected.enable</td><td>bool</td><td>重发布开关</td></tr>
+<tr><td>data.redistributeConnected.metric</td><td>uint32</td><td>重发布度量值<br>最小值:1<br>最大值:15</td></tr>
+</tbody>
+</table>
+</body>
+</html>

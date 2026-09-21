@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p603-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=603 | table_id=af-8.0.107-api-p603-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.1 获取接口列表</p>
+<table>
+<thead><tr><th>data.items.gretunif</th><th>object</th><th>GRE隧道口相关配置</th></tr></thead>
+<tbody>
+<tr><td>data.items.gretunif.type</td><td>string</td><td>隧道IP地址类型<br>枚举值:[<br>IPV4:IPV4 隧道封装<br>IPV6:IPV6 隧道封装<br>]</td></tr>
+<tr><td>data.items.gretunif.tunnelSrc</td><td>string</td><td>隧道的源地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.gretunif.tunnelDst</td><td>string</td><td>隧道的目的地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.gretunif.greKey</td><td>int64</td><td>gre的密钥<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.items.gretunif.checkSumEnable</td><td>bool</td><td>是否开启报文检验和</td></tr>
+<tr><td>data.items.gretunif.keepalive</td><td>object</td><td>keepalive相关配置</td></tr>
+<tr><td>data.items.gretunif.keepalive.aliveEnable</td><td>bool</td><td>是否开启keepalive保活功能</td></tr>
+<tr><td>data.items.gretunif.keepalive.interval</td><td>uint16</td><td>间隔时间<br>最小值:1<br>最大值:32767</td></tr>
+<tr><td>data.items.gretunif.keepalive.attempt</td><td>uint16</td><td>最大发送次数<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.gretunif.createTime</td><td>string</td><td>隧道创建时间</td></tr>
+<tr><td>data.items.tunnelif</td><td>object</td><td>隧道口相关配置</td></tr>
+<tr><td>data.items.tunnelif.type</td><td>string</td><td>隧道类型<br>枚举值:[<br>IPIPV6:IPv4 over IPv6隧道<br>IPV6IP:IPv6 over IPv4隧道<br>6TO4:6to4自动隧道<br>ISATAP:ISATAP自动隧道<br>]</td></tr>
+<tr><td>data.items.tunnelif.source</td><td>string</td><td>隧道源信息</td></tr>
+<tr><td>data.items.tunnelif.destination</td><td>string</td><td>隧道目的信息<br>格式:ip-address</td></tr>
+<tr><td>data.items.oobManage</td><td>bool</td><td>带外管理起禁用</td></tr>
+<tr><td>data.items.lldpConfig</td><td>object</td><td>接口lldp参数配置信息</td></tr>
+</tbody>
+</table>
+</body>
+</html>

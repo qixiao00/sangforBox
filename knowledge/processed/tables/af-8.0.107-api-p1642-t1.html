@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1642-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1642 | table_id=af-8.0.107-api-p1642-t1<br>上下文标题路径：5 网络 / 5.9 DNS / 5.9.2 dns透明代理 / 5.9.2.9 获取dns透明代理请求事务列表</p>
+<table>
+<thead><tr><th>data.itemLength</th><th>int32</th><th>数据列表长度</th></tr></thead>
+<tbody>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.tranid</td><td>uint32</td><td>事务id</td></tr>
+<tr><td>data.items.srcip</td><td>string</td><td>请求源ip地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.questionsCrc</td><td>uint32</td><td>问题区crc</td></tr>
+<tr><td>data.items.dstip</td><td>string</td><td>请求目的ip地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.sport</td><td>uint32</td><td>源端口</td></tr>
+<tr><td>data.items.dport</td><td>uint32</td><td>目的端口</td></tr>
+<tr><td>data.items.inport</td><td>uint32</td><td>入接口</td></tr>
+<tr><td>data.items.queryNum</td><td>uint32</td><td>请求的问题个数</td></tr>
+<tr><td>data.items.successQueryNum</td><td>uint32</td><td>已经成功的查询个数</td></tr>
+<tr><td>data.items.failedQueryNum</td><td>uint32</td><td>已经失败的查询个数</td></tr>
+<tr><td>data.items.queries</td><td>object[]</td><td>请求的问题</td></tr>
+<tr><td>data.items.queries.name</td><td>string</td><td>域名</td></tr>
+<tr><td>data.items.queries.rclass</td><td>string</td><td>rclass<br>枚举值:[<br>IN:internet类<br>]</td></tr>
+<tr><td>data.items.queries.rtype</td><td>string</td><td>rtype<br>枚举值:[<br>A:IPv4地址<br>AAAA:IPv6地址<br>]</td></tr>
+<tr><td>data.items.queries.crc</td><td>uint32</td><td>问题crc</td></tr>
+<tr><td>data.items.queries.answered</td><td>string</td><td>查询状态<br>枚举值:[<br>WAITING:正在请求<br>SUCCESS:请求成功，保存在请求区<br>SUCCESS ANS:请求成功，保存在响应区<br>_<br>FAILED:请求失败<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

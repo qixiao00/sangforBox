@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1850-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1850 | table_id=af-8.0.107-api-p1850-t2<br>上下文标题路径：5 网络 / 5.15 RSTP / 5.15.3 获取rstp的实时信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>rstp状态信息</td></tr>
+<tr><td>data.mac</td><td>string</td><td>设备的mac地址</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>设备是否起禁用rstp</td></tr>
+<tr><td>data.priority</td><td>uint32</td><td>桥优先级</td></tr>
+<tr><td>data.rootPathCost</td><td>uint32</td><td>根路径开销</td></tr>
+<tr><td>data.maxage</td><td>uint8</td><td>运行时真实BPDU消息生存时间, 秒</td></tr>
+<tr><td>data.configMaxage</td><td>uint8</td><td>配置BPDU消息生存时间, 秒</td></tr>
+<tr><td>data.hello</td><td>uint8</td><td>运行时真实Hello报文间隔, 秒</td></tr>
+<tr><td>data.configHello</td><td>uint8</td><td>配置Hello报文间隔, 秒</td></tr>
+<tr><td>data.forwardDelay</td><td>uint8</td><td>运行时真实转发延迟时间, 秒</td></tr>
+<tr><td>data.configForwardDelay</td><td>uint8</td><td>配置转发延迟时间, 秒</td></tr>
+<tr><td>data.rootBridge</td><td>string</td><td>设备的根桥ID</td></tr>
+<tr><td>data.rootPort</td><td>string</td><td>设备的根端口ID</td></tr>
+<tr><td>data.timeSinceTC</td><td>uint32</td><td>自从拓扑改变到现在的时间, 秒</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1146-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1146 | table_id=af-8.0.107-api-p1146-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.1 BGP / 5.8.13.1.1.6 增量更新指定BGP实例</p>
+<table>
+<thead><tr><th>obj.addressFamilyIpv6Unicast.redistributeVpn.metric</th><th>int64</th><th>--</th><th>引入路由度量值<br>最小值:-1<br>最大值:4294967295</th></tr></thead>
+<tbody>
+<tr><td>obj.addressFamilyIpv6Unicast.redistributeVpn.routeMap</td><td>string</td><td>--</td><td>过滤引入路由信息的路由映射表<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.addressFamilyIpv6Unicast.ebgpDistance</td><td>uint8</td><td>--</td><td>EBGP路由管理距离<br>最小值:1<br>最大值:255<br>默认值:20</td></tr>
+<tr><td>obj.addressFamilyIpv6Unicast.ibgpDistance</td><td>uint8</td><td>--</td><td>IBGP路由管理距离<br>最小值:1<br>最大值:255<br>默认值:200</td></tr>
+<tr><td>obj.addressFamilyIpv6Unicast.localDistance</td><td>uint8</td><td>--</td><td>本地路由管理距离<br>最小值:1<br>最大值:255<br>默认值:200</td></tr>
+<tr><td>obj.addressFamilyIpv6Unicast.ebgpMaximumPaths</td><td>uint8</td><td>--</td><td>EBGP负载均衡的最大路径数<br>最小值:1<br>最大值:8<br>默认值:1</td></tr>
+<tr><td>obj.addressFamilyIpv6Unicast.ibgpMaximumPaths</td><td>uint8</td><td>--</td><td>IBGP负载均衡的最大路径数<br>最小值:1<br>最大值:8<br>默认值:1</td></tr>
+<tr><td>obj.gracefulRestart</td><td>object</td><td>--</td><td>BGP平滑重启</td></tr>
+<tr><td>obj.gracefulRestart.enable</td><td>bool</td><td>--</td><td>平滑重启开关</td></tr>
+<tr><td>obj.gracefulRestart.restartTime</td><td>uint16</td><td>--</td><td>平滑重启时间<br>最小值:1<br>最大值:3600<br>默认值:120</td></tr>
+<tr><td>obj.gracefulRestart.stalepathTime</td><td>uint16</td><td>--</td><td>平滑重启保持老化路由最大时间<br>最小值:1<br>最大值:3600<br>默认值:360</td></tr>
+<tr><td>obj.gracefulRestart.selectdeferTime</td><td>uint16</td><td>--</td><td>平滑重启延迟选路时间<br>最小值:1<br>最大值:3600<br>默认值:360</td></tr>
+<tr><td>obj.gracefulRestart.ribstaleTime</td><td>uint16</td><td>--</td><td>平滑重启删除老化路由时间<br>最小值:1<br>最大值:3600<br>默认值:480</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p513-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=513 | table_id=af-8.0.107-api-p513-t1<br>上下文标题路径：4 对象 / 4.6 负载均衡地址池对象 / 4.6.6 全量修改指定的负载均衡地址池对象</p>
+<table>
+<thead><tr><th>obj.realServers.weight</th><th>uint8</th><th>--</th><th>权重<br>最小值:1<br>最大值:255<br>默认值:10</th></tr></thead>
+<tbody>
+<tr><td>obj.type</td><td>string</td><td>--</td><td>SLB 地址池对象类型<br>枚举值:[<br>IPV4:ipv4 slbpool<br>IPV6:ipv6 slbpool<br>]</td></tr>
+<tr><td>obj.detectMode</td><td>string</td><td>--</td><td>探测模式<br>默认值:ANY<br>枚举值:[<br>ALL:ALL<br>ANY:ANY<br>]</td></tr>
+<tr><td>obj.detects</td><td>object[]</td><td>--</td><td>地址池探测方法列表</td></tr>
+<tr><td>obj.detects.detectMethod</td><td>string</td><td>--</td><td>探测协议<br>枚举值:[<br>ICMP:ICMP 探测<br>TCP:TCP 探测<br>UDP:UDP 探测<br>]</td></tr>
+<tr><td>obj.detects.port</td><td>uint16</td><td>--</td><td>探测端口<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>obj.detects.interval</td><td>uint8</td><td>--</td><td>探测间隔<br>最小值:1<br>最大值:255<br>默认值:5</td></tr>
+<tr><td>obj.detects.threshold</td><td>uint8</td><td>--</td><td>探测阈值<br>最小值:3<br>最大值:255<br>默认值:3</td></tr>
+</tbody>
+</table>
+</body>
+</html>

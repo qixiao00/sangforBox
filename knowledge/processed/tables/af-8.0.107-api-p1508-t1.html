@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1508-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1508 | table_id=af-8.0.107-api-p1508-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.4 动态路由RIP / 5.8.13.4.4 RIP接口 / 5.8.13.4.4.1 全量更新单个RIP接口配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>rip接口配置</td></tr>
+<tr><td>obj.ifname</td><td>string</td><td>--</td><td>接口名称</td></tr>
+<tr><td>obj.passiveMode</td><td>bool</td><td>--</td><td>被动模式开关</td></tr>
+<tr><td>obj.sendVersion</td><td>uint8</td><td>--</td><td>发送版本号<br>最小值:1<br>最大值:2<br>默认值:2</td></tr>
+<tr><td>obj.receiveVersion</td><td>uint8</td><td>--</td><td>接收版本号<br>最小值:1<br>最大值:2<br>默认值:2</td></tr>
+<tr><td>obj.authMode</td><td>string</td><td>--</td><td>认证模式<br>默认值:NONE<br>枚举值:[<br>NONE:不认证<br>TEXT:密码认证<br>MD5:md5认证<br>]</td></tr>
+<tr><td>obj.authString</td><td>string</td><td>--</td><td>认证口令<br>最小长度:2<br>最大长度:16</td></tr>
+</tbody>
+</table>
+</body>
+</html>

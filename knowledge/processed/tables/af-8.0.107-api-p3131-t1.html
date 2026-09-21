@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3131-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3131 | table_id=af-8.0.107-api-p3131-t1<br>上下文标题路径：8 运营中心 / 8.1 物联网安全 / 8.1.2 资产列表 / 8.1.2.4 删除资产接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>assets.cfg.assets</td></tr>
+<tr><td>data.atype</td><td>uint32</td><td>资产大类<br>最小值:0<br>最大值:999</td></tr>
+<tr><td>data.atype common_</td><td>uint32</td><td>资产大类（内置类型）<br>最小值:0<br>最大值:999</td></tr>
+<tr><td>data.factory</td><td>string</td><td>终端厂商<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.factory common_</td><td>string</td><td>终端厂商（内置类型）<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.first found_</td><td>uint32</td><td>首次发现时间<br>最小值:0</td></tr>
+<tr><td>data.force magic_</td><td>uint32</td><td>强制下发标记<br>最小值:0</td></tr>
+<tr><td>data.from</td><td>string</td><td>设备id<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.hostname</td><td>string</td><td>主机名<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.ip</td><td>string</td><td>需要修改资产准入状态的IP列表<br>格式:ip4-address</td></tr>
+<tr><td>data.last discern_</td><td>uint32</td><td>上一次扫描时间<br>最小值:0</td></tr>
+<tr><td>data.last save time_ _</td><td>uint32</td><td>最近一次发现时间<br>最小值:0</td></tr>
+<tr><td>data.last updater_</td><td>string</td><td>更新资产的进程名<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.mac</td><td>string</td><td>mac地址</td></tr>
+<tr><td>data.means attr_</td><td>string</td><td>资产属性<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.model</td><td>string</td><td>资产型号<br>最小长度:0<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

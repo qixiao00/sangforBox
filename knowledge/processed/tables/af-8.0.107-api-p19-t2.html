@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p19-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=19 | table=af-8.0.107-api-p19-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>用户流量请求过滤数据</td></tr>
+<tr><td>obj.topNumber</td><td>int32</td><td>否</td><td>显示前N名的排行(默认为60,范围1-60)<br>最小值:1<br>最大值:60</td></tr>
+<tr><td>obj.line</td><td>uint16</td><td>否</td><td>要过滤的线路,0代表全部(默认为0,范围0-<br>256)<br>最小值:0<br>最大值:256</td></tr>
+<tr><td>obj.applicationType</td><td>string[]</td><td>否</td><td>要过滤的应用类型列表，若不选该字段，则<br>默认不过滤</td></tr>
+</tbody>
+</table>
+</body>
+</html>

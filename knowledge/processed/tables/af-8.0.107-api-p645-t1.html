@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p645-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=645 | table_id=af-8.0.107-api-p645-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.4 删除指定接口信息</p>
+<table>
+<thead><tr><th>data.vlan.vlanMode</th><th>string</th><th>vlan模式<br>枚举值:[<br>ACCESS:access模式<br>TRUNK:trunk模式<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.vlan.accessId</td><td>uint32</td><td>access vlan id，透明模式下选择access时使用<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>data.vlan.trunkConfig</td><td>object</td><td>trunk配置，透明模式下选择trunk时使用</td></tr>
+<tr><td>data.vlan.trunkConfig.nativeId</td><td>int32</td><td>trunk native vlanid<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>data.vlan.trunkConfig.trunkRange</td><td>object[]</td><td>trunk vlan 范围</td></tr>
+<tr><td>data.vlan.trunkConfig.trunkRange.start</td><td>uint32</td><td>vlan范围起始值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>data.vlan.trunkConfig.trunkRange.end</td><td>uint32</td><td>vlan范围结束值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>data.vlanId</td><td>uint32</td><td>标识子接口和vlan口的vlanid，接口类型为物理口和聚<br>合口时使用<br>最小值:0<br>最大值:4094</td></tr>
+<tr><td>data.physicalif</td><td>object</td><td>物理口相关配置，接口类型为物理接口时使用</td></tr>
+<tr><td>data.physicalif.speedDuplex</td><td>object</td><td>速率双工配置</td></tr>
+<tr><td>data.physicalif.speedDuplex.autoneg</td><td>bool</td><td>接口速率工作模式自动协商，为true时speed和duple<br>x不再生效</td></tr>
+<tr><td>data.physicalif.speedDuplex.speed</td><td>uint32</td><td>接口速率，autoneg为false时speed配置生效<br>枚举值:[<br>100:选择100Mbps<br>1000:选择1000Mbps<br>10000:选择10000Mbps<br>40000:选择40000Mbps<br>100000:选择100000Mbps<br>]</td></tr>
+<tr><td>data.physicalif.speedDuplex.duplex</td><td>string</td><td>双工模式，autoneg为false时duplex配置生效<br>枚举值:[<br>half:半双工模式<br>full:全双工模式<br>]</td></tr>
+<tr><td>data.physicalif.speedDuplex.fixedAuto</td><td>bool</td><td>配置具体速率双工，工作模式时开启关闭协商</td></tr>
+<tr><td>data.physicalif.bypassMirror</td><td>object</td><td>旁路镜像模式配置，物理接口旁路镜像模式时使用</td></tr>
+<tr><td>data.physicalif.bypassMirror.statsEnable</td><td>bool</td><td>是否启用流量统计</td></tr>
+</tbody>
+</table>
+</body>
+</html>

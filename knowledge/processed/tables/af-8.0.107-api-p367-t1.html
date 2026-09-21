@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p367-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=367 | table=af-8.0.107-api-p367-t1</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>select<br>_</td><td>string</td><td>否</td><td>选择字段，字段用逗号分隔<br>最大长度:1000</td></tr>
+<tr><td>libtype</td><td>string</td><td>否</td><td>应用所属库类型, 枚举型。设置该参数表示<br>只获取相应库类型的数据,不设置该参数表<br>示所有应用大类,中间类,应用,但不包涵‘全<br>部’与‘其他应用’两个大类<br>枚举值:[<br>FEATURE:特征库<br>INTELL:智能库<br>CUSTOM:自定义库<br>PREDEF:预定义应用<br>ALL:全部应用,包涵'全部'与'其他'两个大类<br>]</td></tr>
+<tr><td>apppath</td><td>string</td><td>否</td><td>应用路径名,如应用Custom a1,所属类型<br>_<br>是Custom t1,apppath就是Custom t1/<br>_ _<br>Custom a1,填写该参数表示查询该大类或<br>_<br>者中间类下面的所有的应用或者中间类,如<br>果填写的大类或者中间类不存在，返回一个<br>空列表<br>最小长度:1<br>最大长度:287</td></tr>
+<tr><td>start<br>_</td><td>int32</td><td>否</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+<tr><td>sortby<br>_</td><td>string</td><td>否</td><td>指定排序字段<br>最大长度:100</td></tr>
+<tr><td>length<br>_</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+</tbody>
+</table>
+</body>
+</html>

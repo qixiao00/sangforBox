@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1391-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1391 | table_id=af-8.0.107-api-p1391-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.2 动态路由OSPF / 5.8.13.2.8 OSPF状态查询 / 5.8.13.2.8.2 获取ospfd后台基础链路信息</p>
+<table>
+<thead><tr><th>code</th><th>int</th><th>错误码</th></tr></thead>
+<tbody>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.areaId</td><td>string</td><td>区域ID</td></tr>
+<tr><td>data.items.lsaDataType</td><td>string</td><td>数据类型</td></tr>
+<tr><td>data.items.lsaDataId</td><td>string</td><td>数据id</td></tr>
+<tr><td>data.items.lsaDataAdvRouter</td><td>string</td><td>通告路由器</td></tr>
+<tr><td>data.items.lsaDataLsSeqnum</td><td>string</td><td>sequence序号</td></tr>
+<tr><td>data.items.lsaDataLsAge</td><td>uint16</td><td>lsa 生成时间</td></tr>
+<tr><td>data.items.lsaDataOpt</td><td>string</td><td>lsa 选项</td></tr>
+<tr><td>data.items.lsaDataChecksum</td><td>string</td><td>lsa 校验和</td></tr>
+<tr><td>data.items.lsaDataLen</td><td>uint16</td><td>lsa 数据长度</td></tr>
+<tr><td>data.items.routerId</td><td>string</td><td>ospf router id</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p224-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=224 | table_id=af-8.0.107-api-p224-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.1 告警事件 / 3.4.3.1.2 设置告警事件配置</p>
+<table>
+<thead><tr><th>data.hardwareCheck.networkAbnormalAlarm</th><th>bool</th><th>网络故障检测告警开关</th></tr></thead>
+<tbody>
+<tr><td>data.hardwareCheck.powerAbnormalAlarm</td><td>bool</td><td>电源异常检测告警开关</td></tr>
+<tr><td>data.hardwareCheck.memAbnormalAlarm</td><td>bool</td><td>内存异常检测告警开关</td></tr>
+<tr><td>data.firewallLog</td><td>object</td><td>防火墙日志告警组配置</td></tr>
+<tr><td>data.firewallLog.enable</td><td>bool</td><td>防火墙日志告警组开关</td></tr>
+<tr><td>data.firewallLog.diskIoAlarm</td><td>bool</td><td>日志读写繁忙程度告警开关</td></tr>
+<tr><td>data.firewallLog.logSizeAlarm</td><td>bool</td><td>日志数量告警开关</td></tr>
+<tr><td>data.firewallLog.ioUsage</td><td>int8</td><td>日志读写繁忙程度告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>data.firewallLog.appControl</td><td>int32</td><td>应用控制日志告警阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.firewallLog.flux</td><td>int32</td><td>流量审计日志告警阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.systemResource</td><td>object</td><td>系统资源告警组配置</td></tr>
+<tr><td>data.systemResource.enable</td><td>bool</td><td>系统资源告警组开关</td></tr>
+<tr><td>data.systemResource.cpuUsageAlarm</td><td>bool</td><td>CPU使用率告警开关</td></tr>
+<tr><td>data.systemResource.memUsageAlarm</td><td>bool</td><td>内存使用率告警开关</td></tr>
+<tr><td>data.systemResource.diskUsageAlarm</td><td>bool</td><td>磁盘空间使用率告警开关</td></tr>
+<tr><td>data.systemResource.fluxLimitAlarm</td><td>bool</td><td>流量超限告警开关</td></tr>
+<tr><td>data.systemResource.fileSystemAlarm</td><td>bool</td><td>文件系统故障检测告警开关</td></tr>
+<tr><td>data.systemResource.cpuUsage</td><td>int8</td><td>CPU使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>data.systemResource.memUsage</td><td>int8</td><td>内存使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>data.systemResource.diskUsage</td><td>int8</td><td>磁盘空间使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>data.systemResource.fluxLimit</td><td>object[]</td><td>各个网卡流量告警阈值</td></tr>
+</tbody>
+</table>
+</body>
+</html>

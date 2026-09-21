@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3105-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3105 | table_id=af-8.0.107-api-p3105-t1<br>上下文标题路径：7 系统 / 7.9 调试 / 7.9.1 报文追踪 / 7.9.1.7 全量更新指定debugfilter信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>debugfilter 配置</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>debugfilter名称<br>最小长度:1<br>最大长度:18</td></tr>
+<tr><td>obj.enable</td><td>string</td><td>--</td><td>debugfilter开关</td></tr>
+<tr><td>obj.pcap</td><td>string</td><td>--</td><td>debugfilter 导入的接口<br>枚举值:[<br>NONE:重置<br>PCAPIF1:pcapif1<br>PCAPIF2:pcapif2<br>PCAPIF3:pcapif3<br>PCAPIF4:pcapif4<br>]</td></tr>
+<tr><td>obj.device</td><td>object</td><td>--</td><td>按设备过滤</td></tr>
+<tr><td>obj.device.type</td><td>string</td><td>--</td><td>设备类型<br>枚举值:[<br>VSYS:虚拟系统<br>]</td></tr>
+<tr><td>obj.device.name</td><td>string</td><td>--</td><td>设备设备名</td></tr>
+<tr><td>obj.inifname</td><td>string</td><td>--</td><td>按照入接口过滤</td></tr>
+<tr><td>obj.inport</td><td>string</td><td>--</td><td>按照入端口过滤</td></tr>
+<tr><td>obj.outport</td><td>string</td><td>--</td><td>按照出端口过滤</td></tr>
+<tr><td>obj.ether</td><td>object</td><td>--</td><td>二层过滤</td></tr>
+<tr><td>obj.ether.mac</td><td>string</td><td>--</td><td>按照mac过滤</td></tr>
+<tr><td>obj.ether.srcmac</td><td>string</td><td>--</td><td>按照源mac过滤</td></tr>
+<tr><td>obj.ether.dstmac</td><td>string</td><td>--</td><td>按照目的mac过滤</td></tr>
+</tbody>
+</table>
+</body>
+</html>

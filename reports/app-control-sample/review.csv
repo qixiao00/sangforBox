@@ -1,0 +1,3 @@
+﻿candidate_id,type,verification,status,details
+NAME-0001,命名规范化,仅名称变化；需确认设备是否存在按名称引用,待确认,deny-douyin-vwire → 拒绝_Web流媒体-抖音_All_All_7690b472
+NAME-0002,命名规范化,仅名称变化；需确认设备是否存在按名称引用,待确认,default → 允许_全部_All_All_05acf302

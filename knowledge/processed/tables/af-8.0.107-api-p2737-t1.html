@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2737-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2737 | table_id=af-8.0.107-api-p2737-t1<br>上下文标题路径：6 策略 / 6.5 流控 / 6.5.4 通道 / 6.5.4.5 批量删除通道信息</p>
+<table>
+<thead><tr><th>obj.enable</th><th>bool</th><th>--</th><th>开关</th></tr></thead>
+<tbody>
+<tr><td>obj.vline</td><td>string</td><td>--</td><td>所属线路引用</td></tr>
+<tr><td>obj.priority</td><td>string</td><td>--</td><td>通道优先级<br>默认值:LOW<br>枚举值:[<br>LOW:优先级低<br>MID:优先级中<br>HIGH:优先级高<br>]</td></tr>
+<tr><td>obj.uplink</td><td>object</td><td>--</td><td>上行通道</td></tr>
+<tr><td>obj.uplink.ceil</td><td>uint32</td><td>--</td><td>通道限制带宽，单位kbps<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.uplink.assureRate</td><td>uint32</td><td>--</td><td>通道保证带宽，单位kbps<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.uplink.perIpLimit</td><td>uint32</td><td>--</td><td>单IP最大带宽限制<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.downlink</td><td>object</td><td>--</td><td>下行通道</td></tr>
+<tr><td>obj.downlink.ceil</td><td>uint32</td><td>--</td><td>通道限制带宽，单位kbps<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.downlink.assureRate</td><td>uint32</td><td>--</td><td>通道保证带宽，单位kbps<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.downlink.p2pSuppress</td><td>bool</td><td>--</td><td>抑制P2P下行丢包开关</td></tr>
+<tr><td>obj.downlink.perIpLimit</td><td>uint32</td><td>--</td><td>单IP最大带宽限制<br>最小值:0<br>最大值:104857600</td></tr>
+<tr><td>obj.perIpUsing</td><td>string</td><td>--</td><td>源IP或者目的IP做为通道用户<br>默认值:SRCIP<br>枚举值:[<br>SRCIP:源ip<br>DSTIP:目标IP<br>]</td></tr>
+<tr><td>obj.match</td><td>object</td><td>--</td><td>通道适用范围</td></tr>
+<tr><td>obj.match.app</td><td>string[]</td><td>--</td><td>应用类型</td></tr>
+<tr><td>obj.match.files</td><td>string[]</td><td>--</td><td>文件类型</td></tr>
+<tr><td>obj.match.url</td><td>string[]</td><td>--</td><td>url类型</td></tr>
+<tr><td>obj.match.suitobj</td><td>object</td><td>--</td><td>适用对象</td></tr>
+</tbody>
+</table>
+</body>
+</html>

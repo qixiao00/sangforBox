@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p82-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=82 | table_id=af-8.0.107-cli-p82-t1<br>上下文标题路径：5 策略 / 5.1 地址转换 / 5.1.1 IPV4地址转换 / disable</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>port &lt;port-value&gt;</td><td>-</td><td>STRING</td><td>端口范围，示例:66 66-666, 支持128个</td></tr>
+<tr><td>ip-prefix &lt;ip-address&gt;</td><td>-</td><td>A.B.C.D/M<br>地址格式为A.B.C.D/M</td><td>设置转换类型为ip前缀，转换类型七选一</td></tr>
+<tr><td>slb-server-pool &lt;pool-name&gt;</td><td>-</td><td>STRING</td><td>设置转换类型为负载均衡地址池，转换类型<br>七选一</td></tr>
+<tr><td>ip &lt;ip-address&gt;</td><td>-</td><td>A.B.C.D<br>地址格式为A.B.C.D</td><td>设置转换类型为单个ip，转换类型七选一</td></tr>
+<tr><td>iprange &lt;iprange-value&gt;</td><td>-</td><td>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H</td><td>设置转换类型为ip组，转换类型七选一</td></tr>
+<tr><td>ipgroup &lt;ipgroup-name&gt;</td><td>length:(1-95)</td><td>STRING</td><td>设置转换类型为ip组，转换类型七选一</td></tr>
+<tr><td>no-trans</td><td>-</td><td>-</td><td>设置转换类型为不转换，转换类型七选一</td></tr>
+</tbody>
+</table>
+</body>
+</html>

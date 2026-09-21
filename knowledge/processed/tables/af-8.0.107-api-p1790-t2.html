@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1790-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1790 | table_id=af-8.0.107-api-p1790-t2<br>上下文标题路径：5 网络 / 5.12 ARP / 5.12.1 静态ARP / 5.12.1.10 arp静态表ip检测局域网mac地址信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>arp配置自动检测的接口信息</td></tr>
+<tr><td>data.ip</td><td>string</td><td>IP地址</td></tr>
+<tr><td>data.mac</td><td>string</td><td>mac地址</td></tr>
+<tr><td>data.interface</td><td>string</td><td>接口名</td></tr>
+<tr><td>data.code</td><td>uint32</td><td>返回错误码标识，内部使用</td></tr>
+<tr><td>data.result</td><td>string</td><td>返回错误信息<br>枚举值:[<br>WAITING:arp项在检测中<br>COMPLETE:arp项检测完成<br>IPERROR:ip错误<br>UNKNOWN:未知错误<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

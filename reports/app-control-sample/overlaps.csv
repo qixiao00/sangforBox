@@ -1,0 +1,2 @@
+﻿prior_position,prior_name,later_position,later_name,relation,prior_effect,later_effect,evidence
+1,deny-douyin-vwire,2,default,无重叠,n||y|n|y|0,y||n|n|y|0,"src_zone:Virtual_trust_A→bridge,lan,wan；dst_zone:Virtual_untrust_A→bridge,lan,wan；application:Web流媒体/抖音→任意"

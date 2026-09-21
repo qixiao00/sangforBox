@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3059-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3059 | table_id=af-8.0.107-api-p3059-t1<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.22 显示HA监控对象状态信息</p>
+<table>
+<thead><tr><th>data.items.type</th><th>string</th><th>监控对象类型<br>枚举值:[<br>LINKGROUP:link group模式<br>VLAN:vlan监控模式<br>LINKDETECT:链路探测模式<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.items.mode</td><td>string</td><td>监控对象模式<br>枚举值:[<br>ALL:当所有对象失效后后认为监控失效<br>ANY:任意组内对象后认为监控失效<br>]</td></tr>
+<tr><td>data.items.vlan</td><td>uint16</td><td>vlanID</td></tr>
+<tr><td>data.items.itemStateList</td><td>object[]</td><td>已选择的网络接口</td></tr>
+<tr><td>data.items.itemStateList.name</td><td>string</td><td>接口名或链路探测对象名称</td></tr>
+<tr><td>data.items.itemStateList.state</td><td>string</td><td>状态<br>枚举值:[<br>VALID:对象有效<br>INVALID:对象无效<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

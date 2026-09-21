@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1388-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1388 | table_id=af-8.0.107-api-p1388-t2<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.2 动态路由OSPF / 5.8.13.2.8 OSPF状态查询 / 5.8.13.2.8.1 获取ospfd后台接口信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.ifname</td><td>string</td><td>接口名称</td></tr>
+<tr><td>data.items.passiveMode</td><td>bool</td><td>被动模式是否开启</td></tr>
+<tr><td>data.items.ip</td><td>string</td><td>接口ip地址</td></tr>
+<tr><td>data.items.ipmask</td><td>uint32</td><td>掩码长度</td></tr>
+<tr><td>data.items.area</td><td>string</td><td>区域ID</td></tr>
+<tr><td>data.items.state</td><td>string</td><td>状态</td></tr>
+<tr><td>data.items.dr</td><td>string</td><td>指定路由器</td></tr>
+<tr><td>data.items.bdr</td><td>string</td><td>备份路由器</td></tr>
+<tr><td>data.items.cost</td><td>uint32</td><td>开销</td></tr>
+<tr><td>data.items.helloInterval</td><td>uint32</td><td>hello报文间隔</td></tr>
+<tr><td>data.items.deadInterval</td><td>uint32</td><td>老化间隔</td></tr>
+</tbody>
+</table>
+</body>
+</html>

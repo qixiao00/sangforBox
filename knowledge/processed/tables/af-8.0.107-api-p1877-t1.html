@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1877-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1877 | table_id=af-8.0.107-api-p1877-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.1 NAT策略 / 6.1.1.3 批量获取nat策略</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object[]</td><td>是</td><td>nat策略列表</td></tr>
+<tr><td>obj.name</td><td>string</td><td>是</td><td>策略名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>否</td><td>是否启用<br>默认值:true</td></tr>
+<tr><td>obj.position</td><td>int32</td><td>否</td><td>表示位置状态</td></tr>
+<tr><td>obj.natType</td><td>string</td><td>是</td><td>nat类型<br>枚举值:[<br>SNAT:转换类型为源地址转换<br>DNAT:转换类型为目的地址转换<br>BNAT:转换类型为双向地址转换<br>]</td></tr>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.schedule</td><td>string</td><td>否</td><td>生效时间，引用时间计划对象<br>默认值:00000000000000000000000c0</td></tr>
+<tr><td>obj.snat</td><td>object</td><td>按条件选<br>择</td><td>snat信息,策略类型为源地址转换时使用</td></tr>
+<tr><td>obj.snat.srcZones</td><td>string[]</td><td>是</td><td>需要匹配的源区域</td></tr>
+<tr><td>obj.snat.srcIpGroups</td><td>string[]</td><td>是</td><td>需要匹配的源IP组</td></tr>
+<tr><td>obj.snat.dstNetobj</td><td>object</td><td>是</td><td>需要匹配的目的区域或者接口</td></tr>
+<tr><td>obj.snat.dstNetobj.dstNetobjType</td><td>string</td><td>是</td><td>需要匹配的目的类型<br>默认值:ZONE<br>枚举值:[<br>ZONE:区域<br>INTERFACE:接口<br>]</td></tr>
+<tr><td>obj.snat.dstNetobj.interface</td><td>string</td><td>按条件选<br>择</td><td>目的接口，当dstNetobjType类型为INTE<br>RFACE时选择</td></tr>
+<tr><td>obj.snat.dstNetobj.zone</td><td>string[]</td><td>按条件选<br>择</td><td>目的区域，当dstNetobjType类型为ZON<br>E时选择</td></tr>
+<tr><td>obj.snat.dstIpGroups</td><td>string[]</td><td>是</td><td>需要匹配的目的IP组</td></tr>
+<tr><td>obj.snat.natService</td><td>string[]</td><td>是</td><td>引用的服务组</td></tr>
+<tr><td>obj.snat.transfer</td><td>object</td><td>是</td><td>源地址转换相关数据</td></tr>
+<tr><td>obj.snat.transfer.transferType</td><td>string</td><td>是</td><td>源转换类型<br>默认值:OUTIF IP<br>_<br>枚举值:[<br>OUTIF IP:出接口ip<br>_<br>IP RANGE:ip范围<br>_<br>IP:单个ip<br>IPGROUP:ip组<br>NO TRANS:不转换<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

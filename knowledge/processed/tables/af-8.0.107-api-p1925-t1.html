@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1925-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1925 | table_id=af-8.0.107-api-p1925-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.1 NAT策略 / 6.1.1.8 全量修改nat策略</p>
+<table>
+<thead><tr><th>obj.bnat.transferDst.ipRange</th><th>object</th><th>按条件选<br>择</th><th>转换的IP范围，当transferType转换类型<br>为IP RANGE时选择<br>_<br>格式:ip-range</th></tr></thead>
+<tbody>
+<tr><td>obj.bnat.transferDst.ipRange.start</td><td>string</td><td>是</td><td>IP范围起始地址<br>格式:ip-address</td></tr>
+<tr><td>obj.bnat.transferDst.ipRange.end</td><td>string</td><td>是</td><td>IP范围结束地址<br>格式:ip-address</td></tr>
+<tr><td>obj.bnat.transferDst.specifyIp</td><td>string</td><td>按条件选<br>择</td><td>转换的单个IP，当transferType转换类型<br>为IP时选择</td></tr>
+<tr><td>obj.bnat.transferDst.ipPrefix</td><td>string</td><td>是</td><td>IPv4网段,掩码格式</td></tr>
+<tr><td>obj.bnat.transferDst.ipGroups</td><td>string[]</td><td>按条件选<br>择</td><td>转换的IP组，当transferType转换类型为I<br>PGROUP时选择</td></tr>
+<tr><td>obj.bnat.transferDst.transferPort</td><td>object[]</td><td>是</td><td>转换端口，数组为空表示不转换端口</td></tr>
+<tr><td>obj.bnat.transferDst.transferPort.start</td><td>int32</td><td>是</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.bnat.transferDst.transferPort.end</td><td>int32</td><td>否</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.bnat.transferDst.slbPool</td><td>string</td><td>--</td><td>引用负载均衡地址池对象</td></tr>
+<tr><td>obj.bnat.dnatIgnoreAcl</td><td>bool</td><td>是</td><td>忽略访问控制<br>默认值:true</td></tr>
+<tr><td>obj.bnat.bypassAclLog</td><td>bool</td><td>否</td><td>忽略访问控制匹配上策略上报会话日志</td></tr>
+<tr><td>obj.bnat.transferSrc</td><td>object</td><td>是</td><td>源转换相关数据</td></tr>
+<tr><td>obj.bnat.transferSrc.transferType</td><td>string</td><td>是</td><td>转换类型<br>默认值:OUTIF IP<br>_<br>枚举值:[<br>OUTIF IP:出接口ip<br>_<br>IP RANGE:ip范围<br>_<br>IP:单个ip<br>IPGROUP:ip组<br>NO TRANS:不转换<br>_<br>]</td></tr>
+<tr><td>obj.bnat.transferSrc.ipRange</td><td>object</td><td>按条件选<br>择</td><td>转换的IP范围，当transferType转换类型<br>为IP RANGE时选择<br>_<br>格式:ip-range</td></tr>
+<tr><td>obj.bnat.transferSrc.ipRange.start</td><td>string</td><td>是</td><td>IP范围起始地址<br>格式:ip-address</td></tr>
+<tr><td>obj.bnat.transferSrc.ipRange.end</td><td>string</td><td>是</td><td>IP范围结束地址<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

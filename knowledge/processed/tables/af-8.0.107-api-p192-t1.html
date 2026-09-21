@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p192-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=192 | table_id=af-8.0.107-api-p192-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.1 日志设置 / 3.4.1.6 设置日志模块的所有配置信息</p>
+<table>
+<thead><tr><th>obj.listLogSettings.listSyslog.enable</th><th>bool</th><th>--</th><th>syslog设置开关</th></tr></thead>
+<tbody>
+<tr><td>obj.listLogSettings.listSyslog.syslog</td><td>object[]</td><td>--</td><td>syslog设置</td></tr>
+<tr><td>obj.listLogSettings.listSyslog.syslog.ip</td><td>string</td><td>--</td><td>syslog服务器ip地址<br>格式:ip-address</td></tr>
+<tr><td>obj.listLogSettings.listSyslog.syslog.port</td><td>int32</td><td>--</td><td>syslog服务器端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.listLogSettings.listSyslog.syslog.logtype</td><td>string[]</td><td>--</td><td>logsetting:log store type</td></tr>
+<tr><td>obj.listLogSettings.listLocal</td><td>object</td><td>--</td><td>防火墙日志设置信息</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del before days_ _</td><td>object</td><td>--</td><td>删除多少天前的日志</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del before days.ma_ _x days_</td><td>int32</td><td>--</td><td>删除天数阈值<br>最小值:1<br>最大值:1000</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del before days.en_ _able</td><td>bool</td><td>--</td><td>防火墙日志设置开关</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del lt disk percent_ _ _</td><td>object</td><td>--</td><td>磁盘占用空间超过比例删除</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del lt disk percent._ _ _default delete day en_ _ _able</td><td>bool</td><td>--</td><td></td></tr>
+<tr><td>obj.listLogSettings.listLocal.del lt disk percent._ _ _max percent_</td><td>int32</td><td>--</td><td>日志删除磁盘比例<br>最小值:50<br>最大值:90</td></tr>
+<tr><td>obj.listLogSettings.listLocal.del lt disk percent._ _ _enable</td><td>bool</td><td>--</td><td>磁盘占用空间超过比例删除开关</td></tr>
+<tr><td>obj.listLogSettings.listLocal.alarm lt disk perce_ _ _nt</td><td>object</td><td>--</td><td>磁盘占用空间超过比例警告</td></tr>
+<tr><td>obj.listLogSettings.listLocal.alarm lt disk perce_ _ _nt.alarm percent_</td><td>int32</td><td>--</td><td>磁盘警告比例<br>最小值:50<br>最大值:90</td></tr>
+<tr><td>obj.listLogSettings.listLocal.alarm lt disk perce_ _ _nt.enable</td><td>bool</td><td>--</td><td>磁盘占用空间超过比例警开关</td></tr>
+<tr><td>obj.listLogSettings.listLocal.plat</td><td>string</td><td>--</td><td>预留</td></tr>
+<tr><td>obj.listLogSettings.listLocal.enable</td><td>bool</td><td>--</td><td>防火墙日志设置开关</td></tr>
+</tbody>
+</table>
+</body>
+</html>

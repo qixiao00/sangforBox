@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2348-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2348 | table_id=af-8.0.107-api-p2348-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.2 DDOS / 6.2.2.4 batch delete ddos.rules</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>objs</td><td>object[]</td><td>是</td><td>DDOS 防护列表</td></tr>
+<tr><td>objs.name</td><td>string</td><td>--</td><td>策略名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>objs.description</td><td>string</td><td>--</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>objs.enable</td><td>bool</td><td>--</td><td>开关<br>默认值:true</td></tr>
+<tr><td>objs.src</td><td>object</td><td>--</td><td>区域/对象</td></tr>
+<tr><td>objs.src.zone</td><td>string[]</td><td>--</td><td>源区域</td></tr>
+<tr><td>objs.src.ipGroup</td><td>string[]</td><td>--</td><td>ip组</td></tr>
+<tr><td>objs.scanDefend</td><td>object</td><td>--</td><td>扫描防护配置</td></tr>
+<tr><td>objs.scanDefend.ipScan</td><td>object</td><td>--</td><td>IP扫描</td></tr>
+<tr><td>objs.scanDefend.ipScan.enable</td><td>bool</td><td>--</td><td>开关</td></tr>
+<tr><td>objs.scanDefend.ipScan.threshold</td><td>uint32</td><td>--</td><td>阻断阈值<br>最小值:1<br>最大值:4000</td></tr>
+<tr><td>objs.scanDefend.ipScan.blockTime</td><td>uint32</td><td>--</td><td>阻断时间<br>最小值:0<br>最大值:1800</td></tr>
+<tr><td>objs.scanDefend.portScan</td><td>object</td><td>--</td><td>端口扫描</td></tr>
+<tr><td>objs.scanDefend.portScan.enable</td><td>bool</td><td>--</td><td>开关</td></tr>
+<tr><td>objs.scanDefend.portScan.threshold</td><td>uint32</td><td>--</td><td>阻断阈值<br>最小值:1<br>最大值:4000</td></tr>
+<tr><td>objs.scanDefend.portScan.blockTime</td><td>uint32</td><td>--</td><td>阻断时间<br>最小值:0<br>最大值:1800</td></tr>
+<tr><td>objs.ruleType</td><td>uint32</td><td>--</td><td>规则类型<br>枚举值:[<br>1:内网对外攻击防护<br>2:外网对内攻击防护<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

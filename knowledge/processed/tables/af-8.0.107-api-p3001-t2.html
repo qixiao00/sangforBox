@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3001-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3001 | table_id=af-8.0.107-api-p3001-t2<br>上下文标题路径：7 系统 / 7.4 排障 / 7.4.1 故障排查 / 7.4.1.13 全量修改本机流量分析配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>本机数据流分析配置</td></tr>
+<tr><td>obj.setting</td><td>object</td><td>--</td><td>本机分析配置</td></tr>
+<tr><td>obj.setting.enable</td><td>bool</td><td>--</td><td>开关</td></tr>
+<tr><td>obj.setting.srcIp</td><td>object[]</td><td>--</td><td>源地址</td></tr>
+<tr><td>obj.setting.srcIp.transferType</td><td>string</td><td>--</td><td>转换类型 enum<br>枚举值:[<br>IPV4:IPV4地址<br>IPV4 RANGE:IPV4地址范围<br>_<br>IPV4 MASK:IPV4掩码格式<br>_<br>IPV6:IPv6<br>IPV6 RANGE:IPV6地址范围<br>_<br>IPV6 MASK:IPV6掩码格式<br>_<br>]</td></tr>
+<tr><td>obj.setting.srcIp.specifyIPv4</td><td>string</td><td>--</td><td>单个ipv4</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2877-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2877 | table_id=af-8.0.107-api-p2877-t1<br>上下文标题路径：7 系统 / 7.2 管理员账户 / 7.2.4 新增一个管理员账户</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>管理员基本信息</td></tr>
+<tr><td>data.name</td><td>string</td><td>用户名<br>最小长度:1<br>最大长度:60</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>账户状态，启用/禁用</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.roleName</td><td>string</td><td>账户角色<br>枚举值:[<br>ADMINISTRATOR:超级管理员<br>COMMON:普通管理员<br>SAFE:三权分立账户，安全管理员<br>LOG:三权分立账户，审计员<br>SYSTEM:三权分立账户，系统管理员<br>]</td></tr>
+<tr><td>data.authType</td><td>string</td><td>认证类型<br>枚举值:[<br>LOCAL:仅通过本地进行认证<br>REMOTE:仅通过已设置的外部服务器进行认证<br>REMOTE OR LOCAL:优先通过已设置的外部服务<br>_ _<br>器进行认证，当服务器无法连接时，通过本地进行认<br>]</td></tr>
+<tr><td>data.authentication</td><td>object</td><td>认证策略</td></tr>
+<tr><td>data.authentication.usbKeyEnable</td><td>bool</td><td>usb-key认证是否启用</td></tr>
+<tr><td>data.authentication.emailEnable</td><td>bool</td><td>邮件认证是否启用</td></tr>
+<tr><td>data.authentication.emailAddr</td><td>string</td><td>账号绑定邮箱地址<br>最小长度:6<br>最大长度:320</td></tr>
+</tbody>
+</table>
+</body>
+</html>

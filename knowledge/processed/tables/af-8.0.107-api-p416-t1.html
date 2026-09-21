@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p416-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=416 | table_id=af-8.0.107-api-p416-t1<br>上下文标题路径：4 对象 / 4.4 内容识别 / 4.4.1 应用识别 / 4.4.1.9 新增自定义应用规则</p>
+<table>
+<thead><tr><th>data.ruleOwner</th><th>string</th><th>规则库属性,枚举型。可选参数[FEATURE,INTELL,C<br>USTOM], FEATURE:特征应用规则,INTELL:智能应<br>用规则,CUSTOM:自定义应用规则<br>枚举值:[<br>FEATURE:特征应用规则<br>INTELL:智能应用规则<br>CUSTOM:自定义应用规则<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.intellRuleParam</td><td>object</td><td>应用智能识别规则的配置参数</td></tr>
+<tr><td>data.intellRuleParam.sensitivity</td><td>string</td><td>灵敏度,枚举型。<br>枚举值:[<br>LOWER:极低<br>LOW:低<br>MID:中<br>HIGH:高<br>]</td></tr>
+<tr><td>data.intellRuleParam.excludePort</td><td>object[]</td><td>排除扫描端口列表,格式:[{"start": 1}, {"start": 2}]</td></tr>
+<tr><td>data.intellRuleParam.excludePort.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.intellRuleParam.excludePort.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.customRuleParam</td><td>object</td><td>自定义规则配置参数</td></tr>
+<tr><td>data.customRuleParam.direction</td><td>string</td><td>数据包方向,枚举型。可选参数[BOTH,LAN-WAN,W<br>AN-LAN], BOTH:双向, LAN-WAN:LAN到WAN,<br>WAN-LAN:WAN到LAN<br>枚举值:[<br>BOTH:LAN&lt;-&gt;WAN<br>LAN-WAN:LAN-&gt;WAN<br>WAN-LAN:WAN-&gt;LAN<br>]</td></tr>
+<tr><td>data.customRuleParam.protocolNum</td><td>uint8</td><td>协议号, 范围:1-255<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.customRuleParam.portRange</td><td>object[]</td><td>指定端口或范围</td></tr>
+<tr><td>data.customRuleParam.portRange.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.customRuleParam.portRange.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.customRuleParam.ipRange</td><td>object[]</td><td>指定ip地址或范围</td></tr>
+<tr><td>data.customRuleParam.ipRange.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

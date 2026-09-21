@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-16T05:03:24Z",
+  "checks": {
+    "JSONL 文件数": 7,
+    "JSONL 总记录数": 10094,
+    "JSON Schema 文件": 3,
+    "Schema 元模式校验": "通过",
+    "Schema 实例校验失败记录数": 0,
+    "ID 唯一性": "通过",
+    "引用完整性错误数": 0,
+    "页码越界数": 0,
+    "chunk 双向链接错误数": 0,
+    "文档内顺序断裂数": 0,
+    "空字段 chunk 数": 0,
+    "超短 chunk 数（<20 字符）": 4,
+    "疑似页眉页脚残留 chunk 数": 0,
+    "text_sha256 不一致数": 0,
+    "重复正文 chunk 组数": 335,
+    "API 端点数": 1235,
+    "API 端点缺 method/path 数": 0,
+    "CLI 命令数": 956,
+    "CLI 命令缺 syntax 数": 0,
+    "每端点/命令至少一个 chunk": "通过",
+    "表格 HTML 文件数": 6941,
+    "未被任何 chunk 引用的表格数": 260,
+    "manifest 计数一致性": "通过"
+  },
+  "errors": 0,
+  "warnings": 2,
+  "error_messages": [],
+  "warning_messages": [
+    "存在 335 组正文完全重复的 chunk（跨章节重复内容，已记录 issues）",
+    "260 个表格 HTML 未被 chunk 引用（多为跨页续表，示例：['af-8.0.107-api-p10-t1', 'af-8.0.107-api-p10-t2', 'af-8.0.107-api-p100-t2']）"
+  ],
+  "exit_code": 0
+}

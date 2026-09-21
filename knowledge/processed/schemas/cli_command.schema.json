@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sangforbox.local/schemas/cli_command.schema.json",
+  "title": "SangforBox CLI command record",
+  "type": "object",
+  "required": [
+    "command_id",
+    "doc_id",
+    "command",
+    "syntax",
+    "page_start",
+    "page_end",
+    "source_chunk_ids"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "command_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "doc_id": {
+      "type": "string",
+      "const": "af-8.0.107-cli"
+    },
+    "command": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "section_no": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title_path": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "syntax": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "modes_observed": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "privilege": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "arguments": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "range": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "input_format": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "table_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "argument_table_headers": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "options": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "examples": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "warnings": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_commands": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "parent_command_id": {
+      "type": "string"
+    },
+    "page_start": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "page_end": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_chunk_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

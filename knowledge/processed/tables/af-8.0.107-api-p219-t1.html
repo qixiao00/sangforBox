@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p219-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=219 | table_id=af-8.0.107-api-p219-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.1 告警事件 / 3.4.3.1.2 设置告警事件配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>告警事件配置，对应页面的告警事件</td></tr>
+<tr><td>obj.bbc admin_</td><td>bool</td><td>--</td><td>配置来自bbc,值为true</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>--</td><td>告警总开关</td></tr>
+<tr><td>obj.baseEvent</td><td>object</td><td>--</td><td>基础事件告警组配置</td></tr>
+<tr><td>obj.baseEvent.enable</td><td>bool</td><td>--</td><td>基础事件告警组开关</td></tr>
+<tr><td>obj.baseEvent.adminLoginFailedAlarm</td><td>bool</td><td>--</td><td>管理员登录失败告警开关</td></tr>
+<tr><td>obj.baseEvent.passwordModifyAlarm</td><td>bool</td><td>--</td><td>用户密码修改告警开关</td></tr>
+<tr><td>obj.baseEvent.mailServerModifyAlarm</td><td>bool</td><td>--</td><td>邮件服务器修改告警开关</td></tr>
+<tr><td>obj.baseEvent.LinkDetectAbnormalAlarm</td><td>bool</td><td>--</td><td>监控对象异常告警开关</td></tr>
+<tr><td>obj.baseEvent.snExpireAlarm</td><td>bool</td><td>--</td><td>序列号过期告警开关</td></tr>
+<tr><td>obj.baseEvent.logLawAlarm</td><td>bool</td><td>--</td><td>日志合规提醒告警开关</td></tr>
+<tr><td>obj.baseEvent.processAbnormalAlarm</td><td>bool</td><td>--</td><td>进程故障管理告警开关</td></tr>
+<tr><td>obj.baseEvent.timeSystemAbnormalAlarm</td><td>bool</td><td>--</td><td>时间一致性告警开关</td></tr>
+<tr><td>obj.ha</td><td>object</td><td>--</td><td>高可用告警组配置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

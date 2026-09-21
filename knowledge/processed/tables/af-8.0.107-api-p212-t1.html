@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p212-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=212 | table_id=af-8.0.107-api-p212-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.2 TOP N设置 / 3.4.2.2 修改TOPN配置接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>TOPN</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>--</td><td>topn功能模块开关</td></tr>
+<tr><td>obj.save day_</td><td>uint32</td><td>--</td><td>topn数据存储天数<br>最小值:1<br>最大值:32<br>默认值:32</td></tr>
+<tr><td>obj.monitor object_</td><td>object</td><td>--</td><td>topn监控对象</td></tr>
+<tr><td>obj.monitor object.devi_ce</td><td>bool</td><td>--</td><td>设备</td></tr>
+<tr><td>obj.monitor object.srcIp_</td><td>bool</td><td>--</td><td>源ip</td></tr>
+<tr><td>obj.monitor object.dstIp_</td><td>bool</td><td>--</td><td>目的ip</td></tr>
+<tr><td>obj.monitor object.src_ _subnet</td><td>bool</td><td>--</td><td>源网段</td></tr>
+<tr><td>obj.monitor object.dst_ _subnet</td><td>bool</td><td>--</td><td>目的网段</td></tr>
+<tr><td>obj.monitor object.netw_ork interface_</td><td>bool</td><td>--</td><td>接口</td></tr>
+<tr><td>obj.monitor object.app_</td><td>bool</td><td>--</td><td>应用</td></tr>
+<tr><td>obj.monitor object.traffi_c manage_</td><td>bool</td><td>--</td><td>流控</td></tr>
+<tr><td>obj.monitor object.url_</td><td>bool</td><td>--</td><td>url域名</td></tr>
+<tr><td>obj.monitor object.vpnt_un</td><td>bool</td><td>--</td><td>vpn隧道</td></tr>
+<tr><td>obj.monitor data_</td><td>object</td><td>--</td><td>topn监控数据</td></tr>
+<tr><td>obj.monitor data.increa_seSession</td><td>bool</td><td>--</td><td>新建会话数</td></tr>
+<tr><td>obj.monitor data.strea_m</td><td>bool</td><td>--</td><td>流量</td></tr>
+<tr><td>obj.monitor data.speed_</td><td>bool</td><td>--</td><td>流速</td></tr>
+<tr><td>obj.monitor data.dropR_ate</td><td>bool</td><td>--</td><td>丢包率</td></tr>
+<tr><td>obj.monitor data.delay_</td><td>bool</td><td>--</td><td>时延</td></tr>
+<tr><td>obj.disk</td><td>object</td><td>--</td><td>磁盘使用</td></tr>
+<tr><td>obj.disk.usageRate</td><td>uint64</td><td>--</td><td>磁盘已使用比例</td></tr>
+<tr><td>obj.disk.usedSize</td><td>uint64</td><td>--</td><td>磁盘已使用大小</td></tr>
+<tr><td>obj.disk.totallSize</td><td>uint64</td><td>--</td><td>磁盘总容量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

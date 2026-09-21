@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p46-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=46 | table=af-8.0.107-api-p46-t1</p>
+<table>
+<thead><tr><th>obj.forwardMbps</th><th>object</th><th>--</th><th>正向报文每秒字节数匹配维度</th></tr></thead>
+<tbody>
+<tr><td>obj.forwardMbps.comp<br>areType</td><td>string</td><td>--</td><td>个数比较类型<br>枚举值:[<br>MORETHAN:大于等于指定个数过滤<br>LESSTHAN:小于等于指定个数过滤<br>EQUAL:等于指定个数过滤<br>]</td></tr>
+<tr><td>obj.forwardMbps.numb<br>erValue</td><td>uint64</td><td>--</td><td>指定过滤维度的值<br>最小值:0<br>最大值:99999999999999</td></tr>
+<tr><td>obj.reverseMbps</td><td>object</td><td>--</td><td>反向报文每秒字节数匹配维度</td></tr>
+<tr><td>obj.reverseMbps.comp<br>areType</td><td>string</td><td>--</td><td>个数比较类型<br>枚举值:[<br>MORETHAN:大于等于指定个数过滤<br>LESSTHAN:小于等于指定个数过滤<br>EQUAL:等于指定个数过滤<br>]</td></tr>
+<tr><td>obj.reverseMbps.numb<br>erValue</td><td>uint64</td><td>--</td><td>指定过滤维度的值<br>最小值:0<br>最大值:99999999999999</td></tr>
+<tr><td>obj.user</td><td>string</td><td>--</td><td>用户信息过滤维度</td></tr>
+<tr><td>obj.srcZone</td><td>string</td><td>--</td><td>源区域过滤维度</td></tr>
+<tr><td>obj.dstZone</td><td>string</td><td>--</td><td>目的域过滤维度</td></tr>
+<tr><td>obj.innerIfName</td><td>string</td><td>--</td><td>入接口</td></tr>
+<tr><td>obj.outerIfName</td><td>string</td><td>--</td><td>出接口</td></tr>
+<tr><td>obj.srcVsys</td><td>string</td><td>--</td><td>源虚拟系统过滤维度<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>obj.dstVsys</td><td>string</td><td>--</td><td>源虚拟系统过滤维度<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>obj.lastCreateTime</td><td>object</td><td>--</td><td>最近创建时间的维度过滤</td></tr>
+<tr><td>obj.lastCreateTime.time<br>Type</td><td>string</td><td>--</td><td>创建时间过滤类型<br>枚举值:[<br>DAY:以天为维度进行最近创建时间的过滤<br>HOUR:以小时为维度进行最近创建时间的<br>过滤<br>MINUTE:以分钟为维度进行最近创建时间<br>的过滤<br>]</td></tr>
+<tr><td>obj.lastCreateTime.day<br>Value</td><td>uint16</td><td>--</td><td>指定过滤维度的以天为单位的值<br>最小值:1<br>最大值:45</td></tr>
+<tr><td>obj.lastCreateTime.hour<br>Value</td><td>uint16</td><td>--</td><td>指定过滤维度的以小时为单位的值<br>最小值:1<br>最大值:1092</td></tr>
+</tbody>
+</table>
+</body>
+</html>

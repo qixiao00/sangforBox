@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1206-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1206 | table_id=af-8.0.107-api-p1206-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.2 BGP对等体 / 5.8.13.1.2.8 全量更新指定BGP对等体属性</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>对等体/对等体组配置</td></tr>
+<tr><td>obj.description</td><td>string</td><td>--</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.remoteAs</td><td>uint32</td><td>--</td><td>指定对等体（组）的AS号<br>最小值:1<br>最大值:4294967295</td></tr>
+<tr><td>obj.shutdown</td><td>bool</td><td>--</td><td>关闭对等体（组）</td></tr>
+<tr><td>obj.keepalive</td><td>uint32</td><td>--</td><td>发送保持激活信息的频率<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.holdtime</td><td>uint32</td><td>--</td><td>保持时间<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.updateSourceInterfaceName</td><td>string</td><td>--</td><td>更新源接口名</td></tr>
+<tr><td>obj.updateSourceAddress</td><td>string</td><td>--</td><td>更新源地址<br>格式:ip-address</td></tr>
+<tr><td>obj.password</td><td>string</td><td>--</td><td>MD5认证密码字符串<br>最小长度:1<br>最大长度:128</td></tr>
+<tr><td>obj.ebgpMultihop</td><td>uint8</td><td>--</td><td>EBGP最大跳跃数<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>obj.bfd</td><td>bool</td><td>--</td><td>关联BFD启禁用</td></tr>
+<tr><td>obj.ipv4UnicastFamily</td><td>object</td><td>--</td><td>IPv4单播地址族下邻居属性信息</td></tr>
+<tr><td>obj.ipv4UnicastFamily.nextHopSelf</td><td>bool</td><td>--</td><td>下一跳属性设为自身启禁用</td></tr>
+<tr><td>obj.ipv4UnicastFamily.inRouteMapName</td><td>string</td><td>--</td><td>入站路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.ipv4UnicastFamily.outRouteMapName</td><td>string</td><td>--</td><td>出站路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.ipv4UnicastFamily.importRouteMapName</td><td>string</td><td>--</td><td>导入路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1439-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1439 | table_id=af-8.0.107-api-p1439-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.3 动态路由OSPFv3 / 5.8.13.3.3 OSPFv3接口 / 5.8.13.3.3.1 添加OSPFv3接口配置</p>
+<table>
+<thead><tr><th>obj.ipv6.networkType</th><th>string</th><th>否</th><th>网络类型<br>默认值:BROADCAST<br>枚举值:[<br>BROADCAST:广播<br>NON-BROADCAST:非广播多路访问<br>POINT-TO-POINT:点到点<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.ipv6.instanceId</td><td>uint8</td><td>否</td><td>接口实例ID<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>obj.ipv6.cost</td><td>uint16</td><td>否</td><td>接口开销<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.ipv6.helloInterval</td><td>uint16</td><td>否</td><td>Hello报文间隔时间<br>最小值:1<br>最大值:65535<br>默认值:10</td></tr>
+<tr><td>obj.ipv6.deadInterval</td><td>uint16</td><td>否</td><td>邻居超时时间<br>最小值:1<br>最大值:65535<br>默认值:40</td></tr>
+<tr><td>obj.ipv6.priority</td><td>uint8</td><td>否</td><td>DR优先级<br>最小值:0<br>最大值:255<br>默认值:1</td></tr>
+<tr><td>obj.ipv6.retransmitInterval</td><td>uint16</td><td>否</td><td>重传时间间隔<br>最小值:3<br>最大值:65535<br>默认值:5</td></tr>
+<tr><td>obj.ipv6.transmitDelay</td><td>uint16</td><td>否</td><td>传输延迟时间<br>最小值:1<br>最大值:65535<br>默认值:1</td></tr>
+<tr><td>obj.ipv6.mtuIgnore</td><td>bool</td><td>否</td><td>MTU忽略检查</td></tr>
+<tr><td>obj.ipv6.bfd</td><td>bool</td><td>否</td><td>单接口BFD检测开关</td></tr>
+</tbody>
+</table>
+</body>
+</html>

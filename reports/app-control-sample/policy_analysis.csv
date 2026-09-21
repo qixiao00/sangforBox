@@ -1,0 +1,3 @@
+﻿position,name,enabled,status,covering_same_effect,covering_different_effect,partial_overlap,unknown_overlap,suggested_name
+1,deny-douyin-vwire,是,正常,,,,,拒绝_Web流媒体-抖音_All_All_7690b472
+2,default,是,正常,,,,,允许_全部_All_All_05acf302

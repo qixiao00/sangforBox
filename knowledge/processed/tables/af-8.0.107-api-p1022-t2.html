@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1022-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1022 | table_id=af-8.0.107-api-p1022-t2<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.5 策略路由IPV6 / 5.8.5.8 增量修改指定IPv6策略路由信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>策略路由属性模板</td></tr>
+<tr><td>obj.name</td><td>string</td><td>是</td><td>策略路由名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>否</td><td>启禁用开关<br>默认值:true</td></tr>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.schedule</td><td>string</td><td>否</td><td>时间计划名称<br>默认值:00000000000000000000000c0</td></tr>
+<tr><td>obj.srcZones</td><td>string[]</td><td>是</td><td>关联区域列表</td></tr>
+<tr><td>obj.srcIpGroups</td><td>string[]</td><td>是</td><td>源地址引用IP组列表</td></tr>
+<tr><td>obj.dstIpGroups</td><td>string[]</td><td>按条件选<br>择</td><td>目的地址引用IP组列表，目的中3选1</td></tr>
+<tr><td>obj.dstIsp</td><td>string[]</td><td>按条件选<br>择</td><td>目的地址引用ISP列表，目的中3选1</td></tr>
+<tr><td>obj.dstCountryArea</td><td>string[]</td><td>按条件选<br>择</td><td>目的地址引用国家/地区列表，目的中3选1</td></tr>
+<tr><td>obj.services</td><td>string[]</td><td>是</td><td>服务对象列表</td></tr>
+<tr><td>obj.applications</td><td>string[]</td><td>否</td><td>关联应用列表</td></tr>
+<tr><td>obj.lbMethod</td><td>string</td><td>否</td><td>多线路模式下，接口选择策略<br>枚举值:[<br>POLL:轮询<br>BANDWIDTH:带宽比例<br>WEIGHTED MINIMUM FLOW:加权最<br>_ _<br>小流量<br>PRIORITY FRONT LINE:优先使用前<br>_ _<br>面线路<br>]</td></tr>
+<tr><td>obj.tableId</td><td>uint32</td><td>否</td><td>策略路由表ID，默认为0<br>最小值:0<br>最大值:1</td></tr>
+<tr><td>obj.position</td><td>int32</td><td>否</td><td>策略的位置，状态字段不可设置或修改</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1711-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1711 | table_id=af-8.0.107-api-p1711-t1<br>上下文标题路径：5 网络 / 5.10 DHCP / 5.10.1 DHCP配置 / 5.10.1.1 dhcp4 / 5.10.1.1.6 删除dhcp4配置信息</p>
+<table>
+<thead><tr><th>data.dhcp4Server.ipmacBindings</th><th>object[]</th><th>ip和mac的绑定信息</th></tr></thead>
+<tbody>
+<tr><td>data.dhcp4Server.ipmacBindings.name</td><td>string</td><td>绑定名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.dhcp4Server.ipmacBindings.description</td><td>string</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.dhcp4Server.ipmacBindings.ip</td><td>string</td><td>ip</td></tr>
+<tr><td>data.dhcp4Server.ipmacBindings.hostname</td><td>string</td><td>主机名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.dhcp4Server.ipmacBindings.mac</td><td>string</td><td>接口的mac地址</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool</td><td>object</td><td>地址池</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.gateway</td><td>string</td><td>网关</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.netmask</td><td>string</td><td>掩码</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.lease</td><td>uint32</td><td>租约<br>最小值:60<br>最大值:432000</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.vsi</td><td>string</td><td>option43</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.addressRange</td><td>object[]</td><td>地址池范围</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.addressRange.start</td><td>string</td><td>ip范围的起始位置</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.addressRange.end</td><td>string</td><td>ip范围的终止位置</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.addressRange.bits</td><td>uint8</td><td>ip掩码简写<br>最小值:0<br>最大值:32</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.setdns</td><td>bool</td><td>是否设置系统dns</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.dns</td><td>object</td><td>DNS</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.dns.dns1</td><td>string</td><td>首选dns</td></tr>
+<tr><td>data.dhcp4Server.dhcpServerPool.dns.dns2</td><td>string</td><td>备选dns</td></tr>
+</tbody>
+</table>
+</body>
+</html>

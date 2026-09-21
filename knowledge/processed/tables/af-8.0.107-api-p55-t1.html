@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p55-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=55 | table_id=af-8.0.107-api-p55-t1<br>上下文标题路径：3 监控 / 3.1 会话 / 3.1.1 流量排行 / 3.1.1.1 获取IP流量趋势</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>speedType</td><td>string</td><td>否</td><td>流速类型,默认为TOTAL<br>默认值:TOTAL<br>枚举值:[<br>UP:上行流速<br>DOWN:下行流速<br>TOTAL:总流速<br>]</td></tr>
+<tr><td>ip</td><td>string</td><td>否</td><td>ip地址<br>格式:ip-address</td></tr>
+<tr><td>topNumber</td><td>string</td><td>否</td><td>显示前5名/前10名的流量趋势,默认为TOP<br>默认值:TOP5<br>枚举值:[<br>TOP5:前5名的流量趋势<br>TOP10:前10名的流量趋势<br>]</td></tr>
+<tr><td>timeFilter</td><td>string</td><td>否</td><td>最近多长时间段内的IP流量趋势,默认为1H<br>OUR<br>默认值:1HOUR<br>枚举值:[<br>1HOUR:最近1小时的IP流量趋势<br>12HOUR:最近12小时的IP流量趋势<br>24HOUR:最近24小时的IP流量趋势<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

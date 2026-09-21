@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2635-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2635 | table_id=af-8.0.107-api-p2635-t1<br>上下文标题路径：6 策略 / 6.4 解密 / 6.4.1 解密策略 / 6.4.1.1 获取所有解密策略信息接口</p>
+<table>
+<thead><tr><th>data.items.sessionTimeout</th><th>uint32</th><th>会话超时时间</th></tr></thead>
+<tbody>
+<tr><td>data.items.policyType</td><td>string</td><td>ssl代理策略类型<br>枚举值:[<br>server:服务器场景<br>internet:上网场景<br>user auth:认证模块使用<br>_<br>]</td></tr>
+<tr><td>data.items.certs</td><td>string[]</td><td>服务器证书</td></tr>
+<tr><td>data.items.internet</td><td>object</td><td>上网场景配置</td></tr>
+<tr><td>data.items.internet.websiteAll</td><td>bool</td><td>是否全部站点</td></tr>
+<tr><td>data.items.internet.websiteCategory</td><td>string[]</td><td>站点的类别</td></tr>
+<tr><td>data.items.internet.websiteCategoryId</td><td>uint8[]</td><td>url类型id数组</td></tr>
+<tr><td>data.items.internet.installCert</td><td>bool</td><td>是否提示用户安装证书</td></tr>
+<tr><td>data.items.internet.certUrl</td><td>string</td><td>证书地址<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.items.server</td><td>object</td><td>服务器场景配置</td></tr>
+<tr><td>data.items.server.servers</td><td>object[]</td><td>服务器IP/端口</td></tr>
+<tr><td>data.items.server.servers.ip</td><td>string</td><td>ipv4或者ipv6地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.server.servers.port</td><td>uint16[]</td><td>端口</td></tr>
+<tr><td>data.items.server.servers.type</td><td>string</td><td>类型,可能的取值为 {web, mail, ftp, other}<br>枚举值:[<br>web:web服务<br>mail:邮件<br>ftp:ftp<br>other:其它<br>]</td></tr>
+<tr><td>data.items.referenceStatus</td><td>string</td><td>url引用状态<br>枚举值:[<br>0:url为空<br>1:只有自定义URl<br>2:包含内置和自定义url<br>3:只有内置url<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

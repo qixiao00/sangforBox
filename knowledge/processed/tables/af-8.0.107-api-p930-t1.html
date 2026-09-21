@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p930-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=930 | table_id=af-8.0.107-api-p930-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.3 静态路由IPV6 / 5.8.3.10 增量修改多条IPv6静态路由信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>objs</td><td>object[]</td><td>是</td><td>IPv6静态路由表项列表</td></tr>
+<tr><td>objs.enable</td><td>bool</td><td>否</td><td>静态路由启禁用开关<br>默认值:true</td></tr>
+<tr><td>objs.description</td><td>string</td><td>否</td><td>描述信息<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>objs.prefix</td><td>string</td><td>是</td><td>目的IPv6地址/掩码</td></tr>
+<tr><td>objs.gateway</td><td>string</td><td>是</td><td>下一跳IPv6地址<br>格式:ip6-address</td></tr>
+<tr><td>objs.ifname</td><td>string</td><td>否</td><td>出接口名称<br>最小长度:1<br>最大长度:48<br>默认值:auto</td></tr>
+<tr><td>objs.metric</td><td>uint32</td><td>否</td><td>路由度量值<br>最小值:256<br>最大值:1023<br>默认值:256</td></tr>
+<tr><td>objs.linkdtEnable</td><td>bool</td><td>否</td><td>静态路由关联接口链路探测启禁用开关，默<br>认false，不可修改</td></tr>
+<tr><td>objs.linkdt</td><td>string</td><td>否</td><td>静态路由关联链路探测</td></tr>
+<tr><td>objs.tag</td><td>uint32</td><td>否</td><td>路由标记，默认为0<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>objs.distance</td><td>uint32</td><td>否</td><td>路由管理距离，默认为1<br>最小值:1<br>最大值:255<br>默认值:1</td></tr>
+<tr><td>objs.vsys</td><td>string</td><td>否</td><td>目的虚拟系统名称，默认为public<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>objs.weight</td><td>uint8</td><td>否</td><td>ipv6静态路由权重，默认为1<br>最小值:1<br>最大值:255<br>默认值:1</td></tr>
+<tr><td>objs.tableId</td><td>uint32</td><td>--</td><td>路由表Id，不可修改<br>默认值:251<br>枚举值:[<br>251:业务网络路由表<br>250:管理网络路由表<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

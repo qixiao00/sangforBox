@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2580-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2580 | table_id=af-8.0.107-api-p2580-t1<br>上下文标题路径：6 策略 / 6.3 访问控制 / 6.3.2 地域访问控制 / 6.3.2.1 地域访问控制策略 / 6.3.2.1.8 批量修改地域访问控制策略</p>
+<table>
+<thead><tr><th>message</th><th>string</th><th>错误信息</th></tr></thead>
+<tbody>
+<tr><td>data</td><td>object[]</td><td>地域访问控制策略</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>唯一标识id</td></tr>
+<tr><td>data.name</td><td>string</td><td>名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>是否启用</td></tr>
+<tr><td>data.action</td><td>string</td><td>控制方式<br>枚举值:[<br>ALLOW:只允许以下国家/地区访问<br>DENY:拒绝以下国家/地区访问<br>]</td></tr>
+<tr><td>data.srcZones</td><td>string[]</td><td>源外网区域</td></tr>
+<tr><td>data.dstIPGroups</td><td>string[]</td><td>目的网络对象</td></tr>
+<tr><td>data.boardAndCountry</td><td>string[]</td><td>国家/地区</td></tr>
+<tr><td>data.position</td><td>uint32</td><td>策略位置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1565-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1565 | table_id=af-8.0.107-api-p1565-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.6 路由映射 / 5.8.13.6.4 添加一条路由映射配置信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>路由映射表项配置信息</td></tr>
+<tr><td>data.name</td><td>string</td><td>路由映射名字<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>路由映射资源资源唯一ID</td></tr>
+<tr><td>data.sequence</td><td>uint32</td><td>序列号<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.action</td><td>string</td><td>路由映射动作类型<br>枚举值:[<br>DENY:拒绝<br>PERMIT:允许<br>]</td></tr>
+<tr><td>data.match</td><td>object</td><td>匹配信息</td></tr>
+<tr><td>data.match.matchAcl</td><td>string</td><td>关联访问列表名称<br>最小长度:1<br>最大长度:31</td></tr>
+</tbody>
+</table>
+</body>
+</html>

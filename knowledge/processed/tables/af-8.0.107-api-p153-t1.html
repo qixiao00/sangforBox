@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p153-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=153 | table_id=af-8.0.107-api-p153-t1<br>上下文标题路径：3 监控 / 3.3 诊断 / 3.3.1 报文示踪 / 3.3.1.2 获取后台报文示踪统计流维度信息下所有报文trace列表</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>flowId</td><td>uint8</td><td>否</td><td>flow统计的标识信息</td></tr>
+<tr><td>_start</td><td>int32</td><td>否</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+<tr><td>_select</td><td>string</td><td>否</td><td>选择字段，字段用逗号分隔<br>最大长度:1000</td></tr>
+<tr><td>filterType</td><td>string</td><td>否</td><td>报文统计信息过滤规则<br>枚举值:[<br>ALL:显示指定流的所有报文统计信息<br>DROP END PACKET:只显示丢弃结束<br>_ _<br>的报文统计信息<br>NORMAL END PACKET:只显示正常<br>_ _<br>结束的报文统计信息<br>NORMAL AND DROP PACKET:显<br>_ _ _<br>示正常结束和丢包结束的报文统计信息<br>]</td></tr>
+<tr><td>_length</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>_search</td><td>string</td><td>否</td><td>模糊搜索关键字<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

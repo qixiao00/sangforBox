@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1116-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1116 | table_id=af-8.0.107-api-p1116-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.1 BGP / 5.8.13.1.1.2 获取指定BGP实例</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>BGP实例基础配置</td></tr>
+<tr><td>data.asId</td><td>uint32</td><td>AS号<br>最小值:1<br>最大值:4294967295</td></tr>
+<tr><td>data.routerId</td><td>string</td><td>路由器ID</td></tr>
+<tr><td>data.localPreference</td><td>uint32</td><td>本地优先级<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>data.keepalive</td><td>uint32</td><td>心跳报文发送间隔<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.holdtime</td><td>uint32</td><td>超时时间<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast</td><td>object</td><td>IPv4单播地址族信息</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeConnected</td><td>object</td><td>重分布直连路由</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeConnected.enable</td><td>bool</td><td>引入路由启禁用开关</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeConnected.metric</td><td>int64</td><td>引入路由度量值<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeConnected.routeMap</td><td>string</td><td>过滤引入路由信息的路由映射表<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeStatic</td><td>object</td><td>重分布静态路由</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeStatic.enable</td><td>bool</td><td>引入路由启禁用开关</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeStatic.metric</td><td>int64</td><td>引入路由度量值<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.addressFamilyIpv4Unicast.redistributeStatic.routeMap</td><td>string</td><td>过滤引入路由信息的路由映射表<br>最小长度:1<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

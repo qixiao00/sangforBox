@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p432-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=432 | table_id=af-8.0.107-cli-p432-t1<br>上下文标题路径：7 网络 / 7.1 接口 / 7.1.4 interface / nd</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>ns-interval &lt;ns-interval-value&gt;</td><td>1000-4294967295</td><td>NUMBER</td><td>配置ipv6 ns间隔时间 单位:毫秒</td></tr>
+<tr><td>enable</td><td>-</td><td>-</td><td>开启其他ipv6 nd</td></tr>
+<tr><td>disable</td><td>-</td><td>-</td><td>关闭其他ipv6 nd</td></tr>
+<tr><td>&lt;attempts-value&gt;</td><td>0-600</td><td>NUMBER</td><td>配置ipv6重复地址检测尝试次数</td></tr>
+<tr><td>reachable-time&lt;reachable-time-value&gt;</td><td>1000-3600000</td><td>NUMBER</td><td>配置ipv6 nud可达时间 单位:毫秒</td></tr>
+<tr><td>dns_server &lt;dns_server-name&gt;</td><td>-</td><td>A:B:C:D::E<br>地址格式为A:B:C:D::E</td><td>ipv6 ra dns server</td></tr>
+<tr><td>lifetime &lt;life-time&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>RA消息中dns服务器配置首选生存时间</td></tr>
+<tr><td>supress</td><td>枚举值:[<br>all: 不发送与回复RA<br>part: 当收到RS发送RA<br>disable: 定期发送RA<br>]</td><td>ENUM</td><td>配置ipv6 nd路由器抑制</td></tr>
+<tr><td>&lt;ra-max-interval-time&gt;</td><td>4-1800</td><td>NUMBER</td><td>配置ipv6 nd路由器间隔最大时间 单位:秒</td></tr>
+<tr><td>&lt;ra-min-interval-time&gt;</td><td>3-1800</td><td>NUMBER</td><td>配置ipv6 nd路由器间隔最小时间 单位:秒</td></tr>
+<tr><td>router-perference</td><td>枚举值:[<br>high: 高优先级<br>low: 低优先级<br>medium: 中优先级<br>]</td><td>ENUM</td><td>配置ipv6 nd路由器优先级</td></tr>
+<tr><td>no-linkmtu</td><td>-</td><td>-</td><td>RA消息中不携带MTU选项</td></tr>
+<tr><td>prefix</td><td>-</td><td>A:B:C:D::E/M<br>地址格式:<br>A:B:C:D::E/M<br>default 使用接口生成生<br>成的默认前缀</td><td>配置ipv6 nd ra前缀</td></tr>
+<tr><td>validLifetime &lt;value&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>前缀有效时间</td></tr>
+<tr><td>perferredLifetime &lt;value&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>前缀首选时间</td></tr>
+<tr><td>offLink</td><td>-</td><td>-</td><td>对端不生成默认路由</td></tr>
+<tr><td>noAutoconfig</td><td>-</td><td>-</td><td>取消 autuconfig 配置</td></tr>
+<tr><td>dns_domain &lt;dns_domain-name&gt;</td><td>length:(0-127)</td><td>string ipv6 ra dns<br>domain</td><td>ipv6 ra dns domain</td></tr>
+<tr><td>hoplimit &lt;hoplimit-value&gt;</td><td>0-255</td><td>NUMBER</td><td>配置ipv6 nd ra TTL</td></tr>
+<tr><td>&lt;ipv6-address&gt;</td><td>-</td><td>A:B:C:D::E/M<br>地址格式:<br>A:B:C:D::E/M</td><td>RA路由前缀</td></tr>
+</tbody>
+</table>
+</body>
+</html>

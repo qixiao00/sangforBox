@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p836-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=836 | table_id=af-8.0.107-api-p836-t1<br>上下文标题路径：5 网络 / 5.4 PPPOE接口 / 5.4.1 全量获取PPPOE接口配置信息</p>
+<table>
+<thead><tr><th>data.pageSize</th><th>int32</th><th>每页多大</th></tr></thead>
+<tbody>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>pppoe实例名称<br>最小长度:1<br>最大长度:32</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.items.user</td><td>string</td><td>pppoe认证用户名<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.password</td><td>string</td><td>pppoe认证密码<br>最小长度:0<br>最大长度:512</td></tr>
+<tr><td>data.items.lcpEchoTimeout</td><td>uint32</td><td>探测超时/握手时间<br>最小值:0<br>最大值:60</td></tr>
+<tr><td>data.items.idleTimeout</td><td>uint32</td><td>空闲超时时间<br>最小值:20<br>最大值:240</td></tr>
+<tr><td>data.items.lcpEchoRetry</td><td>uint32</td><td>重试次数<br>最小值:1<br>最大值:10</td></tr>
+<tr><td>data.items.autoConnect</td><td>bool</td><td>设置自动重连,自动拨号</td></tr>
+<tr><td>data.items.setRoute</td><td>bool</td><td>添加默认路由</td></tr>
+<tr><td>data.items.setDns</td><td>bool</td><td>作为系统首选DNS</td></tr>
+</tbody>
+</table>
+</body>
+</html>

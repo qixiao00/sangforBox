@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2109-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2109 | table_id=af-8.0.107-api-p2109-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.3 NAT64策略 / 6.1.3.9 批量修改nat64策略</p>
+<table>
+<thead><tr><th>obj.name</th><th>string</th><th>是</th><th>策略名称<br>最小长度:1<br>最大长度:95</th></tr></thead>
+<tbody>
+<tr><td>obj.enable</td><td>bool</td><td>是</td><td>是否启用<br>默认值:true</td></tr>
+<tr><td>obj.position</td><td>int32</td><td>否</td><td>表示位置状态</td></tr>
+<tr><td>obj.natType</td><td>string</td><td>是</td><td>nat64策略类型<br>枚举值:[<br>V4 TO V6:转换类型为V4 TO V6<br>_ _ _ _<br>V6 TO V4:转换类型为V6 TO V4<br>_ _ _ _<br>]</td></tr>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.schedule</td><td>string</td><td>--</td><td>生效时间,特殊情况,是拓展字段,8025不使<br>用<br>默认值:00000000000000000000000c0</td></tr>
+<tr><td>obj.ignoreAcl</td><td>bool</td><td>是</td><td>是否忽略acl策略<br>默认值:true</td></tr>
+<tr><td>obj.bypassAclLog</td><td>bool</td><td>否</td><td>忽略访问控制匹配上策略上报会话日志</td></tr>
+<tr><td>obj.v4ToV6</td><td>object</td><td>按条件选<br>择</td><td>IPv4转换为IPv6信息,二选一</td></tr>
+<tr><td>obj.v4ToV6.srcZones</td><td>string[]</td><td>是</td><td>源区域</td></tr>
+<tr><td>obj.v4ToV6.srcIpGroups</td><td>string[]</td><td>是</td><td>源ip组</td></tr>
+<tr><td>obj.v4ToV6.dstIpobjType</td><td>string</td><td>是</td><td>目的类型<br>默认值:IP<br>枚举值:[<br>IPGROUP:IP组<br>IP:指定的IP列表<br>]</td></tr>
+<tr><td>obj.v4ToV6.dstIpGroups</td><td>string[]</td><td>--</td><td>目的ip组</td></tr>
+<tr><td>obj.v4ToV6.dstIp</td><td>string</td><td>是</td><td>目的IPv4网段,掩码格式</td></tr>
+<tr><td>obj.v4ToV6.natService</td><td>string[]</td><td>是</td><td>引用的服务组</td></tr>
+<tr><td>obj.v4ToV6.transfer</td><td>object</td><td>是</td><td>转换信息</td></tr>
+<tr><td>obj.v4ToV6.transfer.srcTransfer</td><td>object</td><td>是</td><td>源地址转换信息</td></tr>
+<tr><td>obj.v4ToV6.transfer.srcTransfer.srcTransferType</td><td>string</td><td>是</td><td>源地址转换类型<br>默认值:OUTIF IP<br>_<br>枚举值:[<br>IP:单个IP转换<br>IP RANGE:IP范围转换<br>_<br>OUTIF IP:转换为出接口<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

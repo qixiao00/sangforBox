@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1976-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1976 | table_id=af-8.0.107-api-p1976-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.2 获取筛选后的nat6策略</p>
+<table>
+<thead><tr><th>data.items.position</th><th>int32</th><th>表示位置状态</th></tr></thead>
+<tbody>
+<tr><td>data.items.natType</td><td>string</td><td>nat6策略类型<br>枚举值:[<br>SNAT:转换类型为源地址转换<br>DNAT:转换类型为目的地址转换<br>BNAT:转换类型为源目的地址转换<br>]</td></tr>
+<tr><td>data.items.natMode</td><td>string</td><td>ipv6-nat模式,可选项有NAT66|NPTV6<br>枚举值:[<br>NAT66:转换类型为NAT66<br>NPTV6:转换类型为NPTV6<br>]</td></tr>
+<tr><td>data.items.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.items.schedule</td><td>string</td><td>生效时间</td></tr>
+<tr><td>data.items.snat</td><td>object</td><td>源地址转换信息</td></tr>
+<tr><td>data.items.snat.srcZones</td><td>string[]</td><td>源区域信息</td></tr>
+<tr><td>data.items.snat.srcIp</td><td>string</td><td>源IPv6<br>格式:ip6-address</td></tr>
+<tr><td>data.items.snat.prefix</td><td>uint8</td><td>源IP的前缀<br>最小值:4<br>最大值:128</td></tr>
+<tr><td>data.items.snat.srcIpGroups</td><td>string[]</td><td>源IP信息</td></tr>
+<tr><td>data.items.snat.dstNetobjType</td><td>string</td><td>SNAT6:需要匹配的目的类型<br>枚举值:[<br>ZONE:区域<br>INTERFACE:接口<br>]</td></tr>
+<tr><td>data.items.snat.dstZones</td><td>string[]</td><td>目的区域</td></tr>
+<tr><td>data.items.snat.dstInterface</td><td>string</td><td>目的接口</td></tr>
+<tr><td>data.items.snat.dstIpobj</td><td>object</td><td>目的ip</td></tr>
+<tr><td>data.items.snat.dstIpobj.dstIpGroups</td><td>string[]</td><td>目的ip组</td></tr>
+<tr><td>data.items.snat.dstIpobj.dstIp</td><td>string</td><td>源IP信息<br>格式:ip6-address</td></tr>
+<tr><td>data.items.snat.dstIpobj.prefix</td><td>uint8</td><td>前缀<br>最小值:4<br>最大值:128</td></tr>
+<tr><td>data.items.snat.natService</td><td>string[]</td><td>引用的服务组</td></tr>
+<tr><td>data.items.snat.transfer</td><td>object</td><td>转换信息</td></tr>
+</tbody>
+</table>
+</body>
+</html>

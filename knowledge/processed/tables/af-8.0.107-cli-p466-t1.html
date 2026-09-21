@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p466-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=466 | table_id=af-8.0.107-cli-p466-t1<br>上下文标题路径：7 网络 / 7.5 路由 / 7.5.1 静态路由 / 7.5.1.7 ipv6</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>&lt;domain-name&gt;</td><td>length:(0-255)</td><td>STRING</td><td>域名</td></tr>
+<tr><td>&lt;ip-address&gt;</td><td>-</td><td>A::B IPv6 地址</td><td>ipaddr6</td></tr>
+<tr><td>&lt;action&gt;</td><td>枚举值:[<br>deny: 指定的数据包进行拒绝<br>permit: 指定的数据包进行放通<br>]</td><td>ENUM</td><td>访问控制列表动作</td></tr>
+<tr><td>&lt;ipv6-address&gt;</td><td>-</td><td>A::B/M<br>IPv6前缀匹配格式,<br>例如：2000::24/24</td><td>IPv6前缀匹配格式, 例如：2000::24/24</td></tr>
+<tr><td>&lt;access-list-name&gt;</td><td>length:(1-31)</td><td>STRING</td><td>IPv6访问控制列表名称</td></tr>
+<tr><td>action &lt;action-value&gt;</td><td>枚举值:[<br>DROP: 丢包<br>ALARM: 警报<br>]</td><td>ENUM</td><td>ip-per-mac行为</td></tr>
+<tr><td>&lt;number&gt;</td><td>0-1024</td><td>NUMBER</td><td>ip-per-mac数目</td></tr>
+<tr><td>&lt;rate-value&gt;</td><td>0-10</td><td>NUMBER</td><td>配置ndp非请求na发送数目</td></tr>
+<tr><td>mac &lt;mac-address&gt;</td><td>-</td><td>AA:BB:CC:DD:EE:FF<br>mac地址</td><td>mac地址</td></tr>
+<tr><td>interface &lt;interface-name&gt;</td><td>-</td><td>STRING</td><td>接口</td></tr>
+<tr><td>ip &lt;ipv6-address&gt;</td><td>-</td><td>A:B:C:D::E IPv6 地址</td><td>IP地址</td></tr>
+<tr><td>&lt;dst-ipv6-address&gt;</td><td>-</td><td>A:B:C:D::E/M<br>目的地址以及掩码</td><td>目的地址/掩码</td></tr>
+<tr><td>&lt;next-hop-ipv6-address&gt;</td><td>-</td><td>A:B:C:D::E<br>下一跳IP地址</td><td>下一跳</td></tr>
+<tr><td>vsys &lt;vsys-name&gt;</td><td>length:(1-31)</td><td>STRING</td><td>目的虚拟系统</td></tr>
+<tr><td>weight &lt;weight-number&gt;</td><td>1-255</td><td>NUMBER</td><td>权重</td></tr>
+<tr><td>tag &lt;tag-number&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>tag值</td></tr>
+<tr><td>disable</td><td>-</td><td>-</td><td>禁用</td></tr>
+<tr><td>metric &lt;metric-number&gt;</td><td>256-1023</td><td>NUMBER</td><td>度量值</td></tr>
+<tr><td>link-detect &lt;link-detect-name&gt;</td><td>-</td><td>STRING</td><td>链路探测</td></tr>
+<tr><td>distance &lt;distance-number&gt;</td><td>1-255</td><td>NUMBER</td><td>管理距离</td></tr>
+<tr><td>enable</td><td>-</td><td>-</td><td>启用</td></tr>
+<tr><td>description &lt;description-value&gt;</td><td>length:(0-95)</td><td>STRING</td><td>描述</td></tr>
+</tbody>
+</table>
+</body>
+</html>

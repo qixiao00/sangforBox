@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3083-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3083 | table_id=af-8.0.107-api-p3083-t1<br>上下文标题路径：7 系统 / 7.6 安全能力更新 / 7.6.8 修改库更新设置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>库更新设置</td></tr>
+<tr><td>data.cloudSource</td><td>string</td><td>情报库来源<br>枚举值:[<br>CN:中国区情报<br>OVERSEA:海外情报库<br>]</td></tr>
+<tr><td>data.ruleSource</td><td>string</td><td>安全规则库来源<br>枚举值:[<br>PRC:中国境内<br>HK:中国香港<br>MAS:马来西亚<br>EUR:欧洲<br>]</td></tr>
+<tr><td>data.domain</td><td>string</td><td>域名<br>最大长度:255</td></tr>
+<tr><td>data.method</td><td>string</td><td>更新方式<br>枚举值:[<br>DOWNLOAD:仅下载<br>DOWNLOAD-INSTALL:下载且安装<br>]</td></tr>
+<tr><td>data.schedule</td><td>string</td><td>当前更新频率类型<br>枚举值:[<br>HOURLY:每几时<br>DAILY:每日<br>WEEKLY:每周<br>]</td></tr>
+<tr><td>data.scheduleDefault</td><td>bool</td><td>默认更新时间</td></tr>
+<tr><td>data.hourly</td><td>object</td><td>每几时</td></tr>
+</tbody>
+</table>
+</body>
+</html>

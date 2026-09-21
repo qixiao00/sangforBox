@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2971-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2971 | table_id=af-8.0.107-api-p2971-t1<br>上下文标题路径：7 系统 / 7.4 排障 / 7.4.1 故障排查 / 7.4.1.1 全量修改定向流量分析配置</p>
+<table>
+<thead><tr><th>obj.enable.dstIp.transferType</th><th>string</th><th>--</th><th>转换类型 enum<br>枚举值:[<br>IPV4:IPV4地址<br>IPV4 RANGE:IPV4地址范围<br>_<br>IPV4 MASK:IPV4掩码格式<br>_<br>IPV6:IPv6<br>IPV6 RANGE:IPV6地址范围<br>_<br>IPV6 MASK:IPV6掩码格式<br>_<br>DOMAIN NAME:域名<br>_<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.enable.dstIp.specifyIPv4</td><td>string</td><td>--</td><td>单个ipv4</td></tr>
+<tr><td>obj.enable.dstIp.ipv4Range</td><td>object</td><td>--</td><td>ipv4范围<br>格式:ip-range</td></tr>
+<tr><td>obj.enable.dstIp.ipv4Range.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.enable.dstIp.ipv4Range.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.enable.dstIp.ipv4Range.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.enable.dstIp.ipv4Mask</td><td>string</td><td>--</td><td>ipv4掩码形式</td></tr>
+<tr><td>obj.enable.dstIp.specifyIPv6</td><td>string</td><td>--</td><td>单个ipv6<br>格式:ip6-address</td></tr>
+<tr><td>obj.enable.dstIp.ipv6Range</td><td>object</td><td>--</td><td>ipv6范围<br>格式:ip-range</td></tr>
+<tr><td>obj.enable.dstIp.ipv6Range.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.enable.dstIp.ipv6Range.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.enable.dstIp.ipv6Range.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.enable.dstIp.ipv6Mask</td><td>string</td><td>--</td><td>ipv6掩码形式</td></tr>
+<tr><td>obj.enable.dstIp.domainName</td><td>string</td><td>--</td><td>域名<br>最大长度:255</td></tr>
+<tr><td>obj.enable.protocal</td><td>uint8</td><td>--</td><td>协议号<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>obj.enable.dstPort</td><td>int32</td><td>--</td><td>目的端口号<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.enable.byPass</td><td>bool</td><td>--</td><td>直通开关</td></tr>
+<tr><td>obj.enable.pktState</td><td>bool</td><td>--</td><td>报文状态类型</td></tr>
+</tbody>
+</table>
+</body>
+</html>

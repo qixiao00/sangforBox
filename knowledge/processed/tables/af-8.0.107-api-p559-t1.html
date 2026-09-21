@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p559-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=559 | table_id=af-8.0.107-api-p559-t1<br>上下文标题路径：4 对象 / 4.8 时间计划 / 4.8.1 获取所有时间计划</p>
+<table>
+<thead><tr><th>data.pageNumber</th><th>int32</th><th>当前页码，从 1 开始</th></tr></thead>
+<tbody>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一资源id</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>时间计划名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.id</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.items.description</td><td>string</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.items.scheduleType</td><td>string</td><td>时间计划类型<br>枚举值:[<br>SINGLE:单次时间计划<br>PERIODICAL:循环时间计划<br>]</td></tr>
+<tr><td>data.items.isdefault</td><td>bool</td><td>区分是用户自定义时间计划和系统预定义时间计划</td></tr>
+<tr><td>data.items.hasref</td><td>bool</td><td>标识是否被引用</td></tr>
+<tr><td>data.items.singleSchedule</td><td>object</td><td>单次时间计划规则，scheduleType为SINGLE时必选</td></tr>
+<tr><td>data.items.singleSchedule.startDateTime</td><td>string</td><td>开始日期时间，示例：2020-11-11</td></tr>
+<tr><td>data.items.singleSchedule.endDateTime</td><td>string</td><td>结束日期时间，示例：2020-11-12</td></tr>
+<tr><td>data.items.periodicalSchedule</td><td>object</td><td>循环时间计划规则，scheduleType为PERIODICAL<br>时必选</td></tr>
+<tr><td>data.items.periodicalSchedule.singleDetail</td><td>object[]</td><td>单次循环时间段</td></tr>
+<tr><td>data.items.periodicalSchedule.singleDetail.startDateTime</td><td>string</td><td>开始日期时间，示例：2020-11-11</td></tr>
+<tr><td>data.items.periodicalSchedule.singleDetail.endDateTime</td><td>string</td><td>结束日期时间，示例：2020-11-12</td></tr>
+<tr><td>data.items.periodicalSchedule.periodicalDetail</td><td>object[]</td><td>循环时间计划周期规则</td></tr>
+<tr><td>data.items.periodicalSchedule.periodicalDetail.week</td><td>string[]</td><td>循环周期</td></tr>
+<tr><td>data.items.periodicalSchedule.periodicalDetail.startTime</td><td>string</td><td>开始时间，示例：08:00:00</td></tr>
+</tbody>
+</table>
+</body>
+</html>

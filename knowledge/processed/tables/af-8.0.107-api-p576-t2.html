@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p576-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=576 | table_id=af-8.0.107-api-p576-t2<br>上下文标题路径：4 对象 / 4.8 时间计划 / 4.8.8 获取时间计划的实时信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>时间计划的状态信息</td></tr>
+<tr><td>data.validType</td><td>string</td><td>生效类型<br>枚举值:[<br>VALID:有效<br>INVALID:无效<br>]</td></tr>
+<tr><td>data.scheduleMsg</td><td>object</td><td>时间计划的信息</td></tr>
+<tr><td>data.scheduleMsg.uuid</td><td>string</td><td>唯一资源id</td></tr>
+<tr><td>data.scheduleMsg.name</td><td>string</td><td>时间计划名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.scheduleMsg.id</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.scheduleMsg.description</td><td>string</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.scheduleMsg.scheduleType</td><td>string</td><td>时间计划类型<br>枚举值:[<br>SINGLE:单次时间计划<br>PERIODICAL:循环时间计划<br>]</td></tr>
+<tr><td>data.scheduleMsg.isdefault</td><td>bool</td><td>区分是用户自定义时间计划和系统预定义时间计划</td></tr>
+<tr><td>data.scheduleMsg.hasref</td><td>bool</td><td>标识是否被引用</td></tr>
+<tr><td>data.scheduleMsg.singleSchedule</td><td>object</td><td>单次时间计划规则，scheduleType为SINGLE时必选</td></tr>
+<tr><td>data.scheduleMsg.singleSchedule.startDateTime</td><td>string</td><td>开始日期时间，示例：2020-11-11</td></tr>
+</tbody>
+</table>
+</body>
+</html>

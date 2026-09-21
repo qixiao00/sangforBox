@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2253-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2253 | table_id=af-8.0.107-api-p2253-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.1 安全防护策略高级设置 / 6.2.1.1.3 内容安全高级设置 / 6.2.1.1.3.8 删除内容安全模板</p>
+<table>
+<thead><tr><th>data.safe.urlfilter.safeSearch</th><th>bool</th><th>是否启用搜索引擎SafeSearch功能</th></tr></thead>
+<tbody>
+<tr><td>data.safe.urlfilter.youtubeAccessMode</td><td>string</td><td>限制YouTube访问强度<br>枚举值:[<br>MODERATE:适度限制YouTube访问<br>STRICT:强力限制YouTube访问<br>]</td></tr>
+<tr><td>data.safe.urlfilter.urlList</td><td>string[]</td><td>URL分类库已选站点列表</td></tr>
+<tr><td>data.safe.fileSafe</td><td>object</td><td>文件安全</td></tr>
+<tr><td>data.safe.fileSafe.enable</td><td>bool</td><td>文件安全开关</td></tr>
+<tr><td>data.advance</td><td>object</td><td>高级选项</td></tr>
+<tr><td>data.advance.mailSafe</td><td>object</td><td>邮件安全</td></tr>
+<tr><td>data.advance.mailSafe.mailContext</td><td>object</td><td>钓鱼邮件</td></tr>
+<tr><td>data.advance.mailSafe.mailContext.enable</td><td>bool</td><td>钓鱼邮件开关</td></tr>
+<tr><td>data.advance.mailSafe.mailContext.maxSerialFail</td><td>uint16</td><td>每分钟连续失败阈值<br>最小值:5<br>最大值:64</td></tr>
+<tr><td>data.advance.mailSafe.attachFilter</td><td>object</td><td>附件过滤</td></tr>
+<tr><td>data.advance.mailSafe.attachFilter.enable</td><td>bool</td><td>附件过滤开关</td></tr>
+<tr><td>data.advance.mailSafe.attachFilter.filetype</td><td>string[]</td><td>邮件附件过滤类型组</td></tr>
+<tr><td>data.advance.mailSafe.attachKv</td><td>object</td><td>SAVE安全智能文件检测</td></tr>
+<tr><td>data.advance.mailSafe.attachKv.enable</td><td>bool</td><td>SAVE安全智能文件检测开关</td></tr>
+<tr><td>data.advance.mailSafe.attachKv.filetype</td><td>string[]</td><td>文件类型组</td></tr>
+<tr><td>data.advance.urlfilter</td><td>object</td><td>URL过滤</td></tr>
+<tr><td>data.advance.urlfilter.requestType</td><td>object</td><td>URL过滤类型</td></tr>
+<tr><td>data.advance.urlfilter.requestType.httpGet</td><td>bool</td><td>HTTP(get)</td></tr>
+<tr><td>data.advance.urlfilter.requestType.httpPost</td><td>bool</td><td>HTTP(post)</td></tr>
+<tr><td>data.advance.urlfilter.requestType.https</td><td>bool</td><td>HTTPS</td></tr>
+<tr><td>data.advance.urlfilter.redefiningType</td><td>string</td><td>URL过滤重定向门户类型<br>枚举值:[<br>DEFAULT:默认地址<br>USER DEF:自定义<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

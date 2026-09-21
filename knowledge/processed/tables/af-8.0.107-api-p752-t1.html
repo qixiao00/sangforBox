@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p752-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=752 | table=af-8.0.107-api-p752-t1</p>
+<table>
+<thead><tr><th>data.ipv6.ipv6Param.nd<br>.ns interval<br>_</th><th>uint32</th><th>NS重传间隔<br>最小值:1<br>最大值:3600</th></tr></thead>
+<tbody>
+<tr><td>data.manage</td><td>object</td><td>本地策略控制配置</td></tr>
+<tr><td>data.manage.ssh</td><td>bool</td><td>是否启用ssh</td></tr>
+<tr><td>data.manage.snmp</td><td>bool</td><td>是否启用snmp</td></tr>
+<tr><td>data.manage.https</td><td>bool</td><td>是否启用https</td></tr>
+<tr><td>data.manage.ping</td><td>bool</td><td>是否启用ping</td></tr>
+<tr><td>data.jumbo</td><td>bool</td><td>巨帧模式</td></tr>
+<tr><td>data.zone</td><td>string</td><td>区域名称</td></tr>
+<tr><td>data.ifMode</td><td>string</td><td>接口模式</td></tr>
+<tr><td>data.wanEnable</td><td>string</td><td>是否开启接口的wan模式</td></tr>
+<tr><td>data.ingressbandSwitch</td><td>uint64</td><td>接口接收的带宽限制</td></tr>
+<tr><td>data.egressbandSwitch</td><td>uint64</td><td>接口发送的带宽限制</td></tr>
+<tr><td>data.bypassMirrorstats<br>Enable</td><td>string</td><td>是否启用流量统计</td></tr>
+<tr><td>data.bypassMirrorIpGro<br>up</td><td>string[]</td><td>关联的网络对象</td></tr>
+<tr><td>data.ifType</td><td>string</td><td>接口类型</td></tr>
+<tr><td>data.status</td><td>object</td><td>接口的启用或禁用</td></tr>
+<tr><td>data.status.physicalStat<br>us</td><td>bool</td><td>物理状态</td></tr>
+<tr><td>data.status.adminStatu<br>s</td><td>bool</td><td>管理状态</td></tr>
+<tr><td>data.status.linkStatus</td><td>bool</td><td>链路状态</td></tr>
+<tr><td>data.statusTimestamp</td><td>uint64</td><td>接口ipv4相关配置</td></tr>
+<tr><td>data.vlan</td><td>object</td><td>vlan配置</td></tr>
+<tr><td>data.vlan.vlanMode</td><td>string</td><td>vlan模式<br>枚举值:[<br>ACCESS:access模式<br>TRUNK:trunk模式<br>]</td></tr>
+<tr><td>data.vlan.accessId</td><td>uint32</td><td>access vlan id</td></tr>
+<tr><td>data.vlan.trunkConfig</td><td>object</td><td>trunk配置</td></tr>
+<tr><td>data.vlan.trunkConfig.n<br>ativeId</td><td>int32</td><td>trunk native vlanid</td></tr>
+<tr><td>data.vlan.trunkConfig.tr<br>unkRange</td><td>object[]</td><td>trunk vlan 范围</td></tr>
+<tr><td>data.vlan.trunkConfig.tr<br>unkRange.start</td><td>uint32</td><td>vlan范围起始值</td></tr>
+<tr><td>data.vlan.trunkConfig.tr<br>unkRange.end</td><td>uint32</td><td>vlan范围起始值</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p155-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=155 | table_id=af-8.0.107-api-p155-t2<br>上下文标题路径：3 监控 / 3.3 诊断 / 3.3.1 报文示踪 / 3.3.1.3 获取后台报文示踪统计简要信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>get packet trace grief info</td></tr>
+<tr><td>data.switchState</td><td>uint8</td><td>后台报文示踪的开关状态</td></tr>
+<tr><td>data.isClearResource</td><td>uint8</td><td>后台资源是否被清理</td></tr>
+<tr><td>data.proto</td><td>uint8</td><td>三层网路协议号<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.srcIp</td><td>string</td><td>源地址<br>格式:ip-address</td></tr>
+<tr><td>data.dstIp</td><td>string</td><td>目的地址<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

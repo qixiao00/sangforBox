@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p594-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=594 | table_id=af-8.0.107-api-p594-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.1 获取接口列表</p>
+<table>
+<thead><tr><th>subFatherItf</th><th>bool</th><th>否</th><th>获取子接口可用的父接口</th></tr></thead>
+<tbody>
+<tr><td>ifMode</td><td>string</td><td>否</td><td>过滤参数：接口模式，用于物理口，聚合口<br>枚举值:[<br>ROUTE:路由类型，接口作为3层接口，提<br>供IP地址配置，路由配置转发等功能<br>SWITCH:交换类型，接口作为2层接口，<br>提供二层转发、vlan配置等功能<br>VIRTUALLINE:虚拟线类型，接口作为虚<br>拟线的一端，透明传输报文<br>BYPASSMIRROR:旁路镜像类型，该模<br>式进来的报文，只处理不转发<br>]</td></tr>
+<tr><td>filterVeth0</td><td>bool</td><td>否</td><td>过滤接口veth.0</td></tr>
+<tr><td>mkptItf</td><td>bool</td><td>否</td><td>获取本地可用同步/传输网口</td></tr>
+<tr><td>oobManage</td><td>bool</td><td>否</td><td>过滤管理口</td></tr>
+<tr><td>_search</td><td>string</td><td>否</td><td>模糊搜索关键字<br>最大长度:95</td></tr>
+<tr><td>filterInterfaces</td><td>string</td><td>否</td><td>接口对外公用插件</td></tr>
+<tr><td>traffics</td><td>bool</td><td>否</td><td>显示流量趋势支持的接口</td></tr>
+<tr><td>wanEnable</td><td>bool</td><td>否</td><td>过滤wan口</td></tr>
+</tbody>
+</table>
+</body>
+</html>

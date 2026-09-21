@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1776-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1776 | table_id=af-8.0.107-api-p1776-t1<br>上下文标题路径：5 网络 / 5.11 DHCPv6 / 5.11.1 DHCPv6配置 / 5.11.1.1 dhcp6 / 5.11.1.1.12 获取dhcp6的实时状态信息</p>
+<table>
+<thead><tr><th>data.itemLength</th><th>int32</th><th>数据列表长度</th></tr></thead>
+<tbody>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.poolName</td><td>string</td><td>地址池名字</td></tr>
+<tr><td>data.items.duid</td><td>string</td><td>duid</td></tr>
+<tr><td>data.items.iaid</td><td>uint32</td><td>可标识接口的ID</td></tr>
+<tr><td>data.items.addrType</td><td>string</td><td>地址类型<br>枚举值:[<br>PD:前缀<br>AD:地址<br>]</td></tr>
+<tr><td>data.items.ipv6Address</td><td>string</td><td>地址<br>格式:ip6-address</td></tr>
+<tr><td>data.items.plen</td><td>uint32</td><td>前缀长度</td></tr>
+<tr><td>data.items.state</td><td>string</td><td>时间计划类型<br>枚举值:[<br>ACTIVE:活跃<br>RENEW:更新<br>REBIND:重绑定<br>EXPIRED:过期<br>INVALID:无效<br>]</td></tr>
+<tr><td>data.items.status</td><td>uint32</td><td>状态</td></tr>
+<tr><td>data.items.startTime</td><td>string</td><td>开始时间，示例：08:00:00</td></tr>
+<tr><td>data.items.endTime</td><td>string</td><td>结束时间，示例：12:00:00</td></tr>
+<tr><td>data.items.renewTime</td><td>string</td><td>更新时间</td></tr>
+<tr><td>data.items.rebindTime</td><td>string</td><td>重绑定时间</td></tr>
+<tr><td>data.items.validLifeTime</td><td>uint32</td><td>有效时间</td></tr>
+<tr><td>data.items.preferLifeTime</td><td>uint32</td><td>优先时间</td></tr>
+<tr><td>data.items.infinite</td><td>bool</td><td>是否无限期租约</td></tr>
+</tbody>
+</table>
+</body>
+</html>

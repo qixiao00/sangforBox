@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1487-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1487 | table_id=af-8.0.107-api-p1487-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.4 动态路由RIP / 5.8.13.4.1 RIP实例 / 5.8.13.4.1.4 增量更新指定RIP实例信息</p>
+<table>
+<thead><tr><th>obj.defaultMetric</th><th>uint32</th><th>--</th><th>路由默认度量值<br>最小值:1<br>最大值:15<br>默认值:1</th></tr></thead>
+<tbody>
+<tr><td>obj.distance</td><td>uint32</td><td>--</td><td>路由默认管理距离<br>最小值:1<br>最大值:255<br>默认值:120</td></tr>
+<tr><td>obj.updateTime</td><td>uint32</td><td>--</td><td>路由更新时间<br>最小值:1<br>最大值:16777215<br>默认值:30</td></tr>
+<tr><td>obj.holddownTime</td><td>uint32</td><td>--</td><td>路由保持时间<br>最小值:1<br>最大值:16777215<br>默认值:180</td></tr>
+<tr><td>obj.timeoutTime</td><td>uint32</td><td>--</td><td>路由超时时间<br>最小值:1<br>最大值:16777215<br>默认值:180</td></tr>
+<tr><td>obj.garbageTime</td><td>uint32</td><td>--</td><td>路由垃圾时间<br>最小值:1<br>最大值:16777215<br>默认值:240</td></tr>
+<tr><td>obj.redistributeDefault</td><td>bool</td><td>--</td><td>重发布默认路由开关</td></tr>
+<tr><td>obj.redistributeConnected</td><td>object</td><td>--</td><td>重发布直连路由</td></tr>
+<tr><td>obj.redistributeConnected.enable</td><td>bool</td><td>--</td><td>重发布开关</td></tr>
+<tr><td>obj.redistributeConnected.metric</td><td>uint32</td><td>--</td><td>重发布度量值<br>最小值:1<br>最大值:15</td></tr>
+<tr><td>obj.redistributeStatic</td><td>object</td><td>--</td><td>重发布静态路由</td></tr>
+<tr><td>obj.redistributeStatic.enable</td><td>bool</td><td>--</td><td>重发布开关</td></tr>
+<tr><td>obj.redistributeStatic.metric</td><td>uint32</td><td>--</td><td>重发布度量值<br>最小值:1<br>最大值:15</td></tr>
+<tr><td>obj.redistributeOspf</td><td>object</td><td>--</td><td>重发布OSPF路由</td></tr>
+<tr><td>obj.redistributeOspf.enable</td><td>bool</td><td>--</td><td>重发布开关</td></tr>
+<tr><td>obj.redistributeOspf.metric</td><td>uint32</td><td>--</td><td>重发布度量值<br>最小值:1<br>最大值:15</td></tr>
+<tr><td>obj.redistributeBgp</td><td>object</td><td>--</td><td>重发布BGP路由</td></tr>
+<tr><td>obj.redistributeBgp.enable</td><td>bool</td><td>--</td><td>重发布开关</td></tr>
+</tbody>
+</table>
+</body>
+</html>

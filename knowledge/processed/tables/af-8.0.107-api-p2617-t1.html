@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2617-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2617 | table_id=af-8.0.107-api-p2617-t1<br>上下文标题路径：6 策略 / 6.3 访问控制 / 6.3.4 连接数控制 / 6.3.4.4 修改连接数控制策略</p>
+<table>
+<thead><tr><th>data.name</th><th>string</th><th>名称<br>最小长度:1<br>最大长度:95</th></tr></thead>
+<tbody>
+<tr><td>data.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>是否启用</td></tr>
+<tr><td>data.policyType</td><td>string</td><td>类型<br>枚举值:[<br>SRC:源IP连接数控制<br>DST:目的IP连接数控制<br>BIE:双向IP连接数控制<br>]</td></tr>
+<tr><td>data.srcZones</td><td>string[]</td><td>源区域，策略类型为源IP连接数控制或双向IP连接数控<br>制时使用</td></tr>
+<tr><td>data.dstZones</td><td>string[]</td><td>目的区域，策略类型为目的IP连接数控制或双向IP连接<br>数控制时使用</td></tr>
+<tr><td>data.srcIPGroups</td><td>string[]</td><td>源网络对象，策略类型为源IP连接数控制或双向IP连接<br>数控制时使用</td></tr>
+<tr><td>data.dstIPGroups</td><td>string[]</td><td>目的网络对象，策略类型为目的IP连接数控制或双向IP<br>连接数控制时使用</td></tr>
+<tr><td>data.maxConnNum</td><td>int32</td><td>最大并发连接数，0为不限制<br>最小值:0<br>最大值:32768</td></tr>
+<tr><td>data.rampRate</td><td>uint32</td><td>每秒新建连接数速率，0为不限制<br>最小值:0<br>最大值:2147483647</td></tr>
+<tr><td>data.actionLog</td><td>bool</td><td>连接数控制日志上报开关，默认关闭</td></tr>
+<tr><td>data.actionAlarm</td><td>bool</td><td>连接数控制告警开关，默认关闭</td></tr>
+<tr><td>data.actionDrop</td><td>bool</td><td>连接数控制丢弃开关，默认关闭</td></tr>
+<tr><td>data.actionBlock</td><td>bool</td><td>连接数控制封锁开关，默认关闭</td></tr>
+<tr><td>data.blockTime</td><td>uint16</td><td>连接数控制封锁时长，默认十分钟<br>最小值:3<br>最大值:21600</td></tr>
+<tr><td>data.position</td><td>uint32</td><td>策略位置</td></tr>
+<tr><td>data.defenseMethod</td><td>string</td><td>连接数控制防范方式</td></tr>
+<tr><td>data.countSessionDrop</td><td>uint64</td><td>连接数控制会话丢弃数量</td></tr>
+<tr><td>data.countIpBlock</td><td>uint64</td><td>连接数控制下发联动封锁数量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

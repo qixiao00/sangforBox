@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1640-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1640 | table_id=af-8.0.107-api-p1640-t1<br>上下文标题路径：5 网络 / 5.9 DNS / 5.9.2 dns透明代理 / 5.9.2.8 清除dns透明代理caches列表</p>
+<table>
+<thead><tr><th>data.totalPages</th><th>int32</th><th>总共多少页</th></tr></thead>
+<tbody>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>域名</td></tr>
+<tr><td>data.items.ha</td><td>uint32</td><td>HA标记</td></tr>
+<tr><td>data.items.hashcode</td><td>uint32</td><td>哈希key</td></tr>
+<tr><td>data.items.type</td><td>string</td><td>cache类型<br>枚举值:[<br>Static:静态记录<br>Dynamic:动态记录<br>Register:注册记录<br>]</td></tr>
+<tr><td>data.items.ttl</td><td>uint32</td><td>资源记录TTL</td></tr>
+<tr><td>data.items.recordtime</td><td>uint32</td><td>记录的时间</td></tr>
+<tr><td>data.items.expiretime</td><td>uint32</td><td>过期的时间</td></tr>
+<tr><td>data.items.remaintime</td><td>uint32</td><td>剩余时间</td></tr>
+<tr><td>data.items.address</td><td>string[]</td><td>ip地址列表</td></tr>
+</tbody>
+</table>
+</body>
+</html>

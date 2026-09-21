@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3054-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3054 | table_id=af-8.0.107-api-p3054-t1<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.20 显示HA组状态信息</p>
+<table>
+<thead><tr><th>data.itemLength</th><th>int32</th><th>数据列表长度</th></tr></thead>
+<tbody>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.groupId</td><td>uint8</td><td>HA组ID</td></tr>
+<tr><td>data.items.local</td><td>object</td><td>本端HA组的状态</td></tr>
+<tr><td>data.items.local.state</td><td>string</td><td>HA组主备状态<br>枚举值:[<br>INIT:初始化状态<br>MASTER:主机<br>SLAVE:备机<br>]</td></tr>
+<tr><td>data.items.local.priority</td><td>uint8</td><td>HA组优先级</td></tr>
+<tr><td>data.items.local.currentPriority</td><td>uint8</td><td>HA组当前优先级</td></tr>
+<tr><td>data.items.local.preempt</td><td>bool</td><td>抢占开关</td></tr>
+<tr><td>data.items.local.preemptDelay</td><td>uint16</td><td>抢占延时时间</td></tr>
+<tr><td>data.items.local.lastStateChangeInfo</td><td>string</td><td>上次切换信息</td></tr>
+<tr><td>data.items.local.faultInfo</td><td>string</td><td>故障信息</td></tr>
+<tr><td>data.items.local.lastChangeTime</td><td>uint32</td><td>上次切换到现在的秒数</td></tr>
+<tr><td>data.items.local.preemptDelayExpired</td><td>uint16</td><td>抢占延时剩余秒数</td></tr>
+<tr><td>data.items.local.switchThresholdExpired</td><td>uint16</td><td>切换延时剩余秒数</td></tr>
+<tr><td>data.items.local.flags</td><td>string</td><td>主备协商标记</td></tr>
+<tr><td>data.items.peer</td><td>object</td><td>本端HA组的状态</td></tr>
+<tr><td>data.items.peer.isValid</td><td>bool</td><td>抢占开关</td></tr>
+<tr><td>data.items.peer.state</td><td>string</td><td>HA组主备状态<br>枚举值:[<br>INIT:初始化状态<br>MASTER:主机<br>SLAVE:备机<br>]</td></tr>
+<tr><td>data.items.peer.priority</td><td>uint8</td><td>HA组优先级</td></tr>
+<tr><td>data.items.peer.currentPriority</td><td>uint8</td><td>HA组当前优先级</td></tr>
+<tr><td>data.items.peer.preempt</td><td>bool</td><td>抢占开关</td></tr>
+<tr><td>data.items.peer.preemptDelay</td><td>uint16</td><td>抢占延时时间</td></tr>
+<tr><td>data.items.peer.flags</td><td>string</td><td>主备协商标记</td></tr>
+</tbody>
+</table>
+</body>
+</html>

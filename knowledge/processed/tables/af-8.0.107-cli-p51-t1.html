@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p51-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=51 | table_id=af-8.0.107-cli-p51-t1<br>上下文标题路径：4 监控 / 4.1 会话 / 4.1.1 流量排行 / 4.1.1.1 show top-traffics</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>application sort-by &lt;sort-type&gt;</td><td>枚举值:[<br>up: 上行流速<br>down: 下行流速<br>total: 总流速<br>]</td><td>ENUM</td><td>流速类型(不指定默认为总流速)</td></tr>
+<tr><td>user ip &lt;ip-address&gt;</td><td>-</td><td>A.B.C.D IPv4 地址<br>A:B:C:D::E IPv6 地址</td><td>查看对应IP流量组成</td></tr>
+<tr><td>user sort-by &lt;sort-type&gt;</td><td>枚举值:[<br>up: 上行流速<br>down: 下行流速<br>total: 总流速<br>]</td><td>ENUM</td><td>流速类型(不指定默认为总流速)</td></tr>
+<tr><td>trends top &lt;top-value&gt;</td><td>枚举值:[<br>top5: 前5名IP流量趋势<br>top10: 前10名IP流量趋势<br>]</td><td>ENUM</td><td>获取top5或top10的流量趋势</td></tr>
+<tr><td>trends speed-type&lt;speed-type-value&gt;</td><td>枚举值:[<br>up: 上行流速<br>down: 下行流速<br>total: 总流速<br>]</td><td>ENUM</td><td>流速类型(不指定默认为总流速)</td></tr>
+<tr><td>trends time-filter &lt;time-filter-value&gt;</td><td>枚举值:[<br>1hour: 最近1小时的IP流量趋势<br>12hour: 最近12小时的IP流量趋势<br>24hour: 最近24小时的IP流量趋势<br>]</td><td>ENUM</td><td>最近多长时间段内的IP流量趋势(默认为最近<br>1小时)</td></tr>
+<tr><td>trends ip &lt;ip-address&gt;</td><td>-</td><td>A.B.C.D IPv4 地址<br>A:B:C:D::E IPv6 地址</td><td>指定ip获取对应ip的流量趋势表</td></tr>
+</tbody>
+</table>
+</body>
+</html>

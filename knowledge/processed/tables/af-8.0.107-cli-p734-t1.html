@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p734-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=734 | table_id=af-8.0.107-cli-p734-t1<br>上下文标题路径：8 系统 / 8.3 排障 / 8.3.6 traceroute</p>
+<table>
+<thead><tr><th>use-udplite</th><th>-</th><th>-</th><th>使用UDPLITE进行路由跟踪</th></tr></thead>
+<tbody>
+<tr><td>tos &lt;tos-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>设置传出数据包的TOS值</td></tr>
+<tr><td>gateway &lt;gateway-value&gt;</td><td>length:(0-255)</td><td>STRING</td><td>从特定的网关路由数据包</td></tr>
+<tr><td>first-ttl &lt;first-ttl-value&gt;</td><td>1-30</td><td>NUMBER</td><td>从第first_ttl跳开始(而不是从1开始)</td></tr>
+<tr><td>port &lt;port-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>设置要使用的目标端口</td></tr>
+<tr><td>flow-label &lt;flow-label-value&gt;</td><td>length:(0-255)</td><td>STRING</td><td>对IPv6数据包使用指定的flow_label</td></tr>
+<tr><td>src-addr &lt;src-ip-address&gt;</td><td>-</td><td>STRING</td><td>选择备用源地址。</td></tr>
+<tr><td>v6</td><td>-</td><td>-</td><td>使用IPv6</td></tr>
+<tr><td>mtu</td><td>-</td><td>-</td><td>沿着被追踪的路径发现MTU</td></tr>
+<tr><td>queries &lt;queries-value&gt;</td><td>1-10</td><td>NUMBER</td><td>设置每个跃点的探测数。默认值为 3</td></tr>
+<tr><td>options &lt;options-name&gt;</td><td>length:(0-255)</td><td>STRING</td><td>将特定模块的选项用于traceroute模块</td></tr>
+<tr><td>use-tcp</td><td>-</td><td>-</td><td>使用TCP SYN做路由跟踪(默认端口是80)</td></tr>
+<tr><td>debug</td><td>-</td><td>-</td><td>使能套接字级别调试</td></tr>
+<tr><td>bypass</td><td>-</td><td>-</td><td>绕过常规路由并直接发送到连接网络上的主<br>机</td></tr>
+<tr><td>as-path-lookups</td><td>-</td><td>-</td><td>在路由注册表中执行AS路径查找</td></tr>
+<tr><td>extensions</td><td>-</td><td>-</td><td>显示ICMP扩展</td></tr>
+<tr><td>interface &lt;interface-name&gt;</td><td>length:(0-255)</td><td>STRING</td><td>指定traceroute发送数据包的接口</td></tr>
+<tr><td>src-port &lt;src-port-number&gt;</td><td>0-65536</td><td>NUMBER</td><td>选择要使用的源端口</td></tr>
+<tr><td>max-hops &lt;max-hops-number&gt;</td><td>1-255</td><td>NUMBER</td><td>设置最大跃点数（达到最大<br>TTL）。默认值为 30</td></tr>
+<tr><td>version</td><td>-</td><td>-</td><td>打印版本信息并退出</td></tr>
+<tr><td>sendwait &lt;sendwait-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>两次探测之间的最小时间间隔（默认为5s）</td></tr>
+<tr><td>module &lt;module-name&gt;</td><td>length:(0-255)</td><td>STRING</td><td>使用指定的模块进行traceroute操作</td></tr>
+<tr><td>waittime &lt;waittime-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>设置等待探测响应的时间（以秒为单位<br>默认为5）</td></tr>
+<tr><td>sim-queries &lt;sim-queries-number&gt;</td><td>1-255</td><td>NUMBER</td><td>设置要同时尝试的探测器数（默认值为 16）</td></tr>
+<tr><td>&lt;ip-address&gt;</td><td>length:(0-255)</td><td>A.B.D.C IP地址</td><td>IP地址</td></tr>
+</tbody>
+</table>
+</body>
+</html>

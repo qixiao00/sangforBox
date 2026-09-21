@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1745-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1745 | table_id=af-8.0.107-api-p1745-t1<br>上下文标题路径：5 网络 / 5.11 DHCPv6 / 5.11.1 DHCPv6配置 / 5.11.1.1 dhcp6 / 5.11.1.1.5 增量修改dhcp6服务配置</p>
+<table>
+<thead><tr><th>obj.dhcp6Server.serverPool.adPoolList.preferredUnlimit</th><th>bool</th><th>--</th><th>租约优先时间无限期的开关</th></tr></thead>
+<tbody>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList</td><td>object[]</td><td>--</td><td>前缀地址池</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.ipv6Prefix</td><td>string</td><td>--</td><td>前缀</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.assignedLength</td><td>uint32</td><td>--</td><td>分配的长度<br>最小值:1<br>最大值:128<br>默认值:16</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.valid</td><td>uint32</td><td>--</td><td>租约的有效时间<br>最小值:60<br>最大值:432000<br>默认值:7200</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.preferred</td><td>uint32</td><td>--</td><td>租约的优先时间<br>最小值:60<br>最大值:432000<br>默认值:7200</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.validUnlimit</td><td>bool</td><td>--</td><td>租约无限期的开关，默认关闭</td></tr>
+<tr><td>obj.dhcp6Server.serverPool.pdPoolList.preferredUnlimit</td><td>bool</td><td>--</td><td>租约无限期的开关，默认关闭</td></tr>
+<tr><td>obj.dhcp6Server.serverBind</td><td>object</td><td>--</td><td>server绑定配置</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList</td><td>object[]</td><td>--</td><td>网络地址绑定</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.ipv6Address</td><td>string</td><td>--</td><td>地址<br>格式:ip6-address</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.duid</td><td>string</td><td>--</td><td>绑定DUID信息<br>最小长度:8<br>最大长度:256</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.iaid</td><td>uint32</td><td>--</td><td>可标识接口的ID</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.valid</td><td>uint32</td><td>--</td><td>租约的有效时间<br>最小值:60<br>最大值:432000<br>默认值:7200</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.preferred</td><td>uint32</td><td>--</td><td>租约的优先时间<br>最小值:60<br>最大值:432000<br>默认值:7200</td></tr>
+<tr><td>obj.dhcp6Server.serverBind.adPoolBindList.validUnlimit</td><td>bool</td><td>--</td><td>租约有效时间无限期的开关</td></tr>
+</tbody>
+</table>
+</body>
+</html>

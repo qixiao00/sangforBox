@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p194-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=194 | table_id=af-8.0.107-cli-p194-t2<br>上下文标题路径：5 策略 / 5.3 解密 / 5.3.7 show dp-tcpproxy-tran</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>coreid &lt;coreid-value&gt;</td><td>0-256</td><td>NUMBER</td><td>过滤cpu id查看数据面TCP代理事务</td></tr>
+<tr><td>sport &lt;source-port-number&gt;</td><td>0-65535</td><td>NUMBER</td><td>过滤客户端源端口查看数据面TCP代理事务</td></tr>
+<tr><td>state &lt;tran-state&gt;</td><td>枚举值:[<br>INIT: INIT.<br>CLI_OPEN: CLI_OPEN<br>CLI_HANDSHAKE: CLI_HANDSHAKE<br>CLI_ANAYLYZE: CLI_ANAYLYZE<br>SRV_OPEN: SRV_OPEN<br>SRV_HANDSHAKE:<br>SRV_HANDSHAKE<br>ESTABLISHED: ESTABLISHED<br>CLI_CLOSE: CLI_CLOSE<br>SRV_CLOSE: SRV_CLOSE<br>]</td><td>ENUM</td><td>过滤事务状态查看数据面TCP代理事务</td></tr>
+<tr><td>dip &lt;dest-ip-address&gt;</td><td>-</td><td>A.B.C.D IPv4 地址<br>A:B:C:D::E IPv6 地址</td><td>过滤客户端目的IP查看数据面TCP代理事务</td></tr>
+<tr><td>dport &lt;dest-port-number&gt;</td><td>0-65535</td><td>NUMBER</td><td>过滤客户端目的端口查看数据面TCP代理事<br>务</td></tr>
+<tr><td>sip &lt;source-ip-address&gt;</td><td>-</td><td>A.B.C.D IPv4 地址<br>A:B:C:D::E IPv6 地址</td><td>过滤客户端源IP查看数据面TCP代理事务</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p431-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=431 | table_id=af-8.0.107-api-p431-t1<br>上下文标题路径：4 对象 / 4.4 内容识别 / 4.4.1 应用识别 / 4.4.1.14 批量启禁用应用规则(通过应用名称启禁用)</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>objs</td><td>object</td><td>是</td><td>用户启禁用应用规则列表</td></tr>
+<tr><td>objs.apps</td><td>object[]</td><td>是</td><td>应用名称</td></tr>
+<tr><td>objs.apps.name</td><td>string</td><td>是</td><td>应用名称<br>最小长度:1<br>最大长度:287</td></tr>
+<tr><td>objs.enable</td><td>bool</td><td>是</td><td>启禁用</td></tr>
+<tr><td>objs.libtype</td><td>string</td><td>是</td><td>应用所属库类型, 枚举型。可选参数[FEAT<br>URE,INTELL,CUSTOM], FEATURE:特<br>征库,INTELL:智能库,CUSTOM:自定义库<br>,<br>枚举值:[<br>FEATURE:特征库<br>INTELL:智能库<br>CUSTOM:自定义库<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

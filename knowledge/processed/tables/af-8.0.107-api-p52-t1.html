@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p52-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=52 | table_id=af-8.0.107-api-p52-t1<br>上下文标题路径：2 认证鉴权 / 2.1 用户登录</p>
+<table>
+<thead><tr><th>data.role</th><th>string</th><th>账户角色<br>枚举值:[<br>ADMINISTRATOR:超级管理员<br>COMMON:普通管理员<br>SAFE:三权分立账户，安全管理员<br>LOG:三权分立账户，审计员<br>SYSTEM:三权分立账户，系统管理员<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.cftoken</td><td>string</td><td>账号登录得到的防跨站请求伪造的会话令牌</td></tr>
+<tr><td>data.namespace</td><td>string</td><td>账号所属系统标识<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>data.emailAddr</td><td>string</td><td>账号绑定邮箱地址<br>最小长度:6<br>最大长度:320</td></tr>
+<tr><td>data.totpEnable</td><td>bool</td><td>totp认证是否启用</td></tr>
+<tr><td>data.totpUri</td><td>string</td><td>totp的uri，携带密钥用于生成二维码<br>最小长度:50<br>最大长度:512</td></tr>
+<tr><td>data.totpSlaveErr</td><td>bool</td><td>totp备机情况下不允许扫码的错误标志</td></tr>
+<tr><td>data.authMethod</td><td>string</td><td>登录成功时采用的认证方式<br>枚举值:[<br>EMAIL SUCCESS:邮件认证成功<br>_<br>TOTP SUCCESS:totp认证成功<br>_<br>TOTP TMP SUCCESS:totp认证并绑定成功<br>_ _<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

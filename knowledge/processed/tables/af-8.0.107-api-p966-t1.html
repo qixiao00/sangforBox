@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p966-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=966 | table_id=af-8.0.107-api-p966-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.4 策略路由IPV4 / 5.8.4.12 策略路由表二添加一条ipv4策略路由信息</p>
+<table>
+<thead><tr><th>data.lbMethod</th><th>string</th><th>多线路模式下，接口选择策略<br>枚举值:[<br>POLL:轮询<br>BANDWIDTH:带宽比例<br>WEIGHTED MINIMUM FLOW:加权最小流量<br>_ _<br>PRIORITY FRONT LINE:优先使用前面线路<br>_ _<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.tableId</td><td>uint32</td><td>策略路由表ID，默认为0<br>最小值:0<br>最大值:1</td></tr>
+<tr><td>data.status</td><td>uint8</td><td>策略路由的状态值，状态字段不可设置或修改</td></tr>
+<tr><td>data.position</td><td>int32</td><td>策略的位置，状态字段不可设置或修改</td></tr>
+<tr><td>data.outif</td><td>object[]</td><td>策略路由出接口列表</td></tr>
+<tr><td>data.outif.outifName</td><td>string</td><td>出接口名称</td></tr>
+<tr><td>data.outif.gateway</td><td>string</td><td>下一跳IP地址</td></tr>
+<tr><td>data.outif.linkdt</td><td>string</td><td>引用链路探测对象名称</td></tr>
+</tbody>
+</table>
+</body>
+</html>

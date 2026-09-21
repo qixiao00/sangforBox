@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p475-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=475 | table_id=af-8.0.107-api-p475-t1<br>上下文标题路径：4 对象 / 4.5 服务 / 4.5.3 批量获取服务或服务组信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>服务和服务组列表</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>唯一资源id</td></tr>
+<tr><td>data.name</td><td>string</td><td>服务名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.id</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.servType</td><td>string</td><td>预定义服务或自定义服务或服务组<br>枚举值:[<br>PREDEF SERV:预定义服务<br>_<br>USRDEF SERV:自定义服务<br>_<br>SERV GRP:服务组<br>_<br>]</td></tr>
+<tr><td>data.tcpEntrys</td><td>object[]</td><td>tcp条目列表，服务类型为预定义服务或自定义服务时<br>使用</td></tr>
+<tr><td>data.tcpEntrys.srcPorts</td><td>object[]</td><td>源端口信息</td></tr>
+<tr><td>data.tcpEntrys.srcPorts.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.tcpEntrys.srcPorts.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.tcpEntrys.dstPorts</td><td>object[]</td><td>目的端口信息</td></tr>
+<tr><td>data.tcpEntrys.dstPorts.start</td><td>int32</td><td>起始端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.tcpEntrys.dstPorts.end</td><td>int32</td><td>结束端口<br>最小值:0<br>最大值:65535</td></tr>
+</tbody>
+</table>
+</body>
+</html>

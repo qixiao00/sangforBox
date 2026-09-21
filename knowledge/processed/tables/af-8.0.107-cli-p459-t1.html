@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p459-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=459 | table_id=af-8.0.107-cli-p459-t1<br>上下文标题路径：7 网络 / 7.5 路由 / 7.5.1 静态路由 / 7.5.1.5 ip</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>&lt;domain-name&gt;</td><td>length:(0-255)</td><td>STRING</td><td>域名</td></tr>
+<tr><td>&lt;ip-address&gt;</td><td>-</td><td>A.B.D.C IPv4 地址</td><td>ipaddr</td></tr>
+<tr><td>&lt;action&gt;</td><td>枚举值:[<br>deny: 指定的数据包进行拒绝<br>permit: 指定的数据包进行放通<br>]</td><td>ENUM</td><td>访问控制列表动作</td></tr>
+<tr><td>&lt;regular-expression&gt;</td><td>-</td><td>STRING</td><td>匹配的自治系统AS号正则表达式</td></tr>
+<tr><td>&lt;name&gt;</td><td>length:(1-31)</td><td>STRING</td><td>自治系统路径过滤列表名称</td></tr>
+<tr><td>&lt;src-ip-address&gt;</td><td>-</td><td>A.B.C.D 源地址</td><td>ipv4 mroute src address</td></tr>
+<tr><td>src-if &lt;src-interface-name&gt;</td><td>-</td><td>STRING</td><td>源接口</td></tr>
+<tr><td>&lt;multicast-ip-address&gt;</td><td>-</td><td>A.B.C.D Multicast<br>address</td><td>ipv4 mroute multicast address</td></tr>
+<tr><td>dst-if &lt;dst-interface-name-list&gt;</td><td>-</td><td>STRING</td><td></td></tr>
+<tr><td>src-port &lt;src-port-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>源端口或范围</td></tr>
+<tr><td>src-interface &lt;src-interface-name&gt;</td><td>-</td><td>STRING</td><td>入接口</td></tr>
+<tr><td>dst-port &lt;dst-port-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>目的端口或范围</td></tr>
+<tr><td>dst-ip &lt;dst-ip-address&gt;</td><td>-</td><td>A.B.C.D 目的IP地址</td><td>目的IP地址</td></tr>
+<tr><td>src-ip &lt;src-ip-address&gt;</td><td>-</td><td>A.B.C.D 源IP地址</td><td>源IP地址</td></tr>
+<tr><td>protocol-code&lt;protocol-code-number&gt;</td><td>0-255</td><td>NUMBER</td><td>协议号</td></tr>
+<tr><td>&lt;dst-ip-address&gt;</td><td>-</td><td>A.B.C.D/M<br>目的地址以及掩码简写<br>A.B.C.D/E.F.G.H<br>目的地址以及掩码全写</td><td>目的地址/掩码</td></tr>
+<tr><td>&lt;next-hop-ip-address&gt;</td><td>-</td><td>A.B.C.D 下一跳IP地址</td><td>下一跳</td></tr>
+<tr><td>interface &lt;interface-name&gt;</td><td>length:(1-48)</td><td>STRING</td><td>接口</td></tr>
+<tr><td>vsys &lt;vsys-name&gt;</td><td>length:(1-31)</td><td>STRING</td><td>目的虚拟系统</td></tr>
+<tr><td>weight &lt;weight-number&gt;</td><td>1-255</td><td>NUMBER</td><td>权重</td></tr>
+<tr><td>distance &lt;distance-number&gt;</td><td>1-255</td><td>NUMBER</td><td>管理距离</td></tr>
+<tr><td>disable</td><td>-</td><td>-</td><td>禁用</td></tr>
+<tr><td>metric &lt;metric-number&gt;</td><td>0-255</td><td>NUMBER</td><td>度量值</td></tr>
+<tr><td>link-detect &lt;link-detect-name&gt;</td><td>-</td><td>STRING</td><td>链路探测</td></tr>
+<tr><td>tag &lt;tag-number&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>tag值</td></tr>
+<tr><td>enable</td><td>-</td><td>-</td><td>启用</td></tr>
+<tr><td>description &lt;description-value&gt;</td><td>length:(0-95)</td><td>STRING</td><td>描述</td></tr>
+</tbody>
+</table>
+</body>
+</html>

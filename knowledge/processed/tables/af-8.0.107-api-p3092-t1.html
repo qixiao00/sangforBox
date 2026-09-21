@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3092-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3092 | table_id=af-8.0.107-api-p3092-t1<br>上下文标题路径：7 系统 / 7.9 调试 / 7.9.1 报文追踪 / 7.9.1.2 获取debugfilter信息列表</p>
+<table>
+<thead><tr><th>data.items.arp.senderMac</th><th>string</th><th>发送方Mac地址过滤</th></tr></thead>
+<tbody>
+<tr><td>data.items.arp.targetIp</td><td>string</td><td>目标方ip地址过滤</td></tr>
+<tr><td>data.items.arp.op</td><td>string</td><td>arp操作过滤<br>枚举值:[<br>NONE:重置<br>REPLY:响应过滤<br>REQUEST:请求过滤<br>]</td></tr>
+<tr><td>data.items.ppp</td><td>object</td><td>ppp过滤</td></tr>
+<tr><td>data.items.ppp.protocol</td><td>string</td><td>协议过滤<br>枚举值:[<br>NONE:重置<br>IP:ip协议<br>IPv6:IPv6协议<br>LCP:LCP协议<br>PAP:PAP协议<br>CHAP:CHAP协议<br>]</td></tr>
+<tr><td>data.items.ip</td><td>object</td><td>ip过滤</td></tr>
+<tr><td>data.items.ip.host</td><td>string</td><td>主机过滤ip<br>格式:ip-address</td></tr>
+<tr><td>data.items.ip.dsthost</td><td>string</td><td>目的主机过滤ip<br>格式:ip-address</td></tr>
+<tr><td>data.items.ip.srchost</td><td>string</td><td>源主机过滤ip<br>格式:ip-address</td></tr>
+<tr><td>data.items.ip.protocol</td><td>uint8</td><td>协议过滤<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.items.port</td><td>object</td><td>端口过滤</td></tr>
+<tr><td>data.items.port.port</td><td>uint16</td><td>按照端口过滤</td></tr>
+<tr><td>data.items.port.dstport</td><td>uint16</td><td>按照目的端口过滤</td></tr>
+<tr><td>data.items.port.srcport</td><td>uint16</td><td>按照源端口过滤</td></tr>
+<tr><td>data.items.packetCount</td><td>uint16</td><td>匹配报文的个数<br>最小值:0<br>最大值:2048</td></tr>
+</tbody>
+</table>
+</body>
+</html>

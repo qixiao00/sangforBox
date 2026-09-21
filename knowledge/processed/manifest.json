@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-09-16T04:22:59Z",
+  "generator": "knowledge/scripts/build_knowledge.py",
+  "parser": {
+    "name": "PyMuPDF (fitz) text + find_tables",
+    "version": "1.28.2"
+  },
+  "product": "AF",
+  "version": "8.0.107",
+  "vendor": "深信服",
+  "documents": [
+    {
+      "doc_id": "af-8.0.107-api",
+      "title": "API帮助文档",
+      "doc_type": "api_manual",
+      "source_path": "D:/chrome_downloads/AF8.0.107版本API帮忙文档.pdf",
+      "sha256": "e6396aa890dac0e1ef1e63f9e4ff835858fa31b74537695a7f2f95abd44cad76",
+      "page_count": 3297,
+      "excluded_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "doc_id": "af-8.0.107-cli",
+      "title": "命令行帮助文档",
+      "doc_type": "cli_manual",
+      "source_path": "D:/chrome_downloads/AF8.0.107版本CLI帮忙文档.pdf",
+      "sha256": "1af3cb7d75a43dc8a1822f90b3669a529b59f5f3337be7bd32e379603bf7fa61",
+      "page_count": 855,
+      "excluded_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "doc_id": "af-8.0.107-product",
+      "title": "下一代防火墙AF_AF8.0.107_文档",
+      "doc_type": "product_manual",
+      "source_path": "D:/chrome_downloads/下一代防火墙AF_AF8.0.107_文档.pdf",
+      "sha256": "2eaa58e3012df8c70e150979dd4ad2cfa6be6fc33af128dcf5ebe3e9a1134266",
+      "page_count": 723,
+      "excluded_pages": [
+        1,
+        2
+      ]
+    }
+  ],
+  "counts": {
+    "documents": 3,
+    "chunks": 6958,
+    "api_endpoints": 1235,
+    "cli_commands": 956,
+    "glossary": 44,
+    "qa_seed": 100,
+    "issues": 798,
+    "tables_html": 6941
+  },
+  "per_document": {
+    "af-8.0.107-api": {
+      "doc_id": "af-8.0.107-api",
+      "page_count": 3297,
+      "excluded_pages": 41,
+      "processed_pages": 3256,
+      "extraction_method": "text_layer",
+      "ocr_pages": [],
+      "extracted_chars": 3454737,
+      "chunks": 4185,
+      "tables": 4301,
+      "request_line_boxes": 1235,
+      "pages_with_tables": 3145,
+      "toc_entries": 1470
+    },
+    "af-8.0.107-cli": {
+      "doc_id": "af-8.0.107-cli",
+      "page_count": 855,
+      "excluded_pages": 17,
+      "processed_pages": 838,
+      "extraction_method": "text_layer",
+      "ocr_pages": [],
+      "extracted_chars": 741037,
+      "chunks": 2173,
+      "tables": 2336,
+      "request_line_boxes": 0,
+      "pages_with_tables": 781,
+      "toc_entries": 580
+    },
+    "af-8.0.107-product": {
+      "doc_id": "af-8.0.107-product",
+      "page_count": 723,
+      "excluded_pages": 2,
+      "processed_pages": 721,
+      "extraction_method": "text_layer",
+      "ocr_pages": [],
+      "extracted_chars": 194925,
+      "chunks": 600,
+      "tables": 45,
+      "request_line_boxes": 0,
+      "pages_with_tables": 45,
+      "toc_entries": 376
+    }
+  },
+  "outputs": {
+    "documents.jsonl": {
+      "sha256": "a83206fd7868db7d40cbee6e89f241f6de3ccd3b7f189e1135f15155e8ae0b18",
+      "bytes": 1959,
+      "lines": 3
+    },
+    "chunks.jsonl": {
+      "sha256": "1fcf0a9081d6c16f7c709360420595e6a675abb67c7e65ea0de6b4b81feb9611",
+      "bytes": 19987754,
+      "lines": 6958
+    },
+    "api_endpoints.jsonl": {
+      "sha256": "e5455ac4601c4ae082d47bb16dbe934fabb6752d05b4c1ec0625daa67c764673",
+      "bytes": 15709604,
+      "lines": 1235
+    },
+    "cli_commands.jsonl": {
+      "sha256": "e0cd59252adcff09f8023f909cd1885c6e7d7b070da20c38b76f63b35c49ba3e",
+      "bytes": 1080704,
+      "lines": 956
+    },
+    "glossary.jsonl": {
+      "sha256": "0b23f7fc5119c62a9da4502edeac4cd03f926beff7afb76c9017eaebf76c0e38",
+      "bytes": 20170,
+      "lines": 44
+    },
+    "qa_seed.jsonl": {
+      "sha256": "c5650000bcd7be96a60c4233ab47a6560e63904bf0ad61fa8cb59540fea5eb8b",
+      "bytes": 36884,
+      "lines": 100
+    },
+    "issues.jsonl": {
+      "sha256": "d56eb74fb10902a5b77f070c527da3c320fba39cbb717c2a5c7ff2b959f49a8d",
+      "bytes": 243141,
+      "lines": 798
+    }
+  },
+  "notes": [
+    "页码统一为 PDF 物理页码，从 1 开始。",
+    "封面与目录页不进入 chunks / source_markdown，见各文档 excluded_pages。",
+    "每端点鉴权方式在文档 1.2 交互流程与报文格式 中统一定义，未在任何端点小节内重复，故 api_endpoints.auth 统一为 null。",
+    "API 返回码在文档 1.5 与附录 12.1 统一定义，未在端点小节内重复，故 success_codes / error_codes 为 null。"
+  ]
+}

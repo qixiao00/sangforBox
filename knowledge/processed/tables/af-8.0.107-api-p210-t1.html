@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p210-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=210 | table_id=af-8.0.107-api-p210-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.2 TOP N设置 / 3.4.2.1 获取TOPN配置接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>TOPN</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>topn功能模块开关</td></tr>
+<tr><td>data.save day_</td><td>uint32</td><td>topn数据存储天数<br>最小值:1<br>最大值:32</td></tr>
+<tr><td>data.monitor object_</td><td>object</td><td>topn监控对象</td></tr>
+<tr><td>data.monitor object.de_vice</td><td>bool</td><td>设备</td></tr>
+<tr><td>data.monitor object.src_Ip</td><td>bool</td><td>源ip</td></tr>
+<tr><td>data.monitor object.dst_Ip</td><td>bool</td><td>目的ip</td></tr>
+<tr><td>data.monitor object.src_subnet_</td><td>bool</td><td>源网段</td></tr>
+<tr><td>data.monitor object.dst_subnet_</td><td>bool</td><td>目的网段</td></tr>
+<tr><td>data.monitor object.net_work interface_</td><td>bool</td><td>接口</td></tr>
+<tr><td>data.monitor object.ap_p</td><td>bool</td><td>应用</td></tr>
+<tr><td>data.monitor object.traf_fic manage_</td><td>bool</td><td>流控</td></tr>
+<tr><td>data.monitor object.url_</td><td>bool</td><td>url域名</td></tr>
+<tr><td>data.monitor object.vp_ntun</td><td>bool</td><td>vpn隧道</td></tr>
+<tr><td>data.monitor data_</td><td>object</td><td>topn监控数据</td></tr>
+</tbody>
+</table>
+</body>
+</html>

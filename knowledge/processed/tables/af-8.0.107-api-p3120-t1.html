@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3120-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3120 | table_id=af-8.0.107-api-p3120-t1<br>上下文标题路径：8 运营中心 / 8.1 物联网安全 / 8.1.1 资产发现设置 / 8.1.1.2 修改资产发现配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>资产发现设置</td></tr>
+<tr><td>data.zones</td><td>string[]</td><td>区域</td></tr>
+<tr><td>data.assetIpGroups</td><td>string[]</td><td>资产范围定义</td></tr>
+<tr><td>data.terminalTrafficIdentify</td><td>bool</td><td>启用全网终端流量识别</td></tr>
+<tr><td>data.terminalActiveScan</td><td>bool</td><td>启用全网终端主动扫描</td></tr>
+<tr><td>data.activeScanAssetScope</td><td>uint32</td><td>主动扫描资产范围定义<br>枚举值:[<br>0:复用已定义的资产范围<br>1:自定义<br>]</td></tr>
+<tr><td>data.activeScanIpGroups</td><td>string[]</td><td>主动扫描资产范围</td></tr>
+<tr><td>data.deleteNotInScopeAsset</td><td>bool</td><td>定义的资产范围发生变化后，清除不在此范围内的资产</td></tr>
+<tr><td>data.autoDeleteInactiveAsset</td><td>bool</td><td>自动删除未发现或无流量的资产</td></tr>
+<tr><td>data.autoDeleteDays</td><td>uint32</td><td>自动删除长期未发现或无流量的资产<br>最小值:1<br>最大值:365</td></tr>
+<tr><td>data.noBusinessScan</td><td>bool</td><td>开启无业务流量扫描模式</td></tr>
+<tr><td>data.activeScanAll</td><td>object</td><td>主动扫描全部资产的间隔时间</td></tr>
+<tr><td>data.activeScanAll.time</td><td>uint32</td><td>时间<br>最小值:1<br>最大值:10080</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p703-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=703 | table_id=af-8.0.107-api-p703-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.7 批量删除接口</p>
+<table>
+<thead><tr><th>obj.tunnelif.source</th><th>string</th><th>--</th><th>隧道源信息</th></tr></thead>
+<tbody>
+<tr><td>obj.tunnelif.destination</td><td>string</td><td>--</td><td>隧道目的信息<br>格式:ip-address</td></tr>
+<tr><td>obj.oobManage</td><td>bool</td><td>--</td><td>带外管理起禁用</td></tr>
+<tr><td>obj.lldpConfig</td><td>object</td><td>--</td><td>接口lldp参数配置信息</td></tr>
+<tr><td>obj.lldpConfig.state</td><td>string</td><td>--</td><td>工作模式<br>枚举值:[<br>DISABLE:既不能接收LLDP报文，也不能<br>发送LLDP报文<br>RX:只能接收LLDP报文<br>TX:只能发送LLDP报文<br>TXRX:既能接收LLDP报文，也能发送LL<br>DP报文<br>]</td></tr>
+<tr><td>obj.lldpConfig.basicTlv</td><td>object</td><td>--</td><td>基本tlv</td></tr>
+<tr><td>obj.lldpConfig.basicTlv.managementAddress</td><td>bool</td><td>--</td><td>管理地址tlv<br>默认值:true</td></tr>
+<tr><td>obj.lldpConfig.basicTlv.systemCapability</td><td>bool</td><td>--</td><td>系统能力tlv<br>默认值:true</td></tr>
+<tr><td>obj.lldpConfig.basicTlv.systemDescription</td><td>bool</td><td>--</td><td>系统描述tlv<br>默认值:true</td></tr>
+<tr><td>obj.lldpConfig.basicTlv.systemName</td><td>bool</td><td>--</td><td>系统名称tlv<br>默认值:true</td></tr>
+<tr><td>obj.lldpConfig.basicTlv.portDescription</td><td>bool</td><td>--</td><td>端口描述tlv<br>默认值:true</td></tr>
+<tr><td>obj.lldpConfig.dot1Tlv</td><td>object</td><td>--</td><td>802.1tlv</td></tr>
+<tr><td>obj.lldpConfig.dot1Tlv.portVlanId</td><td>bool</td><td>--</td><td>端口vlan id tlv</td></tr>
+<tr><td>obj.lldpConfig.dot3Tlv</td><td>object</td><td>--</td><td>802.3tlv</td></tr>
+<tr><td>obj.lldpConfig.dot3Tlv.linkAggregation</td><td>bool</td><td>--</td><td>链路聚合tlv</td></tr>
+<tr><td>obj.lldpConfig.dot3Tlv.macPhysic</td><td>bool</td><td>--</td><td>物理信息tlv</td></tr>
+<tr><td>obj.lldpConfig.dot3Tlv.maximumFrameSize</td><td>bool</td><td>--</td><td>最大帧长度tlv</td></tr>
+<tr><td>obj.rstp</td><td>object</td><td>按条件选<br>择</td><td>rstp接口配置信息</td></tr>
+<tr><td>obj.rstp.rstpState</td><td>bool</td><td>--</td><td>接口是否起禁用rstp</td></tr>
+<tr><td>obj.rstp.rstpPriority</td><td>uint8</td><td>--</td><td>端口优先级<br>最小值:0<br>最大值:240<br>默认值:128</td></tr>
+<tr><td>obj.rstp.portEdge</td><td>bool</td><td>--</td><td>设置边缘端口, 为true时，自动管理；false<br>时：强制指定为非边缘端口<br>默认值:true</td></tr>
+</tbody>
+</table>
+</body>
+</html>

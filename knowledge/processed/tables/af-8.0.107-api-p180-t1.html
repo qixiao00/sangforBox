@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p180-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=180 | table_id=af-8.0.107-api-p180-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.1 日志设置 / 3.4.1.4 获取日开关配置的详细信息</p>
+<table>
+<thead><tr><th>data.listFilterLog.ics.syslog.minlevel</th><th>string</th><th>最小日志级别<br>枚举值:[<br>emerg:系统不可用信息<br>alert:需要立即处理的信息<br>crit:紧急信息<br>err:错误信息<br>warning:报警信息<br>notice:非错误信息<br>info:通知信息<br>debug:调试信息<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.listFilterLog.ics.syslog.logformat</td><td>string</td><td>日志格式<br>枚举值:[<br>syslog:syslog格式<br>]</td></tr>
+<tr><td>data.listFilterLog.ics.internal</td><td>bool</td><td>防火墙存储位置选择</td></tr>
+<tr><td>data.listFilterLog.ics.platForm</td><td>bool</td><td>安全感知平台存储位置选择</td></tr>
+<tr><td>data.listSyslog</td><td>object</td><td>查询syslog配置</td></tr>
+<tr><td>data.listSyslog.enable</td><td>bool</td><td>syslog设置开关</td></tr>
+<tr><td>data.listSyslog.syslog</td><td>object[]</td><td>syslog设置</td></tr>
+<tr><td>data.listSyslog.syslog.ip</td><td>string</td><td>syslog服务器ip地址<br>格式:ip-address</td></tr>
+<tr><td>data.listSyslog.syslog.port</td><td>int32</td><td>syslog服务器端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.listSyslog.syslog.logtype</td><td>string[]</td><td>logsetting:log store type</td></tr>
+<tr><td>data.listLocal</td><td>object</td><td>防火墙日志设置信息</td></tr>
+<tr><td>data.listLocal.del befor_e days_</td><td>object</td><td>删除多少天前的日志</td></tr>
+<tr><td>data.listLocal.del befor_e days.max days_ _</td><td>int32</td><td>删除天数阈值<br>最小值:1<br>最大值:1000</td></tr>
+<tr><td>data.listLocal.del befor_e days.enable_</td><td>bool</td><td>防火墙日志设置开关</td></tr>
+<tr><td>data.listLocal.del lt dis_ _k percent_</td><td>object</td><td>磁盘占用空间超过比例删除</td></tr>
+<tr><td>data.listLocal.del lt dis_ _k percent.default delet_ _e day enable_ _</td><td>bool</td><td></td></tr>
+<tr><td>data.listLocal.del lt dis_ _k percent.max percent_ _</td><td>int32</td><td>日志删除磁盘比例<br>最小值:50<br>最大值:90</td></tr>
+<tr><td>data.listLocal.del lt dis_ _k percent.enable_</td><td>bool</td><td>磁盘占用空间超过比例删除开关</td></tr>
+</tbody>
+</table>
+</body>
+</html>

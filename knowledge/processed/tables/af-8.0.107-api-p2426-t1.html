@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2426-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2426 | table_id=af-8.0.107-api-p2426-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.3 云安全访问服务策略 / 6.2.3.1 线路配置 / 6.2.3.1.4 获取线路配置及状态</p>
+<table>
+<thead><tr><th>data.lineConfig.popConfig</th><th>object</th><th>SASE端POP节点配置</th></tr></thead>
+<tbody>
+<tr><td>data.lineConfig.popConfig.popLineList</td><td>object[]</td><td>SASE端POP节点线路列表配置</td></tr>
+<tr><td>data.lineConfig.popConfig.popLineList.popLocation</td><td>string</td><td>POP归属地</td></tr>
+<tr><td>data.lineConfig.popConfig.popLineList.popIp</td><td>string</td><td>POP运营商IP地址</td></tr>
+<tr><td>data.lineConfig.popConfig.popLineList.popId</td><td>string</td><td>PoP ID</td></tr>
+<tr><td>data.lineConfig.popConfig.popLineList.popIsp</td><td>string</td><td>POP运营商</td></tr>
+<tr><td>data.lineConfig.popConfig.enable</td><td>bool</td><td>SASE端POP节点启用状态</td></tr>
+<tr><td>data.lineConfig.popConfig.RT</td><td>object</td><td>后台RT包相关字段</td></tr>
+<tr><td>data.lineConfig.popConfig.RT.rtKey</td><td>uint32</td><td>RTkey</td></tr>
+<tr><td>data.lineConfig.hasref</td><td>bool</td><td>标识是否被引用</td></tr>
+<tr><td>data.lineStatus</td><td>object</td><td>线路状态信息</td></tr>
+<tr><td>data.lineStatus.uuid</td><td>string</td><td>资源唯一ID</td></tr>
+<tr><td>data.lineStatus.usedSelectIfName</td><td>string</td><td>正在使用的选路接口</td></tr>
+<tr><td>data.lineStatus.currentSelectIfName</td><td>string</td><td>最新推荐的选路接口</td></tr>
+<tr><td>data.lineStatus.usedSelectIfMode</td><td>string</td><td>正在使用的选路接口模式<br>枚举值:[<br>SWITCH:透明<br>ROUTE:路由<br>VIRTUALLINE:虚拟网线<br>]</td></tr>
+<tr><td>data.lineStatus.capMain</td><td>string</td><td>主捕获包信息<br>最大长度:200</td></tr>
+<tr><td>data.lineStatus.capBack</td><td>string</td><td>备捕获包信息<br>最大长度:200</td></tr>
+<tr><td>data.lineStatus.currentPopIp</td><td>string</td><td>POP运营商IP地址</td></tr>
+<tr><td>data.lineStatus.status</td><td>string</td><td>探测状态<br>枚举值:[<br>INIT:未检测<br>CONNECTED:已连接<br>DISCONNECTED:连接已断开<br>]</td></tr>
+<tr><td>data.lineStatus.errCode</td><td>int32</td><td>线路断开原因错误码</td></tr>
+</tbody>
+</table>
+</body>
+</html>

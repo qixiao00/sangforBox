@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p746-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=746 | table_id=af-8.0.107-api-p746-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.11 获取后台接口分页信息列表</p>
+<table>
+<thead><tr><th>data.items.egressbandSwitch</th><th>uint64</th><th>接口发送的带宽限制</th></tr></thead>
+<tbody>
+<tr><td>data.items.bypassMirrorstatsEnable</td><td>string</td><td>是否启用流量统计</td></tr>
+<tr><td>data.items.bypassMirrorIpGroup</td><td>string[]</td><td>关联的网络对象</td></tr>
+<tr><td>data.items.ifType</td><td>string</td><td>接口类型</td></tr>
+<tr><td>data.items.status</td><td>object</td><td>接口的启用或禁用</td></tr>
+<tr><td>data.items.status.physicalStatus</td><td>bool</td><td>物理状态</td></tr>
+<tr><td>data.items.status.adminStatus</td><td>bool</td><td>管理状态</td></tr>
+<tr><td>data.items.status.linkStatus</td><td>bool</td><td>链路状态</td></tr>
+<tr><td>data.items.statusTimestamp</td><td>uint64</td><td>接口ipv4相关配置</td></tr>
+<tr><td>data.items.vlan</td><td>object</td><td>vlan配置</td></tr>
+<tr><td>data.items.vlan.vlanMode</td><td>string</td><td>vlan模式<br>枚举值:[<br>ACCESS:access模式<br>TRUNK:trunk模式<br>]</td></tr>
+<tr><td>data.items.vlan.accessId</td><td>uint32</td><td>access vlan id</td></tr>
+<tr><td>data.items.vlan.trunkConfig</td><td>object</td><td>trunk配置</td></tr>
+<tr><td>data.items.vlan.trunkConfig.nativeId</td><td>int32</td><td>trunk native vlanid</td></tr>
+<tr><td>data.items.vlan.trunkConfig.trunkRange</td><td>object[]</td><td>trunk vlan 范围</td></tr>
+<tr><td>data.items.vlan.trunkConfig.trunkRange.start</td><td>uint32</td><td>vlan范围起始值</td></tr>
+<tr><td>data.items.vlan.trunkConfig.trunkRange.end</td><td>uint32</td><td>vlan范围起始值</td></tr>
+<tr><td>data.items.stats</td><td>object</td><td>接口统计信息</td></tr>
+<tr><td>data.items.stats.ipackets</td><td>uint64</td><td>in packets</td></tr>
+<tr><td>data.items.stats.opackets</td><td>uint64</td><td>out packets</td></tr>
+<tr><td>data.items.stats.ibytes</td><td>uint64</td><td>in bytes</td></tr>
+<tr><td>data.items.stats.obytes</td><td>uint64</td><td>out bytes</td></tr>
+<tr><td>data.items.stats.ierrors</td><td>uint64</td><td>in errors</td></tr>
+<tr><td>data.items.stats.oerrors</td><td>uint64</td><td>out errors</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p27-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=27 | table=af-8.0.107-api-p27-t1</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>ip</td><td>string</td><td>否</td><td>要过滤的ip地址，若不选该字段，默认全部<br>格式:ip-address</td></tr>
+<tr><td>sessionType</td><td>string</td><td>否</td><td>并发会话数量或新建会话数量(默认NEW)<br>默认值:NEW<br>枚举值:[<br>CONCURRENT:并发会话数量<br>NEW:每秒新建会话数量<br>]</td></tr>
+<tr><td>dateFilter</td><td>string</td><td>否</td><td>指定获取某天日期(yyyy-mm-dd)的数量<br>趋势</td></tr>
+<tr><td>vsys</td><td>string</td><td>否</td><td>过滤的虚拟系统名称<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>timeFilter</td><td>string</td><td>否</td><td>最近多长时间段内的总会话数量趋势<br>枚举值:[<br>REAL-TIME:最近的总会话数量趋势<br>24HOUR:最近24小时的总会话数量趋势<br>7DAY:最近7天的总会话数量趋势<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

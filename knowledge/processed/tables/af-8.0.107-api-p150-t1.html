@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p150-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=150 | table_id=af-8.0.107-api-p150-t1<br>上下文标题路径：3 监控 / 3.2 统计信息 / 3.2.10 获取后台软分发报文统计信息列表</p>
+<table>
+<thead><tr><th>data.items.coreNumber</th><th>uint16</th><th>core id</th></tr></thead>
+<tbody>
+<tr><td>data.items.ringNumber</td><td>uint16</td><td>当前core 对了的个数</td></tr>
+<tr><td>data.items.CoreRingList</td><td>object[]</td><td>每个core上的软分发统计</td></tr>
+<tr><td>data.items.CoreRingList.ringNumber</td><td>uint16</td><td>core id</td></tr>
+<tr><td>data.items.CoreRingList.rpsDispatchFailed</td><td>uint64</td><td>软分发成功数量</td></tr>
+<tr><td>data.items.CoreRingList.rpsDispatch</td><td>uint64</td><td>软分发失败数量</td></tr>
+<tr><td>data.items.CoreRingList.rpsPreInput</td><td>uint64</td><td>pre input 报文进入的数量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

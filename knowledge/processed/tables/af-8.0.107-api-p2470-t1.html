@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2470-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2470 | table_id=af-8.0.107-api-p2470-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.4 违规外联检测策略 / 6.2.4.2 修改违规外联策略高级设置接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>违规外联高级设置</td></tr>
+<tr><td>obj.nic setting_</td><td>object</td><td>--</td><td>违规外联网卡检测设置</td></tr>
+<tr><td>obj.nic setting.no busi_ _ness</td><td>bool</td><td>--</td><td>开启无业务流量的检测模式的状态</td></tr>
+<tr><td>obj.nic setting.last no_ _ _business</td><td>bool</td><td>否</td><td>上一次开启无业务流量检测模式的状态</td></tr>
+<tr><td>obj.nic setting.whitelist_</td><td>object[]</td><td>--</td><td>网卡检测白名单</td></tr>
+<tr><td>obj.nic setting.whitelist._start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.nic setting.whitelist._end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.nic setting.whitelist._bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+</tbody>
+</table>
+</body>
+</html>

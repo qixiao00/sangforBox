@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2948-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2948 | table_id=af-8.0.107-api-p2948-t1<br>上下文标题路径：7 系统 / 7.3 snmp接口 / 7.3.3 snmp trap / 7.3.3.3 添加一条snmp的trap信息</p>
+<table>
+<thead><tr><th>obj.trapmsg.val</th><th>string</th><th>--</th><th>snmptrap类型<br>枚举值:[<br>sfTemperatureWarnTrap:温度trap<br>sfCPUWarnTrap:cpu trap<br>sfMemoryWarnTrap:memory trap<br>sfDiskWarnTrap:disk trap<br>sfPowerWarnTrap:电源trap<br>sfInterfacDownTrap:接口故障trap<br>sfFanWarnTrap:风扇trap<br>sfHAStatusTrap:双机状态改变Trap<br>sfRuleUpdateTrap:规则库升级Trap<br>sfBypassChangeTrap:bypass状态改变<br>trap<br>sfLinkUpTrap:链路恢复trap<br>sfLinkDownTrap:链路故障trap<br>sfHotStartTrap:热启动通知<br>sfFirewallTrapFwAttack:防火墙受到攻击<br>sfFirewallTrapNetworkAttack:受保护网<br>络受到攻击<br>sfPortResourceWarnTrap:端口资源耗<br>尽trap<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.version</td><td>uint8</td><td>是</td><td>snmp版本(0:v1|1:v2c|3:v3)<br>枚举值:[<br>0:v1<br>1:v2c<br>3:v3<br>]</td></tr>
+<tr><td>obj.community name_</td><td>string</td><td>按条件选<br>择</td><td>团体名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.dest ip_</td><td>string</td><td>是</td><td>IPv46地址<br>格式:ip-address</td></tr>
+<tr><td>obj.port</td><td>int32</td><td>否</td><td>端口号<br>最小值:1<br>最大值:65535<br>默认值:162</td></tr>
+<tr><td>obj.oobmanage</td><td>uint8</td><td>否</td><td>带外管理优先选路<br>默认值:252<br>枚举值:[<br>250:manage管理口<br>251:public业务口<br>252:auto<br>]</td></tr>
+<tr><td>obj.engineID</td><td>string</td><td>按条件选<br>择</td><td>snmp v3 引擎id<br>最小长度:0<br>最大长度:12</td></tr>
+<tr><td>obj.user name_</td><td>string</td><td>按条件选<br>择</td><td>用户名称<br>最小长度:1<br>最大长度:32</td></tr>
+</tbody>
+</table>
+</body>
+</html>

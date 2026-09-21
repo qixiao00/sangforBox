@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1290-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1290 | table_id=af-8.0.107-api-p1290-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.2 动态路由OSPF / 5.8.13.2.1 OSPF实例 / 5.8.13.2.1.1 添加一个ospf实例信息</p>
+<table>
+<thead><tr><th>obj.redistributeVPN.tag</th><th>uint32</th><th>--</th><th>重发布路由tag<br>最小值:0<br>最大值:4294967295</th></tr></thead>
+<tbody>
+<tr><td>obj.redistributeDefault</td><td>object</td><td>--</td><td>重发布默认路由</td></tr>
+<tr><td>obj.redistributeDefault.enable</td><td>bool</td><td>--</td><td>重发布开关</td></tr>
+<tr><td>obj.redistributeDefault.metric</td><td>int32</td><td>--</td><td>重发布度量值<br>最小值:-1<br>最大值:16777214</td></tr>
+<tr><td>obj.redistributeDefault.metricType</td><td>string</td><td>--</td><td>重发度量值类型<br>默认值:E2<br>枚举值:[<br>E1:E1类型<br>E2:E2类型<br>]</td></tr>
+<tr><td>obj.redistributeDefault.routeMap</td><td>string</td><td>--</td><td>引入路由映射名字<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.redistributeDefault.tag</td><td>uint32</td><td>--</td><td>重发布路由tag<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>obj.spfTimers</td><td>uint32</td><td>--</td><td>SPF 计算保持时间<br>最小值:0<br>最大值:600000<br>默认值:5000</td></tr>
+<tr><td>obj.spfDelayTimers</td><td>uint32</td><td>--</td><td>SPF计算延迟时间<br>最小值:0<br>最大值:600000</td></tr>
+<tr><td>obj.always</td><td>bool</td><td>--</td><td>默认重发布always开关</td></tr>
+<tr><td>obj.bfd</td><td>bool</td><td>--</td><td>OSPF全局BFD开关</td></tr>
+<tr><td>obj.max multipath_</td><td>uint16</td><td>--</td><td>最大等价路由条数<br>最小值:1<br>最大值:8<br>默认值:1</td></tr>
+<tr><td>obj.compatible rfc1583_</td><td>bool</td><td>--</td><td>net.instance.compatible rfc1583<br>_</td></tr>
+<tr><td>obj.opaque</td><td>bool</td><td>--</td><td>ospf扩展能力opaque</td></tr>
+<tr><td>obj.restarter</td><td>object</td><td>--</td><td>ospf平滑重启侧</td></tr>
+<tr><td>obj.restarter.enable</td><td>bool</td><td>--</td><td>ospf协助平滑重启侧使能</td></tr>
+<tr><td>obj.restarter.period</td><td>int32</td><td>--</td><td>ospf平滑重启周期<br>最小值:1<br>最大值:1800<br>默认值:120</td></tr>
+<tr><td>obj.helper</td><td>object</td><td>--</td><td>ospf协助平滑重启侧</td></tr>
+<tr><td>obj.helper.enable</td><td>bool</td><td>--</td><td>ospf协助平滑重启侧使能<br>默认值:true</td></tr>
+<tr><td>obj.helper.plannedOnly</td><td>bool</td><td>--</td><td>ospf协助平滑重启侧只支持有计划重启</td></tr>
+</tbody>
+</table>
+</body>
+</html>

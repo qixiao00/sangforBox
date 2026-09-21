@@ -1,0 +1,253 @@
+{
+  "available": true,
+  "seed": 20260916,
+  "summary": {
+    "sample_size": 24,
+    "pass": 14,
+    "partial": 7,
+    "review": 3,
+    "mean_fragment_hit_ratio": 0.684
+  },
+  "items": [
+    {
+      "chunk_id": "af-8.0.107-api::p323::t30956f::n0352::87ac6701f8",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 323,
+      "page_end": 323,
+      "title": "4.2.4 批量添加单个链路探测配置",
+      "char_count": 1317,
+      "fragment_hit_ratio": 1.0,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p2503::ta74d50::n3134::d0d023e3da",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 2503,
+      "page_end": 2503,
+      "title": "6.3.1.1.1 获取应用控制策略列表",
+      "char_count": 45,
+      "fragment_hit_ratio": 1.0,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p1073::td7b131::n1304::2e2a2e1296",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 1073,
+      "page_end": 1073,
+      "title": "5.8.7.1 获取BGP协议进程路由访问控制列表",
+      "char_count": 654,
+      "fragment_hit_ratio": 0.6,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p761::te77a9e::n0890::97ab7c7463",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 761,
+      "page_end": 761,
+      "title": "5.2.12 批量获取后台接口指定信息列表",
+      "char_count": 1180,
+      "fragment_hit_ratio": 0.375,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p2424::tb65ee1::n3028::4f78212de5",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 2424,
+      "page_end": 2425,
+      "title": "6.2.3.1.3 获取单个线路配置",
+      "char_count": 438,
+      "fragment_hit_ratio": 1.0,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p3255::t62b401::n4133::be471ffe33",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 3255,
+      "page_end": 3255,
+      "title": "10.12 获取虚拟系统状态",
+      "char_count": 679,
+      "fragment_hit_ratio": 0.39,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p1585::t865521::n1977::47b534ffa5",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 1585,
+      "page_end": 1585,
+      "title": "5.8.13.6.8 增量更新指定路由映射信息",
+      "char_count": 546,
+      "fragment_hit_ratio": 0.205,
+      "verdict": "review"
+    },
+    {
+      "chunk_id": "af-8.0.107-api::p2851::t142454::n3588::77e67e073e",
+      "doc_id": "af-8.0.107-api",
+      "page_start": 2851,
+      "page_end": 2852,
+      "title": "7.1.7.2 获取带外管理业务网络类型",
+      "char_count": 817,
+      "fragment_hit_ratio": 0.15,
+      "verdict": "review"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p806::tde516d::n2053::dae507de77",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 806,
+      "page_end": 806,
+      "title": "static-route",
+      "char_count": 60,
+      "fragment_hit_ratio": 0.571,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p421::tfa2b64::n0996::13419f1757",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 421,
+      "page_end": 422,
+      "title": "system-description",
+      "char_count": 1093,
+      "fragment_hit_ratio": 0.171,
+      "verdict": "review"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p431::tecdaa5::n1019::d1e287c39b",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 431,
+      "page_end": 432,
+      "title": "enable",
+      "char_count": 43,
+      "fragment_hit_ratio": 0.263,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p325::t47b440::n0709::722304b6c4",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 325,
+      "page_end": 325,
+      "title": "engine-zero",
+      "char_count": 268,
+      "fragment_hit_ratio": 0.714,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p704::tb5e961::n1786::1d4949974c",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 704,
+      "page_end": 704,
+      "title": "tcp-paws-detect",
+      "char_count": 97,
+      "fragment_hit_ratio": 0.778,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p461::tdcfcbd::n1103::e7dcd2bb15",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 461,
+      "page_end": 461,
+      "title": "tcp",
+      "char_count": 493,
+      "fragment_hit_ratio": 0.585,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p729::t45f8b8::n1858::d80f89ada3",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 729,
+      "page_end": 730,
+      "title": "8.2.6.3 no out-of-band",
+      "char_count": 539,
+      "fragment_hit_ratio": 0.476,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-cli::p672::t4d1daa::n1688::2c620d1eb3",
+      "doc_id": "af-8.0.107-cli",
+      "page_start": 672,
+      "page_end": 673,
+      "title": "8.2.1.5 ntp",
+      "char_count": 943,
+      "fragment_hit_ratio": 0.595,
+      "verdict": "partial"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p432::tf513d5::n0427::56b8de19da",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 432,
+      "page_end": 432,
+      "title": "策略路由",
+      "char_count": 176,
+      "fragment_hit_ratio": 1.0,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p601::t098951::n0544::63d356c38d",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 601,
+      "page_end": 602,
+      "title": "VPN日志",
+      "char_count": 195,
+      "fragment_hit_ratio": 0.927,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p421::te3207a::n0415::8f946f66e4",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 421,
+      "page_end": 423,
+      "title": "聚合接口",
+      "char_count": 182,
+      "fragment_hit_ratio": 0.921,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p123::t290ac4::n0131::5f851a053f",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 123,
+      "page_end": 123,
+      "title": "访问控制",
+      "char_count": 83,
+      "fragment_hit_ratio": 1.0,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p513::tff2341::n0497::31e8b4d7c2",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 513,
+      "page_end": 515,
+      "title": "虚拟IP池",
+      "char_count": 347,
+      "fragment_hit_ratio": 0.872,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p46::t8608b8::n0048::b7ab90043e",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 46,
+      "page_end": 47,
+      "title": "云蜜罐诱捕总览",
+      "char_count": 602,
+      "fragment_hit_ratio": 0.975,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p184::te06f7a::n0187::79907a7040",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 184,
+      "page_end": 192,
+      "title": "Web 应用防护排除设置 :",
+      "char_count": 1186,
+      "fragment_hit_ratio": 0.951,
+      "verdict": "pass"
+    },
+    {
+      "chunk_id": "af-8.0.107-product::p499::t25408e::n0488::d2ae6b640f",
+      "doc_id": "af-8.0.107-product",
+      "page_start": 499,
+      "page_end": 502,
+      "title": "资源组",
+      "char_count": 395,
+      "fragment_hit_ratio": 0.907,
+      "verdict": "pass"
+    }
+  ]
+}

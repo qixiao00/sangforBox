@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1215-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1215 | table_id=af-8.0.107-api-p1215-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.2 BGP对等体 / 5.8.13.1.2.11 复位BGP连接</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>复位BGP连接</td></tr>
+<tr><td>obj.type</td><td>string</td><td>--</td><td>复位类型<br>枚举值:[<br>ALL:复位所有BGP连接<br>PEER:复位指定BGP对等体的连接<br>GROUP:复位指定BGP对等体组的连接<br>EXTERNAL:复位所有EBGP连接<br>AS:复位指定AS号的连接<br>]</td></tr>
+<tr><td>obj.peer</td><td>string</td><td>--</td><td>对等体地址</td></tr>
+<tr><td>obj.peerGroup</td><td>string</td><td>--</td><td>对等体组名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.asId</td><td>uint32</td><td>--</td><td>AS号码<br>最小值:1<br>最大值:4294967295</td></tr>
+</tbody>
+</table>
+</body>
+</html>

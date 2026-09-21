@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p849-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=849 | table_id=af-8.0.107-api-p849-t1<br>上下文标题路径：5 网络 / 5.4 PPPOE接口 / 5.4.8 获取PPPOE接口状态信息</p>
+<table>
+<thead><tr><th>data</th><th>object</th><th>pppoe接口状态信息</th></tr></thead>
+<tbody>
+<tr><td>data.name</td><td>string</td><td>名字，命名方式用接口名作前缀 例：eth1.1<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.status</td><td>string</td><td>pppoe接口拨号状态<br>最大长度:32</td></tr>
+<tr><td>data.status code_</td><td>uint32</td><td>状态码，与status对应</td></tr>
+<tr><td>data.ifname</td><td>string</td><td>pppoe绑定的接口名</td></tr>
+<tr><td>data.localMAC</td><td>string</td><td>本端接口mac地址</td></tr>
+<tr><td>data.remoteMAC</td><td>string</td><td>对端接口mac地址</td></tr>
+<tr><td>data.sessionID</td><td>uint16</td><td>会话ID</td></tr>
+<tr><td>data.mtu</td><td>uint16</td><td>mtu</td></tr>
+<tr><td>data.sendBytes</td><td>uint32</td><td>pppoe接口自拨号成功发送字节数(单位KB)</td></tr>
+<tr><td>data.recvBytes</td><td>uint32</td><td>pppoe接口自拨号成功接收字节数(单位KB)</td></tr>
+<tr><td>data.durationTime</td><td>string</td><td>pppoe接口自拨号成功持续时间<br>最大长度:32</td></tr>
+</tbody>
+</table>
+</body>
+</html>

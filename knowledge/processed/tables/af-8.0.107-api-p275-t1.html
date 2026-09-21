@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p275-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=275 | table_id=af-8.0.107-api-p275-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.7 告警消息 / 3.4.3.7.1 获取告警消息列表</p>
+<table>
+<thead><tr><th>data.items.pushStatus</th><th>string</th><th>发送状态<br>枚举值:[<br>SUCCESS:推送成功<br>FAILED:推送失败<br>CFGERR:配置解析失败（详细错误需查看后台日志，<br>可能包含敏感信息）<br>WAIT:未推送<br>DUMP:被合并<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.items.pushResult</td><td>object[]</td><td>发送详细结果</td></tr>
+<tr><td>data.items.pushResult.facilitator</td><td>string</td><td>服务商<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.pushResult.addr</td><td>string</td><td>目标地址</td></tr>
+<tr><td>data.items.pushResult.msg</td><td>string</td><td>告警内容</td></tr>
+<tr><td>data.items.pushResult.retCode</td><td>int32</td><td>返回码</td></tr>
+<tr><td>data.items.pushResult.detail</td><td>string</td><td>详细信息<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.items.message</td><td>object</td><td>告警消息内容</td></tr>
+<tr><td>data.items.message.module</td><td>string</td><td>模块名称</td></tr>
+<tr><td>data.items.message.object</td><td>string</td><td>告警对象</td></tr>
+<tr><td>data.items.message.event</td><td>string</td><td>告警项目</td></tr>
+<tr><td>data.items.message.result</td><td>string</td><td>告警结果</td></tr>
+<tr><td>data.items.message.advice</td><td>string</td><td>排查建议</td></tr>
+<tr><td>data.items.message.time</td><td>uint32</td><td>告警的unix时间戳</td></tr>
+</tbody>
+</table>
+</body>
+</html>

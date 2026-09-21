@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p139-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=139 | table_id=af-8.0.107-api-p139-t1<br>上下文标题路径：3 监控 / 3.2 统计信息 / 3.2.4 获取sfhash统计列表</p>
+<table>
+<thead><tr><th>_order</th><th>string</th><th>否</th><th>指定排序方式（正序/倒序）<br>默认值:asc<br>枚举值:[<br>asc:按升序排列<br>desc:按降序排列<br>]</th></tr></thead>
+<tbody>
+<tr><td>_start</td><td>int32</td><td>否</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+<tr><td>_sortby</td><td>string</td><td>否</td><td>指定排序字段<br>最大长度:100</td></tr>
+<tr><td>_length</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>_search</td><td>string</td><td>否</td><td>模糊搜索关键字<br>最大长度:95</td></tr>
+<tr><td>deviceType</td><td>string</td><td>否</td><td>设备类型<br>默认值:VROUTER<br>枚举值:[<br>VSWITCH:vswitch设备<br>VROUTER:vrouter设备<br>DVSWITCH:dvswitch设备<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

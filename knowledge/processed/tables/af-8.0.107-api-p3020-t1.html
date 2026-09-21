@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3020-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3020 | table_id=af-8.0.107-api-p3020-t1<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.2 修改高可用配置</p>
+<table>
+<thead><tr><th>obj.hwCompatibleEnable</th><th>bool</th><th>--</th><th>高可用硬件兼容开关</th></tr></thead>
+<tbody>
+<tr><td>obj.mode</td><td>string</td><td>--</td><td>高可用模式<br>枚举值:[<br>ACTIVE-ACTIVE:主主模式<br>ACTIVE-PASSIVE:主备模式<br>MIRROR:镜像模式<br>]</td></tr>
+<tr><td>obj.cryptoid</td><td>string</td><td>--</td><td>加密标识<br>最小长度:1<br>最大长度:64</td></tr>
+<tr><td>obj.TransparentEnable</td><td>bool</td><td>--</td><td>主主透明开关</td></tr>
+<tr><td>obj.ctrlLink</td><td>object</td><td>--</td><td>配置HA控制线路</td></tr>
+<tr><td>obj.ctrlLink.ifname</td><td>string</td><td>--</td><td>控制线路接口名称</td></tr>
+<tr><td>obj.ctrlLink.peerAddress</td><td>string</td><td>--</td><td>控制线路对端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.ctrlLink.localAddress</td><td>string</td><td>--</td><td>控制线路本端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.ctrlLink2</td><td>object</td><td>--</td><td>配置HA控制线路2</td></tr>
+<tr><td>obj.ctrlLink2.ifname</td><td>string</td><td>--</td><td>控制线路2接口名称</td></tr>
+<tr><td>obj.ctrlLink2.peerAddress</td><td>string</td><td>--</td><td>控制线路2对端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.ctrlLink2.localAddress</td><td>string</td><td>--</td><td>控制线路2本端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.dataLink</td><td>object</td><td>--</td><td>配置HA数据线路</td></tr>
+<tr><td>obj.dataLink.ifname</td><td>string</td><td>--</td><td>数据线路接口名称</td></tr>
+<tr><td>obj.dataLink.peerAddress</td><td>string</td><td>--</td><td>数据线路对端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.dataLink.localAddress</td><td>string</td><td>--</td><td>控制线路本端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.dataLink2</td><td>object</td><td>--</td><td>配置HA数据线路2</td></tr>
+<tr><td>obj.dataLink2.ifname</td><td>string</td><td>--</td><td>数据线路2接口名称</td></tr>
+<tr><td>obj.dataLink2.peerAddress</td><td>string</td><td>--</td><td>数据线路2对端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.dataLink2.localAddress</td><td>string</td><td>--</td><td>控制线路2本端IP地址<br>格式:ip-address</td></tr>
+<tr><td>obj.helloInterval</td><td>uint32</td><td>--</td><td>心跳间隔时间，单位毫秒<br>最小值:100<br>最大值:255000<br>默认值:100</td></tr>
+<tr><td>obj.helloThreshold</td><td>uint8</td><td>--</td><td>检测心跳差超时次数<br>最小值:1<br>最大值:60<br>默认值:3</td></tr>
+</tbody>
+</table>
+</body>
+</html>

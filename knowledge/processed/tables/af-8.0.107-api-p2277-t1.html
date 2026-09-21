@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2277-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2277 | table_id=af-8.0.107-api-p2277-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.3 获取单个安全防护策略</p>
+<table>
+<thead><tr><th>data.defence.ips.template</th><th>string</th><th>漏洞攻击防护模板</th></tr></thead>
+<tbody>
+<tr><td>data.defence.ips.action</td><td>string</td><td>动作<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>data.defence.contextsafe</td><td>object</td><td>内容安全</td></tr>
+<tr><td>data.defence.contextsafe.enable</td><td>bool</td><td>开启内容安全</td></tr>
+<tr><td>data.defence.contextsafe.template</td><td>string</td><td>内容安全模板</td></tr>
+<tr><td>data.defence.contextsafe.action</td><td>string</td><td>动作<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>data.defence.waf</td><td>object</td><td>WEB应用防护</td></tr>
+<tr><td>data.defence.waf.enable</td><td>bool</td><td>开启WEB应用防护</td></tr>
+<tr><td>data.defence.waf.template</td><td>string</td><td>WEB应用防护模板</td></tr>
+<tr><td>data.defence.waf.action</td><td>string</td><td>动作<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>data.response</td><td>object</td><td>检测响应</td></tr>
+<tr><td>data.response.utm</td><td>object</td><td>僵尸网络</td></tr>
+<tr><td>data.response.utm.enable</td><td>bool</td><td>开启僵尸网络</td></tr>
+<tr><td>data.response.utm.template</td><td>string</td><td>僵尸网络模板</td></tr>
+<tr><td>data.response.utm.action</td><td>string</td><td>动作<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>data.response.localDnsIp</td><td>string[]</td><td>内网DNS服务器</td></tr>
+<tr><td>data.response.innerDnsOptimize</td><td>bool</td><td>启用内网DNS服务器场景优化</td></tr>
+<tr><td>data.response.block</td><td>object</td><td>联动封锁</td></tr>
+<tr><td>data.response.block.enable</td><td>bool</td><td>开启联动封锁</td></tr>
+</tbody>
+</table>
+</body>
+</html>

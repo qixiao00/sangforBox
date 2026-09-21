@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p97-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=97 | table_id=af-8.0.107-api-p97-t1<br>上下文标题路径：3 监控 / 3.1 会话 / 3.1.4 会话列表 / 3.1.4.2 获取vsys会话概要信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>vsys会话概要信息列表</td></tr>
+<tr><td>data.vsys</td><td>string</td><td>过滤的虚拟系统名称<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>data.ipv4</td><td>object</td><td>ipv4的vsys统计信息</td></tr>
+<tr><td>data.ipv4.max</td><td>uint32</td><td>配置的最大会话数量</td></tr>
+<tr><td>data.ipv4.alloc</td><td>uint32</td><td>已分配会话数量</td></tr>
+<tr><td>data.ipv4.reserve</td><td>uint32</td><td>配置的保留会话数量</td></tr>
+<tr><td>data.ipv4.failed</td><td>uint32</td><td>分配失败的会话数量</td></tr>
+<tr><td>data.ipv4.filterTotal</td><td>uint32</td><td>过滤后的会话数量</td></tr>
+<tr><td>data.ipv6</td><td>object</td><td>ipv4的vsys统计信息</td></tr>
+<tr><td>data.ipv6.max</td><td>uint32</td><td>配置的最大会话数量</td></tr>
+<tr><td>data.ipv6.alloc</td><td>uint32</td><td>已分配会话数量</td></tr>
+<tr><td>data.ipv6.reserve</td><td>uint32</td><td>配置的保留会话数量</td></tr>
+<tr><td>data.ipv6.failed</td><td>uint32</td><td>分配失败的会话数量</td></tr>
+<tr><td>data.ipv6.filterTotal</td><td>uint32</td><td>过滤后的会话数量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

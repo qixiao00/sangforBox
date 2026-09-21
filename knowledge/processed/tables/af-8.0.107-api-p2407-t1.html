@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2407-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2407 | table_id=af-8.0.107-api-p2407-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.2 DDOS / 6.2.2.15 删除指定port名单</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>端口名单</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.protocol</td><td>uint32</td><td>协议 TCP/UDP<br>枚举值:[<br>1:TCP<br>2:UDP<br>]</td></tr>
+<tr><td>data.portType</td><td>uint32</td><td>类型 白名单/排除名单<br>枚举值:[<br>1:白名单<br>2:排除名单<br>]</td></tr>
+<tr><td>data.range</td><td>object</td><td>范围<br>格式:int-range</td></tr>
+<tr><td>data.range.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.range.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+</tbody>
+</table>
+</body>
+</html>

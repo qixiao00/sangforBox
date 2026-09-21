@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2900-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2900 | table_id=af-8.0.107-api-p2900-t1<br>上下文标题路径：7 系统 / 7.2 管理员账户 / 7.2.13 批量修改管理员账户启用、禁用状态</p>
+<table>
+<thead><tr><th>data.authType</th><th>string</th><th>认证类型<br>枚举值:[<br>LOCAL:仅通过本地进行认证<br>REMOTE:仅通过已设置的外部服务器进行认证<br>REMOTE OR LOCAL:优先通过已设置的外部服务<br>_ _<br>器进行认证，当服务器无法连接时，通过本地进行认<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.authentication</td><td>object</td><td>认证策略</td></tr>
+<tr><td>data.authentication.usbKeyEnable</td><td>bool</td><td>usb-key认证是否启用</td></tr>
+<tr><td>data.authentication.emailEnable</td><td>bool</td><td>邮件认证是否启用</td></tr>
+<tr><td>data.authentication.emailAddr</td><td>string</td><td>账号绑定邮箱地址<br>最小长度:6<br>最大长度:320</td></tr>
+<tr><td>data.authentication.emailCode</td><td>string</td><td>邮件认证验证码<br>最小长度:6<br>最大长度:6</td></tr>
+<tr><td>data.authentication.totpEnable</td><td>bool</td><td>totp认证是否启用</td></tr>
+<tr><td>data.authentication.totpSecretFlag</td><td>bool</td><td>totp密钥是否存在</td></tr>
+<tr><td>data.authentication.fingerprintEnable</td><td>bool</td><td>指纹校验是否启用</td></tr>
+<tr><td>data.authentication.createUsbKeyStatus</td><td>bool</td><td>是否创建了usbkey证书</td></tr>
+<tr><td>data.authentication.dKey</td><td>string</td><td>采集的指纹<br>最大长度:24</td></tr>
+<tr><td>data.authentication.manageMode</td><td>string[]</td><td>管理方式</td></tr>
+<tr><td>data.modulePermissions</td><td>object[]</td><td>模块权限</td></tr>
+<tr><td>data.modulePermissions.name</td><td>string</td><td>模块名<br>最大长度:60</td></tr>
+<tr><td>data.modulePermissions.leaf</td><td>bool</td><td>模块是否为子项</td></tr>
+<tr><td>data.modulePermissions.moduleClass</td><td>string</td><td>模块所属大类名<br>最大长度:60</td></tr>
+<tr><td>data.modulePermissions.editPermission</td><td>object</td><td>模块的编辑权限</td></tr>
+<tr><td>data.modulePermissions.editPermission.authorizeStatus</td><td>bool</td><td>是否有权限</td></tr>
+<tr><td>data.modulePermissions.editPermission.modifyEnable</td><td>bool</td><td>能否修改权限</td></tr>
+</tbody>
+</table>
+</body>
+</html>

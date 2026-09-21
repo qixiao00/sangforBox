@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2460-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2460 | table_id=af-8.0.107-api-p2460-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.3 云安全访问服务策略 / 6.2.3.2 引流/排流策略 / 6.2.3.2.6 批量修改引流/排流策略信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object[]</td><td>是</td><td>引流/排流策略列表</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>--</td><td>启用状态</td></tr>
+<tr><td>obj.policyType</td><td>string</td><td>--</td><td>策略类型<br>枚举值:[<br>NOROUTE:排流<br>ROUTE:引流<br>]</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>策略名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.srcZones</td><td>string[]</td><td>--</td><td>关联区域列表</td></tr>
+<tr><td>obj.srcIpGroups</td><td>string[]</td><td>--</td><td>源网络对象列表</td></tr>
+<tr><td>obj.dstIpGroups</td><td>string[]</td><td>--</td><td>目的网络对象列表</td></tr>
+<tr><td>obj.dstIsp</td><td>string[]</td><td>--</td><td>目的ISP地址列表</td></tr>
+<tr><td>obj.dstBoardAndCountry</td><td>string[]</td><td>--</td><td>国家/地区</td></tr>
+<tr><td>obj.dstAddrType</td><td>string</td><td>--</td><td>目的地址类型<br>默认值:NET OBJECT<br>_<br>枚举值:[<br>NET OBJECT:网络对象<br>_<br>ISP ADDR:ISP运营商地址<br>_<br>AREA IPADDR:地域IP地址<br>_<br>]</td></tr>
+<tr><td>obj.services</td><td>string[]</td><td>--</td><td>服务列表</td></tr>
+<tr><td>obj.routesType</td><td>string</td><td>--</td><td>选路类型<br>枚举值:[<br>SINGLE LINE:单线路<br>_<br>MULT LINE:多线路<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

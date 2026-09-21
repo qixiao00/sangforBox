@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3220-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3220 | table_id=af-8.0.107-api-p3220-t2<br>上下文标题路径：9 状态中心 / 9.1 总览 / 9.1.2 网络活动状态 / 9.1.2.1 获取接口吞吐率折线图</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>接口吞吐率折线图数据</td></tr>
+<tr><td>data.data</td><td>object</td><td>two in one</td></tr>
+<tr><td>data.data.speeds</td><td>object[]</td><td>接口吞吐率列表</td></tr>
+<tr><td>data.data.speeds.sendSpeed</td><td>uint64</td><td>发送速率</td></tr>
+<tr><td>data.data.speeds.recvSpeed</td><td>uint64</td><td>接收速率</td></tr>
+<tr><td>data.data.speeds.time</td><td>string</td><td>日期时间</td></tr>
+<tr><td>data.data.unit</td><td>string</td><td>接口吞吐率单位(MB/s KB/s B/s)</td></tr>
+<tr><td>data.data.realTimeSpeed</td><td>object</td><td>实时速率</td></tr>
+<tr><td>data.data.realTimeSpeed.sendSpeed</td><td>string</td><td>实时发送速率，如1024Kbps</td></tr>
+<tr><td>data.data.realTimeSpeed.recvSpeed</td><td>string</td><td>实时接收速率，如1024Kbps</td></tr>
+<tr><td>data.eth</td><td>object[]</td><td>吞吐</td></tr>
+<tr><td>data.eth.physicalStatus</td><td>bool</td><td>物理状态</td></tr>
+</tbody>
+</table>
+</body>
+</html>

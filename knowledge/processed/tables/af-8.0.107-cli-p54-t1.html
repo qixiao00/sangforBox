@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p54-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=54 | table_id=af-8.0.107-cli-p54-t1<br>上下文标题路径：4 监控 / 4.1 会话 / 4.1.2 会话排行 / 4.1.2.2 show session</p>
+<table>
+<thead><tr><th>forward-kpps more-than &lt;kpps&gt;</th><th>0-99999999999999</th><th>NUMBER</th><th>大于等于</th></tr></thead>
+<tbody>
+<tr><td>forward-bytes less-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-bytes equal &lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>forward-bytes more-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>generic</td><td>-</td><td>-</td><td>查看会话常规信息</td></tr>
+<tr><td>protocol &lt;protocol-value&gt;</td><td>1-255</td><td>NUMBER</td><td>3层协议</td></tr>
+<tr><td>application &lt;application-name&gt;</td><td>length:(1-287)</td><td>STRING</td><td>应用名称</td></tr>
+<tr><td>forward-Mbps less-than &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-Mbps equal &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>forward-Mbps more-than &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>user &lt;user-name&gt;</td><td>-</td><td>STRING</td><td>用户名称</td></tr>
+<tr><td>offload &lt;offload-status&gt;</td><td>0-2</td><td>NUMBER</td><td>卸载状态</td></tr>
+<tr><td>id &lt;id-value&gt;</td><td>-</td><td>NUMBER</td><td>命中此策略id的session</td></tr>
+<tr><td>name &lt;name-value&gt;</td><td>-</td><td>STRING</td><td>命中此策略名的session</td></tr>
+<tr><td>src-vsys &lt;vsys-name&gt;</td><td>length:(1-15)</td><td>STRING</td><td>src vsys(虚拟系统不支持该命令)</td></tr>
+<tr><td>src-ip &lt;ip46-address&gt;</td><td>-</td><td>A.B.C.D/M<br>地址格式为A.B.C.D/M<br>A.B.C.D/E.F.G.H 地址<br>格式为A.B.C.D/E.F.G.<br>H<br>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H<br>A.B.C.D<br>地址格式为A.B.C.D<br>A:B:C:D::E<br>地址格式为A:B:C:D::E<br>A:B:C:D::E/M 地址格<br>式为A:B:C:D::E/M<br>A:B:C:D::E-F:G:H:I::J<br>地址格式为A:B:C:D::E<br>-F:G:H:I::J</td><td>源ip范围</td></tr>
+<tr><td>sip</td><td>-</td><td>-</td><td>sip协议</td></tr>
+<tr><td>total-packet less-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>total-packet equal &lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>total-packet more-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>dst-vsys &lt;vsys-name&gt;</td><td>-</td><td>STRING</td><td>dst vsys(虚拟系统不支持该命令)</td></tr>
+<tr><td>reverse-kpps less-than &lt;kpps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>reverse-kpps equal &lt;kpps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>reverse-kpps more-than &lt;kpps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>h323</td><td>-</td><td>-</td><td>h.323协议</td></tr>
+<tr><td>dst-port &lt;port-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>目的端口号</td></tr>
+<tr><td>time-out more-than &lt;time-value&gt;</td><td>1-86400</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>time-out less-than &lt;time-value&gt;</td><td>1-86400</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>reverse-Mbps less-than &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>reverse-Mbps equal &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>reverse-Mbps more-than &lt;Mbps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>elephant-flow</td><td>-</td><td>-</td><td>大象流</td></tr>
+<tr><td>src-port &lt;src-port-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>源端口号</td></tr>
+</tbody>
+</table>
+</body>
+</html>

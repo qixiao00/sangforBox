@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p799-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=799 | table=af-8.0.107-api-p799-t1</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>pppoe配置</td></tr>
+<tr><td>data.name</td><td>string</td><td>pppoe实例名称<br>最小长度:1<br>最大长度:32</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.user</td><td>string</td><td>pppoe认证用户名<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.password</td><td>string</td><td>pppoe认证密码<br>最小长度:0<br>最大长度:512</td></tr>
+<tr><td>data.lcpEchoTimeout</td><td>uint32</td><td>探测超时/握手时间<br>最小值:0<br>最大值:60</td></tr>
+<tr><td>data.idleTimeout</td><td>uint32</td><td>空闲超时时间<br>最小值:20<br>最大值:240</td></tr>
+<tr><td>data.lcpEchoRetry</td><td>uint32</td><td>重试次数<br>最小值:1<br>最大值:10</td></tr>
+<tr><td>data.autoConnect</td><td>bool</td><td>设置自动重连,自动拨号</td></tr>
+<tr><td>data.setRoute</td><td>bool</td><td>添加默认路由</td></tr>
+<tr><td>data.setDns</td><td>bool</td><td>作为系统首选DNS</td></tr>
+</tbody>
+</table>
+</body>
+</html>

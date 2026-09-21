@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p274-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=274 | table_id=af-8.0.107-api-p274-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.7 告警消息 / 3.4.3.7.1 获取告警消息列表</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>本条消息的ID</td></tr>
+<tr><td>data.items.event</td><td>string</td><td>告警项目</td></tr>
+<tr><td>data.items.facilitator</td><td>string</td><td>指定服务商的ID</td></tr>
+<tr><td>data.items.atemplate</td><td>string</td><td>指定服务商对应的信息模板ID，使用facilitator方式时<br>的必选</td></tr>
+<tr><td>data.items.address</td><td>object</td><td>指定目标地址,键可为<br>smsTo/emailTo/emailCc/emailBcc</td></tr>
+<tr><td>data.items.address.smsTo</td><td>string[]</td><td>短信目标地址</td></tr>
+<tr><td>data.items.address.emailTo</td><td>string[]</td><td>邮件目标地址</td></tr>
+<tr><td>data.items.address.emailCc</td><td>string[]</td><td>邮件抄送目标地址</td></tr>
+<tr><td>data.items.address.emailBcc</td><td>string[]</td><td>邮件密送目标地址</td></tr>
+<tr><td>data.items.alarmLevel</td><td>string</td><td>告警等级<br>枚举值:[<br>urgent:紧急。严重影响业务<br>normal:正常。提示性，不影响业务<br>]</td></tr>
+<tr><td>data.items.param</td><td>object[]</td><td>指定消息的 body,<br>为键值对。当发送方式是邮件时，必须包含<br>subject/content</td></tr>
+<tr><td>data.items.param.key</td><td>string</td><td>扩展字段的键<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.param.value</td><td>string</td><td>扩展键对应的值<br>最小长度:0<br>最大长度:1024</td></tr>
+</tbody>
+</table>
+</body>
+</html>

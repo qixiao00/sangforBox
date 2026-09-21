@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2420-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2420 | table_id=af-8.0.107-api-p2420-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.3 云安全访问服务策略 / 6.2.3.1 线路配置 / 6.2.3.1.2 获取线路配置及状态列表</p>
+<table>
+<thead><tr><th>data.items.lineStatus.capBack</th><th>string</th><th>备捕获包信息<br>最大长度:200</th></tr></thead>
+<tbody>
+<tr><td>data.items.lineStatus.currentPopIp</td><td>string</td><td>POP运营商IP地址</td></tr>
+<tr><td>data.items.lineStatus.status</td><td>string</td><td>探测状态<br>枚举值:[<br>INIT:未检测<br>CONNECTED:已连接<br>DISCONNECTED:连接已断开<br>]</td></tr>
+<tr><td>data.items.lineStatus.errCode</td><td>int32</td><td>线路断开原因错误码</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus</td><td>object[]</td><td>线路各个POP的状态</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.popIp</td><td>string</td><td>POP运营商IP地址</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.status</td><td>string</td><td>探测状态<br>枚举值:[<br>INIT:未检测<br>CONNECTED:已连接<br>DISCONNECTED:连接已断开<br>]</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.current tun_type_</td><td>string</td><td>当前隧道引流协议类型<br>枚举值:[<br>UDP:SASE PROTO UDP<br>_ _<br>TCP:SASE PROTO TCP<br>_ _<br>ESP:SASE PROTO ESP<br>_ _<br>]</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun_</td><td>object</td><td>线路隧道状态</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.st_ate</td><td>uint8</td><td>隧道状态</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.co_ntinue lost_</td><td>uint16</td><td>隧道探测包的连续丢包数</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.co_ntinue resp_</td><td>uint16</td><td>隧道探测包的连续收包数</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.los_t rate_</td><td>uint16</td><td>探测包丢包率</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.del_ay</td><td>uint16</td><td>线路当前隧道平均时延</td></tr>
+<tr><td>data.items.lineStatus.popTunStatus.udp tun.qu_ality</td><td>uint16</td><td>隧道质量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3195-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3195 | table_id=af-8.0.107-api-p3195-t2<br>上下文标题路径：8 运营中心 / 8.3 封锁攻击者IP / 8.3.14 清空业务封锁IP</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>封锁攻击者ip列表</td></tr>
+<tr><td>data.blockType</td><td>string</td><td>stateCenter:block ip src or dst or dns or url<br>枚举值:[<br>SRC:源IP<br>DST:目的IP<br>DNS:域名<br>URL:url<br>IP:源IP和目的IP<br>]</td></tr>
+<tr><td>data.blockAddr</td><td>string</td><td>stateCenter:block address</td></tr>
+<tr><td>data.srcIP</td><td>string</td><td>源IP<br>格式:ip-address</td></tr>
+<tr><td>data.srcBussinessName</td><td>string</td><td>源业务地址</td></tr>
+<tr><td>data.dstIP</td><td>string</td><td>目的IP<br>格式:ip-address</td></tr>
+<tr><td>data.dns</td><td>string</td><td>域名<br>最小长度:1<br>最大长度:256</td></tr>
+</tbody>
+</table>
+</body>
+</html>

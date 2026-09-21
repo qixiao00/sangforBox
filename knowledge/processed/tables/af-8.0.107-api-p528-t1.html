@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p528-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=528 | table_id=af-8.0.107-api-p528-t1<br>上下文标题路径：4 对象 / 4.6 负载均衡地址池对象 / 4.6.10 获取所有负载均衡地址池对象列表</p>
+<table>
+<thead><tr><th>data.items.realServerStatus.status</th><th>string</th><th>OK:有效，BAD无效</th></tr></thead>
+<tbody>
+<tr><td>data.items.realServerStatus.hitCount</td><td>uint64</td><td>当前命中次数</td></tr>
+<tr><td>data.items.realServerStatus.connections</td><td>uint64</td><td>当前命中次数</td></tr>
+<tr><td>data.items.realServers</td><td>object[]</td><td>地址池中的地址列表</td></tr>
+<tr><td>data.items.realServers.addr</td><td>object</td><td>连接地址<br>格式:ip-range</td></tr>
+<tr><td>data.items.realServers.addr.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.realServers.addr.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.realServers.addr.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.items.realServers.port</td><td>int32</td><td>连接端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.realServers.weight</td><td>uint8</td><td>权重<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.type</td><td>string</td><td>SLB 地址池对象类型</td></tr>
+<tr><td>data.items.detectMode</td><td>string</td><td>探测模式</td></tr>
+<tr><td>data.items.detects</td><td>object[]</td><td>地址池探测方法列表</td></tr>
+<tr><td>data.items.detects.detectMethod</td><td>string</td><td>探测协议<br>枚举值:[<br>ICMP:ICMP 探测<br>TCP:TCP 探测<br>UDP:UDP 探测<br>]</td></tr>
+<tr><td>data.items.detects.port</td><td>uint16</td><td>探测端口<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.items.detects.interval</td><td>uint8</td><td>探测间隔<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.detects.threshold</td><td>uint8</td><td>探测阈值<br>最小值:3<br>最大值:255</td></tr>
+</tbody>
+</table>
+</body>
+</html>

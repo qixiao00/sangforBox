@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p260-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=260 | table_id=af-8.0.107-api-p260-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.5 服务配置 / 3.4.3.5.1 修改告警服务配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>告警推送服务的配置</td></tr>
+<tr><td>data.email push interv_ _al</td><td>uint16</td><td>推送邮件的时间间隔（s）<br>最小值:0<br>最大值:43200</td></tr>
+<tr><td>data.sms push interval_ _</td><td>uint16</td><td>推送短信的时间间隔（s）<br>最小值:0<br>最大值:43200</td></tr>
+<tr><td>data.enableWarning</td><td>bool</td><td>是否启用告警推送，在告警推送时会判断根据这个字段<br>决定是否要发送告警信息</td></tr>
+<tr><td>data.destination count_limit_</td><td>int8</td><td>支持的单次告警目的地址最大数量<br>最小值:1<br>最大值:20</td></tr>
+<tr><td>data.module messages_limit_</td><td>int8</td><td>单次push时，每个模块最大的告警条数<br>最小值:1<br>最大值:120</td></tr>
+<tr><td>data.curl timeout_</td><td>int16</td><td>发送信息时，请求的数据传输超时秒数<br>最小值:1<br>最大值:600</td></tr>
+<tr><td>data.curl connect time_ _out</td><td>int16</td><td>建立请求的连接时的超时秒数<br>最小值:1<br>最大值:600</td></tr>
+<tr><td>data.mail att size_ _</td><td>int32</td><td>邮件附件限制最大大小，单位字节B<br>最小值:1<br>最大值:1073741824</td></tr>
+<tr><td>data.mail subject_</td><td>string</td><td>邮件标题<br>最小长度:0<br>最大长度:79</td></tr>
+<tr><td>data.default senders_</td><td>object</td><td>邮箱地址和手机号</td></tr>
+<tr><td>data.default senders.s_msTo</td><td>string[]</td><td>短信目标地址</td></tr>
+<tr><td>data.default senders.e_mailTo</td><td>string[]</td><td>邮件目标地址</td></tr>
+<tr><td>data.default senders.e_mailCc</td><td>string[]</td><td>邮件抄送目标地址</td></tr>
+<tr><td>data.default senders.e_mailBcc</td><td>string[]</td><td>邮件密送目标地址</td></tr>
+<tr><td>data.bbc admin_</td><td>bool</td><td>配置是否来自BBC，值为true标识被BBC管控</td></tr>
+<tr><td>data.mail auth type_ _</td><td>string</td><td>邮件认证方式<br>最小长度:0<br>最大长度:64</td></tr>
+</tbody>
+</table>
+</body>
+</html>

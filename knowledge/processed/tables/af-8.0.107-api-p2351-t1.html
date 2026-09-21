@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2351-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2351 | table_id=af-8.0.107-api-p2351-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.2 DDOS / 6.2.2.4 batch delete ddos.rules</p>
+<table>
+<thead><tr><th>objs.wan.ddosDefend.dnsFlood</th><th>object</th><th>--</th><th>DNS洪水攻击防护</th></tr></thead>
+<tbody>
+<tr><td>objs.wan.ddosDefend.dnsFlood.enable</td><td>bool</td><td>--</td><td>开关</td></tr>
+<tr><td>objs.wan.ddosDefend.dnsFlood.perDstIpDropThreshold</td><td>uint32</td><td>--</td><td>每目的IP丢包阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>objs.wan.ddosDefend.dnsFlood.srcIpBlockThreshold</td><td>uint32</td><td>--</td><td>源IP封锁阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>objs.wan.ddosDefend.dnsFlood.blockTime</td><td>uint32</td><td>--</td><td>封锁时间(带时间单位:m/h/d)<br>最小值:1<br>最大值:1800</td></tr>
+<tr><td>objs.wan.ddosDefend.icmpFlood</td><td>object</td><td>--</td><td>ICMP洪水攻击防护</td></tr>
+<tr><td>objs.wan.ddosDefend.icmpFlood.enable</td><td>bool</td><td>--</td><td>开关</td></tr>
+<tr><td>objs.wan.ddosDefend.icmpFlood.perDstIpDropThreshold</td><td>uint32</td><td>--</td><td>每目的IP丢包阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>objs.wan.ddosDefend.icmpFlood.srcIpBlockThreshold</td><td>uint32</td><td>--</td><td>源IP封锁阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>objs.wan.ddosDefend.icmpFlood.blockTime</td><td>uint32</td><td>--</td><td>封锁时间(带时间单位:m/h/d)<br>最小值:1<br>最大值:1800</td></tr>
+<tr><td>objs.wan.attackDefend</td><td>object</td><td>--</td><td>高级防御配置</td></tr>
+<tr><td>objs.wan.attackDefend.packetAttackDefend</td><td>uint32[]</td><td>--</td><td>基于数据包攻击</td></tr>
+<tr><td>objs.wan.attackDefend.ipv4OptAttackDefend</td><td>uint32[]</td><td>--</td><td>基于IP选项的攻击</td></tr>
+<tr><td>objs.wan.attackDefend.tcpAttackDefend</td><td>uint32[]</td><td>--</td><td>基于TCP缺陷的攻击</td></tr>
+<tr><td>objs.action</td><td>object</td><td>--</td><td>检测攻击后操作</td></tr>
+<tr><td>objs.action.log</td><td>bool</td><td>--</td><td>记录日志</td></tr>
+<tr><td>objs.action.deny</td><td>bool</td><td>--</td><td>阻断</td></tr>
+</tbody>
+</table>
+</body>
+</html>

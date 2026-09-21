@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p147-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=147 | table_id=af-8.0.107-cli-p147-t1<br>上下文标题路径：5 策略 / 5.2 访问控制 / 5.2.1 应用控制策略 / 5.2.1.2 show policy</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>[label &lt;label-value&gt;]</td><td>length:(1-95)</td><td>STRING</td><td>标签</td></tr>
+<tr><td>[status &lt;status-value&gt;]</td><td>枚举值:[<br>enable: 启用<br>disable: 禁用<br>]</td><td>ENUM</td><td>状态</td></tr>
+<tr><td>[log &lt;acl-log&gt;]</td><td>枚举值:[<br>enable: 开启<br>disable: 关闭<br>]</td><td>ENUM</td><td>日志记录</td></tr>
+<tr><td>[application &lt;acl-application&gt;]</td><td>-</td><td>STRING</td><td>应用</td></tr>
+<tr><td>from</td><td>-</td><td>YYYY-MM-DD.HH:<br>MM 时间</td><td>起始时间</td></tr>
+<tr><td>to</td><td>-</td><td>YYYY-MM-DD.HH:<br>MM 时间</td><td>结束时间</td></tr>
+<tr><td>before</td><td>-</td><td>YYYY-MM-DD.HH:<br>MM 时间</td><td>最近一次更新时间，早于</td></tr>
+<tr><td>equal</td><td>-</td><td>YYYY-MM-DD 时间</td><td>最近一次更新时间，等于，一天之内</td></tr>
+<tr><td>after</td><td>-</td><td>YYYY-MM-DD.HH:<br>MM 时间</td><td>最近一次更新时间，晚于</td></tr>
+<tr><td>[src-zone &lt;zone-name&gt;]</td><td>length:(1-95)</td><td>STRING</td><td>源区域</td></tr>
+<tr><td>[name-filter &lt;acl-policy-profile&gt;]</td><td>-</td><td>STRING</td><td>IPv6拓展策略</td></tr>
+<tr><td>[sec-group &lt;acl-sec-group&gt;]</td><td>-</td><td>STRING</td><td>安全组</td></tr>
+<tr><td>[service &lt;acl-service&gt;]</td><td>-</td><td>STRING</td><td>服务</td></tr>
+<tr><td>[name-filter &lt;acl-name-filter&gt;]</td><td>-</td><td>STRING</td><td>策略名称，模糊查询</td></tr>
+<tr><td>[dst-ipgroup &lt;ipgroup-name&gt;]</td><td>-</td><td>STRING</td><td>目的IP组</td></tr>
+<tr><td>[src-mac &lt;mac-name&gt;]</td><td>-</td><td>AA:BB:CC:DD:EE:FF<br>mac地址</td><td>源MAC地址</td></tr>
+<tr><td>[dst-zone &lt;zone-name&gt;]</td><td>length:(1-95)</td><td>STRING</td><td>目的区域</td></tr>
+<tr><td>[schedule &lt;acl-schedule&gt;]</td><td>-</td><td>STRING</td><td>生效时间</td></tr>
+<tr><td>[dst-mac &lt;mac-name&gt;]</td><td>-</td><td>AA:BB:CC:DD:EE:FF<br>mac地址</td><td>目的MAC地址</td></tr>
+<tr><td>[action &lt;action-type-value&gt;]</td><td>枚举值:[<br>permit: 允许<br>deny: 拒绝<br>]</td><td>ENUM</td><td>动作</td></tr>
+<tr><td>[description-filter &lt;acl-schedule&gt;]</td><td>-</td><td>STRING</td><td>描述</td></tr>
+</tbody>
+</table>
+</body>
+</html>

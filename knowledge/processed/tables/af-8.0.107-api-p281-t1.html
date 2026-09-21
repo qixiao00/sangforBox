@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p281-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=281 | table_id=af-8.0.107-api-p281-t1<br>上下文标题路径：4 对象 / 4.1 网络对象 / 4.1.1 获取网络对象</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>_select</td><td>string</td><td>否</td><td>选择字段，字段用逗号分隔<br>最大长度:1000</td></tr>
+<tr><td>__nameprefix</td><td>string</td><td>否</td><td>网络对象组名字前缀过滤<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>hasSensitiveData</td><td>string</td><td>否</td><td>过滤参数：是否过滤敏感数据业务<br>枚举值:[<br>TRUE:过滤敏感数据业务<br>FALSE:过滤非敏感数据业务<br>ALL:不过滤敏感数据业务<br>]</td></tr>
+<tr><td>getRefBy</td><td>string</td><td>否</td><td>过滤参数：传入一个网络对象的uuid，查<br>找指定网络对象被哪些地址组引用<br>最小长度:32<br>最大长度:32</td></tr>
+<tr><td>_search</td><td>string</td><td>否</td><td>模糊搜索关键字<br>最大长度:95</td></tr>
+<tr><td>excludeAll</td><td>string</td><td>否</td><td>过滤参数：是否过滤名字为全部的IP组<br>枚举值:[<br>TRUE:过滤名字为全部的IP组<br>FALSE:不过滤名字为全部的IP组<br>]</td></tr>
+<tr><td>_start</td><td>int32</td><td>否</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+</tbody>
+</table>
+</body>
+</html>

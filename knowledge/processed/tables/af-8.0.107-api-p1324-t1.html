@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1324-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1324 | table_id=af-8.0.107-api-p1324-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.2 动态路由OSPF / 5.8.13.2.1 OSPF实例 / 5.8.13.2.1.6 获取所有ospf实例信息</p>
+<table>
+<thead><tr><th>data.pageSize</th><th>int32</th><th>每页多大</th></tr></thead>
+<tbody>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.instanceId</td><td>uint16</td><td>ospf实例ID<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.items.routerId</td><td>string</td><td>路由器ID</td></tr>
+<tr><td>data.items.intraArea</td><td>uint8</td><td>域内优先级<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.interArea</td><td>uint8</td><td>域间优先级<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.external</td><td>uint8</td><td>外部优先级<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.items.defaultMetric</td><td>uint32</td><td>默认度量值<br>最小值:0<br>最大值:16777214</td></tr>
+<tr><td>data.items.redistributeConnected</td><td>object</td><td>重发布直连路由</td></tr>
+<tr><td>data.items.redistributeConnected.enable</td><td>bool</td><td>重发布开关</td></tr>
+<tr><td>data.items.redistributeConnected.metric</td><td>int32</td><td>重发布度量值<br>最小值:-1<br>最大值:16777214</td></tr>
+<tr><td>data.items.redistributeConnected.metricType</td><td>string</td><td>重发度量值类型<br>枚举值:[<br>E1:E1类型<br>E2:E2类型<br>]</td></tr>
+<tr><td>data.items.redistributeConnected.routeMap</td><td>string</td><td>引入路由映射名字<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.redistributeConnected.tag</td><td>uint32</td><td>重发布路由tag<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>data.items.redistributeStatic</td><td>object</td><td>重发布静态路由</td></tr>
+<tr><td>data.items.redistributeStatic.enable</td><td>bool</td><td>重发布开关</td></tr>
+<tr><td>data.items.redistributeStatic.metric</td><td>int32</td><td>重发布度量值<br>最小值:-1<br>最大值:16777214</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3118-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3118 | table_id=af-8.0.107-api-p3118-t2<br>上下文标题路径：8 运营中心 / 8.1 物联网安全 / 8.1.1 资产发现设置 / 8.1.1.2 修改资产发现配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>资产发现设置</td></tr>
+<tr><td>obj.zones</td><td>string[]</td><td>是</td><td>区域</td></tr>
+<tr><td>obj.assetIpGroups</td><td>string[]</td><td>是</td><td>资产范围定义</td></tr>
+<tr><td>obj.terminalTrafficIdentify</td><td>bool</td><td>是</td><td>启用全网终端流量识别</td></tr>
+<tr><td>obj.terminalActiveScan</td><td>bool</td><td>是</td><td>启用全网终端主动扫描</td></tr>
+<tr><td>obj.activeScanAssetScope</td><td>uint32</td><td>是</td><td>主动扫描资产范围定义<br>枚举值:[<br>0:复用已定义的资产范围<br>1:自定义<br>]</td></tr>
+<tr><td>obj.activeScanIpGroups</td><td>string[]</td><td>是</td><td>主动扫描资产范围</td></tr>
+<tr><td>obj.deleteNotInScopeAsset</td><td>bool</td><td>是</td><td>定义的资产范围发生变化后，清除不在此范<br>围内的资产</td></tr>
+<tr><td>obj.autoDeleteInactiveAsset</td><td>bool</td><td>是</td><td>自动删除未发现或无流量的资产</td></tr>
+</tbody>
+</table>
+</body>
+</html>

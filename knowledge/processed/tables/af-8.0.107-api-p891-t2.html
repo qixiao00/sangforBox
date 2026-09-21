@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p891-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=891 | table_id=af-8.0.107-api-p891-t2<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.2 静态路由IPV4 / 5.8.2.4 添加多条IPv4静态路由信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>IPv4路由表项列表</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>静态路由唯一资源ID</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>静态路由启禁用开关</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述信息<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.prefix</td><td>string</td><td>目的IP地址/掩码</td></tr>
+<tr><td>data.gateway</td><td>string</td><td>下一跳IP地址</td></tr>
+<tr><td>data.ifname</td><td>string</td><td>出接口名称<br>最小长度:1<br>最大长度:48</td></tr>
+<tr><td>data.metric</td><td>uint32</td><td>路由度量值<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.linkdtEnable</td><td>bool</td><td>静态路由关联接口链路探测启禁用开关，默认false</td></tr>
+</tbody>
+</table>
+</body>
+</html>
