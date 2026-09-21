@@ -2,6 +2,8 @@
 name: af-virtual-wire
 description: 通过 af-workbench MCP 查询、配置或回滚深信服 AF 虚拟网线组及其接口和区域归属。
 agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 虚拟网线

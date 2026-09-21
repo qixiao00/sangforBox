@@ -1,6 +1,9 @@
 ---
 name: af-device-initialization
 description: 在 WorkBuddy 中引导工程师逐步完成深信服 AF 8.0.107 初始化设计，通过 SangforBox MCP 分阶段实施、验证并形成可评价的试用案例。
+agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 初始化试用流程

@@ -2,6 +2,8 @@
 name: af-security-policy
 description: 通过 af-workbench MCP 查询、规划和变更深信服 AF 安全防护策略，包括业务防护、用户防护、外到内和内到外防护基线。
 agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 安全防护策略

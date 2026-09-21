@@ -2,6 +2,8 @@
 name: af-app-control-policy
 description: 通过 af-workbench MCP 查询、规划和变更用户明确指定的单条深信服 AF 应用控制策略，例如按区域允许或拒绝指定应用；整表梳理和优化请使用 af-app-control-optimization。
 agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 应用控制策略

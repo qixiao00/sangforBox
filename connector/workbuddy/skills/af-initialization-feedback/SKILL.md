@@ -1,6 +1,9 @@
 ---
 name: af-initialization-feedback
 description: 工程师调整 AF 初始化配置后，通过 SangforBox MCP 回读现场状态，确认差异，并把逐项满意度 CSV 保存到初始化案例。
+agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 初始化反馈

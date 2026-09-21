@@ -1,7 +1,12 @@
 ---
 name: af-feature-name
-description: 说明用户在什么 AF 场景下应使用此 Skill，以及支持查询、创建、修改或删除中的哪些动作。
+description: <触发条件>；<边界，含何时不适用>。
+agent_created: true
+layer: scenario
+version: 1.0.0
 ---
+
+> frontmatter 字段规范见 [`skills/_SCHEMA.md`](../skills/_SCHEMA.md)。路由触发词见 [`skills/ROUTING.md`](../skills/ROUTING.md)，不要在本文件重复整棵路由决策树。
 
 # AF 功能名称
 

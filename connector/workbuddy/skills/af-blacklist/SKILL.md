@@ -2,6 +2,8 @@
 name: af-blacklist
 description: 通过 af-workbench MCP 查询、新增、修改或删除深信服 AF 黑白名单 IP 与域名条目。
 agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 黑白名单

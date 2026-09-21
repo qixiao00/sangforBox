@@ -1,6 +1,9 @@
 ---
 name: af-app-control-optimization
-description: 通过 SangforBox MCP 梳理深信服 AF 应用控制策略；适用于整表分析、命名规范、遮蔽与顺序问题、合并候选的等价性复验和地址对象化。先导出审核表供用户决定，当前只支持分析、审核、组合复验和只读预检。
+description: 通过 SangforBox MCP 梳理深信服 AF 应用控制策略；适用于整表分析、命名规范、遮蔽与顺序问题、合并候选的等价性复验和地址对象化。先导出审核表供用户决定，当前只支持分析、审核、组合复验和只读预检，不执行设备写入。
+agent_created: true
+layer: scenario
+version: 1.0.0
 ---
 
 # AF 应用控制策略梳理

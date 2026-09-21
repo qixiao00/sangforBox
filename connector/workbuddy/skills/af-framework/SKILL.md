@@ -1,6 +1,9 @@
 ---
 name: af-framework
-description: 通过 SangforBox 查询、变更和初始化深信服 AF 8.0.107 设备，并按厂商运维口径解释实时配置、API 与手册信息。
+description: 通过 SangforBox 查询、变更和初始化深信服 AF 8.0.107 设备，并按厂商运维口径解释实时配置、API 与手册信息；是所有 AF 场景的总入口与路由层。
+agent_created: true
+layer: framework
+version: 1.0.0
 ---
 
 # AF 设备操作
