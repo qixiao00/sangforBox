@@ -1,6 +1,6 @@
 ---
 name: af-app-control-policy
-description: 通过 af-workbench MCP 查询、规划和变更用户明确指定的单条深信服 AF 应用控制策略，例如按区域允许或拒绝指定应用；整表梳理和优化请使用 af-app-control-optimization。
+description: 通过 af-workbench MCP 查询、规划和变更用户明确指定的单条深信服 AF 应用控制策略，例如按区域允许或拒绝指定应用。
 agent_created: true
 layer: scenario
 version: 1.0.0
@@ -8,9 +8,10 @@ version: 1.0.0
 
 # AF 应用控制策略
 
-仅使用 `af-workbench` MCP 的 AF HTTP API，不读取凭据或生成直连脚本。
+本 Skill 只处理用户明确指定的单条策略配置。整表梳理、批量命名、遮蔽检测、合并、地址对象化
+及顺序调整属于其它 Skill，见 [`ROUTING.md`](ROUTING.md)。
 
-本 Skill 处理用户明确指定的单条策略配置。用户要梳理整张策略表、批量命名、遮蔽检测、合并、地址对象化或根据优化建议调整顺序时，转到 `af-app-control-optimization`，先导出审核表。优化审核项及 `review_id` 不能作为本 Skill 的 `edit_device` 请求体或执行授权。
+**边界**：优化审核项及 `review_id` 不能作为本 Skill 的 `edit_device` 请求体或执行授权。
 
 ## 标准流程
 

@@ -10,17 +10,22 @@ version: 1.0.0
 
 默认使用 `af-workbench` MCP 内部的 AF HTTP API。设备凭据、登录、Cookie 和注销由服务端处理。
 
-## 应用控制请求路由
+## 场景路由
 
-- 用户说“梳理、优化、批量规范命名、找重复/遮蔽/未生效策略、合并、对象化、分析顺序或例外关系”时，使用 `af-app-control-optimization`。先调用 `analyze_app_control`，把审核 CSV 和问题 CSV 交给用户，再按明确决定调用 `review_app_control`、`verify_app_control_review` 和只读 `preflight_app_control_review`。用户说“全部采纳”也不等于设备执行授权。
-- 用户明确指定单条应用控制策略的新增、修改、删除和完整目标条件时，使用 `af-app-control-policy` 的独立配置流程。
-- “调整顺序使其生效”或“按梳理建议执行”属于整表效果判断，进入优化 Skill。用户明确指定某条策略的目标位置且意图是直接配置时，才进入单条配置流程；不得拿优化审核结果填入通用编辑请求。
-- 优化工具当前没有专用 plan/apply。模型等价和快照未变仍不是设备执行许可；在专用执行适配完成前停在只读预检。
-- 工程师手动实施后的差异反馈使用 `record_app_control_feedback`，按 `review_id` 绑定原建议版本，并将可下载的 JSON 日志交还需求方。历史日志用 `list_app_control_feedback` 查找，不用新分析覆盖旧证据。
+请求分流到哪个 Skill，以 [`ROUTING.md`](ROUTING.md) 为准；本文件不重复维护路由决策树。
+`ROUTING.md` 同时列出冲突判定边界（"梳理后直接执行"、"调整顺序使其生效"、同时提出梳理与单条配置、
+审核项不得作为执行授权等），遇到这些情形先读该表再行动。
 
-禁止为完成 AF 任务编写 Python、curl 或其他直连脚本，禁止读取凭据库，禁止修改本机 Skill，禁止自动改用 SSH/CLI。若出现 `Session not found`，说明 WorkBuddy 与 MCP 的会话已失效；提示用户重新连接连接器后重试，不绕过 MCP。
+本层只承载所有场景共用的约束，场景 Skill 不重复声明：
 
-这条限制适用于所有设备业务操作，而不只适用于已注册能力。不得调用 Bash、Write、Edit 或本地 Python 来查询、试探或修改 AF；不得导入 `AFAPIClient`、`DeviceRepository` 或读取 `af.db` 中的凭据。MCP 暂时无法完成时应报告阻塞原因。
+- 所有 AF 设备操作必须通过 `af-workbench` MCP。禁止为完成 AF 任务编写 Python、curl 或其他
+  直连脚本，禁止读取凭据库，禁止自动改用 SSH/CLI。若出现 `Session not found`，说明 WorkBuddy
+  与 MCP 的会话已失效；提示用户重新连接连接器后重试，不绕过 MCP。
+- 该限制适用于所有设备业务操作，而不只适用于已注册能力。不得调用 Bash、Write、Edit 或本地
+  Python 来查询、试探或修改 AF；不得导入 `AFAPIClient`、`DeviceRepository` 或读取 `af.db`
+  中的凭据。MCP 暂时无法完成时应报告阻塞原因。
+- 注册表没有业务快捷名称时，继续走同一流程使用知识库返回的 `endpoint_id`，不能判定为
+  "不可执行"。已注册接口使用 `operation_id`；未注册接口使用 `endpoint_id`。二者只填一个。
 
 ## 最短调用路径
 
@@ -29,9 +34,7 @@ version: 1.0.0
 - 未知能力：先调用一次对应工具的 `discover`。优先看 `capabilities`，没有合适的注册能力时查看 `documented_endpoints`；其中标为 `executable=true` 的端点可直接使用 `endpoint_id`。若仍需消歧，再调用 `lookup_api_endpoint` 和 `get_api_endpoint`。
 - 参数不清楚：调用 `describe(operation_ids=[...])`，使用返回的请求定义和样例。
 - 配置变更：`edit_device(prepare)` → 逐项向用户询问返回的必答问题 → `edit_device(plan)` → 向用户展示计划 → 用户确认 → `edit_device(apply)` → `query_device` 验证。
-- 应用控制整表梳理：遵循 `af-app-control-optimization` 的分析、导出、审核、复验和只读预检流程；本通用配置变更路径不接收梳理候选。
-- 设备初始化：按 `af-device-initialization` Skill，通过 `initialize_device` 保存并确认设计版本，再按 `inspect → prepare → plan → 用户确认 → apply → verify` 分阶段执行；现场调整后按 `af-initialization-feedback` Skill 回读差异并提交评价。不得用初始化工具查设备 ID 或测试连接。
-- 已注册接口使用 `operation_id`；未注册接口使用 `endpoint_id`。二者只填一个。
+- 场景专用流程（整表梳理、设备初始化、现场反馈等）按 `ROUTING.md` 转入对应 Skill；本通用路径不接收它们的候选结果。
 - 通用 GET：`query_device(action="execute", endpoint_ids=[...], path_parameters=..., query_parameters=...)`。
 - 通用修改：把 `endpoint_id`、`path_parameters`、`query_parameters`、`body` 放入 `edit_device(action="plan")` 的 change。请求体字段放在 `body`，不得使用 `payload` 或擅自包裹 `obj`。
 - `prepare` 返回的问题必须由用户选择，不得根据经验替用户决定。典型问题包括：新增还是修改已有配置、同名对象存在时如何处理、新增策略是否立即启用。

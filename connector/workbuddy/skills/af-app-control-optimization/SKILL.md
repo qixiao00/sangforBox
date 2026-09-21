@@ -8,9 +8,13 @@ version: 1.0.0
 
 # AF 应用控制策略梳理
 
-用户要求“梳理、优化、批量规范命名、找无效或被遮蔽策略、合并重复策略、对象化、评估顺序”时使用本 Skill。针对用户已指定的单条策略直接新增、修改、删除，使用 `af-app-control-policy`。即使用户说“梳理后直接执行”，当前梳理流程也只能到只读预检；不能把审核项转成通用 `edit_device` 或 `initialize_device` 的变更。
+本 Skill 负责整表梳理：分析、导出审核材料、审核、组合复验、只读预检和工程师变更后的差异反馈。
+能做什么、不能做什么，以及何时应转用其它 Skill，见 [`ROUTING.md`](ROUTING.md)。
 
-所有设备读取只通过 `af-workbench` MCP。WorkBuddy 负责理解需求、展示文件、传递用户决定；策略解析、集合运算、证明、版本校验和设备读取由 SangforBox 内置工具完成。禁止生成 Python、PowerShell、curl、SQL 或其他脚本来分析或修改设备；禁止读取凭据或直接访问 AF。
+**边界**：即使用户说"梳理后直接执行"，本流程也只能到只读预检，不执行设备写入；不能把审核项
+转成通用 `edit_device` 或 `initialize_device` 的变更。
+
+所有设备读取只通过 `af-workbench` MCP。WorkBuddy 负责理解需求、展示文件、传递用户决定；策略解析、集合运算、证明、版本校验和设备读取由 SangforBox 内置工具完成。
 
 ## 用户输入
 
@@ -37,5 +41,3 @@ version: 1.0.0
 审核后给出采纳的变更编号、组合验证结果、设备快照是否变化及剩余阻断原因。`review_app_control` 的“采纳”只记录审核决定，`verify_app_control_review` 与 `preflight_app_control_review` 都不授予设备写入权限。当前没有可用于优化方案的专用 plan/apply 工具，也未认证设备版本的匹配、位置移动和对象创建语义；停在预检结果，不调用通用编辑工具绕过。
 
 工程师提交反馈后，只摘要展示实际对齐状态和有差异的候选；完整原配置、建议配置、观察配置与工程师自述保存在 JSON 日志。`matches_recommendation` 仅指结构一致；`comparison_unavailable` 必须说明未形成比较结论。用户询问历史日志时使用 `list_app_control_feedback` 和 `get_app_control_feedback`，不要重新分析替代旧日志。
-
-如果用户同时提出“新增一条指定策略”和“梳理整表”，分别说明两个任务：整表梳理按本流程先产出审核表；单条配置在用户给出明确条件后才进入 `af-app-control-policy` 的独立计划流程。不能把优化候选直接当成单条配置请求。
