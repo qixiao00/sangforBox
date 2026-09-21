@@ -7,7 +7,7 @@ SangforBox Windows 便携版
 2. 双击 SangforBox.exe。首次启动会在 data 目录生成本地数据库并打开 http://127.0.0.1:8765/。
 3. 在网页中添加 AF 设备档案并测试连接。设备密码使用当前 Windows 用户的 DPAPI 加密，只能由同一 Windows 用户解密。
 4. 在 WorkBuddy 的“连接器”入口导入 WorkBuddy\sangforbox-workbuddy-connector.zip。
-5. 如果使用 WorkBuddy 的“技能”入口，单独导入 WorkBuddy\af-app-control-optimization-skill.zip；该 ZIP 根目录直接包含 SKILL.md。
+5. 如果使用 WorkBuddy 的“技能”入口，把 WorkBuddy 目录下全部 *-skill.zip 逐个导入；每个 ZIP 根目录直接包含 SKILL.md。连接器里的 SKILL.md 是技能索引，不要当作技能导入。
 6. WorkBuddy MCP 地址固定为 http://127.0.0.1:8765/mcp/，无需请求头或令牌。
 
 目录说明：

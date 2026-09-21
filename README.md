@@ -158,7 +158,7 @@ MCP 工具：
 .\package-portable.ps1
 ```
 
-默认输出到项目同级的 `SangforBox-Portable` 目录，并同时生成 `SangforBox-Portable.zip`。也可用 `-OutputDirectory` 指定另一个专用目录。目标 Windows 电脑无需安装 Python 或项目依赖；解压整个目录后双击 `SangforBox.exe`，在 WorkBuddy 的“连接器”入口导入 `WorkBuddy\sangforbox-workbuddy-connector.zip`；若使用“技能”入口，单独导入 `WorkBuddy\af-app-control-optimization-skill.zip`。
+默认输出到项目同级的 `SangforBox-Portable` 目录，并同时生成 `SangforBox-Portable.zip`。也可用 `-OutputDirectory` 指定另一个专用目录。目标 Windows 电脑无需安装 Python 或项目依赖；解压整个目录后双击 `SangforBox.exe`，在 WorkBuddy 的“连接器”入口导入 `WorkBuddy\sangforbox-workbuddy-connector.zip`；若使用“技能”入口，把 `WorkBuddy\` 下的全部 `*-skill.zip` 逐个导入，每个 ZIP 的根目录直接包含该 Skill 的 `SKILL.md`。
 
 EXE 首次启动时从内置的无设备档案知识库生成 `data\af.db`，并创建 `results` 和 `logs`。网页下载的审核 CSV、发现项 CSV和反馈 JSON 会同时保存到 `results`。服务仅监听 `127.0.0.1:8765`；设备密码使用目标电脑当前 Windows 用户的 DPAPI 加密。
 

@@ -60,10 +60,20 @@ New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'WorkBuddy') -Forc
 
 Copy-Item -LiteralPath (Join-Path $PyInstallerDist 'SangforBox.exe') -Destination $OutputFullPath
 & (Join-Path $ProjectRoot 'package-workbuddy.ps1')
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'dist\sangforbox-workbuddy-connector.zip') -Destination (Join-Path $OutputFullPath 'WorkBuddy')
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'dist\af-app-control-optimization-skill.zip') -Destination (Join-Path $OutputFullPath 'WorkBuddy')
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'connector\workbuddy\docs\af-initialization-engineer-guide.md') -Destination (Join-Path $OutputFullPath 'WorkBuddy')
+$WorkBuddyDirectory = Join-Path $OutputFullPath 'WorkBuddy'
+Copy-Item -LiteralPath (Join-Path $ProjectRoot 'dist\sangforbox-workbuddy-connector.zip') -Destination $WorkBuddyDirectory
+$SkillArchives = @(Get-ChildItem -LiteralPath (Join-Path $ProjectRoot 'dist') -Filter '*-skill.zip' | Sort-Object Name)
+if ($SkillArchives.Count -eq 0) { throw 'No skill archives were produced by package-workbuddy.ps1.' }
+foreach ($SkillArchive in $SkillArchives) {
+    Copy-Item -LiteralPath $SkillArchive.FullName -Destination $WorkBuddyDirectory
+}
+Copy-Item -LiteralPath (Join-Path $ProjectRoot 'connector\workbuddy\docs\af-initialization-engineer-guide.md') -Destination $WorkBuddyDirectory
 Copy-Item -LiteralPath (Join-Path $ProjectRoot 'PORTABLE-README.txt') -Destination $OutputFullPath
+
+$SkillHashes = [ordered]@{}
+foreach ($SkillArchive in $SkillArchives) {
+    $SkillHashes[$SkillArchive.Name] = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $WorkBuddyDirectory $SkillArchive.Name)).Hash.ToLowerInvariant()
+}
 
 $Manifest = [ordered]@{
     product = 'SangforBox'
@@ -71,8 +81,8 @@ $Manifest = [ordered]@{
     built_at = [DateTime]::UtcNow.ToString('o')
     architecture = $env:PROCESSOR_ARCHITECTURE
     executable_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $OutputFullPath 'SangforBox.exe')).Hash.ToLowerInvariant()
-    connector_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $OutputFullPath 'WorkBuddy\sangforbox-workbuddy-connector.zip')).Hash.ToLowerInvariant()
-    optimization_skill_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $OutputFullPath 'WorkBuddy\af-app-control-optimization-skill.zip')).Hash.ToLowerInvariant()
+    connector_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $WorkBuddyDirectory 'sangforbox-workbuddy-connector.zip')).Hash.ToLowerInvariant()
+    skill_archive_sha256 = $SkillHashes
 }
 $Manifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $OutputFullPath 'manifest.json') -Encoding utf8
 $ArchivePath = "$OutputFullPath.zip"
