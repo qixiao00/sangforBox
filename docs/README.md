@@ -46,6 +46,17 @@
 
 ---
 
+## 项目命名对照
+
+本项目历史上有多个名字，各属不同层，**不要互相改写**：
+
+| 名字 | 层 | 用途 | 是否可改 |
+| --- | --- | --- | --- |
+| `SangforBox` | 产品名 | 仓库名、便携包 EXE 名（`--name SangforBox`）、`%LOCALAPPDATA%\SangforBox\` 状态目录、Web 界面标题 | ✅ 已统一使用 |
+| `sangforbox` | Python 发行包名 | `pyproject.toml` 的 `name`，pip 安装元数据（import 包名仍是 `af_app`，两者独立） | ✅ 已从 `af-workbench` 改名 |
+| `af-workbench` | MCP 服务器注册名 | `connector/workbuddy/mcp.json` 的 key，WorkBuddy 侧与全部 Skill 文本引用的 MCP 名称 | ❌ 外部契约，保持不变 |
+| `af_app` | Python import 包名 | 全部 `import af_app.*` 代码 | ❌ 改动牵动所有源文件，无收益 |
+
 ## 相关目录
 
 | 路径 | 内容 |
