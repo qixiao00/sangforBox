@@ -24,10 +24,15 @@ if (Test-Path -LiteralPath $BuildRoot) { Remove-Item -LiteralPath $BuildRoot -Re
 New-Item -ItemType Directory -Path $SeedDirectory -Force | Out-Null
 
 $env:AF_DATABASE_PATH = $SeedDatabase
+$env:AF_OUTPUT_DIR = (Join-Path $BuildRoot 'results')
+$env:AF_STATE_DIR = (Join-Path $BuildRoot 'state')
 & $Python -m af_app.import_knowledge --source (Join-Path $ProjectRoot 'knowledge\processed')
 if ($LASTEXITCODE -ne 0) { throw 'Failed to build clean knowledge database.' }
 Remove-Item Env:AF_DATABASE_PATH
+Remove-Item Env:AF_OUTPUT_DIR
+Remove-Item Env:AF_STATE_DIR
 
+if (-not (Test-Path -LiteralPath $SeedDatabase)) { throw 'Seed database was not created at the isolated build path.' }
 $DeviceCount = & $Python -c "import sqlite3; c=sqlite3.connect(r'$SeedDatabase'); print(c.execute('select count(*) from device_profiles').fetchone()[0]); c.execute('pragma wal_checkpoint(truncate)'); c.close()"
 if ($LASTEXITCODE -ne 0 -or [int]$DeviceCount -ne 0) { throw 'Portable seed database contains device profiles or could not be verified.' }
 
@@ -53,9 +58,6 @@ if (Test-Path -LiteralPath $OutputFullPath) {
     Remove-Item -LiteralPath $OutputFullPath -Recurse -Force
 }
 New-Item -ItemType Directory -Path $OutputFullPath -Force | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'data') -Force | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'results') -Force | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'logs') -Force | Out-Null
 New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'WorkBuddy') -Force | Out-Null
 
 Copy-Item -LiteralPath (Join-Path $PyInstallerDist 'SangforBox.exe') -Destination $OutputFullPath

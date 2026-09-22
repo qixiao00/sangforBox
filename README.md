@@ -14,7 +14,29 @@ Windows 上运行的 Next.js Web + FastAPI + MCP Server + SQLite 本地知识库
 
 访问 http://127.0.0.1:8765 ，直接运行测试。
 此命令以前台进程运行，Ctrl+C 停止。首次启动只建立 SQLite 基础版本表。
-可设置 `AF_DATABASE_PATH` 修改数据库位置，默认 `data/af.db`。
+
+### 运行态目录
+
+运行数据存放在**当前 Windows 用户的应用数据目录**，与源码分离，源码目录保持干净：
+
+```text
+%LOCALAPPDATA%\SangforBox\
+  af.db             设备档案、知识库索引、初始化案例
+  policy-review.db  应用控制审核记录
+  results\          审核 CSV、发现项 CSV、反馈 JSON
+  logs\             启动与访问日志
+```
+
+覆盖方式（按优先级）：
+
+| 环境变量 | 作用 | 默认值 |
+| --- | --- | --- |
+| `AF_STATE_DIR` | 整体改运行态根目录 | `%LOCALAPPDATA%\SangforBox` |
+| `AF_DATABASE_PATH` | 只改主数据库位置 | `<状态目录>\af.db` |
+| `AF_OUTPUT_DIR` | 只改导出目录 | `<状态目录>\results` |
+
+非 Windows 平台回退到 `$XDG_STATE_HOME/SangforBox` 或 `~/.local/state/SangforBox`。
+
 服务当前不包含应用层鉴权，默认只监听 `127.0.0.1`。若绑定到局域网或公网，应在可信反向代理上配置身份认证和 HTTPS。
 
 ## 请求路径
@@ -74,7 +96,7 @@ WorkBuddy 加工后的 JSONL 位于 `knowledge/processed/`。导入或重建数�
 .\import-knowledge.ps1
 ```
 
-该命令会完整重建 SQLite 中的文档、chunk、API、CLI 和 FTS5 索引。JSONL 始终是可审计的数据源，`data/af.db` 是可重新生成的运行数据库。
+该命令会完整重建 SQLite 中的文档、chunk、API、CLI 和 FTS5 索引。JSONL 始终是可审计的数据源，`af.db` 是可重新生成的运行数据库（位于运行态目录，见上）。
 
 当前检索采用 jieba 中文分词 + SQLite FTS5 BM25，并对标题和关键词提高权重。检索层保留原始 chunk，不改写 PDF 内容；返回结果会折叠完全重复的正文，并包含 PDF 页码与相邻 chunk ID。
 
@@ -160,7 +182,7 @@ MCP 工具：
 
 默认输出到项目同级的 `SangforBox-Portable` 目录，并同时生成 `SangforBox-Portable.zip`。也可用 `-OutputDirectory` 指定另一个专用目录。目标 Windows 电脑无需安装 Python 或项目依赖；解压整个目录后双击 `SangforBox.exe`，在 WorkBuddy 的“连接器”入口导入 `WorkBuddy\sangforbox-workbuddy-connector.zip`；若使用“技能”入口，把 `WorkBuddy\` 下的全部 `*-skill.zip` 逐个导入，每个 ZIP 的根目录直接包含该 Skill 的 `SKILL.md`。
 
-EXE 首次启动时从内置的无设备档案知识库生成 `data\af.db`，并创建 `results` 和 `logs`。网页下载的审核 CSV、发现项 CSV和反馈 JSON 会同时保存到 `results`。服务仅监听 `127.0.0.1:8765`；设备密码使用目标电脑当前 Windows 用户的 DPAPI 加密。
+EXE 首次启动时在**当前用户的 `%LOCALAPPDATA%\SangforBox\`** 生成 `af.db`（从内置的无设备档案知识库种子），并创建 `results` 和 `logs`。因此更新便携包时可以直接替换整个安装目录，设备档案、审核记录和导出结果都不会丢失。网页下载的审核 CSV、发现项 CSV和反馈 JSON 会保存到该目录的 `results` 子目录。服务仅监听 `127.0.0.1:8765`；设备密码使用目标电脑当前 Windows 用户的 DPAPI 加密。
 
 ## 验证
 

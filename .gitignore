@@ -1,16 +1,26 @@
+# Python
 .venv/
 __pycache__/
 .pytest_cache/
 *.egg-info/
-data/
-.env
+
+# 构建产物
 dist/
 .portable-build/
-results/
 frontend/node_modules/
 frontend/.next/
 frontend/out/
 frontend/tsconfig.tsbuildinfo
+
+# 运行态（现默认落在 %LOCALAPPDATA%\SangforBox，此处为向后兼容的历史路径）
+data/
+results/
+logs/
+
+# 本地配置与私有素材
+.env
+*.pdf
+
+# 页面预览临时目录
 .edge-preview/
 .edge-knowledge/
-*.pdf

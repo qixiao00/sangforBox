@@ -18,7 +18,7 @@ from pathlib import Path
 import uvicorn
 
 from af_app.app import create_app
-from af_app.config import Settings
+from af_app.config import Settings, default_state_directory
 
 
 def installation_directory() -> Path:
@@ -30,19 +30,30 @@ def bundled_directory() -> Path:
 
 
 def prepare_directories(root: Path) -> tuple[Path, Path, Path]:
-    data = root / "data"
-    results = root / "results"
-    logs = root / "logs"
-    for directory in (data, results, logs):
+    """Prepare the per-user state directory.
+
+    Runtime state lives outside the installation directory so the portable
+    folder stays read-only in practice: it can be replaced with a new build
+    without losing device profiles, review records or exports. ``root`` is kept
+    for the legacy in-place layout only as a migration source.
+    """
+    state = default_state_directory()
+    results = state / "results"
+    logs = state / "logs"
+    for directory in (state, results, logs):
         directory.mkdir(parents=True, exist_ok=True)
-    database = data / "af.db"
+    database = state / "af.db"
     if not database.exists():
-        seed = bundled_directory() / "assets" / "knowledge.db"
-        if not seed.is_file():
-            raise RuntimeError("内置 AF 知识库缺失，请重新获取完整便携包。")
-        temporary = data / "af.db.initializing"
-        shutil.copyfile(seed, temporary)
-        os.replace(temporary, database)
+        legacy = root / "data" / "af.db"
+        if legacy.is_file():
+            shutil.copyfile(legacy, database)
+        else:
+            seed = bundled_directory() / "assets" / "knowledge.db"
+            if not seed.is_file():
+                raise RuntimeError("内置 AF 知识库缺失，请重新获取完整便携包。")
+            temporary = state / "af.db.initializing"
+            shutil.copyfile(seed, temporary)
+            os.replace(temporary, database)
     return database, results, logs
 
 
@@ -104,6 +115,7 @@ def main() -> int:
         logger.error("端口 %s 已被占用。若 SangforBox 已启动，请直接打开 http://%s:%s/", args.port, host, args.port)
         return 2
     url = f"http://{host}:{args.port}/"
+    logger.info("SangforBox 安装目录：%s", root)
     logger.info("SangforBox 数据目录：%s", database.parent)
     logger.info("导出目录：%s", results)
     logger.info("WorkBuddy MCP 地址：http://%s:%s/mcp/", host, args.port)
