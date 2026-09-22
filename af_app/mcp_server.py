@@ -57,9 +57,9 @@ def create_mcp(service, traces):
         query: Annotated[str, Field(min_length=1, max_length=500)],
         top_k: Annotated[int, Field(ge=1, le=20)] = 5,
         doc_type: str = "",
-        version: str = "8.0.107",
+        version: str = "",
     ) -> KnowledgeSearchResponse:
-        """Search the local Sangfor AF manuals. Returns source chunks with PDF page numbers; it does not generate an answer."""
+        """Search the local Sangfor AF manuals. Returns source chunks with PDF page numbers; it does not generate an answer. Empty version searches all imported manual versions instead of assuming one."""
         return service.search_knowledge(KnowledgeSearchRequest(
             query=query, top_k=top_k, doc_type=doc_type or None, version=version or None))
 
