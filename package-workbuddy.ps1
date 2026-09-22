@@ -49,7 +49,11 @@ try {
         $Staging = Join-Path $BuildRoot $Skill.Name
         New-Item -ItemType Directory -Path $Staging -Force | Out-Null
         Copy-Item -LiteralPath $SkillFile -Destination $Staging -Force
-        Compress-Archive -Path (Join-Path $Staging '*') -DestinationPath $Archive -CompressionLevel Optimal
+        # Same staging pattern as the connector archive: Compress-Archive without
+        # -Force fails when the destination exists, so build in temp and copy over.
+        $SkillArchiveStaging = Join-Path $BuildRoot ("{0}.zip" -f $Skill.Name)
+        Compress-Archive -Path (Join-Path $Staging '*') -DestinationPath $SkillArchiveStaging -CompressionLevel Optimal
+        Copy-Item -LiteralPath $SkillArchiveStaging -Destination $Archive -Force
         Write-Host "Created $Archive"
     }
 } finally {
