@@ -1,13 +1,16 @@
 param(
-    [string]$OutputDirectory = (Join-Path (Split-Path -Parent $PSScriptRoot) 'SangforBox-Portable')
+    [string]$OutputDirectory = ''
 )
 $ErrorActionPreference = 'Stop'
-Set-Location -LiteralPath $PSScriptRoot
+$ProjectRoot = (Resolve-Path -LiteralPath (Split-Path -Parent $PSScriptRoot)).Path
+Set-Location -LiteralPath $ProjectRoot
+if (-not $OutputDirectory) {
+    $OutputDirectory = Join-Path (Split-Path -Parent $ProjectRoot) 'SangforBox-Portable'
+}
 
-$Python = Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
-if (-not (Test-Path -LiteralPath $Python)) { throw 'Run setup.ps1 first.' }
+$Python = Join-Path $ProjectRoot '.venv\Scripts\python.exe'
+if (-not (Test-Path -LiteralPath $Python)) { throw 'Run scripts\setup.ps1 first.' }
 
-$ProjectRoot = (Resolve-Path -LiteralPath $PSScriptRoot).Path
 $OutputFullPath = [IO.Path]::GetFullPath($OutputDirectory)
 $OutputParent = Split-Path -Parent $OutputFullPath
 if ($OutputFullPath -eq $ProjectRoot -or $OutputFullPath -eq $OutputParent -or [IO.Path]::GetPathRoot($OutputFullPath) -eq $OutputFullPath) {
@@ -74,15 +77,13 @@ Set-Content -LiteralPath (Join-Path $OutputFullPath '.sangforbox-package') -Valu
 New-Item -ItemType Directory -Path (Join-Path $OutputFullPath 'WorkBuddy') -Force | Out-Null
 
 Copy-Item -LiteralPath (Join-Path $PyInstallerDist 'SangforBox.exe') -Destination $OutputFullPath
-& (Join-Path $ProjectRoot 'package-workbuddy.ps1')
+& (Join-Path $PSScriptRoot 'package-workbuddy.ps1') -IncludeOptionalSkills
 $WorkBuddyDirectory = Join-Path $OutputFullPath 'WorkBuddy'
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'dist\sangforbox-workbuddy-connector.zip') -Destination $WorkBuddyDirectory
 $SkillArchives = @(Get-ChildItem -LiteralPath (Join-Path $ProjectRoot 'dist') -Filter '*-skill.zip' | Sort-Object Name)
-if ($SkillArchives.Count -eq 0) { throw 'No skill archives were produced by package-workbuddy.ps1.' }
+if ($SkillArchives.Count -ne 3) { throw 'Expected exactly three skill archives from package-workbuddy.ps1.' }
 foreach ($SkillArchive in $SkillArchives) {
     Copy-Item -LiteralPath $SkillArchive.FullName -Destination $WorkBuddyDirectory
 }
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'connector\workbuddy\docs\af-initialization-engineer-guide.md') -Destination $WorkBuddyDirectory
 Copy-Item -LiteralPath (Join-Path $ProjectRoot 'PORTABLE-README.txt') -Destination $OutputFullPath
 
 $SkillHashes = [ordered]@{}
@@ -92,11 +93,10 @@ foreach ($SkillArchive in $SkillArchives) {
 
 $Manifest = [ordered]@{
     product = 'SangforBox'
-    package_version = '1.0.4'
+    package_version = '1.0.6'
     built_at = [DateTime]::UtcNow.ToString('o')
     architecture = $env:PROCESSOR_ARCHITECTURE
     executable_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $OutputFullPath 'SangforBox.exe')).Hash.ToLowerInvariant()
-    connector_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $WorkBuddyDirectory 'sangforbox-workbuddy-connector.zip')).Hash.ToLowerInvariant()
     skill_archive_sha256 = $SkillHashes
 }
 $Manifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $OutputFullPath 'manifest.json') -Encoding utf8
@@ -109,9 +109,16 @@ Compress-Archive -Path (Join-Path $OutputFullPath '*') -DestinationPath $Archive
 Copy-Item -LiteralPath $ArchiveStaging -Destination $ArchivePath -Force
 
 if ($ReplacedOutput) {
-    # Best-effort cleanup of the previous build; failure does not affect this run.
-    try { Remove-Item -LiteralPath $ReplacedOutput -Recurse -Force -ErrorAction Stop }
-    catch { Write-Host "Note: previous output kept at $ReplacedOutput (remove it manually if not needed)." }
+    # Keep any existing runtime data out of the clean distribution archive.
+    # Preserve the previous directory so upgrades never delete user state.
+    foreach ($RuntimeName in @('data', 'results', 'logs')) {
+        $PreviousRuntime = Join-Path $ReplacedOutput $RuntimeName
+        if (Test-Path -LiteralPath $PreviousRuntime -PathType Container) {
+            Copy-Item -LiteralPath $PreviousRuntime -Destination $OutputFullPath -Recurse
+        }
+    }
+    Write-Host "Previous output preserved (including runtime data): $ReplacedOutput"
+    Write-Host 'Runtime data restored beside the new executable, after creating the clean archive.'
 }
 Write-Host "Portable package created: $OutputFullPath"
 Write-Host "Transfer archive created: $ArchivePath"

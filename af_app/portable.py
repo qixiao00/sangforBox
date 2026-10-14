@@ -29,31 +29,55 @@ def bundled_directory() -> Path:
     return Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parents[1]))
 
 
+def _copy_file_if_missing(source: Path, target: Path) -> bool:
+    if not source.is_file() or target.exists():
+        return False
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = target.with_name(target.name + ".migrating")
+    shutil.copyfile(source, temporary)
+    os.replace(temporary, target)
+    return True
+
+
+def _copy_directory_contents_if_empty(source: Path, target: Path) -> bool:
+    if not source.is_dir() or any(target.iterdir()):
+        return False
+    shutil.copytree(source, target, dirs_exist_ok=True)
+    return True
+
+
 def prepare_directories(root: Path) -> tuple[Path, Path, Path]:
     """Prepare the per-user state directory.
 
-    Runtime state lives outside the installation directory so the portable
-    folder stays read-only in practice: it can be replaced with a new build
-    without losing device profiles, review records or exports. ``root`` is kept
-    for the legacy in-place layout only as a migration source.
+    By default the portable build keeps all runtime state beside the executable:
+    databases under ``data`` and exports/logs in sibling directories. Environment
+    overrides remain available for managed deployments.
     """
-    state = default_state_directory()
-    results = state / "results"
-    logs = state / "logs"
-    for directory in (state, results, logs):
+    state_override = os.environ.get("AF_STATE_DIR")
+    state = (Path(state_override).resolve() if state_override else (root / "data").resolve())
+    database_override = os.environ.get("AF_DATABASE_PATH")
+    output_override = os.environ.get("AF_OUTPUT_DIR")
+    database = Path(database_override).resolve() if database_override else state / "af.db"
+    results = Path(output_override).resolve() if output_override else (
+        state / "results" if state_override else (root / "results").resolve()
+    )
+    logs = state / "logs" if state_override else (root / "logs").resolve()
+    for directory in (state, database.parent, results, logs):
         directory.mkdir(parents=True, exist_ok=True)
-    database = state / "af.db"
+    legacy_state = default_state_directory()
     if not database.exists():
-        legacy = root / "data" / "af.db"
-        if legacy.is_file():
-            shutil.copyfile(legacy, database)
-        else:
+        legacy = legacy_state / "af.db"
+        if not _copy_file_if_missing(legacy, database):
             seed = bundled_directory() / "assets" / "knowledge.db"
             if not seed.is_file():
                 raise RuntimeError("内置 AF 知识库缺失，请重新获取完整便携包。")
-            temporary = state / "af.db.initializing"
+            temporary = database.with_name(database.name + ".initializing")
             shutil.copyfile(seed, temporary)
             os.replace(temporary, database)
+    _copy_file_if_missing(legacy_state / "policy-review.db", database.with_name("policy-review.db"))
+    legacy_results = legacy_state / "results"
+    if legacy_results.resolve() != results.resolve():
+        _copy_directory_contents_if_empty(legacy_results, results)
     return database, results, logs
 
 
@@ -121,7 +145,8 @@ def main() -> int:
     logger.info("WorkBuddy MCP 地址：http://%s:%s/mcp/", host, args.port)
     if not args.no_browser:
         threading.Thread(target=open_when_ready, args=(url,), daemon=True).start()
-    settings = Settings(database, output_directory=results)
+    environment_settings = Settings.from_env()
+    settings = Settings(database, environment_settings.allowed_hosts, results)
     try:
         uvicorn.run(create_app(settings), host=host, port=args.port, log_config=config, access_log=True)
     except KeyboardInterrupt:

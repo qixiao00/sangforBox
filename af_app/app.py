@@ -56,7 +56,7 @@ def create_app(settings: Settings | None = None):
             await service.policy_optimizer.close()
             database.engine.dispose()
 
-    app = FastAPI(title="AF Workbench", version="1.0.4", lifespan=lifespan)
+    app = FastAPI(title="AF Workbench", version="1.0.6", lifespan=lifespan)
     app.state.mcp_server = server
     app.state.database = database
     app.state.device_service = service.devices

@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
-Set-Location -LiteralPath (Join-Path $PSScriptRoot 'frontend')
+$ProjectRoot = (Resolve-Path -LiteralPath (Split-Path -Parent $PSScriptRoot)).Path
+Set-Location -LiteralPath (Join-Path $ProjectRoot 'frontend')
 
 $BundledPnpm = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback\pnpm.cmd'
 $Pnpm = if (Get-Command pnpm -ErrorAction SilentlyContinue) { 'pnpm' } elseif (Test-Path -LiteralPath $BundledPnpm) { $BundledPnpm } else { $null }

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sangforbox"
-version = "1.0.4"
+version = "1.0.6"
 description = "SangforBox - AF Web and MCP scaffold"
 requires-python = ">=3.11"
 dependencies = ["mcp==2.2.0", "fastapi==0.141.1", "uvicorn==0.53.0", "sqlalchemy>=2.0,<3", "jieba==0.42.1", "httpx>=0.28,<1", "pywin32>=312; sys_platform == 'win32'"]

@@ -65,15 +65,17 @@ def test_framework(tmp_path):
         assert web.post('/api/test',json={}).json()['schema_version']==5
 
 
-def test_connector():
+def test_workbuddy_distribution_contains_only_two_skills():
     root = Path('connector/workbuddy')
-    meta = json.loads((root/'connector-meta.json').read_text(encoding='utf-8'))
-    config = json.loads((root/'mcp.json').read_text(encoding='utf-8'))
-    assert meta['type']=='mcp' and 'auth_mode' not in meta
-    assert len(config['mcpServers'])==1
-    server = next(iter(config['mcpServers'].values()))
-    assert server['url']=='http://127.0.0.1:8765/mcp/' and 'headers' not in server
-    assert not (root/'token-schema.json').exists()
+    assert not (root/'connector-meta.json').exists()
+    assert not (root/'mcp.json').exists()
+    assert {path.parent.name for path in (root/'skills').glob('*/SKILL.md')} == {
+        'af-device-initialization', 'af-app-control-optimization'
+    }
+    for markdown in root.rglob('*.md'):
+        for target in re.findall(r'\]\(([^)#]+)(?:#[^)]+)?\)', markdown.read_text(encoding='utf-8-sig')):
+            if '://' not in target:
+                assert (markdown.parent / target).exists(), f"Broken link in {markdown}: {target}"
 
 
 def test_download_is_also_persisted_to_output_directory(tmp_path, monkeypatch):

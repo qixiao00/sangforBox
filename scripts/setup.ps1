@@ -1,6 +1,7 @@
 param([string]$Python = 'python')
 $ErrorActionPreference = 'Stop'
-Set-Location -LiteralPath $PSScriptRoot
+$ProjectRoot = (Resolve-Path -LiteralPath (Split-Path -Parent $PSScriptRoot)).Path
+Set-Location -LiteralPath $ProjectRoot
 if (-not (Test-Path -LiteralPath '.venv\Scripts\python.exe')) {
     & $Python -m venv .venv
     if ($LASTEXITCODE -ne 0) { throw 'Failed to create virtual environment.' }

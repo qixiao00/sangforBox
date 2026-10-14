@@ -3,13 +3,12 @@ name: af-app-control-optimization
 description: 通过 SangforBox MCP 梳理深信服 AF 应用控制策略；适用于整表分析、命名规范、遮蔽与顺序问题、合并候选的等价性复验和地址对象化。先导出审核表供用户决定，当前只支持分析、审核、组合复验和只读预检，不执行设备写入。
 agent_created: true
 layer: scenario
-version: 1.0.0
+version: 1.1.0
 ---
 
 # AF 应用控制策略梳理
 
-本 Skill 负责整表梳理：分析、导出审核材料、审核、组合复验、只读预检和工程师变更后的差异反馈。
-能做什么、不能做什么，以及何时应转用其它 Skill，见 [`ROUTING.md`](ROUTING.md)。
+本 Skill 负责整表梳理：分析、导出审核材料、审核、组合复验、只读预检和工程师变更后的差异反馈。单条策略配置、普通设备查询和其它策略模块不属于本 Skill，直接使用 MCP 工具。
 
 **边界**：即使用户说"梳理后直接执行"，本流程也只能到只读预检，不执行设备写入；不能把审核项
 转成通用 `edit_device` 或 `initialize_device` 的变更。

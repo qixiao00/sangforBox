@@ -10,7 +10,7 @@ from af_app.policy_optimizer import OptimizationRequest, ReviewDecision, Feedbac
 def create_mcp(service, traces):
     server = MCPServer(
         "AF Workbench",
-        instructions="""你是深信服 AF 运维连接器。默认且仅通过本 MCP 内部的 AF HTTP API 查询或操作设备；凭据、登录和 Cookie 由服务器管理。不要编写 Python/curl、读取本地凭据、修改本地 Skill，或自动切换 SSH/CLI。query_device 用于实时查询，edit_device 用于明确的单项配置变更，initialize_device 仅用于初始化工作流。应用控制策略的整表梳理/优化必须调用 analyze_app_control、get_app_control_analysis，先展示审核 CSV 和问题 CSV，再按用户决定使用 review_app_control、verify_app_control_review、preflight_app_control_review。工程师手动修改后用 record_app_control_feedback 读取最新设备配置并生成可下载差异日志；此流程只读，不得把优化候选转交 edit_device 下发。device_id 可填写档案 ID、名称、IP 或 URL。优先使用已注册 operation_id；未注册能力调用 lookup_api_endpoint 查找手册端点，必要时 get_api_endpoint 核对参数，然后把唯一 endpoint_id 交给 query_device，或作为 edit_device change 的 endpoint_id。不得把 URL 交给执行工具。单项配置变更先调用 edit_device(action=prepare)，逐项向用户询问返回的必答问题；不得代替用户选择新增/修改、同名对象处理方式或策略启用状态。收集答案后才可 plan。GET 端点可直接查询；POST/PUT/PATCH/DELETE 必须 plan，向用户呈现对象、变更、影响和回滚，确认后 apply，再读取设备验证。普通实时查询不先调用 framework_probe。Session not found 属于客户端 MCP 会话失效，应提示重新连接，不得绕过 MCP。最终答复采用厂商运维口径：先给结论，只列与问题相关的配置和异常；区分设备实测、手册定义和推断；省略工具调用过程、PID、Session ID、原始 JSON、无关对象及调试产物。查询成功通常控制在一张小表或 3-6 个要点。""",
+        instructions="""你是深信服 AF 运维连接器。默认且仅通过本 MCP 内部的 AF HTTP API 查询或操作设备；凭据、登录和 Cookie 由服务器管理。不要编写 Python/curl、读取本地凭据、修改本地 Skill，或自动切换 SSH/CLI。query_device 用于实时查询，edit_device 用于明确的单项配置变更，initialize_device 仅用于初始化工作流。初始化期间，当前 Web API 地址所属管理接口绝对不能修改、删除、解绑或迁移；无法可靠识别该接口时停止所有初始化接口变更。应用控制策略的整表梳理/优化必须调用 analyze_app_control、get_app_control_analysis，先展示审核 CSV 和问题 CSV，再按用户决定使用 review_app_control、verify_app_control_review、preflight_app_control_review。工程师手动修改后用 record_app_control_feedback 读取最新设备配置并生成可下载差异日志；此流程只读，不得把优化候选转交 edit_device 下发。device_id 可填写档案 ID、名称、IP 或 URL。优先使用已注册 operation_id；未注册能力调用 lookup_api_endpoint 查找手册端点，必要时 get_api_endpoint 核对参数，然后把唯一 endpoint_id 交给 query_device，或作为 edit_device change 的 endpoint_id。不得把 URL 交给执行工具。单项配置变更先调用 edit_device(action=prepare)，逐项向用户询问返回的必答问题；不得代替用户选择新增/修改、同名对象处理方式或策略启用状态。收集答案后才可 plan。GET 端点可直接查询；POST/PUT/PATCH/DELETE 必须 plan，向用户呈现对象、变更、影响和回滚，确认后 apply，再读取设备验证。普通实时查询不先调用 framework_probe。Session not found 属于客户端 MCP 会话失效，应提示重新连接，不得绕过 MCP。最终答复采用厂商运维口径：先给结论，只列与问题相关的配置和异常；区分设备实测、手册定义和推断；省略工具调用过程、PID、Session ID、原始 JSON、无关对象及调试产物。查询成功通常控制在一张小表或 3-6 个要点。""",
     )
 
     def describe_operations(operation_ids: list[str], kind: str) -> dict:
@@ -277,4 +277,3 @@ def create_mcp(service, traces):
         return service.policy_optimizer.list_feedback(review_id, offset, limit)
 
     return server
-

@@ -8,8 +8,8 @@ Windows 上运行的 Next.js Web + FastAPI + MCP Server + SQLite 本地知识库
 需要 Python 3.11+（本项目使用 Windows Python 3.12 验证）。仓库已包含 Next.js 的静态构建结果，运行服务不需要 Node.js，也不需要模型。
 
 ```powershell
-.\setup.ps1
-.\start.ps1
+.\scripts\setup.ps1
+.\scripts\start.ps1
 ```
 
 访问 http://127.0.0.1:8765 ，直接运行测试。
@@ -17,7 +17,7 @@ Windows 上运行的 Next.js Web + FastAPI + MCP Server + SQLite 本地知识库
 
 ### 运行态目录
 
-运行数据存放在**当前 Windows 用户的应用数据目录**，与源码分离，源码目录保持干净：
+源码运行的数据默认存放在当前 Windows 用户的应用数据目录：
 
 ```text
 %LOCALAPPDATA%\SangforBox\
@@ -26,6 +26,8 @@ Windows 上运行的 Next.js Web + FastAPI + MCP Server + SQLite 本地知识库
   results\          审核 CSV、发现项 CSV、反馈 JSON
   logs\             启动与访问日志
 ```
+
+便携 EXE 改用便携目录内的 `data\`、`results\`、`logs\`，与 `SangforBox.exe` 一起复制和保留。
 
 覆盖方式（按优先级）：
 
@@ -93,10 +95,10 @@ Invoke-RestMethod "http://127.0.0.1:8765/api/devices/$($device.device_id)/test" 
 WorkBuddy 加工后的 JSONL 位于 `knowledge/processed/`。导入或重建数据库索引：
 
 ```powershell
-.\import-knowledge.ps1
+.\scripts\import-knowledge.ps1
 ```
 
-该命令会完整重建 SQLite 中的文档、chunk、API、CLI 和 FTS5 索引。JSONL 始终是可审计的数据源，`af.db` 是可重新生成的运行数据库（位于运行态目录，见上）。
+该命令会重建 `af.db` 中的文档、chunk、API、CLI 和 FTS5 索引。JSONL 是可审计的知识库数据源；`af.db` 还保存设备档案和初始化案例，不能把整个文件当作缓存删除。需要重建索引时应使用本命令，由导入逻辑保留其他业务数据。
 
 当前检索采用 jieba 中文分词 + SQLite FTS5 BM25，并对标题和关键词提高权重。检索层保留原始 chunk，不改写 PDF 内容；返回结果会折叠完全重复的正文，并包含 PDF 页码与相邻 chunk ID。
 
@@ -133,8 +135,6 @@ MCP 工具：
 - `initialize_device`：多轮保存初始化设计、分阶段检查与执行、回读验证、现场差异反馈和案例事件；
 - `framework_probe`：检查框架和数据库状态。
 
-工程师试用流程、反馈 CSV 与日志说明见 [AF 初始化工程师指南](connector/workbuddy/docs/af-initialization-engineer-guide.md)。
-
 ## 前端开发
 
 页面源码位于 `frontend/`，使用 Next.js App Router、React 和 TypeScript。FastAPI 托管导出的静态页面，因此生产和离线环境仍只需启动一个 8765 服务。
@@ -142,7 +142,7 @@ MCP 工具：
 修改页面后执行：
 
 ```powershell
-.\build-web.ps1
+.\scripts\build-web.ps1
 ```
 
 该脚本安装锁定的 pnpm 依赖、运行 Next.js 类型检查和生产构建，并将导出结果同步到 `af_app/static/`。需要联调界面时也可以在 `frontend/` 运行 `pnpm dev`；Next.js 开发服务器需自行代理 `/api` 到 8765，日常验收建议直接使用上述静态构建。
@@ -158,18 +158,20 @@ MCP 工具：
 
 ## WorkBuddy 连接
 
-`connector/workbuddy/` 提供 MCP + Skill 连接器，默认连接本机 `http://127.0.0.1:8765/mcp/`，无需填写令牌。启动 SangforBox 后，在 WorkBuddy 中导入该连接器目录（或压缩包），连接成功后即可使用。
+便携包分发设备初始化、应用控制策略优化两个基础 Skill，并附带可选的日常安全事件监控 Skill，不提供连接器 ZIP。工程师需要在 WorkBuddy 手工创建 MCP，再分别导入 Skill；只连接 MCP 不会自动加载 Skill 的多轮编排规则。
 
-若使用 WorkBuddy 的自定义 MCP 表单，选择 Streamable HTTP，地址填写 `http://127.0.0.1:8765/mcp/`，不配置请求头。连接后可使用知识库、设备业务工具和应用控制策略梳理工具。完整连接器包包含独立的 `af-app-control-optimization` Skill，会将“梳理、命名、遮蔽、合并、对象化、顺序分析”路由到分析与审核流程；用户明确指定的单条策略配置仍使用 `af-app-control-policy`。
+日常安全事件监控作为独立可选 Skill，源文件见 [af-daily-security-monitoring](connector/workbuddy/optional-skills/af-daily-security-monitoring/SKILL.md)。它通过现有 MCP 只读巡检告警并输出日报，会明确报告完整威胁日志未覆盖等限制；不自带后台定时器。便携包的 `WorkBuddy` 目录附带该 ZIP，可按需单独导入。
 
-只读验收提示词：“梳理 AF-Lab 的应用控制策略，先给我审核 CSV 和问题 CSV。不要修改设备。”预期调用 `analyze_app_control` → `get_app_control_analysis`；用户逐项决定后才调用 `review_app_control` → `verify_app_control_review`，需要核对实时配置时调用只读 `preflight_app_control_review`。工程师按工单手动修改后，调用 `record_app_control_feedback` 生成可下载的 JSON 差异日志，并用 `list_app_control_feedback` 找回历史日志。工程师操作及反馈交接参见 [应用控制策略梳理工程师手册](docs/guides/application-control-engineer-manual.md)。优化执行适配尚未完成，不得把审核结果交给通用 `edit_device` 下发。
+在 WorkBuddy 的自定义 MCP 表单中把名称填写为 `af-workbench`，类型选择 Streamable HTTP，地址填写 `http://127.0.0.1:8765/mcp/`，不配置请求头或令牌。随后在 Skill 管理入口分别导入 `af-device-initialization-skill.zip` 和 `af-app-control-optimization-skill.zip`，并在新对话中启用对应 Skill。普通查询、单项配置、虚拟网线、黑白名单和安全策略直接使用 MCP，不再分发 Skill。
+
+只读验收提示词：“梳理 AF-Lab 的应用控制策略，先给我审核 CSV 和问题 CSV。不要修改设备。”预期调用 `analyze_app_control` → `get_app_control_analysis`；用户逐项决定后才调用 `review_app_control` → `verify_app_control_review`，需要核对实时配置时调用只读 `preflight_app_control_review`。工程师按工单手动修改后，调用 `record_app_control_feedback` 生成可下载的 JSON 差异日志，并用 `list_app_control_feedback` 找回历史日志。完整操作流程由 `af-app-control-optimization` Skill 提供。优化执行适配尚未完成，不得把审核结果交给通用 `edit_device` 下发。
 
 远程部署需由 HTTPS 反向代理转发到本机 8765，保留 MCP 请求头和尾部斜杠，并在代理层增加访问控制。
 设置 `AF_ALLOWED_HOSTS` 为允许的主机名（逗号分隔，如 `af-kb.company.local,127.0.0.1:*`），使 MCP Host 校验接受部署域名。
 使用工作日志时关闭代理响应缓冲。MCP 客户端所在环境必须能访问该地址；云端执行环境无法直接访问内网地址。
 默认监听回环地址。此骨架不包含生产证书、域名、OAuth 或 Windows Service 安装器。
 
-连接器配置和 MCP 协议由本地测试验证；WorkBuddy 客户端中的实际导入/握手需在有客户端及可达 HTTPS 地址后联调，不能把配置准备等同于已经连接。
+MCP 协议由本地测试验证；WorkBuddy 客户端中的实际连接需在工程师电脑联调，不能把表单保存等同于已经连接。
 官方格式参考：https://open.workbuddy.cn/docs/connector
 
 ## Windows 便携包
@@ -177,27 +179,18 @@ MCP 工具：
 在开发机安装依赖并通过测试后运行：
 
 ```powershell
-.\package-portable.ps1
+.\scripts\package-portable.ps1
 ```
 
-默认输出到项目同级的 `SangforBox-Portable` 目录，并同时生成 `SangforBox-Portable.zip`。也可用 `-OutputDirectory` 指定另一个专用目录。目标 Windows 电脑无需安装 Python 或项目依赖；解压整个目录后双击 `SangforBox.exe`，在 WorkBuddy 的“连接器”入口导入 `WorkBuddy\sangforbox-workbuddy-connector.zip`；若使用“技能”入口，把 `WorkBuddy\` 下的全部 `*-skill.zip` 逐个导入，每个 ZIP 的根目录直接包含该 Skill 的 `SKILL.md`。
+默认输出到项目同级的 `SangforBox-Portable` 目录，并同时生成 `SangforBox-Portable.zip`。也可用 `-OutputDirectory` 指定另一个专用目录。目标 Windows 电脑无需安装 Python 或项目依赖；解压整个目录后双击 `SangforBox.exe`，手工创建 MCP，再到“技能”入口按需导入 `WorkBuddy\` 下的三个 `*-skill.zip`。每个 Skill ZIP 的根目录直接包含 `SKILL.md`；监控 Skill 还包含所需参考文件。已有输出目录会移到 `.previous-时间戳` 目录保留；生成干净分发 ZIP 后，将原 `data`、`results`、`logs` 复制回本机新输出目录，运行数据不会混入新分发 ZIP。
 
-EXE 首次启动时在**当前用户的 `%LOCALAPPDATA%\SangforBox\`** 生成 `af.db`（从内置的无设备档案知识库种子），并创建 `results` 和 `logs`。因此更新便携包时可以直接替换整个安装目录，设备档案、审核记录和导出结果都不会丢失。网页下载的审核 CSV、发现项 CSV和反馈 JSON 会保存到该目录的 `results` 子目录。服务仅监听 `127.0.0.1:8765`；设备密码使用目标电脑当前 Windows 用户的 DPAPI 加密。
+EXE 首次启动时在便携目录的 `data\` 下生成 `af.db`（从内置的无设备档案知识库种子）和 `policy-review.db`，并创建 `results\`、`logs\`。升级时保留这三个目录，只替换 EXE 和 WorkBuddy 文件。网页下载的审核 CSV、发现项 CSV 和反馈 JSON 保存到 `results\`。服务仅监听 `127.0.0.1:8765`；设备密码使用目标电脑当前 Windows 用户的 DPAPI 加密。
 
 ## 验证
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 ```
-
-## 知识库交接与 RAG 学习（归档）
-
-- `docs/archive/knowledge-base-handoff-prompt.md`：可直接交给其他 AI Harness 的 PDF 数据加工任务书。
-- `docs/archive/rag-learning-roadmap.md`：本项目的分阶段 RAG 技术栈与验收方法。
-
-两份均属历史材料，不再维护；文档索引与标签说明见 [docs/README.md](docs/README.md)。
-
-知识库加工先输出带来源页码的 JSONL，不直接生成向量。SangforBox 后续负责 embedding、索引、检索、生成和 MCP 工具层，便于更换模型并独立评估每一步。
 
 ## 后续模型从哪里继续
 
@@ -208,16 +201,12 @@ EXE 首次启动时在**当前用户的 `%LOCALAPPDATA%\SangforBox\`** 生成 `a
 | af_app/service.py | 普通 Python 业务服务 |
 | af_app/devices.py | AF API 客户端、DPAPI 凭据、设备查询与计划执行 |
 | af_app/operations.py | 审核能力注册表、文档端点动态解析、参数校验和持久化计划 |
-| connector/workbuddy/skills | 随连接器分发的 AF 场景 Skill 集合 |
-| connector/workbuddy/skill-template | 测试能力沉淀为 Skill 的模板 |
-| docs/application-control.md | 应用控制策略梳理：设计契约、状态机、工具契约、已实现模块索引 |
-| docs/README.md | 文档索引、标签说明与命名规范 |
-| docs/DEVICE_EXECUTION_BOUNDARY.md | 生产环境中强制所有设备操作经过 MCP 的隔离方案 |
+| connector/workbuddy/skills | 工程师分发用的设备初始化、应用控制优化两个 Skill；MCP 由工程师手工创建 |
 | af_app/database.py | SQLAlchemy 基础表与数据库生命周期 |
 | af_app/events.py | 请求工作日志事件契约 |
 | frontend/ | Next.js、React、TypeScript 前端源码 |
 | af_app/static/ | Next.js 静态导出产物，由 FastAPI 托管 |
-| connector/workbuddy/ | WorkBuddy 连接器配置与工具使用说明 |
+| connector/workbuddy/ | WorkBuddy 默认 Skill 及独立可选 Skill 源文件 |
 
 应用控制策略模块：
 
@@ -232,8 +221,6 @@ EXE 首次启动时在**当前用户的 `%LOCALAPPDATA%\SangforBox\`** 生成 `a
 | af_app/policy_review.py | 不可变分析/审核记录、指纹绑定、依赖互斥校验、幂等提交 |
 | af_app/policy_feedback.py | 工程师手动变更后的只读重采集与结构化差异日志 |
 | af_app/app_control_analyzer.py | 离线分析入口：读策略/对象 CSV，输出遮蔽、重复、合并、对象化、命名候选 |
-
-契约细节见 [docs/application-control.md](docs/application-control.md)；文档索引见 [docs/README.md](docs/README.md)。
 
 添加真实业务时，先补数据库迁移和服务，再添加 MCP 工具，Web 通过 MCP 使用它。
 前端可独立扩展动画、Agent 执行轨迹和业务视图，不改变 MCP 入口。

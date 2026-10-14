@@ -3,7 +3,7 @@
 ## 当前阶段与交接
 
 - 当前已进入编码阶段；离线分析第一版已实现。仍不得操作设备或下发变更，除非用户后续明确要求并完成工具链适配。
-- 开始实现前，完整阅读 `docs/application-control.md`，其中记录已确认的范围、算法边界、交付物和验收要求。文档标签与索引见 `docs/README.md`。
+- 当前实现、测试和 `connector/workbuddy/skills` 下的两个 Skill 是有效规则来源；不要在项目级文档中复制另一套操作流程。
 - 本项目仅梳理和优化应用控制策略，以及这些策略实际引用的对象；不扩展到其他策略模块或无关对象治理。
 - 工具链调用必须沿用项目固有模式。现有实现位于 `af_app/operations.py`、`af_app/devices.py` 和 `af_app/mcp_server.py`；应用控制设备操作必须继续走统一 MCP 的 `prepare → plan → apply → verify` 流程。分析器位于 `af_app/app_control_analyzer.py`，只负责离线分析和审核材料生成。
 

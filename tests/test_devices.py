@@ -243,6 +243,123 @@ def test_initialization_inspect_and_plan(tmp_path):
     database.engine.dispose()
 
 
+def test_initialization_protects_current_web_api_management_interface(tmp_path):
+    import pytest
+
+    interfaces = [
+        {
+            "name": "eth0", "uuid": "management-uuid", "ifType": "PHYSICALIF",
+            "ifMode": "ROUTE", "ipv4": {"ipv4Mode": "STATIC", "staticIp": [{
+                "ipaddress": {"start": "192.0.2.13", "end": "192.0.2.13", "bits": 24},
+            }]},
+        },
+        {
+            "name": "eth3", "uuid": "business-uuid", "ifType": "PHYSICALIF",
+            "ifMode": "ROUTE", "ipv4": {"ipv4Mode": "STATIC", "staticIp": [{
+                "ipaddress": {"start": "198.51.100.3", "end": "198.51.100.3", "bits": 24},
+            }]},
+        },
+    ]
+
+    class FakeClient:
+        token = None
+
+        def __init__(self, profile, password):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *_):
+            return None
+
+        async def login(self):
+            self.token = "TOKEN"
+            return {}
+
+        async def logout(self):
+            self.token = None
+
+        async def request(self, method, path, *, params=None, json_body=None):
+            if path.endswith("/interfaces"):
+                data = interfaces
+            elif path.endswith("/interfaces/eth0"):
+                data = interfaces[0]
+            elif path.endswith("/interfaces/eth3"):
+                data = interfaces[1]
+            else:
+                data = []
+            return {"code": 0, "data": data, "message": "成功"}
+
+    database = Database(tmp_path / "management-protection.db")
+    database.initialize()
+    service = DeviceService(database, TestProtector(), FakeClient)
+    profile = service.repository.create(DeviceProfileCreate(
+        name="AF-Protected", base_url="https://192.0.2.13", username="api-admin",
+        password="secret-password", verify_tls=False,
+    ))
+
+    management_change = {
+        "operation_id": "interface.update", "path_parameters": {"name": "eth0"},
+        "body": {"name": "eth0", "description": "must-not-change"},
+    }
+    with pytest.raises(ValueError, match="current Web API address 192.0.2.13"):
+        asyncio.run(service.initialize_device(
+            "plan", profile.device_id, changes=[management_change], stage="topology"))
+
+    business_change = {
+        "operation_id": "interface.update", "path_parameters": {"name": "eth3"},
+        "body": {"name": "eth3", "description": "business-interface"},
+    }
+    plan = asyncio.run(service.initialize_device(
+        "plan", profile.device_id, changes=[business_change], stage="topology"))
+    assert plan["status"] == "planned"
+    database.engine.dispose()
+
+
+def test_initialization_blocks_interface_changes_when_management_interface_is_unknown(tmp_path):
+    import pytest
+
+    class FakeClient:
+        token = None
+
+        def __init__(self, profile, password):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *_):
+            return None
+
+        async def login(self):
+            self.token = "TOKEN"
+            return {}
+
+        async def logout(self):
+            self.token = None
+
+        async def request(self, method, path, *, params=None, json_body=None):
+            data = [{"name": "eth3", "ipv4": {"staticIp": []}}] if path.endswith("/interfaces") else []
+            return {"code": 0, "data": data, "message": "成功"}
+
+    database = Database(tmp_path / "unknown-management.db")
+    database.initialize()
+    service = DeviceService(database, TestProtector(), FakeClient)
+    profile = service.repository.create(DeviceProfileCreate(
+        name="AF-Unknown-Management", base_url="https://af.example.test", username="api-admin",
+        password="secret-password", verify_tls=False,
+    ))
+    change = {
+        "operation_id": "interface.update", "path_parameters": {"name": "eth3"},
+        "body": {"name": "eth3", "description": "blocked"},
+    }
+    with pytest.raises(ValueError, match="management interface cannot be identified safely"):
+        asyncio.run(service.initialize_device(
+            "plan", profile.device_id, changes=[change], stage="topology"))
+    database.engine.dispose()
+
+
 def test_discovery_supports_short_resource_names_and_catalog():
     registry = CapabilityRegistry()
     assert {x.operation_id for x in registry.search("虚拟网线", "edit")} == {
@@ -373,6 +490,12 @@ def test_initialization_case_feedback_keeps_implementation_snapshot(tmp_path):
     import io
     import pytest
 
+    management_interface = {
+        "name": "eth0", "ifType": "PHYSICALIF", "description": "protected management",
+        "ipv4": {"staticIp": [{"ipaddress": {
+            "start": "192.0.2.31", "end": "192.0.2.31", "bits": 24,
+        }}]},
+    }
     interface = {"name": "eth1", "ifType": "PHYSICALIF", "description": "before"}
     zones = []
 
@@ -400,7 +523,7 @@ def test_initialization_case_feedback_keeps_implementation_snapshot(tmp_path):
                 interface.update(json_body)
                 return {"code": 0, "data": dict(interface), "message": "成功"}
             data = dict(interface) if path.endswith("/interfaces/eth1") else (
-                [dict(interface)] if path.endswith("/interfaces") else
+                [dict(management_interface), dict(interface)] if path.endswith("/interfaces") else
                 [dict(zone) for zone in zones] if path.endswith("/zones") else [])
             return {"code": 0, "data": data, "message": "成功"}
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import hashlib
+import ipaddress
 import json
 import os
 import sqlite3
@@ -411,6 +412,93 @@ class DeviceService:
             raise ValueError("Device selection is ambiguous or missing. Call query_device(action='devices') and choose a device_id.")
         return matches[0].device_id
 
+    @staticmethod
+    def _interface_inventory_rows(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        for result in results:
+            if result.get("operation_id") != "interface.list":
+                continue
+            data = result.get("data")
+            if isinstance(data, list):
+                rows.extend(item for item in data if isinstance(item, dict))
+            elif isinstance(data, dict):
+                for key in ("items", "rows", "list"):
+                    items = data.get(key)
+                    if isinstance(items, list):
+                        rows.extend(item for item in items if isinstance(item, dict))
+                        break
+        return rows
+
+    @staticmethod
+    def _configured_addresses(value: Any) -> set[ipaddress.IPv4Address | ipaddress.IPv6Address]:
+        addresses: set[ipaddress.IPv4Address | ipaddress.IPv6Address] = set()
+        if isinstance(value, dict):
+            for nested in value.values():
+                addresses.update(DeviceService._configured_addresses(nested))
+        elif isinstance(value, list):
+            for nested in value:
+                addresses.update(DeviceService._configured_addresses(nested))
+        elif isinstance(value, str):
+            candidate = value.strip()
+            try:
+                addresses.add(ipaddress.ip_address(candidate))
+            except ValueError:
+                try:
+                    addresses.add(ipaddress.ip_interface(candidate).ip)
+                except ValueError:
+                    pass
+        return addresses
+
+    def _protect_initialization_management_interface(
+        self, device_id: str, step: dict[str, Any], capability: Capability,
+        inventory_results: list[dict[str, Any]],
+    ) -> None:
+        resource = capability.path.split("/namespaces/{namespace}/", 1)[-1]
+        if not resource.startswith("interfaces"):
+            return
+        profile = self.repository.get(device_id)[0]
+        host = urlparse(profile.base_url).hostname or ""
+        try:
+            management_address = ipaddress.ip_address(host)
+        except ValueError as exc:
+            raise ValueError(
+                "Initialization interface changes are blocked because the current Web API "
+                f"address {host!r} is not a literal IP and its management interface cannot be identified safely"
+            ) from exc
+
+        management_identities: set[str] = set()
+        for row in self._interface_inventory_rows(inventory_results):
+            if management_address not in self._configured_addresses(row):
+                continue
+            management_identities.update(
+                str(row[key]) for key in ("name", "uuid") if row.get(key) not in (None, "")
+            )
+        if not management_identities:
+            raise ValueError(
+                "Initialization interface changes are blocked because the interface owning the "
+                f"current Web API address {host} could not be identified safely"
+            )
+
+        body = step.get("body") or {}
+        path_parameters = step.get("path_parameters") or {}
+        target_identities = {
+            str(value) for value in (
+                path_parameters.get("name"), path_parameters.get("uuid"),
+                body.get("name"), body.get("uuid"),
+            ) if value not in (None, "")
+        }
+        if not target_identities:
+            raise ValueError(
+                "Initialization cannot use a bulk or unidentified interface change while protecting "
+                f"the current Web API address {host}"
+            )
+        if management_identities.intersection(target_identities):
+            identity = sorted(management_identities.intersection(target_identities))[0]
+            raise ValueError(
+                "Initialization cannot modify the management interface that owns the current Web API "
+                f"address {host} ({identity}); changing it would break the active device connection"
+            )
+
     def discover(self, request: str, capability: str) -> dict[str, Any]:
         catalog = self.capabilities.catalog(capability)
         matches = self.capabilities.public_search(request, capability, 30) if request.strip() else catalog
@@ -773,6 +861,12 @@ class DeviceService:
             current = await self.initialize_device("inspect", plan["device_id"], stage=phase, limit=100)
             if not current["ok"] or not current["inventory_complete"] or saved != current["results"]:
                 raise ValueError("Initialization inventory changed or could not be read; create a new plan")
+            step = plan["steps"][0]
+            capability = self.capabilities.resolve(
+                operation_id=step.get("operation_id") or "",
+                endpoint_id=step.get("endpoint_id") or "", capability="edit")
+            self._protect_initialization_management_interface(
+                plan["device_id"], step, capability, current["results"])
         if not self.plans.claim(plan_id):
             raise ValueError("Plan is already being applied or was applied")
         try:
@@ -881,6 +975,8 @@ class DeviceService:
             inventory = await self.initialize_device("inspect", device_id, stage=stage, limit=100)
             if not inventory["ok"] or not inventory["inventory_complete"]:
                 raise ValueError("Stage inventory failed or may be truncated; no plan was created")
+            self._protect_initialization_management_interface(
+                device_id, change, capability, inventory["results"])
             name = (change.get("body") or {}).get("name") or (change.get("body") or {}).get("prefix")
             if capability.method == "POST" and name:
                 for item in inventory["results"]:
