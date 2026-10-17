@@ -93,7 +93,7 @@ foreach ($SkillArchive in $SkillArchives) {
 
 $Manifest = [ordered]@{
     product = 'SangforBox'
-    package_version = '1.0.6'
+    package_version = '1.0.7'
     built_at = [DateTime]::UtcNow.ToString('o')
     architecture = $env:PROCESSOR_ARCHITECTURE
     executable_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $OutputFullPath 'SangforBox.exe')).Hash.ToLowerInvariant()

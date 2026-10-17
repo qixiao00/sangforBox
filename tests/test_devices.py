@@ -20,6 +20,12 @@ class TestProtector:
         return protected.removeprefix("test:")[::-1]
 
 
+def network_interface(name, address, bits=24):
+    return {"name": name, "ifMode": "ROUTE", "shutdown": False,
+            "ipv4": {"ipv4Mode": "STATIC", "staticIp": [{"ipaddress": {
+                "start": address, "end": address, "bits": bits}}]}}
+
+
 def test_device_repository_never_returns_password(tmp_path):
     database = Database(tmp_path / "devices.db")
     database.initialize()
@@ -165,6 +171,9 @@ def test_query_and_edit_plan_apply_are_separate(tmp_path):
 
         async def request(self, method, path, *, params=None, json_body=None):
             calls.append((method, path, params, json_body))
+            if method == "GET" and path.endswith("/interfaces"):
+                return {"code": 0, "data": [network_interface("eth0", "192.0.2.12"),
+                                             network_interface("eth1", "198.51.100.2")]}
             if method == "GET" and path.endswith("/interfaces/eth1"):
                 return {"code": 0, "data": {"name": "eth1", "description": "WAN"}, "message": "成功"}
             if method == "GET":
@@ -193,11 +202,11 @@ def test_query_and_edit_plan_apply_are_separate(tmp_path):
             "body": {"name": "eth1", "ifType": "PHYSICALIF", "description": "电信出口"},
         }], "edit"))
     assert plan["status"] == "planned" and plan["requires_confirmation"] is True
-    assert [call[0] for call in calls] == ["GET"]  # preflight snapshot only
+    assert calls and all(call[0] == "GET" for call in calls)
 
     applied = asyncio.run(service.apply_change_plan(plan["plan_id"], "edit"))
     assert applied["status"] == "applied"
-    assert [call[0] for call in calls] == ["GET", "PATCH"]
+    assert [call[0] for call in calls].count("PATCH") == 1
     assert calls[-1][1].endswith("/interfaces/eth1")
     database.engine.dispose()
 
@@ -223,7 +232,9 @@ def test_initialization_inspect_and_plan(tmp_path):
             self.token = None
 
         async def request(self, method, path, *, params=None, json_body=None):
-            return {"code": 0, "data": [], "message": "成功"}
+            return {"code": 0, "data": [network_interface("eth0", "192.0.2.13"),
+                                         network_interface("eth1", "198.51.100.2")]
+                    if path.endswith("/interfaces") else [], "message": "成功"}
 
     database = Database(tmp_path / "initialize.db")
     database.initialize()
@@ -236,7 +247,7 @@ def test_initialization_inspect_and_plan(tmp_path):
     assert inspection["read_only"] is True and len(inspection["results"]) == 10
     plan = asyncio.run(service.initialize_device("plan", profile.device_id, "初始化默认路由", [{
         "operation_id": "route.ipv4.create",
-        "body": {"prefix": "0.0.0.0/0", "gateway": "192.0.2.1", "ifname": "auto"},
+        "body": {"prefix": "0.0.0.0/0", "gateway": "198.51.100.1", "ifname": "auto"},
         "decisions": {"on_existing": "abort"},
     }], stage="routing"))
     assert plan["kind"] == "initialization:routing" and plan["status"] == "planned"
@@ -303,7 +314,7 @@ def test_initialization_protects_current_web_api_management_interface(tmp_path):
         "operation_id": "interface.update", "path_parameters": {"name": "eth0"},
         "body": {"name": "eth0", "description": "must-not-change"},
     }
-    with pytest.raises(ValueError, match="current Web API address 192.0.2.13"):
+    with pytest.raises(ValueError, match="当前 Web API 地址 192.0.2.13"):
         asyncio.run(service.initialize_device(
             "plan", profile.device_id, changes=[management_change], stage="topology"))
 
@@ -354,7 +365,7 @@ def test_initialization_blocks_interface_changes_when_management_interface_is_un
         "operation_id": "interface.update", "path_parameters": {"name": "eth3"},
         "body": {"name": "eth3", "description": "blocked"},
     }
-    with pytest.raises(ValueError, match="management interface cannot be identified safely"):
+    with pytest.raises(ValueError, match="无法可靠识别管理接口"):
         asyncio.run(service.initialize_device(
             "plan", profile.device_id, changes=[change], stage="topology"))
     database.engine.dispose()
@@ -457,6 +468,9 @@ def test_initialization_requires_stage_and_verifies_before_next_change(tmp_path)
             if method == "POST":
                 routes.append(dict(json_body))
                 return {"code": 0, "data": json_body, "message": "成功"}
+            if path.endswith("/interfaces"):
+                return {"code": 0, "data": [network_interface("eth0", "192.0.2.30"),
+                                             network_interface("eth1", "198.51.100.2")]}
             return {"code": 0, "data": routes if path.endswith("/staticroutes/ipv4") else [],
                     "message": "成功"}
 
@@ -468,7 +482,7 @@ def test_initialization_requires_stage_and_verifies_before_next_change(tmp_path)
         password="secret-password", verify_tls=False,
     ))
     change = {"operation_id": "route.ipv4.create",
-              "body": {"prefix": "0.0.0.0/0", "gateway": "192.0.2.1", "ifname": "eth1"},
+              "body": {"prefix": "0.0.0.0/0", "gateway": "198.51.100.1", "ifname": "eth1"},
               "decisions": {"on_existing": "abort"}}
     with pytest.raises(ValueError, match="stage is required"):
         asyncio.run(service.initialize_device("plan", profile.device_id, changes=[change]))
@@ -553,6 +567,7 @@ def test_initialization_case_feedback_keeps_implementation_snapshot(tmp_path):
         "design", profile.device_id, case_id=case_id,
         design={"topology": "AF between LAN and uplink", "zones": [{"name": "LAN", "role": "inside"}],
                 "routing": [], "preserve_existing": True, "business_subnets": ["192.0.2.0/24"],
+                "network_context": {"needs_default_route": False, "routing_mode": "none"},
                 "protection_scope": "LAN egress", "default_choices": {
                     "security": "review deny baseline", "application": "review scoped allow",
                 }}, confirm_design=True))

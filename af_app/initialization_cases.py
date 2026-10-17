@@ -12,6 +12,7 @@ import tempfile
 import uuid
 from datetime import datetime, timezone
 from typing import Any
+from af_app.network_safety import NetworkContext
 
 
 def _now() -> str:
@@ -30,11 +31,11 @@ _SENSITIVE = {"password", "passwd", "secret", "token", "cookie", "authorization"
 _DESIGN_FIELDS = {
     "deployment_mode", "topology", "interfaces", "zones", "address_plan", "routing",
     "nat", "security", "application", "preserve_existing", "default_choices",
-    "business_subnets", "protection_scope", "management_recovery", "open_questions", "notes",
+    "business_subnets", "protection_scope", "management_recovery", "open_questions", "notes", "network_context",
 }
 _REQUIRED_DESIGN = (
     "deployment_mode", "topology", "interfaces", "zones", "routing",
-    "preserve_existing", "business_subnets", "protection_scope", "default_choices",
+    "preserve_existing", "business_subnets", "protection_scope", "default_choices", "network_context",
 )
 _CSV_FIELDS = (
     "case_id", "item_id", "review_hash", "stage", "configuration", "before", "planned",
@@ -125,6 +126,11 @@ class InitializationCaseRepository:
             gaps.append("default_choices")
         if design.get("open_questions"):
             gaps.append("open_questions")
+        if "network_context" not in gaps:
+            try:
+                NetworkContext.model_validate(design["network_context"])
+            except ValueError:
+                gaps.append("network_context")
         return gaps
 
     def save_design(self, device_id: str, patch: dict[str, Any], case_id: str = "",

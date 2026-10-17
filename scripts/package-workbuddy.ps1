@@ -34,6 +34,9 @@ try {
         try { $Entries = @($Zip.Entries | Where-Object { $_.Name } | ForEach-Object { $_.FullName.Replace('\', '/') }) }
         finally { $Zip.Dispose() }
         $ExpectedEntries = @('SKILL.md')
+        if ($SkillName -eq 'af-device-initialization') {
+            $ExpectedEntries += 'references/network-checks.md'
+        }
         if ($SkillName -eq 'af-daily-security-monitoring') {
             $ExpectedEntries += 'references/af-api-coverage.md'
         }

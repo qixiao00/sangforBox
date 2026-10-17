@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import base64
 import hashlib
-import ipaddress
 import json
 import os
 import sqlite3
@@ -19,6 +18,9 @@ from pydantic import BaseModel, Field, SecretStr, field_validator
 from af_app.operations import Capability, CapabilityRegistry, OperationPlanRepository, DeviceChange
 from af_app.knowledge import KnowledgeRepository
 from af_app.initialization_cases import InitializationCaseRepository, _safe
+from af_app.network_safety import (
+    NetworkSafetyError, inventory_complete, merge, network_report, resource_family, rows as inventory_rows,
+)
 
 
 def _now() -> str:
@@ -371,6 +373,7 @@ class AFAPIClient:
 
 
 class DeviceService:
+    NETWORK_READS = ("interface.list", "zone.list", "virline.list", "route.ipv4.list")
     INITIALIZATION_STAGES = (
         "management", "topology", "objects", "routing", "nat", "security", "application",
     )
@@ -412,92 +415,34 @@ class DeviceService:
             raise ValueError("Device selection is ambiguous or missing. Call query_device(action='devices') and choose a device_id.")
         return matches[0].device_id
 
-    @staticmethod
-    def _interface_inventory_rows(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        rows: list[dict[str, Any]] = []
-        for result in results:
-            if result.get("operation_id") != "interface.list":
-                continue
-            data = result.get("data")
-            if isinstance(data, list):
-                rows.extend(item for item in data if isinstance(item, dict))
-            elif isinstance(data, dict):
-                for key in ("items", "rows", "list"):
-                    items = data.get(key)
-                    if isinstance(items, list):
-                        rows.extend(item for item in items if isinstance(item, dict))
-                        break
-        return rows
-
-    @staticmethod
-    def _configured_addresses(value: Any) -> set[ipaddress.IPv4Address | ipaddress.IPv6Address]:
-        addresses: set[ipaddress.IPv4Address | ipaddress.IPv6Address] = set()
-        if isinstance(value, dict):
-            for nested in value.values():
-                addresses.update(DeviceService._configured_addresses(nested))
-        elif isinstance(value, list):
-            for nested in value:
-                addresses.update(DeviceService._configured_addresses(nested))
-        elif isinstance(value, str):
-            candidate = value.strip()
-            try:
-                addresses.add(ipaddress.ip_address(candidate))
-            except ValueError:
-                try:
-                    addresses.add(ipaddress.ip_interface(candidate).ip)
-                except ValueError:
-                    pass
-        return addresses
-
-    def _protect_initialization_management_interface(
-        self, device_id: str, step: dict[str, Any], capability: Capability,
-        inventory_results: list[dict[str, Any]],
-    ) -> None:
-        resource = capability.path.split("/namespaces/{namespace}/", 1)[-1]
-        if not resource.startswith("interfaces"):
-            return
+    async def _network_inventory(self, device_id: str) -> dict[str, Any]:
         profile = self.repository.get(device_id)[0]
-        host = urlparse(profile.base_url).hostname or ""
-        try:
-            management_address = ipaddress.ip_address(host)
-        except ValueError as exc:
-            raise ValueError(
-                "Initialization interface changes are blocked because the current Web API "
-                f"address {host!r} is not a literal IP and its management interface cannot be identified safely"
-            ) from exc
+        result = await self.query_device(device_id, "校验管理连接与网络路由", list(self.NETWORK_READS), limit=100)
+        if (not result["ok"] or {x.get("operation_id") for x in result["results"]} != set(self.NETWORK_READS)
+                or not all(x.get("data_complete") for x in result["results"])):
+            raise ValueError("网络盘点失败或分页未读全，暂停相关网络变更。")
+        return {"snapshot_type": "network_safety", "base_url": profile.base_url,
+                "namespace": profile.namespace, "results": result["results"]}
 
-        management_identities: set[str] = set()
-        for row in self._interface_inventory_rows(inventory_results):
-            if management_address not in self._configured_addresses(row):
-                continue
-            management_identities.update(
-                str(row[key]) for key in ("name", "uuid") if row.get(key) not in (None, "")
-            )
-        if not management_identities:
-            raise ValueError(
-                "Initialization interface changes are blocked because the interface owning the "
-                f"current Web API address {host} could not be identified safely"
-            )
-
-        body = step.get("body") or {}
-        path_parameters = step.get("path_parameters") or {}
-        target_identities = {
-            str(value) for value in (
-                path_parameters.get("name"), path_parameters.get("uuid"),
-                body.get("name"), body.get("uuid"),
-            ) if value not in (None, "")
-        }
-        if not target_identities:
-            raise ValueError(
-                "Initialization cannot use a bulk or unidentified interface change while protecting "
-                f"the current Web API address {host}"
-            )
-        if management_identities.intersection(target_identities):
-            identity = sorted(management_identities.intersection(target_identities))[0]
-            raise ValueError(
-                "Initialization cannot modify the management interface that owns the current Web API "
-                f"address {host} ({identity}); changing it would break the active device connection"
-            )
+    async def _check_network_steps(self, device_id: str, steps: list[dict], design: dict | None = None) -> tuple[dict | None, list[dict]]:
+        selected = [(step, self.capabilities.resolve(operation_id=step.get("operation_id") or "",
+                     endpoint_id=step.get("endpoint_id") or "", capability="edit")) for step in steps]
+        selected = [(step, capability) for step, capability in selected if resource_family(capability.path)]
+        if not selected:
+            return None, []
+        # Multi-step topology writes cannot be validated against the same starting snapshot.
+        if len(steps) != 1:
+            raise ValueError("每次只规划一项网络变更，回读验证后再进行下一项。")
+        snapshot = await self._network_inventory(device_id)
+        reports = []
+        for step, capability in selected:
+            report = network_report(snapshot["base_url"], snapshot["results"], step=step,
+                                    path=capability.path, method=capability.method, design=design)
+            if not report["write_allowed"]:
+                raise NetworkSafetyError(report)
+            reports.append(report)
+        snapshot["design"] = design or {}
+        return snapshot, reports
 
     def discover(self, request: str, capability: str) -> dict[str, Any]:
         catalog = self.capabilities.catalog(capability)
@@ -628,6 +573,7 @@ class DeviceService:
                             "path": path,
                             "ok": True,
                             "data": data,
+                            "data_complete": inventory_complete(payload.get("data"), limit),
                             "message": payload.get("message"),
                         })
                     except DeviceAPIError as exc:
@@ -810,7 +756,8 @@ class DeviceService:
 
     async def create_change_plan(self, device_id: str, request: str,
                                  changes: list[dict[str, Any]], kind: str = "edit",
-                                 extra_snapshots: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+                                 extra_snapshots: list[dict[str, Any]] | None = None,
+                                 network_design: dict[str, Any] | None = None) -> dict[str, Any]:
         device_id = self.resolve_device(device_id)
         self.repository.get(device_id)
         validated, questions = self._validate_changes(changes)
@@ -821,6 +768,7 @@ class DeviceService:
                 "message": "操作条件尚未明确，回答问题后重新生成计划；设备未被修改。",
             }
         snapshots: list[dict[str, Any]] = []
+        network_snapshot, network_checks = await self._check_network_steps(device_id, validated, network_design)
         preflight: list[dict[str, Any]] = []
         for step in validated:
             item = self.capabilities.resolve(
@@ -840,8 +788,12 @@ class DeviceService:
             snapshots = await self._run_remote_operations(device_id, preflight, limit=20)
             if not all(item.get("ok") for item in snapshots):
                 raise ValueError("Preflight failed; no executable plan was created")
+        if network_snapshot:
+            snapshots.append(network_snapshot)
         plan = self.plans.create(device_id, kind, request, validated, [*(extra_snapshots or []), *snapshots])
         plan["requires_confirmation"] = True
+        if network_checks:
+            plan["network_checks"] = network_checks[0]
         plan["message"] = "计划已生成，尚未修改设备。确认后使用同一工具的 apply 动作和 plan_id 执行。"
         return plan
 
@@ -861,12 +813,17 @@ class DeviceService:
             current = await self.initialize_device("inspect", plan["device_id"], stage=phase, limit=100)
             if not current["ok"] or not current["inventory_complete"] or saved != current["results"]:
                 raise ValueError("Initialization inventory changed or could not be read; create a new plan")
-            step = plan["steps"][0]
-            capability = self.capabilities.resolve(
-                operation_id=step.get("operation_id") or "",
-                endpoint_id=step.get("endpoint_id") or "", capability="edit")
-            self._protect_initialization_management_interface(
-                plan["device_id"], step, capability, current["results"])
+            linked_case = self.initialization_cases.case_for_plan(plan_id)
+            if linked_case:
+                case = self.initialization_cases.get(linked_case, plan["device_id"])
+                link = self.initialization_cases.linked_plan(linked_case, plan["device_id"], plan_id)
+                if case["missing_context"] or not case["design_confirmed"] or case["design_revision"] != link["design_revision"]:
+                    raise ValueError("Case design changed after planning; create a new plan")
+        saved_network = next((x for x in plan["snapshots"] if x.get("snapshot_type") == "network_safety"), None)
+        live_network, _ = await self._check_network_steps(
+            plan["device_id"], plan["steps"], (saved_network or {}).get("design"))
+        if live_network and live_network != saved_network:
+            raise ValueError("网络配置或 Web API 连接地址已变化，或旧计划缺少网络检查记录，请重新生成计划。")
         if not self.plans.claim(plan_id):
             raise ValueError("Plan is already being applied or was applied")
         try:
@@ -891,8 +848,18 @@ class DeviceService:
         if stage and stage not in self.INITIALIZATION_STAGES:
             raise ValueError(f"Unknown initialization stage: {stage}")
         if action == "design":
-            return self.initialization_cases.save_design(
-                device_id, design or {}, case_id, confirm_design)
+            previous = self.initialization_cases.get(case_id, device_id)["design"] if case_id else {}
+            proposed = merge(previous, design or {})
+            # Validate local fields first, before remote I/O or recording confirmation.
+            if confirm_design and self.initialization_cases.design_gaps(proposed):
+                raise ValueError(f"Design is incomplete: {self.initialization_cases.design_gaps(proposed)}")
+            snapshot = await self._network_inventory(device_id)
+            report = network_report(snapshot["base_url"], snapshot["results"], design=proposed)
+            if confirm_design and not report["design_ready"]:
+                raise NetworkSafetyError(report)
+            record = self.initialization_cases.save_design(device_id, design or {}, case_id, confirm_design)
+            record["network_checks"] = report
+            return record
         if action == "case":
             if not case_id:
                 raise ValueError("case_id is required")
@@ -922,13 +889,22 @@ class DeviceService:
                 operation for phase in self.INITIALIZATION_STAGES
                 for operation in self.INITIALIZATION_READS[phase]
             ))
+            operation_ids = list(dict.fromkeys([*operation_ids, *self.NETWORK_READS]))
             result = await self.query_device(device_id, request or "检查设备初始化状态", operation_ids, limit=limit)
             result.update(initialization_action=action, stage=stage or "all",
                           stages=list(self.INITIALIZATION_STAGES),
                           inventory_complete=result["ok"] and all(
-                              not isinstance(item.get("data"), list) or len(item["data"]) < limit
+                              item.get("data_complete", False)
                               for item in result["results"]
                           ))
+            case_design = self.initialization_cases.get(case_id, device_id)["design"] if case_id else {}
+            result["network_checks"] = network_report(
+                self.repository.get(device_id)[0].base_url, result["results"], design=case_design)
+            if not result["inventory_complete"]:
+                result["network_checks"]["write_allowed"] = False
+                result["network_checks"]["configuration_complete"] = False
+                result["network_checks"]["issues"].append({"code": "inventory_incomplete", "severity": "required_context",
+                                                          "message": "设备盘点失败或分页未读全，暂停规划。"})
             return result
         if action == "prepare":
             if not stage:
@@ -941,12 +917,22 @@ class DeviceService:
                 questions += self.prepare_change_questions(request, endpoint_ids=endpoint_ids)["questions"]
             else:
                 questions = self.prepare_change_questions(request, operation_ids or None, endpoint_ids or None)["questions"]
-            return {"ok": True, "status": "clarification_required", "stage": stage,
-                    "questions": questions, "required_context": [
-                        "deployment_mode", "interface_and_zone_roles", "address_plan", "default_route",
-                        "preserve_existing", "on_existing", "policy_initial_enabled",
-                        "business_subnets_and_protection_scope",
-                    ], "next_action": "Read live state and collect user decisions before plan."}
+            case = self.initialization_cases.get(case_id, device_id) if case_id else None
+            snapshot = await self._network_inventory(device_id)
+            report = network_report(snapshot["base_url"], snapshot["results"], design=case["design"] if case else {})
+            if len(selected) == 1:
+                change = selected[0]
+                capability = self.capabilities.resolve(operation_id=change.get("operation_id") or "",
+                                                       endpoint_id=change.get("endpoint_id") or "", capability="edit")
+                if resource_family(capability.path):
+                    report = network_report(snapshot["base_url"], snapshot["results"], step=change,
+                                            path=capability.path, method=capability.method,
+                                            design=case["design"] if case else {})
+            return {"ok": report["write_allowed"],
+                    "status": "clarification_required" if report["write_allowed"] else "network_check_blocked", "stage": stage,
+                    "questions": questions, "required_context": case["missing_context"] if case else ["case_id"],
+                    "network_checks": report,
+                    "next_action": "展示管理口保护和网络问题；只追问未回答项，再生成单项计划。"}
         if action == "plan":
             if not stage:
                 raise ValueError("stage is required for plan")
@@ -956,6 +942,8 @@ class DeviceService:
                 case = self.initialization_cases.get(case_id, device_id)
                 if not case["design_confirmed"]:
                     raise ValueError("Confirm the current case design revision before planning")
+                if case["missing_context"]:
+                    raise ValueError(f"Update and reconfirm the case design: {case['missing_context']}")
                 if stage == "management" and not case["design"].get("management_recovery"):
                     raise ValueError("Management stage requires an engineer-confirmed recovery path")
             change = changes[0]
@@ -975,8 +963,6 @@ class DeviceService:
             inventory = await self.initialize_device("inspect", device_id, stage=stage, limit=100)
             if not inventory["ok"] or not inventory["inventory_complete"]:
                 raise ValueError("Stage inventory failed or may be truncated; no plan was created")
-            self._protect_initialization_management_interface(
-                device_id, change, capability, inventory["results"])
             name = (change.get("body") or {}).get("name") or (change.get("body") or {}).get("prefix")
             if capability.method == "POST" and name:
                 for item in inventory["results"]:
@@ -986,6 +972,7 @@ class DeviceService:
             plan = await self.create_change_plan(
                 device_id, request, changes, f"initialization:{stage}",
                 extra_snapshots=[{"snapshot_type": "initialization_inventory", "results": inventory["results"]}],
+                network_design=case["design"] if case_id else None,
             )
             if plan.get("status") == "planned":
                 plan["stage"] = stage
@@ -1062,20 +1049,22 @@ class DeviceService:
             if plan["status"] != "applied":
                 raise ValueError("Only an applied initialization plan can be verified")
             phase = plan["kind"].split(":", 1)[1]
-            inventory = await self.initialize_device("inspect", device_id, stage=phase, limit=100)
+            inventory = await self.initialize_device("inspect", device_id, stage=phase, limit=100, case_id=case_id)
             step = plan["steps"][0]
             body = step.get("body") or {}
             identity = (body.get("name") or body.get("prefix") or
                         step.get("path_parameters", {}).get("name") or
                         step.get("path_parameters", {}).get("uuid"))
-            matches = [row for item in inventory["results"] if isinstance(item.get("data"), list)
-                       for row in item["data"] if isinstance(row, dict) and identity in
-                       (row.get("name"), row.get("prefix"), row.get("uuid"))]
+            resource = self.capabilities.resolve(operation_id=step.get("operation_id") or "",
+                       endpoint_id=step.get("endpoint_id") or "", capability="edit").path
+            matches = [row for row in inventory_rows(inventory["results"], self._inventory_operation(resource))
+                       if identity in (row.get("name"), row.get("prefix"), row.get("uuid"))]
             verified = bool(identity and matches and body and inventory["inventory_complete"]
                             and all(key in matches[0] and matches[0][key] == value
                                     for key, value in body.items()))
             outcome = {"ok": verified, "status": "verified" if verified else "review_required",
                        "stage": phase, "plan_id": plan_id, "inventory": inventory,
+                       "network_checks": inventory["network_checks"],
                        "message": "回读字段与计划一致" if verified else "无法自动证明变更已生效，请人工核对设备回读结果"}
             if verified:
                 self.plans.mark_applied(plan_id, "verified", {
@@ -1095,8 +1084,7 @@ class DeviceService:
     def _inventory_item(results: list[dict[str, Any]], resource: str,
                         identity: Any) -> dict[str, Any] | None:
         operation = DeviceService._inventory_operation(resource)
-        result = next((item for item in results if item.get("operation_id") == operation), None)
-        rows = result.get("data") if result and isinstance(result.get("data"), list) else []
+        rows = inventory_rows(results, operation)
         return next((row for row in rows if isinstance(row, dict) and identity is not None
                      and identity in (row.get("name"), row.get("prefix"), row.get("uuid"))), None)
 

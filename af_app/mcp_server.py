@@ -4,13 +4,24 @@ from mcp.server.mcpserver import MCPServer
 from af_app.service import ProbeResult, KnowledgeSearchRequest, KnowledgeSearchResponse
 from af_app.devices import DeviceAPIError
 from af_app.operations import DeviceChange
+from af_app.network_safety import NetworkSafetyError
 from af_app.policy_optimizer import OptimizationRequest, ReviewDecision, FeedbackRequest
+
+NETWORK_INSTRUCTIONS = (
+    "初始化开始及收到 network_checks 时，先向工程师展示 user_message、issues 和 unverified，"
+    "明确当前 Web API 管理 IP（例如 10.251.251.251）及所属接口不可更改。"
+    "把拓扑中的路由需求整理为 design.network_context，经用户确认后保存；缺少路由时提出建议并询问下一跳，"
+    "不能把 PC 直连的管理网段或 PC 地址当作业务出口。network_check_blocked 必须停止相应变更，"
+    "不能改用 edit_device、其他 endpoint 或脚本绕过。configuration_complete 只代表配置检查，"
+    "不代表业务或上游回程已经连通。"
+)
 
 
 def create_mcp(service, traces):
     server = MCPServer(
         "AF Workbench",
-        instructions="""你是深信服 AF 运维连接器。默认且仅通过本 MCP 内部的 AF HTTP API 查询或操作设备；凭据、登录和 Cookie 由服务器管理。不要编写 Python/curl、读取本地凭据、修改本地 Skill，或自动切换 SSH/CLI。query_device 用于实时查询，edit_device 用于明确的单项配置变更，initialize_device 仅用于初始化工作流。初始化期间，当前 Web API 地址所属管理接口绝对不能修改、删除、解绑或迁移；无法可靠识别该接口时停止所有初始化接口变更。应用控制策略的整表梳理/优化必须调用 analyze_app_control、get_app_control_analysis，先展示审核 CSV 和问题 CSV，再按用户决定使用 review_app_control、verify_app_control_review、preflight_app_control_review。工程师手动修改后用 record_app_control_feedback 读取最新设备配置并生成可下载差异日志；此流程只读，不得把优化候选转交 edit_device 下发。device_id 可填写档案 ID、名称、IP 或 URL。优先使用已注册 operation_id；未注册能力调用 lookup_api_endpoint 查找手册端点，必要时 get_api_endpoint 核对参数，然后把唯一 endpoint_id 交给 query_device，或作为 edit_device change 的 endpoint_id。不得把 URL 交给执行工具。单项配置变更先调用 edit_device(action=prepare)，逐项向用户询问返回的必答问题；不得代替用户选择新增/修改、同名对象处理方式或策略启用状态。收集答案后才可 plan。GET 端点可直接查询；POST/PUT/PATCH/DELETE 必须 plan，向用户呈现对象、变更、影响和回滚，确认后 apply，再读取设备验证。普通实时查询不先调用 framework_probe。Session not found 属于客户端 MCP 会话失效，应提示重新连接，不得绕过 MCP。最终答复采用厂商运维口径：先给结论，只列与问题相关的配置和异常；区分设备实测、手册定义和推断；省略工具调用过程、PID、Session ID、原始 JSON、无关对象及调试产物。查询成功通常控制在一张小表或 3-6 个要点。""",
+        # The backend also enforces these rules when the scenario Skill is absent.
+        instructions=NETWORK_INSTRUCTIONS + """你是深信服 AF 运维连接器。默认且仅通过本 MCP 内部的 AF HTTP API 查询或操作设备；凭据、登录和 Cookie 由服务器管理。不要编写 Python/curl、读取本地凭据、修改本地 Skill，或自动切换 SSH/CLI。query_device 用于实时查询，edit_device 用于明确的单项配置变更，initialize_device 仅用于初始化工作流。初始化期间，当前 Web API 地址所属管理接口绝对不能修改、删除、解绑或迁移；无法可靠识别该接口时停止所有初始化接口变更。应用控制策略的整表梳理/优化必须调用 analyze_app_control、get_app_control_analysis，先展示审核 CSV 和问题 CSV，再按用户决定使用 review_app_control、verify_app_control_review、preflight_app_control_review。工程师手动修改后用 record_app_control_feedback 读取最新设备配置并生成可下载差异日志；此流程只读，不得把优化候选转交 edit_device 下发。device_id 可填写档案 ID、名称、IP 或 URL。优先使用已注册 operation_id；未注册能力调用 lookup_api_endpoint 查找手册端点，必要时 get_api_endpoint 核对参数，然后把唯一 endpoint_id 交给 query_device，或作为 edit_device change 的 endpoint_id。不得把 URL 交给执行工具。单项配置变更先调用 edit_device(action=prepare)，逐项向用户询问返回的必答问题；不得代替用户选择新增/修改、同名对象处理方式或策略启用状态。收集答案后才可 plan。GET 端点可直接查询；POST/PUT/PATCH/DELETE 必须 plan，向用户呈现对象、变更、影响和回滚，确认后 apply，再读取设备验证。普通实时查询不先调用 framework_probe。Session not found 属于客户端 MCP 会话失效，应提示重新连接，不得绕过 MCP。最终答复采用厂商运维口径：先给结论，只列与问题相关的配置和异常；区分设备实测、手册定义和推断；省略工具调用过程、PID、Session ID、原始 JSON、无关对象及调试产物。查询成功通常控制在一张小表或 3-6 个要点。""",
     )
 
     def describe_operations(operation_ids: list[str], kind: str) -> dict:
@@ -163,6 +174,9 @@ def create_mcp(service, traces):
             return await service.devices.apply_change_plan(plan_id, "edit")
         except KeyError:
             return {"ok": False, "status": "not_found", "message": "Device profile or plan not found"}
+        except NetworkSafetyError as exc:
+            return {"ok": False, "status": "network_check_blocked", "network_checks": exc.report,
+                    "message": str(exc)}
         except (ValueError, DeviceAPIError) as exc:
             detail = exc.public_detail() if isinstance(exc, DeviceAPIError) else {"message": str(exc)}
             return {"ok": False, "status": "request_failed", "error": detail}
@@ -182,7 +196,7 @@ def create_mcp(service, traces):
         confirm_design: bool = False,
         feedback_csv: str = "",
     ) -> dict:
-        """AF initialization trial in one MCP tool. Collect a design over multiple turns with design(case_id optional), confirm its revision, inspect and prepare each stage, then plan one change, obtain user confirmation, apply and verify. Bind changes with case_id. resolve records an engineer's manual review after uncertain or mismatched results. feedback_review reads live configuration and returns a difference table plus CSV; feedback_submit accepts the completed CSV; events returns metadata-only audit events. Registered operation_id and documented endpoint_id are both supported."""
+        """AF initialization: collect and confirm a design, inspect/prepare, plan one change, obtain approval, apply and verify. Always show network_checks.user_message, issues and unverified items to the engineer. design.network_context requires needs_default_route (boolean), routing_mode (static/dynamic/none), uplink_interface and required_networks (IPv4 CIDRs); routing is a list of AF route bodies (prefix/gateway/ifname/enable). Preserve the interface owning the active Web API IP and its dependencies; PC direct management IP must never become a business interface or default gateway. Missing final routes are reported while earlier stages remain possible. Unknown dynamic/recursive routing is not proof of connectivity. case_id binds the design revision. resolve records manual review; feedback_review reads differences and feedback_submit accepts completed CSV; events returns audit metadata. operation_id and documented endpoint_id are supported."""
         try:
             result = await service.devices.initialize_device(
                 action, service.devices.resolve_device(device_id), request,
@@ -202,6 +216,9 @@ def create_mcp(service, traces):
                     service.devices.initialization_cases.event(case_id, action, "failed", stage, plan_id)
                 except (ValueError, KeyError):
                     pass
+            if isinstance(exc, NetworkSafetyError):
+                return {"ok": False, "status": "network_check_blocked", "network_checks": exc.report,
+                        "message": str(exc)}
             detail = exc.public_detail() if isinstance(exc, DeviceAPIError) else {"message": str(exc)}
             return {"ok": False, "status": "request_failed", "error": detail}
 
