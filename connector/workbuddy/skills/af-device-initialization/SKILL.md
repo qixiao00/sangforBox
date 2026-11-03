@@ -4,7 +4,7 @@ description: 在 WorkBuddy 中引导工程师逐步完成深信服 AF 8.0.107 �
 metadata:
   agent_created: "true"
   layer: scenario
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # AF 初始化试用流程
@@ -31,7 +31,7 @@ metadata:
 
 ## 分阶段实施
 
-阶段依次考虑 `management`、`topology`、`objects`、`routing`、`nat`、`security`、`application`，跳过经工程师确认无需变更的阶段。每项先 `inspect(stage=..., case_id=...)`，再 `prepare(stage=..., case_id=..., changes=[...])` 获取待确认项。只询问返回的 `required_context` 和尚未回答的 `questions`；已有明确回答直接沿用，不能替工程师选择。把答案写入 `decisions`，再调用 `plan(stage=..., case_id=..., changes=[单项变更])`；`stage` 是 plan 的必填参数。plan 只生成计划，不写设备。展示目标、现状、影响、依赖、验证标准和回滚动作；工程师明确确认该 `plan_id` 后才能执行 `apply`，随后执行 `verify`。
+阶段依次考虑 `management`、`topology`、`wan`、`objects`、`routing`、`nat`、`security`、`application`，跳过经工程师确认无需变更的阶段。每项先 `inspect(stage=..., case_id=...)`，再 `prepare(stage=..., case_id=..., changes=[...])` 获取待确认项。只询问返回的 `required_context` 和尚未回答的 `questions`；已有明确回答直接沿用，不能替工程师选择。把答案写入 `decisions`，再调用 `plan(stage=..., case_id=..., changes=[单项变更])`；`stage` 是 plan 的必填参数。plan 只生成计划，不写设备。展示目标、现状、影响、依赖、验证标准和回滚动作；工程师明确确认该 `plan_id` 后才能执行 `apply`，随后执行 `verify`。
 
 每次收到 `network_checks`，在 WorkBuddy 对话中展示 `user_message`、本次相关的 `issues` 和 `unverified`。`blocker` 表示禁止执行，`required_context` 表示需要补充明确证据，`warning` 表示待实施或未验证事项。收到 `network_check_blocked` 时停止该项变更，不能换工具、端点或脚本重试绕过。缺少最终路由可以先实施不依赖它的业务接口步骤，但必须保留缺口提示，不能宣告初始化完成。`configuration_complete` 只表示这组配置检查完成，不能声称实际业务或上游回程已连通。
 
@@ -44,6 +44,37 @@ metadata:
 SangforBox 在 plan 和 apply 前重新读取完整网络盘点，识别不唯一、域名/映射地址不能对应本机接口、分页未读全或管理连接变化时会阻止相关网络写入。此保护也适用于普通编辑工具。实际管理客户端的回程路径未被自动证明，不能以“检查通过”声称远程管理绝不会中断。
 
 上一项结果未知或回读无法证明生效时暂停；工程师核查后，可用 `resolve` 记录明确的人工处理结论和原因。回读配置一致不等于业务连通性已通过；实际业务验证由工程师另行记录。
+
+## WAN 与 PPPoE 拨号
+
+PPPoE 是独立对象，顺序不能颠倒，每一步都要回读：
+
+1. `wan.pppoe.create`：body 必须是**扁平**的 `{"name","user","password"}`，不得包 `obj`；实例名按 `eth1.1` 这类「接口.序号」命名。
+2. 回读 `wan.pppoe.list` 或 `wan.pppoe.get`，确认实例已存在。
+3. `interface.update`（PATCH）：`ipv4Mode=PPPOE` 并给出 `pppoeGroupName`。此时实例必须已存在，否则设备返回 code 1009「指定的资源 PPPoE[...] 不存在」。
+4. `wan.pppoe.connect`：`oprtype=LINKON`；断开用 `LINKOFF`。
+5. 回读 `wan.pppoe.status`：`status` 为「断开」或 `status_code` 非 0 时，**不能**说拨号成功，只能报告「连接指令已被接受、链路未建立」，并给出 `logInfo` 与排查方向（账号口令、VLAN、上游认证、光猫桥接）。不要自动反复重拨。
+
+`HTTP 200` 不等于成功：AF 会在 200 响应体里返回非 0 的 `code`（例如 22、1009）。只有 `code==0` 才算设备接受，工具返回 `ok:false` 时照实报错，不要换写法连打。
+
+拨号口默认路由：设备对 `gateway=0.0.0.0` 会报「无效的下一跳」，而 `ifname=auto` 又可能因解析不到唯一出口被安全检查拦下。正确形态是「出接口 = 拨号接口、不带网关」的接口路由；启用 PPPoE 的 `setRoute` 会自动生成它，因此**先确认是否已有 0.0.0.0/0，避免与手建的静态默认路由并存**。
+
+## 安全防护与僵尸网络模板
+
+- 后端不会代填 `response.block` 或 `response.utm`。工程师没写的开关就不下发。
+- `response.utm.enable=true` 必须同时给出 `template`；`response.block.enable=true` 必须给出 `type`（`HIGH_THREATS` / `ANY_THREAT`），否则计划阶段直接拦下。
+- 新设备可能**根本没有僵尸网络模板和 WAF 模板**，强行开启会报「请配置僵尸网络模板」。先看 `security_options`（只列现有策略出现过的值，`authoritative=false`），模板不存在时两条路：让工程师在「对象 › 安全策略模板」先建，或保持 `utm.enable=false` 并在报告里记为待办。
+- 工程师在 WebUI 抄来的模板名要原样使用，不要翻译、不要猜缩写。
+
+## 对象与命名的常见坑
+
+- 预定义地址对象在不同版本里可能叫 `All`、`private-network`，中文手册样例里的「全部」并不存在，会报 code 1009。以 `inspect` 读到的实际对象名为准；`prepare` 会返回 `object_options.address_objects`。
+- 应用识别对象才叫「全部」，服务对象是 `any`，三者命名体系不统一，不要互相套用。
+- 静态路由与安全策略的 `description` 禁止 `~ ! # $ % ^ & * + \ | { } ; : " ' / < > ?`，写 `192.168.1.0/24` 这类描述会直接 code 22；能不带描述就不带。
+
+## 失败与重试
+
+同一个对象连续失败两次就停下：先 `inspect` 回读现状，再用 `get_api_endpoint` 核对手册的路径、字段和请求体形状，把结论写进 `resolve` 的 `reason`。禁止用「换一种写法再试一次」的方式连打——现场已出现 `POST /pppoes` 连打五次、`POST /securitys` 连打五次仍然失败的情况，浪费的是现场时间。
 
 ## 收集反馈
 

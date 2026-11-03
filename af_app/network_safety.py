@@ -136,6 +136,11 @@ def resource_family(path: str) -> str:
     for root in ("interfaces", "zones", "virlines", "localappcontrols"):
         if resource == root or resource.startswith(root + "/"):
             return root
+    for root in ("pppoes", "pppoestatus", "pppoeconnect"):
+        if resource == root or resource.startswith(root + "/"):
+            return "pppoes"
+    if resource.startswith("linkdetects") or resource.startswith("status/linkdetect"):
+        return "linkdetects"
     return ""
 
 
@@ -298,6 +303,30 @@ def network_report(base_url: str, results: list[dict], *, step: dict | None = No
                         problems.append(issue("route_prefix_exists", "required_context",
                             f"已存在目的网段 {route.get('prefix')} 的路由；请核实已有路由及多出口意图，不能重复新增。"))
                         break
+        if family == "pppoes":
+            declared_name = str((step or {}).get("path_parameters", {}).get("name") or "")
+            pppoe_name = str(body.get("name") or declared_name or next(iter(sorted(target_ids)), ""))
+            base = pppoe_name.split(".", 1)[0]
+            if not pppoe_name:
+                problems.append(issue("pppoe_target_unknown", "blocker", "无法识别 PPPoE 实例名，禁止下发。"))
+            elif {pppoe_name, base} & protected:
+                problems.append(issue("management_pppoe_target", "blocker",
+                    f"PPPoE 实例 {pppoe_name} 指向当前管理接口，初始化期间禁止修改或拨号。"))
+            if body.get("setRoute") is True:
+                problems.append(issue("pppoe_auto_route_unverified", "warning",
+                    "PPPoE 自动添加默认路由后，静态路由清单无法证明运行路由；拨号成功后需核对 0.0.0.0/0 "
+                    "是否出现、是否与既有默认路由并存并造成选路不确定。"))
+            if body.get("setDns") is True:
+                problems.append(issue("pppoe_dns_change_unverified", "warning",
+                    "PPPoE 会改写设备 DNS，当前没有 DNS 现状盘点，需人工核对。"))
+        if family == "linkdetects":
+            for key in ("ping", "dns", "arp", "bfd", "linkDetect"):
+                probe = body.get(key)
+                if isinstance(probe, dict) and str(probe.get("interface") or "") in protected:
+                    problems.append(issue("management_probe_target", "blocker",
+                        "链路探测不能使用当前管理接口作为出接口。"))
+                    break
+
 
     # Design checking is against the final intended state; missing live routes do not block
     # the earlier interface/object stages. Proposed individual writes still use live state.

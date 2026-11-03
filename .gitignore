@@ -2,6 +2,7 @@
 .venv/
 __pycache__/
 .pytest_cache/
+.pytest-tmp*/
 *.egg-info/
 
 # 构建产物
@@ -12,13 +13,15 @@ frontend/.next/
 frontend/out/
 frontend/tsconfig.tsbuildinfo
 
-# 运行态（现默认落在 %LOCALAPPDATA%\SangforBox，此处为向后兼容的历史路径）
+# 运行态（源码默认在 %LOCALAPPDATA%\SangforBox，便携版在 EXE 同级）
 data/
 results/
 logs/
 
 # 本地配置与私有素材
 .env
+.env.*
+!.env.example
 *.pdf
 
 # 页面预览临时目录

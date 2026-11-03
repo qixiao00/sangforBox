@@ -5,6 +5,36 @@ Windows 上运行的 Next.js Web + FastAPI + MCP Server + SQLite 本地知识库
 
 ## 启动
 
+### 换一台 Windows 电脑继续开发和构建
+
+安装 Git 和 Python 3.12（64 位），用自己的 GitHub 账号登录并克隆本仓库。在仓库根目录执行：
+
+```powershell
+git clone https://github.com/qixiao00/sangforBox.git
+cd sangforBox
+.\scripts\setup.ps1
+.\scripts\import-knowledge.ps1
+.\.venv\Scripts\python.exe -m pytest -q
+.\scripts\start.ps1
+```
+
+若当前 PowerShell 禁止执行脚本，可仅对当前窗口设置 `Set-ExecutionPolicy -Scope Process Bypass` 后再执行。`setup.ps1` 使用当前 `python` 创建虚拟环境；先确认 `python --version` 为 3.12。
+
+知识库的可重建源数据已包含在 `knowledge/processed/`，导入后生成本机数据库；无需复制旧电脑的 `af.db`。仓库不携带设备档案、密码、现场日志和运行记录，需在新电脑重新添加设备；旧电脑的 Windows DPAPI 密文不能跨电脑解密。
+
+重新生成 Windows 便携包还需安装打包依赖：
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-build.txt
+.\scripts\package-portable.ps1
+```
+
+输出位于仓库同级的 `SangforBox-Portable/` 和 `SangforBox-Portable.zip`。脚本会从知识库源数据构建干净种子数据库，并把三个 WorkBuddy Skill 一起打包。已有的本机运行目录会备份保留。
+
+仓库已带 `af_app/static/` 静态页面；修改前端时另外安装 Node.js（满足当前 Next.js、pnpm 的运行要求）及 `frontend/package.json` 指定的 `pnpm@11.19.0`，再执行 `.\scripts\build-web.ps1`，然后重新打包。仅修改后端或 Skill 时可直接使用已有静态页面。
+
+继续开发前先 `git pull --ff-only`，完成后按项目约定执行 `git add`、提交并推送。源码版本与便携包应分别验证；仓库中的源码可能包含尚未重新打包的改动。
+
 需要 Python 3.11+（本项目使用 Windows Python 3.12 验证）。仓库已包含 Next.js 的静态构建结果，运行服务不需要 Node.js，也不需要模型。
 
 ```powershell

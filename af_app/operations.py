@@ -166,6 +166,62 @@ CAPABILITIES: tuple[Capability, ...] = (
 )
 
 
+# PPPoE 拨号（手册 5.4.x）与链路探测（手册 4.2.x）。现场实测这两类操作缺少能力注册，
+# 模型只能凭手册手拼 body，POST 返回 200 就被当成成功，拨号没起来、模板没生效都发现不了。
+CAPABILITIES += (
+    Capability("wan.pppoe.list", "查询 PPPoE 拨号配置", "query", "GET",
+               "/api/v1/namespaces/{namespace}/pppoes", "af-8.0.107-api#5.4.1",
+               ("pppoe", "PPPoE", "拨号", "宽带", "拨号配置", "wan", "pppoe列表"), pagination=True),
+    Capability("wan.pppoe.get", "查询单个 PPPoE 拨号配置", "query", "GET",
+               "/api/v1/namespaces/{namespace}/pppoes/{name}", "af-8.0.107-api#5.4.2",
+               ("指定pppoe", "pppoe详情", "拨号详情"), required_path_parameters=("name",)),
+    Capability("wan.pppoe.create", "新增 PPPoE 拨号配置", "edit", "POST",
+               "/api/v1/namespaces/{namespace}/pppoes", "af-8.0.107-api#5.4.3",
+               ("新增pppoe", "添加拨号", "配置pppoe", "创建拨号"), "high",
+               preflight_operation_id="wan.pppoe.list"),
+    Capability("wan.pppoe.update", "增量修改 PPPoE 拨号配置", "edit", "PATCH",
+               "/api/v1/namespaces/{namespace}/pppoes/{name}", "af-8.0.107-api#5.4.6",
+               ("修改pppoe", "编辑拨号", "改拨号密码"), "high", ("name",),
+               preflight_operation_id="wan.pppoe.get"),
+    Capability("wan.pppoe.delete", "删除 PPPoE 拨号配置", "edit", "DELETE",
+               "/api/v1/namespaces/{namespace}/pppoes/{name}", "af-8.0.107-api#5.4.4",
+               ("删除pppoe", "删除拨号"), "critical", ("name",),
+               preflight_operation_id="wan.pppoe.get"),
+    Capability("wan.pppoe.status", "查询 PPPoE 拨号状态", "query", "GET",
+               "/api/v1/namespaces/{namespace}/pppoestatus/{name}", "af-8.0.107-api#5.4.8",
+               ("pppoe状态", "拨号状态", "拨号成功了吗", "pppoestatus"), required_path_parameters=("name",)),
+    Capability("wan.pppoe.connect", "PPPoE 拨号连接/断开", "edit", "POST",
+               "/api/v1/namespaces/{namespace}/pppoeconnect/{name}", "af-8.0.107-api#5.4.9",
+               ("拨号连接", "立即拨号", "断开拨号", "pppoe连接", "重拨"), "medium", ("name",),
+               preflight_operation_id="wan.pppoe.status"),
+
+    Capability("probe.linkdetect.list", "查询链路探测配置", "query", "GET",
+               "/api/v1/namespaces/{namespace}/linkdetects", "af-8.0.107-api#4.2.1",
+               ("链路探测", "ping探测", "探测配置", "linkdetect"), pagination=True),
+    Capability("probe.linkdetect.get", "查询单个链路探测配置", "query", "GET",
+               "/api/v1/namespaces/{namespace}/linkdetects/{name}", "af-8.0.107-api#4.2.2",
+               ("指定链路探测", "探测详情"), required_path_parameters=("name",)),
+    Capability("probe.linkdetect.create", "新增链路探测配置", "edit", "POST",
+               "/api/v1/namespaces/{namespace}/linkdetects", "af-8.0.107-api#4.2.3",
+               ("新增链路探测", "配置ping探测", "添加链路探测"), "high",
+               preflight_operation_id="probe.linkdetect.list"),
+    Capability("probe.linkdetect.update", "增量修改链路探测配置", "edit", "PATCH",
+               "/api/v1/namespaces/{namespace}/linkdetects/{name}", "af-8.0.107-api#4.2.8",
+               ("修改链路探测", "改探测目标"), "high", ("name",),
+               preflight_operation_id="probe.linkdetect.get"),
+    Capability("probe.linkdetect.delete", "删除链路探测配置", "edit", "DELETE",
+               "/api/v1/namespaces/{namespace}/linkdetects/{name}", "af-8.0.107-api#4.2.5",
+               ("删除链路探测",), "critical", ("name",),
+               preflight_operation_id="probe.linkdetect.get"),
+    Capability("probe.linkdetect.status.list", "查询链路探测运行状态", "query", "GET",
+               "/api/v1/namespaces/{namespace}/status/linkdetects", "af-8.0.107-api#4.2.10",
+               ("探测状态", "链路状态", "ping结果", "探测结果"), pagination=True),
+    Capability("probe.linkdetect.status.get", "查询单条链路探测运行状态", "query", "GET",
+               "/api/v1/namespaces/{namespace}/status/linkdetects/{name}", "af-8.0.107-api#4.2.11",
+               ("单条探测状态",), required_path_parameters=("name",)),
+)
+
+
 # Reviewed resource paths from the local AF 8.0.107 API manual.
 for domain, title, resource, section, entries, key in (
     ("virline", "虚拟网线组", "virlines", "5.5", {"list":1,"get":2,"create":3,"delete":4,"update":6}, "name"),

@@ -244,7 +244,11 @@ def test_initialization_inspect_and_plan(tmp_path):
         password="secret-password", verify_tls=False,
     ))
     inspection = asyncio.run(service.initialize_device("inspect", profile.device_id))
-    assert inspection["read_only"] is True and len(inspection["results"]) == 10
+    expected_reads = {operation for stage in service.INITIALIZATION_STAGES
+                      for operation in service.INITIALIZATION_READS[stage]} | set(service.NETWORK_READS)
+    assert inspection["read_only"] is True and len(inspection["results"]) == len(expected_reads)
+    assert {"wan.pppoe.list", "probe.linkdetect.list"} <= expected_reads
+    assert inspection["stages"] == list(service.INITIALIZATION_STAGES)
     plan = asyncio.run(service.initialize_device("plan", profile.device_id, "初始化默认路由", [{
         "operation_id": "route.ipv4.create",
         "body": {"prefix": "0.0.0.0/0", "gateway": "198.51.100.1", "ifname": "auto"},
@@ -413,8 +417,8 @@ def test_prepare_returns_preset_change_questions(tmp_path):
         "decisions": {"on_existing": "abort", "initial_enabled": True},
     }])
     assert missing == [] and security[0]["body"]["enable"] is True
-    assert security[0]["body"]["response"]["block"] == {
-        "enable": True, "type": "HIGH_THREATS"}
+    # 后端不再静默补 response.block：工程师没写就不下发，避免默认值覆盖现场决定。
+    assert "response" not in security[0]["body"]
 
     explicit_off, missing = service._validate_changes([{
         "operation_id": "policy.security.create",
@@ -425,8 +429,38 @@ def test_prepare_returns_preset_change_questions(tmp_path):
         "decisions": {"on_existing": "abort", "initial_enabled": True},
     }])
     assert missing == []
-    assert explicit_off[0]["body"]["response"]["block"] == {
-        "enable": False, "type": "HIGH_THREATS"}
+    assert explicit_off[0]["body"]["response"]["block"] == {"enable": False}
+
+    # 开启僵尸网络必须给出真实模板名，不能由后端猜；设备没有模板时会报「请配置僵尸网络模板」。
+    import pytest as _pytest
+    with _pytest.raises(ValueError, match="security_utm_template_required"):
+        service._validate_changes([{
+            "operation_id": "policy.security.create",
+            "body": {
+                "name": "server-protect-utm", "policyType": "SERVER",
+                "response": {"utm": {"enable": True, "action": "DENY"}},
+            },
+            "decisions": {"on_existing": "abort", "initial_enabled": True},
+        }])
+    with _pytest.raises(ValueError, match="security_block_type_required"):
+        service._validate_changes([{
+            "operation_id": "policy.security.create",
+            "body": {
+                "name": "server-protect-block", "policyType": "SERVER",
+                "response": {"block": {"enable": True}},
+            },
+            "decisions": {"on_existing": "abort", "initial_enabled": True},
+        }])
+    utm_ok, missing = service._validate_changes([{
+        "operation_id": "policy.security.create",
+        "body": {
+            "name": "server-protect-utm-ok", "policyType": "SERVER",
+            "response": {"utm": {"enable": True, "template": "Default Template", "action": "DENY"}},
+        },
+        "decisions": {"on_existing": "abort", "initial_enabled": True},
+    }])
+    assert missing == []
+    assert utm_ok[0]["body"]["response"]["utm"]["template"] == "Default Template"
 
     import pytest
     with pytest.raises(ValueError, match="扁平对象"):

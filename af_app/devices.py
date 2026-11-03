@@ -4,6 +4,7 @@ import base64
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import time
 import uuid
@@ -372,16 +373,86 @@ class AFAPIClient:
             self.http.cookies.delete("token")
 
 
+PPPOE_NAME = re.compile(r"[A-Za-z0-9_.:-]{1,32}")
+# AF 8.0.107 对 description 的字符限制来自现场实测（code 22），安全策略与静态路由同样适用。
+BANNED_DESCRIPTION_CHARS = set("~!#$%^&*+\\|{};:\"'/<>?")
+
+
+def _validate_pppoe_body(capability, body, path_parameters) -> None:
+    """PPPoE 请求体校验：手册 5.4.3 是扁平 name/user/password，设备不接受 obj 包裹。"""
+    body = body if isinstance(body, dict) else {}
+    resource = capability.path.split("/namespaces/{namespace}/", 1)[-1]
+    if "obj" in body or "pppoe" in body:
+        raise ValueError("PPPoE 请求体必须是扁平对象（name/user/password），不得包裹 obj 或 pppoe")
+    if resource.startswith("pppoeconnect/"):
+        if body.get("oprtype") not in {"LINKON", "LINKOFF"}:
+            raise ValueError("PPPoE 连接操作必须显式给出 oprtype=LINKON（拨号）或 LINKOFF（断开）")
+        return
+    for key in ("user", "password"):
+        value = body.get(key)
+        if value is not None and (not isinstance(value, str) or not value.strip()):
+            raise ValueError(f"PPPoE {key} 不能为空")
+    if capability.method == "POST" and resource == "pppoes":
+        missing = [key for key in ("name", "user", "password") if not body.get(key)]
+        if missing:
+            raise ValueError(
+                f"新增 PPPoE 必须提供 {', '.join(missing)}（手册 5.4.3）；密码只放在 changes.body，不要写进 design")
+    if "name" in body:
+        name = body["name"]
+        if not isinstance(name, str) or not PPPOE_NAME.fullmatch(name):
+            raise ValueError("PPPoE 实例名只允许 1-32 位字母、数字、下划线、点、冒号、连字符，例如 eth1.1")
+        declared = str(path_parameters.get("name") or "")
+        if declared and declared != name:
+            raise ValueError("PPPoE 请求体 name 与路径参数 name 不一致")
+
+
+SECURITY_OPTION_LIMIT = 40
+
+
+def security_options(results: list[dict[str, Any]]) -> dict[str, Any]:
+    """聚合现有安全策略里出现过的模板/动作，供对话展示。
+
+    手册没有模板列表接口，这里只能给“现有策略的观察值”，不能声称是设备内置模板全集。
+    """
+    collected: dict[str, set[str]] = {"block_types": set(), "utm_templates": set(),
+                                      "utm_actions": set(), "defence_templates": set()}
+    policies = 0
+    for row in inventory_rows(results, "policy.security.list"):
+        if not isinstance(row, dict):
+            continue
+        policies += 1
+        response = row.get("response") if isinstance(row.get("response"), dict) else {}
+        block = response.get("block") if isinstance(response.get("block"), dict) else {}
+        utm = response.get("utm") if isinstance(response.get("utm"), dict) else {}
+        for target, value in ((collected["block_types"], block.get("type")),
+                              (collected["utm_templates"], utm.get("template")),
+                              (collected["utm_actions"], utm.get("action"))):
+            if isinstance(value, str) and value.strip():
+                target.add(value.strip())
+        defence = row.get("defence") if isinstance(row.get("defence"), dict) else {}
+        for value in defence.values():
+            if isinstance(value, dict) and isinstance(value.get("template"), str) and value["template"].strip():
+                collected["defence_templates"].add(value["template"].strip())
+    return {key: sorted(values)[:SECURITY_OPTION_LIMIT] for key, values in collected.items()} | {
+        "observed_from": "existing_security_policies",
+        "observed_policies": policies,
+        "authoritative": False,
+        "note": ("只能列举现有策略中出现过的值。设备内置的僵尸网络/IPS/WAF 模板没有对应 API，"
+                 "请工程师从设备 WebUI 模板页复制名称后原样给出；后端不会代填默认模板。"),
+    }
+
+
 class DeviceService:
     NETWORK_READS = ("interface.list", "zone.list", "virline.list", "route.ipv4.list")
     INITIALIZATION_STAGES = (
-        "management", "topology", "objects", "routing", "nat", "security", "application",
+        "management", "topology", "wan", "objects", "routing", "nat", "security", "application",
     )
     INITIALIZATION_READS = {
         "management": ("interface.list", "policy.local_control.list"),
         "topology": ("interface.list", "zone.list", "virline.list"),
+        "wan": ("interface.list", "wan.pppoe.list"),
         "objects": ("network_object.list",),
-        "routing": ("route.ipv4.list", "interface.list"),
+        "routing": ("route.ipv4.list", "interface.list", "probe.linkdetect.list"),
         "nat": ("policy.nat.list", "network_object.list", "zone.list"),
         "security": ("policy.security.list", "network_object.list", "zone.list"),
         "application": ("policy.app_control.list", "policy.app_control.group.list", "network_object.list", "zone.list"),
@@ -389,8 +460,9 @@ class DeviceService:
     INITIALIZATION_RESOURCES = {
         "management": ("interfaces", "localappcontrols"),
         "topology": ("interfaces", "zones", "virlines"),
+        "wan": ("pppoes", "pppoestatus", "pppoeconnect", "interfaces"),
         "objects": ("ipgroups",),
-        "routing": ("staticroutes/ipv4",),
+        "routing": ("staticroutes/ipv4", "linkdetects", "status/linkdetects"),
         "nat": ("nats",),
         "security": ("securitys",),
         "application": ("appcontrols",),
@@ -672,6 +744,41 @@ class DeviceService:
             "queried_at": _now(),
         }
 
+    @staticmethod
+    def _validate_security_response(body: dict[str, Any]) -> None:
+        """校验 response 但绝不注入默认值：工程师写的键不动，缺关键字段直接拦。"""
+        response = body.get("response")
+        if response is None:
+            return
+        if not isinstance(response, dict):
+            raise ValueError("安全防护策略 response 必须是对象")
+        block = response.get("block")
+        if block is not None:
+            if not isinstance(block, dict):
+                raise ValueError("安全防护策略 response.block 必须是对象")
+            if block.get("enable") and not block.get("type"):
+                raise ValueError(
+                    "security_block_type_required: 开启联动封锁必须明确 type（HIGH_THREATS 或 ANY_THREAT），"
+                    "后端不再代填默认类型")
+            if block.get("type") not in (None, "HIGH_THREATS", "ANY_THREAT"):
+                raise ValueError("联动封锁 type 只能是 HIGH_THREATS 或 ANY_THREAT")
+        utm = response.get("utm")
+        if utm is not None:
+            if not isinstance(utm, dict):
+                raise ValueError("安全防护策略 response.utm 必须是对象")
+            template = utm.get("template")
+            if utm.get("enable") and not template:
+                raise ValueError(
+                    "security_utm_template_required: 开启僵尸网络必须填写具体模板名。设备上没有模板时会报"
+                    "「请配置僵尸网络模板」，应先创建模板或保持 utm.enable=false，后端不会代填默认模板")
+            if template is not None:
+                if not isinstance(template, str) or not template.strip():
+                    raise ValueError("僵尸网络模板名必须是非空字符串")
+                if len(template.encode("utf-8")) > 95:
+                    raise ValueError("僵尸网络模板名不得超过 95 字节")
+            if utm.get("action") not in (None, "ALLOW", "DENY"):
+                raise ValueError("僵尸网络动作只能是 ALLOW 或 DENY")
+
     def _validate_changes(self, changes: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         if not changes:
             raise ValueError("At least one structured change is required")
@@ -721,14 +828,7 @@ class DeviceService:
                 if "security" in body or "obj" in body:
                     raise ValueError("安全防护策略请求体必须是扁平对象，不得包裹 security 或 obj")
                 if item.method == "POST":
-                    response = body.setdefault("response", {})
-                    if not isinstance(response, dict):
-                        raise ValueError("安全防护策略 response 必须是对象")
-                    botnet = response.setdefault("block", {})
-                    if not isinstance(botnet, dict):
-                        raise ValueError("安全防护策略 response.block 必须是对象")
-                    botnet.setdefault("enable", True)
-                    botnet.setdefault("type", "HIGH_THREATS")
+                    self._validate_security_response(body)
                 description = body.get("description")
                 if isinstance(description, str):
                     if len(description.encode("utf-8")) > 95:
@@ -739,6 +839,18 @@ class DeviceService:
                 policy_type = body.get("policyType")
                 if policy_type is not None and policy_type not in {"SERVER", "INTERNET_ACCESS"}:
                     raise ValueError("安全防护策略 policyType 只能是 SERVER 或 INTERNET_ACCESS")
+            if "/staticroutes/ipv4" in item.path and isinstance(body, dict):
+                route_description = body.get("description")
+                if isinstance(route_description, str):
+                    if len(route_description.encode("utf-8")) > 95:
+                        raise ValueError("静态路由 description 不得超过 95 字节")
+                    banned = BANNED_DESCRIPTION_CHARS & set(route_description)
+                    if banned:
+                        raise ValueError(
+                            f"静态路由 description 含设备不允许的字符 {sorted(banned)}；"
+                            "现场实测该字段会返回 code 22，请去掉或改用中英文与数字")
+            if "/pppoe" in item.path:
+                _validate_pppoe_body(item, body, path_parameters)
             self.capabilities.validate_query_parameters(item, raw.get("query_parameters") or {})
             self.capabilities.validate_body(item, body)
             validated.append({
@@ -905,6 +1017,8 @@ class DeviceService:
                 result["network_checks"]["configuration_complete"] = False
                 result["network_checks"]["issues"].append({"code": "inventory_incomplete", "severity": "required_context",
                                                           "message": "设备盘点失败或分页未读全，暂停规划。"})
+            if stage in {"", "security"}:
+                result["security_options"] = security_options(result["results"])
             return result
         if action == "prepare":
             if not stage:
@@ -928,11 +1042,23 @@ class DeviceService:
                     report = network_report(snapshot["base_url"], snapshot["results"], step=change,
                                             path=capability.path, method=capability.method,
                                             design=case["design"] if case else {})
-            return {"ok": report["write_allowed"],
-                    "status": "clarification_required" if report["write_allowed"] else "network_check_blocked", "stage": stage,
-                    "questions": questions, "required_context": case["missing_context"] if case else ["case_id"],
-                    "network_checks": report,
-                    "next_action": "展示管理口保护和网络问题；只追问未回答项，再生成单项计划。"}
+            response = {"ok": report["write_allowed"],
+                        "status": "clarification_required" if report["write_allowed"] else "network_check_blocked", "stage": stage,
+                        "questions": questions, "required_context": case["missing_context"] if case else ["case_id"],
+                        "network_checks": report,
+                        "next_action": "展示管理口保护和网络问题；只追问未回答项，再生成单项计划。"}
+            if stage == "security":
+                response["security_options"] = security_options(snapshot["results"])
+            if stage in {"nat", "security", "application"}:
+                response["object_options"] = {
+                    "address_objects": [str(row.get("name")) for row in inventory_rows(
+                        snapshot["results"], "network_object.list") if row.get("name")][:40],
+                    "authoritative": False,
+                    "note": ("以设备实际对象名为准：预定义地址对象常见 All / private-network，"
+                             "中文手册样例里的「全部」在这类设备上不存在（会报 code 1009）；"
+                             "应用识别对象才叫「全部」，服务对象是 any。"),
+                }
+            return response
         if action == "plan":
             if not stage:
                 raise ValueError("stage is required for plan")
