@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p514-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=514 | table_id=af-8.0.107-api-p514-t1<br>上下文标题路径：4 对象 / 4.6 负载均衡地址池对象 / 4.6.6 全量修改指定的负载均衡地址池对象</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>SLB 地址池对象</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.name</td><td>string</td><td>SLB 地址池对象名字<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.loadBalanceMethod</td><td>string</td><td>负载方法<br>枚举值:[<br>WEIGHTED HASH:加权轮询<br>_<br>WEIGHTED ROUND ROBIN:Weighted round<br>_ _<br>robin<br>WEIGHTED LEAST CONNECTION:加权最小连<br>_ _<br>接数<br>]</td></tr>
+<tr><td>data.realServers</td><td>object[]</td><td>SLB地址池的地址列表</td></tr>
+<tr><td>data.realServers.addr</td><td>object</td><td>连接地址<br>格式:ip-range</td></tr>
+<tr><td>data.realServers.addr.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.realServers.addr.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.realServers.addr.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.realServers.port</td><td>int32</td><td>连接端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.realServers.weight</td><td>uint8</td><td>权重<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.type</td><td>string</td><td>SLB 地址池对象类型<br>枚举值:[<br>IPV4:ipv4 slbpool<br>IPV6:ipv6 slbpool<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

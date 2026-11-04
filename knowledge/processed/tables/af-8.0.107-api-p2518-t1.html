@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2518-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2518 | table_id=af-8.0.107-api-p2518-t1<br>上下文标题路径：6 策略 / 6.3 访问控制 / 6.3.1 应用控制策略相关 / 6.3.1.1 应用控制策略 / 6.3.1.1.4 增加单项应用控制策略</p>
+<table>
+<thead><tr><th>obj.dst.dstAddrs.dstAddrType</th><th>string</th><th>是</th><th>目的地址类型<br>默认值:NETOBJECT<br>枚举值:[<br>NETOBJECT:ip组<br>MAC:mac地址<br>DOMAIN:域名<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.dst.dstAddrs.dstMacAddrs</td><td>string[]</td><td>按条件选<br>择</td><td>目的mac地址列表，目的地址类型为"MAC<br>"时使用</td></tr>
+<tr><td>obj.dst.dstAddrs.domains</td><td>string[]</td><td>按条件选<br>择</td><td>域名列表，目的地址类型为"DOMAIN"时<br>使用 -- 该参数暂不支持使用</td></tr>
+<tr><td>obj.dst.dstAddrs.dstIpGroups</td><td>string[]</td><td>按条件选<br>择</td><td>目的ip组列表，目的地址类型为"NETOBJ<br>ECT"时使用</td></tr>
+<tr><td>obj.dst.services</td><td>string[]</td><td>是</td><td>服务引用列表</td></tr>
+<tr><td>obj.dst.applications</td><td>string[]</td><td>是</td><td>应用引用列表</td></tr>
+<tr><td>obj.action</td><td>uint32</td><td>否</td><td>应用控制策略动作，允许或拒绝<br>默认值:1<br>枚举值:[<br>0:拒绝<br>1:允许<br>]</td></tr>
+<tr><td>obj.schedule</td><td>string</td><td>是</td><td>应用控制策略生效时间</td></tr>
+<tr><td>obj.advanceOption</td><td>object</td><td>否</td><td>应用控制策略高级选项</td></tr>
+<tr><td>obj.advanceOption.logEnable</td><td>bool</td><td>否</td><td>是否开启会话日志策略命中记录</td></tr>
+<tr><td>obj.advanceOption.sessionDestroyLogEnable</td><td>bool</td><td>否</td><td>是否开启会话结束日志</td></tr>
+<tr><td>obj.advanceOption.autoSynDNS</td><td>bool</td><td>否</td><td>是否开启主动查询域名 --<br>该参数暂不支持使用</td></tr>
+<tr><td>obj.advanceOption.keepAlive</td><td>uint8</td><td>否</td><td>设置长连接，可选值[0,1,3,7,10,15]</td></tr>
+<tr><td>obj.reason</td><td>string</td><td>否</td><td>应用控制策略变更原因 --<br>该参数暂不支持使用<br>最小长度:0<br>最大长度:256</td></tr>
+<tr><td>obj.profile</td><td>string</td><td>--</td><td>acl policy profile</td></tr>
+</tbody>
+</table>
+</body>
+</html>

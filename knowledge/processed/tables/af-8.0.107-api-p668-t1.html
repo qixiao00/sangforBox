@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p668-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=668 | table_id=af-8.0.107-api-p668-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.5 增量修改指定接口信息</p>
+<table>
+<thead><tr><th>data.channelif.channelStatic.failover.channelPrimary</th><th>string</th><th>聚合口主备模式的主接口，状态字段，配置无效</th></tr></thead>
+<tbody>
+<tr><td>data.channelif.channelStatic.loadbalance</td><td>string</td><td>负载均衡的方法，聚合口静态模式选择负载均衡时使用<br>枚举值:[<br>ROUNDROBIN:平衡轮询策略<br>L2HASH:hash负载分担平衡策略<br>L3HASH:hash负载分担平衡策略<br>L4HASH:hash负载分担平衡策略<br>TLB:tlb策略<br>]</td></tr>
+<tr><td>data.channelif.channelLacp</td><td>object</td><td>聚合口动态模式下的相关配置，聚合口工作模式为动态<br>时使用</td></tr>
+<tr><td>data.channelif.channelLacp.hashMode</td><td>string</td><td>哈希策略<br>枚举值:[<br>MAC:源与目的mac<br>2TUPLE:源与目的IP、mac<br>3TUPLE:源与目的IP、mac、port<br>]</td></tr>
+<tr><td>data.channelif.channelLacp.negotiateMode</td><td>string</td><td>协商模式<br>枚举值:[<br>INITIATIVE:源与目的IP<br>PASSIVE:源与目的IP、mac<br>]</td></tr>
+<tr><td>data.channelif.ethSelect</td><td>string[]</td><td>选择的物理口列表</td></tr>
+<tr><td>data.channelif.bypassMirror</td><td>object</td><td>旁路镜像模式有效</td></tr>
+<tr><td>data.channelif.bypassMirror.statsEnable</td><td>bool</td><td>是否启用流量统计</td></tr>
+<tr><td>data.channelif.bypassMirror.ipGroup</td><td>string[]</td><td>内网网络对象，旁路镜像模式开启流量统计时使用</td></tr>
+<tr><td>data.gretunif</td><td>object</td><td>GRE隧道口相关配置</td></tr>
+<tr><td>data.gretunif.type</td><td>string</td><td>隧道IP地址类型<br>枚举值:[<br>IPV4:IPV4 隧道封装<br>IPV6:IPV6 隧道封装<br>]</td></tr>
+<tr><td>data.gretunif.tunnelSrc</td><td>string</td><td>隧道的源地址<br>格式:ip-address</td></tr>
+<tr><td>data.gretunif.tunnelDst</td><td>string</td><td>隧道的目的地址<br>格式:ip-address</td></tr>
+<tr><td>data.gretunif.greKey</td><td>int64</td><td>gre的密钥<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.gretunif.checkSumEnable</td><td>bool</td><td>是否开启报文检验和</td></tr>
+<tr><td>data.gretunif.keepalive</td><td>object</td><td>keepalive相关配置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

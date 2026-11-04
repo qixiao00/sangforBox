@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2499-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2499 | table_id=af-8.0.107-api-p2499-t1<br>上下文标题路径：6 策略 / 6.3 访问控制 / 6.3.1 应用控制策略相关 / 6.3.1.1 应用控制策略 / 6.3.1.1.1 获取应用控制策略列表</p>
+<table>
+<thead><tr><th>_start</th><th>int32</th><th>否</th><th>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</th></tr></thead>
+<tbody>
+<tr><td>action</td><td>uint32</td><td>否</td><td>过滤动作<br>枚举值:[<br>1:动作允许<br>0:动作拒绝<br>]</td></tr>
+<tr><td>_length</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>dstPort</td><td>uint16</td><td>否</td><td>匹配目的端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>name</td><td>string</td><td>否</td><td>资源名<br>最大长度:1440</td></tr>
+<tr><td>id</td><td>uint32</td><td>否</td><td>过滤id，保留字段</td></tr>
+<tr><td>uuid</td><td>string</td><td>否</td><td>资源全局唯一ID<br>最大长度:32</td></tr>
+<tr><td>_order</td><td>string</td><td>否</td><td>指定排序方式（正序/倒序）<br>默认值:asc<br>枚举值:[<br>asc:按升序排列<br>desc:按降序排列<br>]</td></tr>
+<tr><td>srcPort</td><td>uint16</td><td>否</td><td>匹配源端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>_select</td><td>string</td><td>否</td><td>选择字段，字段用逗号分隔<br>最大长度:1000</td></tr>
+<tr><td>protoNum</td><td>uint8</td><td>否</td><td>匹配协议<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>actionTime</td><td>string</td><td>否</td><td>匹配时间</td></tr>
+<tr><td>dstIp</td><td>string</td><td>否</td><td>匹配目的ip地址<br>格式:ip-address</td></tr>
+<tr><td>_search</td><td>string</td><td>否</td><td>模糊搜索关键字<br>最大长度:95</td></tr>
+<tr><td>invalidStatus</td><td>bool</td><td>否</td><td>过滤失效状态策略</td></tr>
+<tr><td>_sortby</td><td>string</td><td>否</td><td>指定排序字段<br>最大长度:100</td></tr>
+<tr><td>policyGroup</td><td>string</td><td>否</td><td>过滤策略组<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>enable</td><td>bool</td><td>否</td><td>过滤启禁用</td></tr>
+</tbody>
+</table>
+</body>
+</html>

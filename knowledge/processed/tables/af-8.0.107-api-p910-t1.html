@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p910-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=910 | table_id=af-8.0.107-api-p910-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.3 静态路由IPV6 / 5.8.3.2 获取IPv6静态路由列表</p>
+<table>
+<thead><tr><th>_start</th><th>int32</th><th>否</th><th>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</th></tr></thead>
+<tbody>
+<tr><td>distance</td><td>uint8</td><td>否</td><td>路由管理距离，默认为1<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>_length</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>ifname</td><td>string</td><td>否</td><td>出接口名称，自动选择接口识别到的接口不<br>支持该参数过滤<br>最小长度:1<br>最大长度:48</td></tr>
+<tr><td>_sortby</td><td>string</td><td>否</td><td>指定排序字段<br>最大长度:100</td></tr>
+<tr><td>metric</td><td>uint32</td><td>否</td><td>静态路由度量值<br>最小值:256<br>最大值:1023</td></tr>
+<tr><td>_order</td><td>string</td><td>否</td><td>指定排序方式（正序/倒序）<br>默认值:asc<br>枚举值:[<br>asc:按升序排列<br>desc:按降序排列<br>]</td></tr>
+<tr><td>gateway</td><td>string</td><td>否</td><td>下一跳IPv6地址<br>格式:ip6-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p258-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=258 | table_id=af-8.0.107-api-p258-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.5 服务配置 / 3.4.3.5.1 修改告警服务配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>告警推送服务的配置</td></tr>
+<tr><td>obj.email push interval_ _</td><td>uint16</td><td>--</td><td>推送邮件的时间间隔（s）<br>最小值:0<br>最大值:43200<br>默认值:1200</td></tr>
+<tr><td>obj.sms push interval_ _</td><td>uint16</td><td>--</td><td>推送短信的时间间隔（s）<br>最小值:0<br>最大值:43200<br>默认值:1200</td></tr>
+<tr><td>obj.enableWarning</td><td>bool</td><td>--</td><td>是否启用告警推送，在告警推送时会判断根<br>据这个字段决定是否要发送告警信息</td></tr>
+<tr><td>obj.destination count li_ _mit</td><td>int8</td><td>--</td><td>支持的单次告警目的地址最大数量<br>最小值:1<br>最大值:20<br>默认值:20</td></tr>
+<tr><td>obj.module messages_ _limit</td><td>int8</td><td>--</td><td>单次push时，每个模块最大的告警条数<br>最小值:1<br>最大值:120<br>默认值:5</td></tr>
+<tr><td>obj.curl timeout_</td><td>int16</td><td>--</td><td>发送信息时，请求的数据传输超时秒数<br>最小值:1<br>最大值:600<br>默认值:60</td></tr>
+</tbody>
+</table>
+</body>
+</html>

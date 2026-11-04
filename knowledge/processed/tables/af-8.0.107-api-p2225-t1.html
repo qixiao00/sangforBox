@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2225-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2225 | table_id=af-8.0.107-api-p2225-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.1 安全防护策略高级设置 / 6.2.1.1.3 内容安全高级设置 / 6.2.1.1.3.4 获取单条内容安全模板</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>内容安全模板</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.name</td><td>string</td><td>名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.templateId</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.showname</td><td>string</td><td>名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.schedule</td><td>string</td><td>生效时间</td></tr>
+<tr><td>data.safe</td><td>object</td><td>安全配置</td></tr>
+<tr><td>data.safe.mailSafe</td><td>object</td><td>邮件安全</td></tr>
+<tr><td>data.safe.mailSafe.enable</td><td>bool</td><td>邮件安全开关</td></tr>
+<tr><td>data.safe.mailSafe.ports</td><td>int32[]</td><td>邮件服务器端口</td></tr>
+<tr><td>data.safe.mailSafe.warningText</td><td>string</td><td>恶意邮件提示文本<br>最小长度:1<br>最大长度:253</td></tr>
+<tr><td>data.safe.urlfilter</td><td>object</td><td>URL过滤</td></tr>
+<tr><td>data.safe.urlfilter.enable</td><td>bool</td><td>URL过滤开关</td></tr>
+<tr><td>data.safe.urlfilter.allUrlType</td><td>bool</td><td>URL分类库是否全选</td></tr>
+<tr><td>data.safe.urlfilter.dnsFilter</td><td>bool</td><td>是否启用DNS阶段的URL过滤</td></tr>
+<tr><td>data.safe.urlfilter.dnsDecrypt</td><td>bool</td><td>是否启用DNS加密流量解密</td></tr>
+<tr><td>data.safe.urlfilter.disableFirefoxDns</td><td>bool</td><td>是否禁用Firefox安全DNS默认策略</td></tr>
+<tr><td>data.safe.urlfilter.stripECH</td><td>bool</td><td>是否移除DNS中加密参数</td></tr>
+</tbody>
+</table>
+</body>
+</html>

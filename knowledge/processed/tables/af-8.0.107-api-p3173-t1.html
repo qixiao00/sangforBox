@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3173-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3173 | table_id=af-8.0.107-api-p3173-t1<br>上下文标题路径：8 运营中心 / 8.3 封锁攻击者IP / 8.3.3 批量添加封锁攻击者</p>
+<table>
+<thead><tr><th>code</th><th>int</th><th>错误码</th></tr></thead>
+<tbody>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>批量添加封锁IP</td></tr>
+<tr><td>data.ipType</td><td>string</td><td>stateCenter:block ip src or dst or dns or url<br>枚举值:[<br>SRC:源IP<br>DST:目的IP<br>DNS:域名<br>URL:url<br>]</td></tr>
+<tr><td>data.srcIP</td><td>string[]</td><td>以源IP地址列表添加封锁,需指定ipType为SRC才生效</td></tr>
+<tr><td>data.dstIP</td><td>string[]</td><td>以目的IP地址列表添加封锁,需指定ipType为DST才生<br>效</td></tr>
+<tr><td>data.dstPort</td><td>int32</td><td>目的端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.url</td><td>string[]</td><td>url</td></tr>
+<tr><td>data.dns</td><td>string[]</td><td>url</td></tr>
+<tr><td>data.attack</td><td>string</td><td>触发封锁的攻击类型<br>枚举值:[<br>NULL:手动添加，无攻击类型<br>WAF:WAF攻击<br>IPS:IPS攻击<br>UTM:UTM攻击<br>IP-CT:IP-CT攻击<br>DOS:DOS攻击<br>PLT-AUTO:安全感知平台自动策略<br>PLT-MANUAL:安全感知平台手动策略<br>CLOUD-IP-PROTECT:黑客IP防护库<br>PLT-HONEYPOT:蜜罐平台封锁<br>PLT-SIP:安全感知平台<br>PLT-MSS:MSS运营平台<br>CLOUD-IP-QUERY:云脑联动<br>WAF-CDN:WEB应用防护CDN场景<br>TRAP-POLICY:云端蜜罐日志联动封锁<br>CONNCTL:连接数控制<br>ASSETFORGERY:stateCenter:block<br>ASSETFORGERY<br>PLT-XDR:可扩展检测响应平台<br>PHISHING EMAIL:钓鱼邮件防护<br>_<br>]</td></tr>
+<tr><td>data.blockTime</td><td>string</td><td>时间(带时间单位m/h/d)</td></tr>
+<tr><td>data.result</td><td>object[]</td><td>封锁结果</td></tr>
+<tr><td>data.result.blockUrl</td><td>string</td><td>url</td></tr>
+<tr><td>data.result.blockRes</td><td>bool</td><td>封锁结果</td></tr>
+<tr><td>data.result.blockMsg</td><td>string</td><td>信息</td></tr>
+<tr><td>data.conflictNum</td><td>int32</td><td>与全局黑名单或白名单IP冲突的数量</td></tr>
+<tr><td>data.conflictItem</td><td>string[]</td><td>与全局黑名单或白名单IP冲突的列表</td></tr>
+</tbody>
+</table>
+</body>
+</html>

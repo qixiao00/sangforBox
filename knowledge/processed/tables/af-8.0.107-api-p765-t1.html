@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p765-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=765 | table=af-8.0.107-api-p765-t1</p>
+<table>
+<thead><tr><th>data.items.ipv6.staticIp.i<br>paddress.bits</th><th>uint8</th><th>ip掩码简写</th></tr></thead>
+<tbody>
+<tr><td>data.items.ipv6.staticIp.<br>state</td><td>string</td><td>ipv6状态<br>枚举值:[<br>TENTATIVE:tentative<br>COMPLETE:complete<br>DUPLICATE:duplicate<br>UNKNOWN:未知<br>]</td></tr>
+<tr><td>data.items.ipv6.dhcp6</td><td>object</td><td>dhcp6客户端配置</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList</td><td>object[]</td><td>dhcp6的ipv6地址列表</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList.ipaddress</td><td>object</td><td>IPv6地址<br>格式:ip-range</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList.ipaddress.st<br>art</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList.ipaddress.en<br>d</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList.ipaddress.bit<br>s</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.items.ipv6.dhcp6.d<br>hcp6IpList.state</td><td>string</td><td>ipv6状态<br>枚举值:[<br>TENTATIVE:tentative<br>COMPLETE:complete<br>DUPLICATE:duplicate<br>UNKNOWN:未知<br>]</td></tr>
+<tr><td>data.items.ipv6.dhcp6.cl<br>ientMode</td><td>string</td><td>客户端模式<br>枚举值:[<br>ADDR:dhcp6 client addr模式<br>PD:dhcp6 client pd(prefix delegation) 模式<br>]</td></tr>
+<tr><td>data.items.ipv6.dhcp6.s<br>erverIp</td><td>object</td><td>dhcp6客户端指定的server ip<br>格式:ip-range</td></tr>
+<tr><td>data.items.ipv6.dhcp6.s<br>erverIp.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.ipv6.dhcp6.s<br>erverIp.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.items.ipv6.dhcp6.s<br>erverIp.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.items.ipv6.dhcp6.r<br>apidOption</td><td>bool</td><td>是否开启dhcp6 rapid-commit(快速分配)选项</td></tr>
+<tr><td>data.items.ipv6.dhcp6.i<br>nfoOnlyOption</td><td>bool</td><td>是否开启dhcp6 info-only(只获取信息)选项</td></tr>
+</tbody>
+</table>
+</body>
+</html>

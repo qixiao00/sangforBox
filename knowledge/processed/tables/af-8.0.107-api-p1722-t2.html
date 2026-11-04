@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1722-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1722 | table_id=af-8.0.107-api-p1722-t2<br>上下文标题路径：5 网络 / 5.10 DHCP / 5.10.1 DHCP配置 / 5.10.1.1 dhcp4 / 5.10.1.1.9 获取指定的dhcp4客户端的状态信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>dhcp4客户端状态信息</td></tr>
+<tr><td>data.ifname</td><td>string</td><td>接口名称</td></tr>
+<tr><td>data.state</td><td>string</td><td>客户端当前状态</td></tr>
+<tr><td>data.unicast</td><td>bool</td><td>客户端的单播属性</td></tr>
+<tr><td>data.setroute</td><td>bool</td><td>客户端设置默认网关</td></tr>
+<tr><td>data.setdns</td><td>bool</td><td>客户端设置dns</td></tr>
+<tr><td>data.dhcp4Client</td><td>object</td><td>客户端状态信息</td></tr>
+<tr><td>data.dhcp4Client.ip</td><td>string</td><td>客户端获取的ip</td></tr>
+<tr><td>data.dhcp4Client.mask</td><td>uint8</td><td>客户端获取的掩码</td></tr>
+<tr><td>data.dhcp4Client.gateway</td><td>string</td><td>客户端获取的网关</td></tr>
+<tr><td>data.dhcp4Client.dns1</td><td>string</td><td>主dns</td></tr>
+<tr><td>data.dhcp4Client.dns2</td><td>string</td><td>备dns</td></tr>
+<tr><td>data.dhcp4Client.serverAddress</td><td>string</td><td>服务器地址</td></tr>
+<tr><td>data.dhcp4Client.startTime</td><td>string</td><td>开始时间，示例：08:00:00</td></tr>
+<tr><td>data.dhcp4Client.endTime</td><td>string</td><td>结束时间，示例：12:00:00</td></tr>
+<tr><td>data.dhcp4Client.renewTime</td><td>string</td><td>续约时间</td></tr>
+</tbody>
+</table>
+</body>
+</html>

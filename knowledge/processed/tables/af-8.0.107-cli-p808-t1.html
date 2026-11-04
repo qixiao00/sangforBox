@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p808-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=808 | table_id=af-8.0.107-cli-p808-t1<br>上下文标题路径：8 系统 / 8.7 系统维护 / 8.7.6 clear / nd-spoofing-statistics</p>
+<table>
+<thead><tr><th>dst-xlate-ip &lt;ip46-address&gt;</th><th>-</th><th>A.B.C.D/M<br>地址格式为A.B.C.D/M<br>A.B.C.D/E.F.G.H 地址<br>格式为A.B.C.D/E.F.G.<br>H<br>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H<br>A.B.C.D<br>地址格式为A.B.C.D<br>A:B:C:D::E<br>地址格式为A:B:C:D::E<br>A:B:C:D::E/M 地址格<br>式为A:B:C:D::E/M<br>A:B:C:D::E-F:G:H:I::J<br>地址格式为A:B:C:D::E<br>-F:G:H:I::J</th><th>nat后目的ip范围</th></tr></thead>
+<tbody>
+<tr><td>last-create minute &lt;time-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>最近多少分钟创建</td></tr>
+<tr><td>last-create hour &lt;time-value&gt;</td><td>1-1092</td><td>NUMBER</td><td>最近多少小时创建</td></tr>
+<tr><td>last-create day &lt;time-value&gt;</td><td>1-45</td><td>NUMBER</td><td>最近多少天创建</td></tr>
+<tr><td>dst-zone &lt;zone-name&gt;</td><td>-</td><td>STRING</td><td>目的区域名称</td></tr>
+<tr><td>forward-packet less-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-packet equal&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>forward-packet more-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>src-xlate-port &lt;port-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>nat后源端口</td></tr>
+<tr><td>dst-xlate-port &lt;port-number&gt;</td><td>1-65535</td><td>NUMBER</td><td>nat后目的端口</td></tr>
+<tr><td>time-out more-than &lt;time-value&gt;</td><td>1-86400</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>time-out less-than &lt;time-value&gt;</td><td>1-86400</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-bytes less-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-bytes equal &lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>forward-bytes more-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>action &lt;action-type&gt;</td><td>枚举值:[<br>permit: 策略动作：允许<br>deny: 策略的动作：拒绝<br>]</td><td>ENUM</td><td>策略匹配动作</td></tr>
+<tr><td>user &lt;user-name&gt;</td><td>-</td><td>STRING</td><td>用户名称</td></tr>
+<tr><td>policy id &lt;id-value&gt;</td><td>-</td><td>NUMBER</td><td>命中此策略id的session</td></tr>
+<tr><td>policy name &lt;name-value&gt;</td><td>-</td><td>STRING</td><td>命中此策略名的session</td></tr>
+<tr><td>src-vsys &lt;vsys-name&gt;</td><td>length:(1-15)</td><td>STRING</td><td>src vsys(虚拟系统不支持该命令)</td></tr>
+<tr><td>src-ip &lt;ip46-address&gt;</td><td>-</td><td>A.B.C.D/M<br>地址格式为A.B.C.D/M<br>A.B.C.D/E.F.G.H 地址<br>格式为A.B.C.D/E.F.G.<br>H<br>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H<br>A.B.C.D<br>地址格式为A.B.C.D<br>A:B:C:D::E<br>地址格式为A:B:C:D::E<br>A:B:C:D::E/M 地址格<br>式为A:B:C:D::E/M<br>A:B:C:D::E-F:G:H:I::J<br>地址格式为A:B:C:D::E<br>-F:G:H:I::J</td><td>源ip范围</td></tr>
+</tbody>
+</table>
+</body>
+</html>

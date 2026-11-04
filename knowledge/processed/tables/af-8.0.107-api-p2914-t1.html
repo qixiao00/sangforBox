@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2914-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2914 | table_id=af-8.0.107-api-p2914-t1<br>上下文标题路径：7 系统 / 7.2 管理员账户 / 7.2.18 修改3A认证信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>account:set 3A config</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>--</td><td>3A认证开关</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>外部认证服务器名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.aaatype</td><td>string</td><td>--</td><td>3A认证方式<br>枚举值:[<br>tacacs:认证方式-tacacs<br>radius:认证方式-radius<br>]</td></tr>
+<tr><td>obj.allowRemoteAccess</td><td>bool</td><td>--</td><td>认证选项(远程管理员接入,默认关闭)</td></tr>
+<tr><td>obj.basic</td><td>object</td><td>--</td><td>基本配置</td></tr>
+<tr><td>obj.basic.ip</td><td>string</td><td>--</td><td>ip地址<br>格式:ip-address</td></tr>
+<tr><td>obj.basic.port</td><td>int32</td><td>--</td><td>认证端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>obj.basic.sharekey</td><td>string</td><td>--</td><td>共享秘钥<br>最小长度:1<br>最大长度:19</td></tr>
+<tr><td>obj.basic.protocol</td><td>string</td><td>--</td><td>采用协议<br>枚举值:[<br>pap:不加密的协议PAP<br>ask:质询握手身份验证协议<br>chap:Microsoft CHAP<br>chap2:Microsoft CHAP2<br>eap:EAP MD5<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

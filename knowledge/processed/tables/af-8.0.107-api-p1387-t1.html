@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1387-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1387 | table_id=af-8.0.107-api-p1387-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.2 动态路由OSPF / 5.8.13.2.7 OSPF聚合路由 / 5.8.13.2.7.6 获取所有聚合路由配置信信息</p>
+<table>
+<thead><tr><th>data.pageNumber</th><th>int32</th><th>当前页码，从 1 开始</th></tr></thead>
+<tbody>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>ospf聚合路由配置uuid信息</td></tr>
+<tr><td>data.items.areaId</td><td>string</td><td>ospf聚合路由配置区域id信息</td></tr>
+<tr><td>data.items.networkAddress</td><td>string</td><td>ospf聚合路由配置网络地址</td></tr>
+<tr><td>data.items.networkMask</td><td>uint32</td><td>ospf聚合路由配置网络掩码<br>最小值:0<br>最大值:32</td></tr>
+<tr><td>data.items.advertise</td><td>bool</td><td>ospf聚合路由配置是否通告</td></tr>
+</tbody>
+</table>
+</body>
+</html>

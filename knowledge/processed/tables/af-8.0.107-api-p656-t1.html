@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p656-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=656 | table_id=af-8.0.107-api-p656-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.5 增量修改指定接口信息</p>
+<table>
+<thead><tr><th>obj.manage.https</th><th>bool</th><th>否</th><th>是否启用https<br>默认值:true</th></tr></thead>
+<tbody>
+<tr><td>obj.manage.ping</td><td>bool</td><td>否</td><td>是否启用ping<br>默认值:true</td></tr>
+<tr><td>obj.jumbo</td><td>bool</td><td>--</td><td>巨帧模式</td></tr>
+<tr><td>obj.vlan</td><td>object</td><td>按条件选<br>择</td><td>vlan配置，物理口和聚合口透明模式时使<br>用</td></tr>
+<tr><td>obj.vlan.vlanMode</td><td>string</td><td>否</td><td>vlan模式<br>枚举值:[<br>ACCESS:access模式<br>TRUNK:trunk模式<br>]</td></tr>
+<tr><td>obj.vlan.accessId</td><td>uint32</td><td>按条件选<br>择</td><td>access vlan<br>id，透明模式下选择access时使用<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlan.trunkConfig</td><td>object</td><td>按条件选<br>择</td><td>trunk配置，透明模式下选择trunk时使用</td></tr>
+<tr><td>obj.vlan.trunkConfig.nativeId</td><td>int32</td><td>是</td><td>trunk native vlanid<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange</td><td>object[]</td><td>是</td><td>trunk vlan 范围</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.start</td><td>uint32</td><td>是</td><td>vlan范围起始值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.end</td><td>uint32</td><td>否</td><td>vlan范围结束值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlanId</td><td>uint32</td><td>按条件选<br>择</td><td>标识子接口和vlan口的vlanid，接口类型为<br>物理口和聚合口时使用<br>最小值:0<br>最大值:4094</td></tr>
+<tr><td>obj.physicalif</td><td>object</td><td>按条件选<br>择</td><td>物理口相关配置，接口类型为物理接口时使<br>用</td></tr>
+<tr><td>obj.physicalif.speedDuplex</td><td>object</td><td>是</td><td>速率双工配置</td></tr>
+<tr><td>obj.physicalif.speedDuplex.autoneg</td><td>bool</td><td>否</td><td>接口速率工作模式自动协商，为true时spe<br>ed和duplex不再生效<br>默认值:true</td></tr>
+</tbody>
+</table>
+</body>
+</html>

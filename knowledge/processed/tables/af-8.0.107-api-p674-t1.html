@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p674-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=674 | table_id=af-8.0.107-api-p674-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.6 全量修改指定接口信息</p>
+<table>
+<thead><tr><th>obj.ipv6.ipv6Param.nd i_nspection.inspectionType</th><th>string</th><th>是</th><th>NDP检查模式<br>默认值:DROP<br>枚举值:[<br>DROP:丢包<br>FORWARD:转发<br>OFF:关闭<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.ipv6.ipv6Param.nd i_nspection.trust</td><td>bool</td><td>--</td><td>接口可信</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd i_nspection.denyra</td><td>bool</td><td>--</td><td>禁止接收RA</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd i_nspection.rate limit_</td><td>uint32</td><td>--</td><td>NDP报文速率限制<br>最小值:0<br>最大值:10000</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd</td><td>object</td><td>--</td><td>ipv6ND协议配置</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.dad</td><td>object</td><td>--</td><td>重复地址检测消息配置</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.dad.time</td><td>uint32</td><td>--</td><td>发送DAD的间隔<br>最小值:1000<br>最大值:3600000</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.dad.attempts</td><td>uint32</td><td>--</td><td>尝试的次数，超过则认为DAD检测成功<br>最小值:0<br>最大值:600<br>默认值:3</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.nud</td><td>object</td><td>--</td><td>邻居不可达检测配置</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.nud.retry base_</td><td>uint32</td><td>--</td><td>失败次数超过则nd表项做状态切换<br>最小值:1<br>最大值:3<br>默认值:3</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.nud.attempts</td><td>uint32</td><td>--</td><td>发送NUD次数<br>最小值:1<br>最大值:10<br>默认值:5</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.nud.interval</td><td>uint32</td><td>--</td><td>发送NUD间隔<br>最小值:1000<br>最大值:3600000<br>默认值:2000</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.nud.reachable time_</td><td>uint32</td><td>--</td><td>判断ipv6节点是否可达的最大时间，超过<br>则认为不可达<br>最小值:1000<br>最大值:3600000<br>默认值:30000</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.router</td><td>object</td><td>--</td><td>ipv6，路由相关配置</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.router.ra interval option_ _</td><td>bool</td><td>--</td><td>ra中公告间隔选项是否打开</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p684-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=684 | table_id=af-8.0.107-api-p684-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.6 全量修改指定接口信息</p>
+<table>
+<thead><tr><th>data.ipv4.staticIp.ipaddress.start</th><th>string</th><th>ip范围的起始位置<br>格式:ip-address</th></tr></thead>
+<tbody>
+<tr><td>data.ipv4.staticIp.ipaddress.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.ipv4.staticIp.ipaddress.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.ipv4.staticIp.isSync</td><td>bool</td><td>是否不同步到备机的选项</td></tr>
+<tr><td>data.ipv4.dhcp</td><td>object</td><td>dhcp4 client配置，三层模式IPv4为DHCP时使用</td></tr>
+<tr><td>data.ipv4.dhcp.gateway</td><td>bool</td><td>是否设置dhcp gateway</td></tr>
+<tr><td>data.ipv4.dhcp.dns</td><td>bool</td><td>设置dns</td></tr>
+<tr><td>data.ipv4.dhcp.unicast</td><td>bool</td><td>是否设置dhcp单播</td></tr>
+<tr><td>data.ipv4.pppoeGroupName</td><td>string</td><td>PPPoE名称，三层模式IPv4为PPPoE时使用</td></tr>
+<tr><td>data.ipv6</td><td>object</td><td>接口ipv6相关配置，三层模式时使用</td></tr>
+<tr><td>data.ipv6.ipv6Mode</td><td>string</td><td>IPv6地址获取类型，路由模式有效<br>枚举值:[<br>STATIC:static IP<br>DHCP6:dhcp6<br>]</td></tr>
+<tr><td>data.ipv6.autoconfigEnable</td><td>bool</td><td>AUTOCONFIG模式是否开启</td></tr>
+<tr><td>data.ipv6.autoconfigDefaultRoute</td><td>bool</td><td>default route 是否设置</td></tr>
+<tr><td>data.ipv6.staticIp</td><td>object[]</td><td>IPv6地址列表，IPv6地址为静态IP时使用</td></tr>
+<tr><td>data.ipv6.staticIp.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.ipv6.staticIp.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.ipv6.staticIp.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.ipv6.dhcp6</td><td>object</td><td>dhcp6客户端配置</td></tr>
+<tr><td>data.ipv6.dhcp6.clientMode</td><td>string</td><td>客户端模式<br>枚举值:[<br>ADDR:dhcp6 client addr模式<br>]</td></tr>
+<tr><td>data.ipv6.dhcp6.serverIp</td><td>object</td><td>dhcp6客户端指定的server ip<br>格式:ip-range</td></tr>
+<tr><td>data.ipv6.dhcp6.serverIp.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.ipv6.dhcp6.serverIp.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.ipv6.dhcp6.serverIp.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.ipv6.dhcp6.rapidOption</td><td>bool</td><td>是否开启dhcp6 rapid-commit(快速分配)选项</td></tr>
+</tbody>
+</table>
+</body>
+</html>

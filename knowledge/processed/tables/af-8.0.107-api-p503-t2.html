@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p503-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=503 | table=af-8.0.107-api-p503-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一标识ID</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>国家/地区全称，内容为全部[/大洲][/国家][/省份],<br>[]中内容可以缺省<br>最大长度:128</td></tr>
+<tr><td>data.items.id</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.items.board</td><td>string</td><td>大洲<br>最大长度:128</td></tr>
+<tr><td>data.items.country</td><td>string</td><td>国家<br>最大长度:128</td></tr>
+<tr><td>data.items.province</td><td>string</td><td>省份<br>最大长度:128</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2727-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2727 | table_id=af-8.0.107-api-p2727-t1<br>上下文标题路径：6 策略 / 6.5 流控 / 6.5.4 通道 / 6.5.4.3 创建通道</p>
+<table>
+<thead><tr><th>obj.match.suitobj.type</th><th>string</th><th>--</th><th>使用对象类型：网络对象或者用户<br>默认值:IPGROUP<br>枚举值:[<br>IPGROUP:网络对象<br>USER:用户<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.match.suitobj.ipGroup</td><td>string[]</td><td>--</td><td>目标网络对象</td></tr>
+<tr><td>obj.match.suitobj.user</td><td>string[]</td><td>--</td><td>认证用户</td></tr>
+<tr><td>obj.match.suitobj.usergroup</td><td>string[]</td><td>--</td><td>认证用户组</td></tr>
+<tr><td>obj.match.suitobj.securityGroup</td><td>string[]</td><td>--</td><td>认证安全组</td></tr>
+<tr><td>obj.match.schedule</td><td>string</td><td>--</td><td>生效时间</td></tr>
+<tr><td>obj.match.target</td><td>object</td><td>--</td><td>目标地址</td></tr>
+<tr><td>obj.match.target.type</td><td>string</td><td>--</td><td>适用对象,目标网络对象或者目标地区<br>默认值:IPGROUP<br>枚举值:[<br>IPGROUP:目标网络对象<br>REGION:目标地区<br>]</td></tr>
+<tr><td>obj.match.target.ipGroup</td><td>string[]</td><td>--</td><td>目标网络对象</td></tr>
+<tr><td>obj.match.target.region</td><td>string[]</td><td>--</td><td>目标地区</td></tr>
+<tr><td>obj.match.subifVlan</td><td>object</td><td>--</td><td>子接口或者vlan范围</td></tr>
+<tr><td>obj.match.subifVlan.type</td><td>string</td><td>--</td><td>子接口或者vlan范围二选一<br>默认值:NONE<br>枚举值:[<br>SUBIF:子接口<br>VLAN:vlan范围<br>SFVPN:SFVPN隧道<br>NONE:不匹配<br>]</td></tr>
+<tr><td>obj.match.subifVlan.subif</td><td>string</td><td>--</td><td>子接口</td></tr>
+<tr><td>obj.match.subifVlan.vlan</td><td>string</td><td>--</td><td>vlan范围</td></tr>
+<tr><td>obj.match.subifVlan.sfvpn</td><td>object[]</td><td>--</td><td>SFVPN隧道</td></tr>
+<tr><td>obj.match.subifVlan.sfvpn.headquarters</td><td>string</td><td>--</td><td>SFVPN隧道总部名称<br>最小长度:1<br>最大长度:99</td></tr>
+<tr><td>obj.match.subifVlan.sfvpn.user</td><td>string</td><td>--</td><td>SFVPN隧道接入用户名称<br>最小长度:1<br>最大长度:79</td></tr>
+</tbody>
+</table>
+</body>
+</html>

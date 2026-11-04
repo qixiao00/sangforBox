@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p819-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=819 | table_id=af-8.0.107-api-p819-t2<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.18 获取CPU过载保护接口信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>CPU过载保护信息查询接口表项</td></tr>
+<tr><td>data.lcore id_</td><td>uint8</td><td>逻辑核ID</td></tr>
+<tr><td>data.rx spin time_ _</td><td>uint32</td><td>收包空载率</td></tr>
+<tr><td>data.rx zero pkt count_ _ _</td><td>uint32</td><td>周期内的0包个数</td></tr>
+<tr><td>data.rx total pkt count_ _ _</td><td>uint32</td><td>周期内的总包个数</td></tr>
+<tr><td>data.current color_</td><td>string</td><td>当前的颜色</td></tr>
+<tr><td>data.drops</td><td>uint64</td><td>丢包个数</td></tr>
+<tr><td>data.drop rate_</td><td>int32</td><td>丢包率</td></tr>
+<tr><td>data.drop rate inc_ _</td><td>int32</td><td>丢包增量</td></tr>
+<tr><td>data.olp on_</td><td>uint32</td><td>cpu过载保护开启</td></tr>
+<tr><td>data.olp cal period_ _</td><td>uint64</td><td>cpu过载保护计算周期</td></tr>
+<tr><td>data.olp drop pkts on_ _ _</td><td>uint32</td><td>cpu过载保护丢包开启</td></tr>
+<tr><td>data.olp drop rate_ _</td><td>uint32</td><td>cpu过载保护手动设置的丢包率,为0算法自动调节</td></tr>
+<tr><td>data.olp drop rate inc_ _ _limit_</td><td>uint32</td><td>cpu过载保护丢包增量限制</td></tr>
+<tr><td>data.olp lower limit_ _</td><td>uint32</td><td>cpu过载保护spin time下限<br>_</td></tr>
+<tr><td>data.olp upper limit_ _</td><td>uint32</td><td>cpu过载保护spin time上限<br>_</td></tr>
+<tr><td>data.olp descs limit_ _</td><td>uint32</td><td>cpu过载保护dma descs限制</td></tr>
+</tbody>
+</table>
+</body>
+</html>

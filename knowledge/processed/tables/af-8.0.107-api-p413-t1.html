@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p413-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=413 | table_id=af-8.0.107-api-p413-t1<br>上下文标题路径：4 对象 / 4.4 内容识别 / 4.4.1 应用识别 / 4.4.1.8 获取单个应用规则</p>
+<table>
+<thead><tr><th>data.customRuleParam.portRange.start</th><th>int32</th><th>网络端口起始值<br>最小值:0<br>最大值:65535</th></tr></thead>
+<tbody>
+<tr><td>data.customRuleParam.portRange.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.customRuleParam.ipRange</td><td>object[]</td><td>指定ip地址或范围</td></tr>
+<tr><td>data.customRuleParam.ipRange.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.customRuleParam.ipRange.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.customRuleParam.ipRange.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.customRuleParam.domains</td><td>string[]</td><td>匹配目标域名</td></tr>
+<tr><td>data.appPath</td><td>string</td><td>应用规则所属的具体应用路径,如应用是Custom a1,所<br>_<br>属类型是Custom t1, appPath<br>_<br>就是Custom t1/Custom a1<br>_ _<br>最小长度:1<br>最大长度:287</td></tr>
+<tr><td>data.userdefApplication</td><td>string</td><td>自定义应用规则所属的具体应用名称</td></tr>
+<tr><td>data.bbc</td><td>bool</td><td>appIdentify:RULE BBC<br>_</td></tr>
+<tr><td>data.bbcRuleCrc</td><td>uint32</td><td>规则crc</td></tr>
+</tbody>
+</table>
+</body>
+</html>

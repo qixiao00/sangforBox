@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3056-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3056 | table_id=af-8.0.107-api-p3056-t2<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.21 显示指定HA组状态信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>HA组状态信息</td></tr>
+<tr><td>data.groupId</td><td>uint8</td><td>HA组ID</td></tr>
+<tr><td>data.local</td><td>object</td><td>本端HA组的状态</td></tr>
+<tr><td>data.local.state</td><td>string</td><td>HA组主备状态<br>枚举值:[<br>INIT:初始化状态<br>MASTER:主机<br>SLAVE:备机<br>]</td></tr>
+<tr><td>data.local.priority</td><td>uint8</td><td>HA组优先级</td></tr>
+<tr><td>data.local.currentPriority</td><td>uint8</td><td>HA组当前优先级</td></tr>
+<tr><td>data.local.preempt</td><td>bool</td><td>抢占开关</td></tr>
+<tr><td>data.local.preemptDelay</td><td>uint16</td><td>抢占延时时间</td></tr>
+<tr><td>data.local.lastStateChangeInfo</td><td>string</td><td>上次切换信息</td></tr>
+<tr><td>data.local.faultInfo</td><td>string</td><td>故障信息</td></tr>
+<tr><td>data.local.lastChangeTime</td><td>uint32</td><td>上次切换到现在的秒数</td></tr>
+<tr><td>data.local.preemptDelayExpired</td><td>uint16</td><td>抢占延时剩余秒数</td></tr>
+<tr><td>data.local.switchThresholdExpired</td><td>uint16</td><td>切换延时剩余秒数</td></tr>
+<tr><td>data.local.flags</td><td>string</td><td>主备协商标记</td></tr>
+<tr><td>data.peer</td><td>object</td><td>本端HA组的状态</td></tr>
+<tr><td>data.peer.isValid</td><td>bool</td><td>抢占开关</td></tr>
+<tr><td>data.peer.state</td><td>string</td><td>HA组主备状态<br>枚举值:[<br>INIT:初始化状态<br>MASTER:主机<br>SLAVE:备机<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p896-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=896 | table_id=af-8.0.107-api-p896-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.2 静态路由IPV4 / 5.8.2.6 通过参数删除指定的IPv4静态路由信息</p>
+<table>
+<thead><tr><th>data.uuid</th><th>string</th><th>静态路由唯一资源ID</th></tr></thead>
+<tbody>
+<tr><td>data.enable</td><td>bool</td><td>静态路由启禁用开关</td></tr>
+<tr><td>data.description</td><td>string</td><td>描述信息<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>data.prefix</td><td>string</td><td>目的IP地址/掩码</td></tr>
+<tr><td>data.gateway</td><td>string</td><td>下一跳IP地址</td></tr>
+<tr><td>data.ifname</td><td>string</td><td>出接口名称<br>最小长度:1<br>最大长度:48</td></tr>
+<tr><td>data.metric</td><td>uint32</td><td>路由度量值<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.linkdtEnable</td><td>bool</td><td>静态路由关联接口链路探测启禁用开关，默认false</td></tr>
+<tr><td>data.linkdt</td><td>string</td><td>静态路由关联链路探测</td></tr>
+<tr><td>data.tag</td><td>uint32</td><td>路由标记，默认为0<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>data.distance</td><td>uint8</td><td>路由管理距离，默认为1<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.vsys</td><td>string</td><td>目的虚拟系统名称，默认为public<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.tableId</td><td>uint32</td><td>路由表Id，不可修改<br>枚举值:[<br>251:业务网络路由表<br>250:管理网络路由表<br>239:SSLVPN路由表<br>]</td></tr>
+<tr><td>data.weight</td><td>uint8</td><td>ipv4静态路由权重，默认为1<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.status</td><td>uint8</td><td>状态信息，状态字段不可设置或修改</td></tr>
+<tr><td>data.invalid reason_</td><td>string</td><td>路由无效原因</td></tr>
+</tbody>
+</table>
+</body>
+</html>

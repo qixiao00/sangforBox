@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1569-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1569 | table_id=af-8.0.107-api-p1569-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.6 路由映射 / 5.8.13.6.5 删除指定的路由映射信息</p>
+<table>
+<thead><tr><th>data.match.matchAcl</th><th>string</th><th>关联访问列表名称<br>最小长度:1<br>最大长度:31</th></tr></thead>
+<tbody>
+<tr><td>data.match.matchIpv6Acl</td><td>string</td><td>关联IPv6访问列表名称<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.match.metric</td><td>int64</td><td>匹配路由的度量值<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.match.bgp</td><td>object</td><td>BGP匹配私有属性</td></tr>
+<tr><td>data.match.bgp.matchAsPath</td><td>string</td><td>关联AS路径访问控制列表名称<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.match.bgp.matchIpNexthopAcl</td><td>string</td><td>关联访问列表名称<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.match.bgp.matchIpv6NexthopAcl</td><td>string</td><td>关联IPv6地址<br>格式:ip6-address</td></tr>
+<tr><td>data.match.ospf</td><td>object</td><td>routeMapMatch.ospf</td></tr>
+<tr><td>data.match.ospf.matchIpNexthopAcl</td><td>string</td><td>ospfMatchPrivate.matchIpNexthopAcl<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.match.ospf.tag</td><td>int64</td><td>ospfMatchPrivate.tag<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.match.ospfv3</td><td>object</td><td>routeMapMatch.ospfv3</td></tr>
+<tr><td>data.match.ospfv3.matchIpv6NexthopAcl</td><td>string</td><td>ospfv3MatchPrivate.matchIpv6NexthopAcl<br>格式:ip6-address</td></tr>
+<tr><td>data.match.ospfv3.tag</td><td>int64</td><td>ospfv3MatchPrivate.tag<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.set</td><td>object</td><td>配置信息</td></tr>
+<tr><td>data.set.metric</td><td>int64</td><td>设置路由的度量值<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.set.tag</td><td>int64</td><td>设置路由的tag值<br>最小值:-1<br>最大值:4294967295</td></tr>
+<tr><td>data.set.bgp</td><td>object</td><td>BGP配置私有属性</td></tr>
+<tr><td>data.set.bgp.Origin</td><td>string</td><td>访问路由来源类型<br>枚举值:[<br>INCOMPLETE:INCOMPLETE<br>EGP:EGP<br>IGP:IGP<br>NONE:None状态<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2297-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2297 | table_id=af-8.0.107-api-p2297-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.5 添加安全防护策略</p>
+<table>
+<thead><tr><th>data.response.block.type</th><th>string</th><th>开启联动封锁<br>枚举值:[<br>HIGH THREATS:高危行为联动封锁<br>_<br>ANY THREAT:任意攻击行为联动封锁<br>_<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.response.recordLog</td><td>bool</td><td>记录日志</td></tr>
+<tr><td>data.highlight</td><td>object</td><td>策略搜索结果，用于前端高亮</td></tr>
+<tr><td>data.highlight.search</td><td>object</td><td>search字段搜索结果</td></tr>
+<tr><td>data.highlight.search.position</td><td>string</td><td>模糊搜索高亮位置<br>枚举值:[<br>MATCH NAME:模糊搜索到name<br>_<br>MATCH SRC ZONE:模糊搜索到源区域名称<br>_ _<br>MATCH SRC USERS:模糊搜索到源用户名称<br>_ _<br>MATCH SRC USERGROUPS:模糊搜索到源用户<br>_ _<br>组名称<br>MATCH SRC SECGROUPS:模糊搜索到源安全组<br>_ _<br>名称<br>MATCH SRC IPGROUP:模糊搜索到源网络对象名<br>_ _<br>称<br>MATCH SRC IPGROUP BYIP:精确搜索到源网络<br>_ _ _<br>对象中IP区间<br>MATCH DST ZONE:模糊搜索到目的区域名称<br>_ _<br>MATCH DST IPGROUP:模糊搜索到目的网络对象<br>_ _<br>名称<br>MATCH DST IPGROUP BYIP:精确搜索到源网络<br>_ _ _<br>对象中IP区间<br>]</td></tr>
+<tr><td>data.highlight.search.exact</td><td>string[]</td><td>模糊搜索高亮字符串</td></tr>
+<tr><td>data.highlight.search.fuzzy</td><td>string</td><td>模糊搜索高亮字符串<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.highlight.srcip</td><td>object</td><td>过滤源IP搜索结果</td></tr>
+</tbody>
+</table>
+</body>
+</html>

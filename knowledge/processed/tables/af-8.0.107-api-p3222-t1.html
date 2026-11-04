@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3222-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3222 | table_id=af-8.0.107-api-p3222-t1<br>上下文标题路径：9 状态中心 / 9.1 总览 / 9.1.2 网络活动状态 / 9.1.2.1 获取接口吞吐率折线图</p>
+<table>
+<thead><tr><th>data.eth.ipv4.dhcp.unicast</th><th>bool</th><th>是否设置dhcp单播</th></tr></thead>
+<tbody>
+<tr><td>data.eth.ipv4.pppoe</td><td>object</td><td>pppoe配置</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeGroupName</td><td>string</td><td>pppoe group name</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList</td><td>object[]</td><td>pppoe的ipv4地址列表</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList.ipaddress</td><td>object</td><td>IPv4地址<br>格式:ip-range</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList.ipaddress.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList.ipaddress.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList.ipaddress.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.eth.ipv4.pppoe.pppoeIpList.isSync</td><td>bool</td><td>是否不同步到备机的选项</td></tr>
+<tr><td>data.eth.ipv4.pppoe.setRoute</td><td>bool</td><td>是否设置一条pppoe的默认路由</td></tr>
+<tr><td>data.eth.ipv4.pppoe.setDns</td><td>bool</td><td>是否设置dns server</td></tr>
+<tr><td>data.eth.ipv6</td><td>object</td><td>接口ipv4相关配置</td></tr>
+<tr><td>data.eth.ipv6.ipv6Mode</td><td>string</td><td>IPv6地址获取类型，路由模式有效<br>枚举值:[<br>STATIC:静态配置<br>DHCP6:dhcp6方式获取<br>]</td></tr>
+<tr><td>data.eth.ipv6.autoconfigEnable</td><td>bool</td><td>AUTOCONFIG模式是否开启</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList</td><td>object[]</td><td>ipv6地址列表</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList.ipaddress</td><td>object</td><td>IPv6地址<br>格式:ip-range</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList.ipaddress.start</td><td>string</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList.ipaddress.end</td><td>string</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList.ipaddress.bits</td><td>uint8</td><td>ip掩码简写</td></tr>
+<tr><td>data.eth.ipv6.autoconfigIpList.state</td><td>string</td><td>ipv6状态<br>枚举值:[<br>TENTATIVE:tentative<br>COMPLETE:complete<br>DUPLICATE:duplicate<br>UNKNOWN:未知<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

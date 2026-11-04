@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1169-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1169 | table_id=af-8.0.107-api-p1169-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.2 BGP对等体 / 5.8.13.1.2.1 获取BGP对等体列表</p>
+<table>
+<thead><tr><th>data.items.keepalive</th><th>uint32</th><th>发送保持激活信息的频率<br>最小值:0<br>最大值:65535</th></tr></thead>
+<tbody>
+<tr><td>data.items.holdtime</td><td>uint32</td><td>保持时间<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.updateSourceInterfaceName</td><td>string</td><td>更新源接口名</td></tr>
+<tr><td>data.items.updateSourceAddress</td><td>string</td><td>更新源地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.password</td><td>string</td><td>MD5认证密码字符串<br>最小长度:1<br>最大长度:128</td></tr>
+<tr><td>data.items.ebgpMultihop</td><td>uint8</td><td>EBGP最大跳跃数<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.items.bfd</td><td>bool</td><td>关联BFD启禁用</td></tr>
+<tr><td>data.items.ipv4UnicastFamily</td><td>object</td><td>IPv4单播地址族下邻居属性信息</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.nextHopSelf</td><td>bool</td><td>下一跳属性设为自身启禁用</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.inRouteMapName</td><td>string</td><td>入站路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.outRouteMapName</td><td>string</td><td>出站路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.importRouteMapName</td><td>string</td><td>导入路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.exportRouteMapName</td><td>string</td><td>导出路由映射名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.activate</td><td>bool</td><td>激活对等体（组）</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.sendCommunity</td><td>string</td><td>发送团队属性<br>枚举值:[<br>STANDARD:标准<br>EXTENDED:扩展<br>BOTH:标准与扩展<br>NONE:禁用<br>]</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.defaultOriginate</td><td>bool</td><td>缺省信息发布启禁用</td></tr>
+<tr><td>data.items.ipv4UnicastFamily.filterListIn</td><td>string</td><td>入方向AS路径访问控制列表名称<br>最小长度:1<br>最大长度:95</td></tr>
+</tbody>
+</table>
+</body>
+</html>

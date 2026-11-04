@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p597-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=597 | table_id=af-8.0.107-api-p597-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.1 获取接口列表</p>
+<table>
+<thead><tr><th>data.items.ipv6.ipv6Param</th><th>object</th><th>ipv6参数</th></tr></thead>
+<tbody>
+<tr><td>data.items.ipv6.ipv6Param.enable</td><td>bool</td><td>是否启用ipv6</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.mtu</td><td>uint32</td><td>最大传输单元设置<br>最小值:1280<br>最大值:1500</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd learning_</td><td>bool</td><td>是否启用nd学习</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd inspection_</td><td>object</td><td>ND检查</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd inspection.inspe_ctionType</td><td>string</td><td>NDP检查模式<br>枚举值:[<br>DROP:丢包<br>FORWARD:转发<br>OFF:关闭<br>]</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd inspection.trust_</td><td>bool</td><td>接口可信</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd inspection.denyr_a</td><td>bool</td><td>禁止接收RA</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd inspection.rate l_ _imit</td><td>uint32</td><td>NDP报文速率限制<br>最小值:0<br>最大值:10000</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd</td><td>object</td><td>ipv6ND协议配置</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.dad</td><td>object</td><td>重复地址检测消息配置</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.dad.time</td><td>uint32</td><td>发送DAD的间隔<br>最小值:1000<br>最大值:3600000</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.dad.attempts</td><td>uint32</td><td>尝试的次数，超过则认为DAD检测成功<br>最小值:0<br>最大值:600</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.nud</td><td>object</td><td>邻居不可达检测配置</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.nud.retry base_</td><td>uint32</td><td>失败次数超过则nd表项做状态切换<br>最小值:1<br>最大值:3</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.nud.attempts</td><td>uint32</td><td>发送NUD次数<br>最小值:1<br>最大值:10</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.nud.interval</td><td>uint32</td><td>发送NUD间隔<br>最小值:1000<br>最大值:3600000</td></tr>
+</tbody>
+</table>
+</body>
+</html>

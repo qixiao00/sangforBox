@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p476-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=476 | table_id=af-8.0.107-api-p476-t1<br>上下文标题路径：4 对象 / 4.5 服务 / 4.5.3 批量获取服务或服务组信息</p>
+<table>
+<thead><tr><th>data.udpEntrys</th><th>object[]</th><th>udp条目列表，服务类型为预定义服务或自定义服务时<br>使用</th></tr></thead>
+<tbody>
+<tr><td>data.udpEntrys.srcPorts</td><td>object[]</td><td>源端口信息</td></tr>
+<tr><td>data.udpEntrys.srcPorts.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.udpEntrys.srcPorts.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.udpEntrys.dstPorts</td><td>object[]</td><td>目的端口信息</td></tr>
+<tr><td>data.udpEntrys.dstPorts.start</td><td>int32</td><td>起始端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.udpEntrys.dstPorts.end</td><td>int32</td><td>结束端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.icmpEntrys</td><td>object[]</td><td>icmp条目列表，服务类型为预定义服务或自定义服务<br>时使用</td></tr>
+<tr><td>data.icmpEntrys.type</td><td>uint8</td><td>类型，255表示全部<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.icmpEntrys.code</td><td>uint8</td><td>代码，255表示全部<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.icmpv6Entrys</td><td>object[]</td><td>icmpv6条目列表，服务类型为预定义服务或自定义服<br>务时使用</td></tr>
+<tr><td>data.icmpv6Entrys.type</td><td>uint8</td><td>类型，255表示全部<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.icmpv6Entrys.code</td><td>uint8</td><td>代码，255表示全部<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>data.other</td><td>uint16[]</td><td>其他协议号列表,其中256表示除tcp,udp,icmp,icmpv6<br>之外的所有其他协议号，服务类型为预定义服务或自定<br>义服务时使用</td></tr>
+<tr><td>data.servsInfo</td><td>string[]</td><td>服务组勾选的服务，服务类型为服务组时使用</td></tr>
+<tr><td>data.hasref</td><td>bool</td><td>标识是否被引用</td></tr>
+</tbody>
+</table>
+</body>
+</html>

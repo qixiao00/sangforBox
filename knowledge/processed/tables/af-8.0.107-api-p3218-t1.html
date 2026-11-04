@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3218-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3218 | table_id=af-8.0.107-api-p3218-t1<br>上下文标题路径：9 状态中心 / 9.1 总览 / 9.1.1 设备信息 / 9.1.1.12 获取磁盘信息数据</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>磁盘信息</td></tr>
+<tr><td>data.diskStatus</td><td>object</td><td>设备磁盘状态</td></tr>
+<tr><td>data.diskStatus.code</td><td>uint32</td><td>设备磁盘状态id<br>0：硬盘稳定<br>1：L1级别告警<br>2：L2级别告警<br>3：L3级别告警<br>4：硬盘不存在<br>5：硬盘没有初始化<br>6：硬盘不支持smart技术<br>7：系统没有运行在CF卡上<br>8：fwlog分区没有挂载成功<br>9: ssd磁盘寿命低于告警门限标志<br>10: 硬盘IO占用率过高</td></tr>
+<tr><td>data.diskStatus.msg</td><td>string</td><td>设备磁盘状态信息</td></tr>
+<tr><td>data.rootDiskUnusedSize</td><td>uint32</td><td>根磁盘(/dev/root)未使用空间大小</td></tr>
+<tr><td>data.diskUsage</td><td>uint32</td><td>返回硬盘使用率<br>最小值:0<br>最大值:100</td></tr>
+<tr><td>data.diskUnusedSize</td><td>uint32</td><td>总磁盘未使用空间大小</td></tr>
+<tr><td>data.diskUsedSize</td><td>uint32</td><td>总磁盘已使用空间大小</td></tr>
+</tbody>
+</table>
+</body>
+</html>

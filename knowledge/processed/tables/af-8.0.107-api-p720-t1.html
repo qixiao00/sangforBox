@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p720-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=720 | table_id=af-8.0.107-api-p720-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.8 批量修改接口信息</p>
+<table>
+<thead><tr><th>obj.ipv6.ipv6Param.nd.router.dns domain_</th><th>object</th><th>--</th><th>RA消息中dns域名</th></tr></thead>
+<tbody>
+<tr><td>obj.ipv6.ipv6Param.nd.router.dns domain.nam_e</td><td>string</td><td>--</td><td>dns域名<br>最大长度:127</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.router.dns domain.lifeti_me</td><td>uint32</td><td>--</td><td>首选生存时间<br>最小值:0<br>最大值:4294967295<br>默认值:1200</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.router.hopLimit</td><td>uint16</td><td>--</td><td>TTL<br>最小值:0<br>最大值:255<br>默认值:64</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix_</td><td>object[]</td><td>--</td><td>ipv6 RA参数</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.prefix_</td><td>string</td><td>--</td><td>IPV6 ND前缀信息(前缀信息或者default)<br>默认值:default</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.validLifetime_</td><td>uint32</td><td>--</td><td>有效生存时间<br>最小值:0<br>最大值:4294967295<br>默认值:2592000</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.perferredLifeti_me</td><td>uint32</td><td>--</td><td>首选生存时间<br>最小值:0<br>最大值:4294967295<br>默认值:604800</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.noAutoconfig_</td><td>bool</td><td>--</td><td>IPV6 ND前缀autoconfig选项</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.offLink_</td><td>bool</td><td>--</td><td>控制IPV6<br>ND前缀分配给本地链路开关选项</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.ra prefix.noAdvertise_</td><td>bool</td><td>--</td><td>控制IPV6<br>ND前缀是否包含在RA消息中开关选项</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.route prefix_</td><td>object[]</td><td>--</td><td>ipv6 ROUTE参数</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.route prefix.prefix_</td><td>string</td><td>--</td><td>IPV6 路由前缀信息</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.route prefix.lifetime_</td><td>uint32</td><td>--</td><td>生存时间<br>最小值:0<br>最大值:4294967295<br>默认值:100</td></tr>
+<tr><td>obj.ipv6.ipv6Param.nd.route prefix.prefence_</td><td>string</td><td>--</td><td>路由前缀的优先级<br>默认值:MEDIUM<br>枚举值:[<br>HIGH:高优先级<br>LOW:低优先级<br>MEDIUM:中优先级<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

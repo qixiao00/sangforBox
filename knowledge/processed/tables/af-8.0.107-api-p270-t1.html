@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p270-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=270 | table_id=af-8.0.107-api-p270-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.6 信息模板 / 3.4.3.6.4 获取信息模板的配置列表</p>
+<table>
+<thead><tr><th>code</th><th>int</th><th>错误码</th></tr></thead>
+<tbody>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>模板配置的唯一名称，如：sms aliyun verify code<br>_ _ _<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.showname</td><td>string</td><td>模板配置的可读标识，如：验证码发送方式<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.originId</td><td>string</td><td>模板在服务商的ID，有的服务商没有这个字段，直接使<br>用content发送<br>最小长度:0<br>最大长度:256</td></tr>
+<tr><td>data.items.content</td><td>string</td><td>信息格式字符串<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.items.proto</td><td>string</td><td>所属的服务商协议，关联<br>枚举值:[<br>sms aliyun:阿里云短信服务商<br>_<br>sms wangyiyun:网易云短信服务商<br>_<br>sms tengxunyun:腾讯云短信服务商<br>_<br>sms chuanglan:创蓝短信服务商<br>_<br>sms common:其他通用短信服务商<br>_<br>mail:通用邮件服务商<br>]</td></tr>
+<tr><td>data.items.extra</td><td>object[]</td><td>信息模板配置的扩展字段，方便不同服务商进行个性化<br>配置，注意键值都为字符串</td></tr>
+<tr><td>data.items.extra.key</td><td>string</td><td>扩展字段的键<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.items.extra.value</td><td>string</td><td>扩展键对应的值<br>最小长度:0<br>最大长度:1024</td></tr>
+<tr><td>data.items.isdefault</td><td>bool</td><td>标识是否是默认配置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

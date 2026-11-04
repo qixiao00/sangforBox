@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2033-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2033 | table_id=af-8.0.107-api-p2033-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.9 增量修改nat6策略</p>
+<table>
+<thead><tr><th>obj.natMode</th><th>string</th><th>--</th><th>ipv6-nat模式,可选项有NAT66|NPTV6<br>默认值:NAT66<br>枚举值:[<br>NAT66:转换类型为NAT66<br>NPTV6:转换类型为NPTV6<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.schedule</td><td>string</td><td>--</td><td>生效时间<br>默认值:00000000000000000000000c0</td></tr>
+<tr><td>obj.snat</td><td>object</td><td>按条件选<br>择</td><td>源地址转换信息</td></tr>
+<tr><td>obj.snat.srcZones</td><td>string[]</td><td>是</td><td>源区域信息</td></tr>
+<tr><td>obj.snat.srcIp</td><td>string</td><td>是</td><td>源IPv6<br>格式:ip6-address</td></tr>
+<tr><td>obj.snat.prefix</td><td>uint8</td><td>是</td><td>源IP的前缀<br>最小值:4<br>最大值:128</td></tr>
+<tr><td>obj.snat.srcIpGroups</td><td>string[]</td><td>--</td><td>源IP信息</td></tr>
+<tr><td>obj.snat.dstNetobjType</td><td>string</td><td>是</td><td>SNAT6:需要匹配的目的类型<br>默认值:ZONE<br>枚举值:[<br>ZONE:区域<br>INTERFACE:接口<br>]</td></tr>
+<tr><td>obj.snat.dstZones</td><td>string[]</td><td>是</td><td>目的区域</td></tr>
+<tr><td>obj.snat.dstInterface</td><td>string</td><td>--</td><td>目的接口</td></tr>
+<tr><td>obj.snat.dstIpobj</td><td>object</td><td>--</td><td>目的ip</td></tr>
+<tr><td>obj.snat.dstIpobj.dstIpGroups</td><td>string[]</td><td>--</td><td>目的ip组</td></tr>
+<tr><td>obj.snat.dstIpobj.dstIp</td><td>string</td><td>--</td><td>源IP信息<br>格式:ip6-address</td></tr>
+<tr><td>obj.snat.dstIpobj.prefix</td><td>uint8</td><td>--</td><td>前缀<br>最小值:4<br>最大值:128</td></tr>
+<tr><td>obj.snat.natService</td><td>string[]</td><td>--</td><td>引用的服务组</td></tr>
+<tr><td>obj.snat.transfer</td><td>object</td><td>是</td><td>转换信息</td></tr>
+<tr><td>obj.snat.transfer.srcIpTrans</td><td>string</td><td>是</td><td>源IPv6转换<br>格式:ip6-address</td></tr>
+<tr><td>obj.snat.transfer.prefixTrans</td><td>uint8</td><td>是</td><td>源IP的前缀<br>最小值:4<br>最大值:128</td></tr>
+<tr><td>obj.snat.transfer.forceTransfer</td><td>object</td><td>--</td><td>转换信息</td></tr>
+</tbody>
+</table>
+</body>
+</html>

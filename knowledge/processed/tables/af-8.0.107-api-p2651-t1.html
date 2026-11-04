@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2651-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2651 | table_id=af-8.0.107-api-p2651-t1<br>上下文标题路径：6 策略 / 6.4 解密 / 6.4.1 解密策略 / 6.4.1.6 批量删除解密策略接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>全部的ssl代理策略配置</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>资源唯一id</td></tr>
+<tr><td>data.position</td><td>uint16</td><td>代理策略优先级</td></tr>
+<tr><td>data.name</td><td>string</td><td>策略名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>是否启用</td></tr>
+<tr><td>data.zones</td><td>string[]</td><td>区域</td></tr>
+<tr><td>data.ipgroups</td><td>string[]</td><td>网络对象</td></tr>
+<tr><td>data.sessionReuse</td><td>bool</td><td>是否启用会话复用</td></tr>
+<tr><td>data.sessionCacheNum</td><td>uint32</td><td>最大会话数</td></tr>
+<tr><td>data.sessionTimeout</td><td>uint32</td><td>会话超时时间</td></tr>
+<tr><td>data.policyType</td><td>string</td><td>ssl代理策略类型<br>枚举值:[<br>server:服务器场景<br>internet:上网场景<br>user auth:认证模块使用<br>_<br>urlfile filter:URL过滤模块使用<br>_<br>]</td></tr>
+<tr><td>data.certs</td><td>string[]</td><td>服务器证书</td></tr>
+<tr><td>data.internet</td><td>object</td><td>上网场景配置</td></tr>
+<tr><td>data.internet.websiteAll</td><td>bool</td><td>是否全部站点</td></tr>
+<tr><td>data.internet.websiteCategory</td><td>string[]</td><td>站点的类别</td></tr>
+<tr><td>data.internet.websiteCategoryId</td><td>uint8[]</td><td>url类型id数组</td></tr>
+<tr><td>data.internet.installCert</td><td>bool</td><td>是否提示用户安装证书</td></tr>
+<tr><td>data.internet.certUrl</td><td>string</td><td>证书地址<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.server</td><td>object</td><td>服务器场景配置</td></tr>
+<tr><td>data.server.servers</td><td>object[]</td><td>服务器IP/端口</td></tr>
+<tr><td>data.server.servers.ip</td><td>string</td><td>ipv4或者ipv6地址<br>格式:ip-address</td></tr>
+<tr><td>data.server.servers.port</td><td>uint16[]</td><td>端口</td></tr>
+</tbody>
+</table>
+</body>
+</html>

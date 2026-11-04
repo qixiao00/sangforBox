@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p781-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=781 | table=af-8.0.107-api-p781-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>接口名称<br>最大长度:48</td></tr>
+<tr><td>data.items.mac</td><td>string</td><td>端口的mac地址</td></tr>
+<tr><td>data.items.portId</td><td>string</td><td>端口id</td></tr>
+<tr><td>data.items.enable</td><td>bool</td><td>是否起禁用rstp</td></tr>
+<tr><td>data.items.priority</td><td>uint8</td><td>端口优先级</td></tr>
+<tr><td>data.items.uptime</td><td>uint32</td><td>启动到现在时间</td></tr>
+<tr><td>data.items.pathCost</td><td>uint32</td><td>端口开销</td></tr>
+<tr><td>data.items.edge</td><td>bool</td><td>是否是边缘端口</td></tr>
+<tr><td>data.items.p2pAdmin</td><td>string</td><td>指定端口是否是点对点链路<br>枚举值:[<br>FORCETRUE:强制指定为点对点链路<br>FORCEFALSE:强制指定为非点对点链路<br>AUTO:系统自动检测是否为点对点链路<br>UNKNOW:未知，一般不会出现这种情况<br>]</td></tr>
+<tr><td>data.items.p2pOper</td><td>bool</td><td>真实链路状态</td></tr>
+</tbody>
+</table>
+</body>
+</html>

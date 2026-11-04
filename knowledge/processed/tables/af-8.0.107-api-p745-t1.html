@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p745-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=745 | table_id=af-8.0.107-api-p745-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.11 获取后台接口分页信息列表</p>
+<table>
+<thead><tr><th>data.items.ipv6.ipv6Param.nd.router.ra interval_option_</th><th>bool</th><th>ra中公告间隔选项是否打开</th></tr></thead>
+<tbody>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.perfence</td><td>string</td><td>路由器的优先级<br>枚举值:[<br>high:高优先级<br>low:低优先级<br>medium:中优先级<br>]</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.ra min int_ _erval</td><td>uint32</td><td>RA发送最小间隔，单位s<br>最小值:4<br>最大值:1800</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.ra max i_ _nterval</td><td>uint32</td><td>RA发送最大间隔，单位s，max必须大于min的75%以<br>上<br>最小值:4<br>最大值:1800</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.ra lifetime_</td><td>uint32</td><td>RA中路由器的生命周期<br>最小值:4<br>最大值:3600</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.ra supres_s</td><td>uint32</td><td>ra的抑制配置<br>枚举值:[<br>0:周期性发送RA<br>1:不主动发送RA，收到RS会回应<br>2:不主动发送，也不应答<br>]</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.manage fl_ag</td><td>bool</td><td>RA报文中M标记位，主机收到RA报文M为1时会发起d<br>hcp6请求地址</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.router.other flag_</td><td>bool</td><td>RA报文中O标记位，主机收到RA报文O为1时会发起d<br>hcp6请求其他网络配置（如dns），为0则使用RA中<br>的</td></tr>
+<tr><td>data.items.ipv6.ipv6Param.nd.ns interval_</td><td>uint32</td><td>NS重传间隔<br>最小值:1<br>最大值:3600</td></tr>
+<tr><td>data.items.manage</td><td>object</td><td>本地策略控制配置</td></tr>
+<tr><td>data.items.manage.ssh</td><td>bool</td><td>是否启用ssh</td></tr>
+<tr><td>data.items.manage.snmp</td><td>bool</td><td>是否启用snmp</td></tr>
+<tr><td>data.items.manage.https</td><td>bool</td><td>是否启用https</td></tr>
+<tr><td>data.items.manage.ping</td><td>bool</td><td>是否启用ping</td></tr>
+<tr><td>data.items.jumbo</td><td>bool</td><td>巨帧模式</td></tr>
+<tr><td>data.items.zone</td><td>string</td><td>区域名称</td></tr>
+<tr><td>data.items.ifMode</td><td>string</td><td>接口模式</td></tr>
+<tr><td>data.items.wanEnable</td><td>string</td><td>是否开启接口的wan模式</td></tr>
+<tr><td>data.items.ingressbandSwitch</td><td>uint64</td><td>接口接收的带宽限制</td></tr>
+</tbody>
+</table>
+</body>
+</html>

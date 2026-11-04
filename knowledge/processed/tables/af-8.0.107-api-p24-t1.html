@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p24-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=24 | table=af-8.0.107-api-p24-t1</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>connectStatus</td><td>string</td><td>否</td><td>过滤连接状态(默认为ALL)<br>默认值:ALL<br>枚举值:[<br>ALL:所有连接状态<br>ESTABLISH:已建立连接<br>CLOSE:已关闭连接<br>HANDSHAKE:半连接状态<br>]</td></tr>
+<tr><td>vsys</td><td>string</td><td>否</td><td>过滤的虚拟系统名称<br>最小长度:1<br>最大长度:15</td></tr>
+<tr><td>start<br>_</td><td>int32</td><td>否</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+<tr><td>srcIP</td><td>string</td><td>否</td><td>源IP<br>格式:ip-address</td></tr>
+<tr><td>length<br>_</td><td>int32</td><td>否</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>protocol</td><td>string</td><td>否</td><td>过滤协议(默认为ALL)<br>默认值:ALL<br>枚举值:[<br>ALL:所有协议<br>TCP:TCP协议<br>UDP:UDP协议<br>ICMP:ICMP协议<br>OTHER:其他协议<br>]</td></tr>
+<tr><td>dstIP</td><td>string</td><td>否</td><td>目的IP（不选默认为全部）<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

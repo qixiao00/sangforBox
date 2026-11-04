@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p791-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=791 | table_id=af-8.0.107-cli-p791-t2<br>上下文标题路径：8 系统 / 8.7 系统维护 / 8.7.1 配置自动远程备份 / 8.7.1.2 configuration-auto-backup</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>unit &lt;unity-type&gt;</td><td>枚举值:[<br>hour: 时<br>day: 天<br>week: 周<br>month: 月<br>]</td><td>ENUM</td><td>时间间隔单位</td></tr>
+<tr><td>user &lt;user-name&gt;</td><td>-</td><td>STRING</td><td>登录账户</td></tr>
+<tr><td>path &lt;path-value&gt;</td><td>-</td><td>STRING</td><td>服务器备份目录</td></tr>
+<tr><td>interval &lt;time-value&gt;</td><td>1-8760</td><td>NUMBER</td><td>定时备份间隔</td></tr>
+<tr><td>file-format custom &lt;custom-value&gt;</td><td>-</td><td>STRING</td><td>自定义格式（设备名：%h, 设备ID：%d,<br>时间戳：%t）</td></tr>
+<tr><td>file-format hostname</td><td>-</td><td>-</td><td>设备名时间戳格式</td></tr>
+<tr><td>file-format deviceid</td><td>-</td><td>-</td><td>设备ID时间戳格式</td></tr>
+<tr><td>password &lt;password-value&gt;</td><td>-</td><td>STRING</td><td>登录密码</td></tr>
+<tr><td>at &lt;time-value&gt;</td><td>-</td><td>HH 指定小时<br>DD.HH 指定天和小时<br>MM-DD.HH<br>指定月、天和小时<br>YYYY-MM-DD.HH<br>指定年、月、天和小时</td><td>备份时间点</td></tr>
+<tr><td>&lt;ip-address&gt;[:port]</td><td>-</td><td>A.B.C.D IPv4地址<br>A.B.C.D:PORT<br>IPv4地址和端口<br>A:B:C:D::E IPv6地址<br>[A:B:C:D::E]:PORT<br>IPv6地址和端口</td><td>服务器IP地址</td></tr>
+</tbody>
+</table>
+</body>
+</html>

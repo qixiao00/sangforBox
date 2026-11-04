@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p106-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=106 | table_id=af-8.0.107-api-p106-t1<br>上下文标题路径：3 监控 / 3.1 会话 / 3.1.4 会话列表 / 3.1.4.3 获取会话信息</p>
+<table>
+<thead><tr><th>data.items.sslproxyPolicyId</th><th>uint32</th><th>命中解密策略ID</th></tr></thead>
+<tbody>
+<tr><td>data.items.sslproxyCertId</td><td>uint32</td><td>命中解密证书ID</td></tr>
+<tr><td>data.items.policyName</td><td>string</td><td>匹配的策略名称</td></tr>
+<tr><td>data.items.policyAction</td><td>string</td><td>命中的策略动作<br>枚举值:[<br>PERMIT:策略动作为允许<br>DENY:策略动作为拒绝<br>]</td></tr>
+<tr><td>data.items.user</td><td>string</td><td>用户信息</td></tr>
+<tr><td>data.items.uplinkPktBytes</td><td>uint64</td><td>字节数</td></tr>
+<tr><td>data.items.uplinkPktNum</td><td>uint64</td><td>报文数</td></tr>
+<tr><td>data.items.downlinkPktBytes</td><td>uint64</td><td>字节数</td></tr>
+<tr><td>data.items.downlinkPktNum</td><td>uint64</td><td>报文数</td></tr>
+<tr><td>data.items.uplinkPktMbps</td><td>uint16</td><td>每秒传输兆比特数</td></tr>
+<tr><td>data.items.downlinkPktMbps</td><td>uint16</td><td>每秒传输兆比特数</td></tr>
+<tr><td>data.items.uplinkPktkpps</td><td>uint16</td><td>每秒传输千报文数</td></tr>
+<tr><td>data.items.downlinkPktkpps</td><td>uint16</td><td>每秒传输千报文数</td></tr>
+<tr><td>data.items.isSeenReply</td><td>uint8</td><td>是否有回包</td></tr>
+<tr><td>data.items.flow0</td><td>object</td><td>flow0 信息</td></tr>
+<tr><td>data.items.flow0.proto</td><td>uint8</td><td>协议号</td></tr>
+<tr><td>data.items.flow0.srcIp</td><td>string</td><td>源地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.flow0.dstIp</td><td>string</td><td>目的地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.flow0.srcPort</td><td>int32</td><td>源端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.flow0.dstPort</td><td>int32</td><td>目的端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.flow0.greKey</td><td>uint32</td><td>gre流key字段</td></tr>
+<tr><td>data.items.flow0.espSpi</td><td>uint32</td><td>esp流spi字段</td></tr>
+<tr><td>data.items.flow0.ahSpi</td><td>uint32</td><td>ah流spi字段</td></tr>
+<tr><td>data.items.flow0.icmpId</td><td>uint16</td><td>icmp id</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3113-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3113 | table_id=af-8.0.107-api-p3113-t1<br>上下文标题路径：7 系统 / 7.9 调试 / 7.9.1 报文追踪 / 7.9.1.8 增量更新指定debugfilter信息</p>
+<table>
+<thead><tr><th>data.device</th><th>object</th><th>按设备过滤</th></tr></thead>
+<tbody>
+<tr><td>data.device.type</td><td>string</td><td>设备类型<br>枚举值:[<br>VSYS:虚拟系统<br>]</td></tr>
+<tr><td>data.device.name</td><td>string</td><td>设备设备名</td></tr>
+<tr><td>data.inifname</td><td>string</td><td>按照入接口过滤</td></tr>
+<tr><td>data.inport</td><td>string</td><td>按照入端口过滤</td></tr>
+<tr><td>data.outport</td><td>string</td><td>按照出端口过滤</td></tr>
+<tr><td>data.ether</td><td>object</td><td>二层过滤</td></tr>
+<tr><td>data.ether.mac</td><td>string</td><td>按照mac过滤</td></tr>
+<tr><td>data.ether.srcmac</td><td>string</td><td>按照源mac过滤</td></tr>
+<tr><td>data.ether.dstmac</td><td>string</td><td>按照目的mac过滤</td></tr>
+<tr><td>data.ether.type</td><td>string</td><td>按照帧类型过滤<br>枚举值:[<br>NONE:重置<br>IP:ip协议<br>IPv6:IPv6协议<br>ARP:ARP协议<br>PPPOED:PPPOED协议<br>PPPOES:PPPOES协议<br>EAPOL:EAPOL协议<br>WAI/WAPI:WAI/WAPI协议<br>]</td></tr>
+<tr><td>data.arp</td><td>object</td><td>arp过滤</td></tr>
+<tr><td>data.arp.senderIp</td><td>string</td><td>发送方ip地址过滤</td></tr>
+<tr><td>data.arp.senderMac</td><td>string</td><td>发送方Mac地址过滤</td></tr>
+<tr><td>data.arp.targetIp</td><td>string</td><td>目标方ip地址过滤</td></tr>
+<tr><td>data.arp.op</td><td>string</td><td>arp操作过滤<br>枚举值:[<br>NONE:重置<br>REPLY:响应过滤<br>REQUEST:请求过滤<br>]</td></tr>
+<tr><td>data.ppp</td><td>object</td><td>ppp过滤</td></tr>
+<tr><td>data.ppp.protocol</td><td>string</td><td>协议过滤<br>枚举值:[<br>NONE:重置<br>IP:ip协议<br>IPv6:IPv6协议<br>LCP:LCP协议<br>PAP:PAP协议<br>CHAP:CHAP协议<br>]</td></tr>
+<tr><td>data.ip</td><td>object</td><td>ip过滤</td></tr>
+<tr><td>data.ip.host</td><td>string</td><td>主机过滤ip<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

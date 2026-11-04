@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3067-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3067 | table_id=af-8.0.107-api-p3067-t2<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.28 显示HA同步进度信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>HA模块同步进度信息</td></tr>
+<tr><td>data.globalState</td><td>string</td><td>同步状态</td></tr>
+<tr><td>data.syncStartTime</td><td>string</td><td>同步开始时间</td></tr>
+<tr><td>data.syncEndTime</td><td>string</td><td>同步结束时间</td></tr>
+<tr><td>data.moduleState</td><td>object[]</td><td>模块同步状态</td></tr>
+<tr><td>data.moduleState.module</td><td>string</td><td>模块名称</td></tr>
+<tr><td>data.moduleState.state</td><td>string</td><td>同步状态</td></tr>
+<tr><td>data.moduleState.rate</td><td>uint8</td><td>同步的进度<br>最小值:0<br>最大值:100</td></tr>
+<tr><td>data.moduleState.useTime</td><td>uint32</td><td>同步完成消耗的毫秒数</td></tr>
+<tr><td>data.moduleState.info</td><td>string</td><td>同步状态描述信息</td></tr>
+</tbody>
+</table>
+</body>
+</html>

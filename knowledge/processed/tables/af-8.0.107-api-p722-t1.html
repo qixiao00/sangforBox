@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p722-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=722 | table_id=af-8.0.107-api-p722-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.8 批量修改接口信息</p>
+<table>
+<thead><tr><th>obj.vlan.accessId</th><th>uint32</th><th>按条件选<br>择</th><th>access vlan<br>id，透明模式下选择access时使用<br>最小值:1<br>最大值:4094</th></tr></thead>
+<tbody>
+<tr><td>obj.vlan.trunkConfig</td><td>object</td><td>按条件选<br>择</td><td>trunk配置，透明模式下选择trunk时使用</td></tr>
+<tr><td>obj.vlan.trunkConfig.nativeId</td><td>int32</td><td>是</td><td>trunk native vlanid<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange</td><td>object[]</td><td>是</td><td>trunk vlan 范围</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.start</td><td>uint32</td><td>是</td><td>vlan范围起始值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlan.trunkConfig.trunkRange.end</td><td>uint32</td><td>否</td><td>vlan范围结束值<br>最小值:1<br>最大值:4094</td></tr>
+<tr><td>obj.vlanId</td><td>uint32</td><td>按条件选<br>择</td><td>标识子接口和vlan口的vlanid，接口类型为<br>物理口和聚合口时使用<br>最小值:0<br>最大值:4094</td></tr>
+<tr><td>obj.physicalif</td><td>object</td><td>按条件选<br>择</td><td>物理口相关配置，接口类型为物理接口时使<br>用</td></tr>
+<tr><td>obj.physicalif.speedDuplex</td><td>object</td><td>是</td><td>速率双工配置</td></tr>
+<tr><td>obj.physicalif.speedDuplex.autoneg</td><td>bool</td><td>否</td><td>接口速率工作模式自动协商，为true时spe<br>ed和duplex不再生效<br>默认值:true</td></tr>
+<tr><td>obj.physicalif.speedDuplex.speed</td><td>uint32</td><td>否</td><td>接口速率，autoneg为false时speed配置<br>生效<br>默认值:1000<br>枚举值:[<br>100:选择100Mbps<br>1000:选择1000Mbps<br>10000:选择10000Mbps<br>40000:选择40000Mbps<br>100000:选择100000Mbps<br>]</td></tr>
+<tr><td>obj.physicalif.speedDuplex.duplex</td><td>string</td><td>否</td><td>双工模式，autoneg为false时duplex配置<br>生效<br>默认值:full<br>枚举值:[<br>half:半双工模式<br>full:全双工模式<br>]</td></tr>
+<tr><td>obj.physicalif.speedDuplex.fixedAuto</td><td>bool</td><td>否</td><td>配置具体速率双工，工作模式时开启关闭协<br>商</td></tr>
+<tr><td>obj.physicalif.bypassMirror</td><td>object</td><td>按条件选<br>择</td><td>旁路镜像模式配置，物理接口旁路镜像模式<br>时使用</td></tr>
+</tbody>
+</table>
+</body>
+</html>

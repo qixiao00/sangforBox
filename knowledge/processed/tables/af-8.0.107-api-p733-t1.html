@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p733-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=733 | table_id=af-8.0.107-api-p733-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.8 批量修改接口信息</p>
+<table>
+<thead><tr><th>data.physicalif.speedDuplex.speed</th><th>uint32</th><th>接口速率，autoneg为false时speed配置生效<br>枚举值:[<br>100:选择100Mbps<br>1000:选择1000Mbps<br>10000:选择10000Mbps<br>40000:选择40000Mbps<br>100000:选择100000Mbps<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.physicalif.speedDuplex.duplex</td><td>string</td><td>双工模式，autoneg为false时duplex配置生效<br>枚举值:[<br>half:半双工模式<br>full:全双工模式<br>]</td></tr>
+<tr><td>data.physicalif.speedDuplex.fixedAuto</td><td>bool</td><td>配置具体速率双工，工作模式时开启关闭协商</td></tr>
+<tr><td>data.physicalif.bypassMirror</td><td>object</td><td>旁路镜像模式配置，物理接口旁路镜像模式时使用</td></tr>
+<tr><td>data.physicalif.bypassMirror.statsEnable</td><td>bool</td><td>是否启用流量统计</td></tr>
+<tr><td>data.physicalif.bypassMirror.ipGroup</td><td>string[]</td><td>内网网络对象，旁路镜像模式开启流量统计时使用</td></tr>
+<tr><td>data.subif</td><td>object</td><td>子接口相关配置，接口类型为子接口时使用</td></tr>
+<tr><td>data.subif.fatherInterface</td><td>string</td><td>接口的父接口，子接口时表示父接口</td></tr>
+<tr><td>data.channelif</td><td>object</td><td>聚合口相关配置，接口类型为聚合接口时使用</td></tr>
+<tr><td>data.channelif.channelMode</td><td>string</td><td>汇聚口的工作模式配置<br>枚举值:[<br>STATIC:静态<br>LACP:动态<br>]</td></tr>
+<tr><td>data.channelif.channelStatic</td><td>object</td><td>聚合口静态模式下的相关配置，聚合口工作模式为静态<br>时使用</td></tr>
+<tr><td>data.channelif.channelStatic.staticMode</td><td>string</td><td>模式选择<br>枚举值:[<br>FAILOVER:故障转移<br>LOADBALANCE:负载均衡<br>]</td></tr>
+<tr><td>data.channelif.channelStatic.failover</td><td>object</td><td>故障转移</td></tr>
+<tr><td>data.channelif.channelStatic.failover.preempt</td><td>bool</td><td>主备模式下的抢占或非抢占</td></tr>
+<tr><td>data.channelif.channelStatic.failover.channelPrimary</td><td>string</td><td>聚合口主备模式的主接口，状态字段，配置无效</td></tr>
+</tbody>
+</table>
+</body>
+</html>

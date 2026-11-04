@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2484-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2484 | table_id=af-8.0.107-api-p2484-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.4 违规外联检测策略 / 6.2.4.9 修改违规外联策略接口</p>
+<table>
+<thead><tr><th>obj.policy type_</th><th>uint16</th><th>--</th><th>策略类型<br>默认值:1<br>枚举值:[<br>1:网卡策略<br>2:重定向策略<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.execute way_</td><td>string</td><td>--</td><td>执行方式<br>默认值:IMMED<br>枚举值:[<br>IMMED:立即<br>REGULAR:定期<br>]</td></tr>
+<tr><td>obj.execute way chan_ _ge</td><td>bool</td><td>--</td><td>执行方式改变标识</td></tr>
+<tr><td>obj.time</td><td>string</td><td>--</td><td>检测时间</td></tr>
+<tr><td>obj.interval</td><td>uint16</td><td>--</td><td>检测间隔<br>默认值:7</td></tr>
+<tr><td>obj.interval unit_</td><td>string</td><td>--</td><td>间隔单位<br>默认值:DAY<br>枚举值:[<br>HOUR:小时<br>DAY:天<br>MONTH:月<br>]</td></tr>
+<tr><td>obj.response</td><td>uint16[]</td><td>--</td><td>响应处置</td></tr>
+<tr><td>obj.status</td><td>string</td><td>--</td><td>执行状态<br>默认值:READY<br>枚举值:[<br>READY:待开始<br>RUN:运行中<br>FINISH:已完成<br>FAIL:失败<br>]</td></tr>
+<tr><td>obj.mtime</td><td>uint32</td><td>--</td><td>策略修改时间</td></tr>
+<tr><td>obj.last scan time_ _</td><td>string</td><td>--</td><td>最近一次扫描时间</td></tr>
+<tr><td>obj.last status update_ _time_</td><td>uint32</td><td>--</td><td>最近一次扫描状态修改时间</td></tr>
+</tbody>
+</table>
+</body>
+</html>

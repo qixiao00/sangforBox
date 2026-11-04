@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p198-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=198 | table_id=af-8.0.107-cli-p198-t1<br>上下文标题路径：5 策略 / 5.3 解密 / 5.3.11 decrypt-certificate</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>country &lt;country-value&gt;</td><td>length:(2-2)</td><td>STRING</td><td>国家</td></tr>
+<tr><td>expire &lt;expire-time&gt;</td><td>-</td><td>1 1年<br>2 2年<br>3 3年<br>4 4年<br>5 5年<br>10 10年<br>20 20年</td><td>证书有效期</td></tr>
+<tr><td>key-type &lt;key-type-value&gt;</td><td>枚举值:[<br>rsa: RSA<br>ecc: ECC<br>]</td><td>ENUM</td><td>秘钥类型</td></tr>
+<tr><td>issued-to &lt;issued-to-value&gt;</td><td>length:(1-64)</td><td>STRING</td><td>颁发给</td></tr>
+<tr><td>cert-name &lt;cert-name-value&gt;</td><td>length:(1-95)</td><td>STRING</td><td>证书名</td></tr>
+<tr><td>key-len &lt;key-length&gt;</td><td>-</td><td>256秘钥长度(ECC)<br>384秘钥长度(ECC)<br>521秘钥长度(ECC)<br>1024秘钥长度(RSA)<br>2048秘钥长度(RSA)<br>3072秘钥长度(RSA)<br>4096秘钥长度(RSA)</td><td>秘钥长度</td></tr>
+<tr><td>province &lt;province-value&gt;</td><td>length:(1-128)</td><td>STRING</td><td>省份</td></tr>
+<tr><td>company &lt;company-value&gt;</td><td>length:(1-64)</td><td>STRING</td><td>公司</td></tr>
+<tr><td>passwd &lt;passwd-value&gt;</td><td>length:(0-129)</td><td>STRING</td><td>证书密码(4-39位)</td></tr>
+<tr><td>city &lt;city-value&gt;</td><td>length:(1-128)</td><td>STRING</td><td>城市</td></tr>
+<tr><td>email &lt;email-value&gt;</td><td>length:(1-128)</td><td>STRING</td><td>邮件</td></tr>
+<tr><td>department &lt;department-value&gt;</td><td>length:(1-64)</td><td>STRING</td><td>部门</td></tr>
+</tbody>
+</table>
+</body>
+</html>

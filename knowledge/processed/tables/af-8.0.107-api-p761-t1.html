@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p761-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=761 | table_id=af-8.0.107-api-p761-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.12 批量获取后台接口指定信息列表</p>
+<table>
+<thead><tr><th>obj.stats.ipv6idropeds</th><th>uint64</th><th>--</th><th>ipv6 in drops</th></tr></thead>
+<tbody>
+<tr><td>obj.stats.ipv6opackets</td><td>uint64</td><td>--</td><td>ipv6 out packets</td></tr>
+<tr><td>obj.stats.ipv6obytes</td><td>uint64</td><td>--</td><td>ipv6 out bytes</td></tr>
+<tr><td>obj.stats.ipv6odropeds</td><td>uint64</td><td>--</td><td>ipv6 out drops</td></tr>
+<tr><td>obj.driver</td><td>string</td><td>--</td><td>驱动名称<br>最大长度:32</td></tr>
+<tr><td>obj.mac</td><td>string</td><td>--</td><td>接口的mac地址</td></tr>
+<tr><td>obj.mtu</td><td>int32</td><td>--</td><td>最大传输单元</td></tr>
+<tr><td>obj.speedDuplex</td><td>object</td><td>--</td><td>速率双工配置</td></tr>
+<tr><td>obj.speedDuplex.autoneg</td><td>bool</td><td>--</td><td>接口速率工作模式自动协商</td></tr>
+<tr><td>obj.speedDuplex.speed</td><td>uint32</td><td>--</td><td>接口速率<br>枚举值:[<br>0:非法值<br>10:选择10Mbps<br>100:选择100Mbps<br>1000:选择1000Mbps<br>10000:选择10000Mbps<br>40000:选择40000Mbps<br>100000:选择100000Mbps<br>]</td></tr>
+<tr><td>obj.speedDuplex.duplex</td><td>string</td><td>--</td><td>接口的模式<br>枚举值:[<br>unknow:非法值<br>half:半双工模式<br>full:全双工模式<br>]</td></tr>
+<tr><td>obj.speedDuplex.fixedAuto</td><td>bool</td><td>--</td><td>接口指定速率时自协商情况</td></tr>
+<tr><td>obj.channelif</td><td>object</td><td>--</td><td>聚合口相关配置</td></tr>
+<tr><td>obj.channelif.channelMode</td><td>string</td><td>--</td><td>汇聚口的工作模式配置<br>枚举值:[<br>STATIC:静态<br>LACP:动态<br>]</td></tr>
+<tr><td>obj.channelif.channelStatic</td><td>object</td><td>--</td><td>汇聚口静态模式下的相关配置</td></tr>
+<tr><td>obj.channelif.channelStatic.staticMode</td><td>string</td><td>--</td><td>模式选择<br>枚举值:[<br>FAILOVER:故障转移<br>LOADBALANCE:负载均衡<br>]</td></tr>
+<tr><td>obj.channelif.channelStatic.failover</td><td>object</td><td>--</td><td>故障转移</td></tr>
+<tr><td>obj.channelif.channelStatic.failover.preempt</td><td>bool</td><td>--</td><td>主备模式下的抢占或非抢占</td></tr>
+</tbody>
+</table>
+</body>
+</html>

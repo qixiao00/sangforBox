@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sangforbox.local/schemas/chunk.schema.json",
+  "title": "SangforBox knowledge chunk",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "doc_id",
+    "doc_type",
+    "product",
+    "version",
+    "title",
+    "title_path",
+    "page_start",
+    "page_end",
+    "content_markdown",
+    "content_plain",
+    "keywords",
+    "entities",
+    "prev_chunk_id",
+    "next_chunk_id",
+    "text_sha256"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "chunk_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "doc_id": {
+      "type": "string",
+      "enum": [
+        "af-8.0.107-api",
+        "af-8.0.107-cli",
+        "af-8.0.107-product"
+      ]
+    },
+    "doc_type": {
+      "type": "string",
+      "enum": [
+        "api_manual",
+        "cli_manual",
+        "product_manual"
+      ]
+    },
+    "product": {
+      "type": "string",
+      "const": "AF"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "section_no": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title_path": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "page_start": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "page_end": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "content_markdown": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_plain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "value"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "char_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "table_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "has_code": {
+      "type": "boolean"
+    },
+    "prev_chunk_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_chunk_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

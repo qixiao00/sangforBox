@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p221-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=221 | table_id=af-8.0.107-api-p221-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.1 告警事件 / 3.4.3.1.2 设置告警事件配置</p>
+<table>
+<thead><tr><th>obj.systemResource.fileSystemAlarm</th><th>bool</th><th>--</th><th>文件系统故障检测告警开关</th></tr></thead>
+<tbody>
+<tr><td>obj.systemResource.cpuUsage</td><td>int8</td><td>--</td><td>CPU使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>obj.systemResource.memUsage</td><td>int8</td><td>--</td><td>内存使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>obj.systemResource.diskUsage</td><td>int8</td><td>--</td><td>磁盘空间使用率告警阈值，百分比<br>最小值:1<br>最大值:100</td></tr>
+<tr><td>obj.systemResource.fluxLimit</td><td>object[]</td><td>--</td><td>各个网卡流量告警阈值</td></tr>
+<tr><td>obj.systemResource.fluxLimit.name</td><td>string</td><td>--</td><td>网卡名</td></tr>
+<tr><td>obj.systemResource.fluxLimit.upFlux</td><td>int32</td><td>--</td><td>上行流量告警阈值<br>最小值:1<br>最大值:10240</td></tr>
+<tr><td>obj.systemResource.fluxLimit.downFlux</td><td>int32</td><td>--</td><td>下行流量告警阈值<br>最小值:1<br>最大值:10240</td></tr>
+<tr><td>obj.safe</td><td>object</td><td>--</td><td>安全告警组配置</td></tr>
+<tr><td>obj.safe.enable</td><td>bool</td><td>--</td><td>安全告警组开关</td></tr>
+<tr><td>obj.safe.emailSafeAlarm</td><td>bool</td><td>--</td><td>邮件安全告警开关</td></tr>
+<tr><td>obj.safe.ipsAlarm</td><td>bool</td><td>--</td><td>漏洞攻击防护告警开关</td></tr>
+<tr><td>obj.safe.webApplicationSafeAlarm</td><td>bool</td><td>--</td><td>WEB应用防护告警开关</td></tr>
+<tr><td>obj.safe.utmSafeAlarm</td><td>bool</td><td>--</td><td>僵尸主机告警开关</td></tr>
+<tr><td>obj.safe.dosSafeAlarm</td><td>bool</td><td>--</td><td>Dos/DDos防护告警开关</td></tr>
+<tr><td>obj.safe.outDosAlarm</td><td>bool</td><td>--</td><td>对外DoS攻击告警开关</td></tr>
+<tr><td>obj.safe.phishingGptAlarm</td><td>bool</td><td>--</td><td>钓鱼邮件防护告警开关</td></tr>
+<tr><td>obj.safe.emailSafe</td><td>int8</td><td>--</td><td>邮件安全等级<br>最小值:1<br>最大值:7</td></tr>
+<tr><td>obj.safe.ips</td><td>int8</td><td>--</td><td>漏洞攻击防护等级<br>最小值:1<br>最大值:31</td></tr>
+<tr><td>obj.safe.webApplicationSafe</td><td>int8</td><td>--</td><td>WEB应用防护等级<br>最小值:1<br>最大值:7</td></tr>
+<tr><td>obj.safe.utmSafe</td><td>int8</td><td>--</td><td>僵尸主机等级<br>最小值:1<br>最大值:15</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p235-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=235 | table_id=af-8.0.107-api-p235-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.3 在册事件 / 3.4.3.3.1 创建告警在册事件</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>告警事件组</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>可读的事件名称，如：memory over thr<br>_ _<br>eshold warning<br>_<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>obj.enableWarning</td><td>bool</td><td>--</td><td>是否启用告警推送，在告警推送时会判断根<br>据这个字段决定是否要发送告警信息</td></tr>
+<tr><td>obj.events</td><td>object[]</td><td>--</td><td>注册了的告警事件列表</td></tr>
+<tr><td>obj.events.name</td><td>string</td><td>--</td><td>可读的事件名称，唯一，如：memory ov<br>_<br>er threshold warning<br>_ _<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>obj.events.showname</td><td>string</td><td>--</td><td>告警事件名称，如：持续30s内存占用超过<br>90%的主机异常告警<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>obj.events.module</td><td>string</td><td>--</td><td>事件所属的模块，仅标识用，如hard-res<br>ources/network/disk<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>obj.events.enableWarning</td><td>bool</td><td>--</td><td>是否启用告警推送，在告警推送时会判断根<br>据这个字段决定是否要发送告警信息</td></tr>
+</tbody>
+</table>
+</body>
+</html>

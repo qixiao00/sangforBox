@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3052-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3052 | table_id=af-8.0.107-api-p3052-t1<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.19 batch delete ha monitor</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object[]</td><td>高可用HA 监控对象</td></tr>
+<tr><td>data.name</td><td>string</td><td>监控对象名<br>最小长度:1<br>最大长度:31</td></tr>
+<tr><td>data.priority</td><td>uint16</td><td>优先级<br>最小值:1<br>最大值:255</td></tr>
+<tr><td>data.type</td><td>string</td><td>监控对象类型<br>枚举值:[<br>LINKGROUP:接口组模式<br>VLAN:vlan监控模式<br>LINKDETECT:链路探测对象模式<br>]</td></tr>
+<tr><td>data.mode</td><td>string</td><td>探测对象生效类型<br>枚举值:[<br>ALL:当所有对象失效后后认为监控失效<br>ANY:任意组内对象后认为监控失效<br>]</td></tr>
+<tr><td>data.vlan</td><td>uint16</td><td>vlanID<br>最小值:1<br>最大值:4095</td></tr>
+<tr><td>data.linkGroup</td><td>string[]</td><td>已选择的网络接口</td></tr>
+<tr><td>data.linkDetect</td><td>string[]</td><td>选择的链路探测对象</td></tr>
+</tbody>
+</table>
+</body>
+</html>

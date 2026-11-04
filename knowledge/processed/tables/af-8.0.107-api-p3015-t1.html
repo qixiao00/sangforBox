@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3015-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3015 | table_id=af-8.0.107-api-p3015-t1<br>上下文标题路径：7 系统 / 7.5 高可用性 / 7.5.1 获取高可用配置的详细信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>高可用配置</td></tr>
+<tr><td>data.haConfig</td><td>object</td><td>高可用开关</td></tr>
+<tr><td>data.haConfig.haEnable</td><td>bool</td><td>高可用开关</td></tr>
+<tr><td>data.haConfig.hwCompatibleEnable</td><td>bool</td><td>高可用硬件兼容开关</td></tr>
+<tr><td>data.haConfig.mode</td><td>string</td><td>高可用模式<br>枚举值:[<br>ACTIVE-ACTIVE:主主模式<br>ACTIVE-PASSIVE:主备模式<br>MIRROR:镜像模式<br>]</td></tr>
+<tr><td>data.haConfig.cryptoid</td><td>string</td><td>加密标识<br>最小长度:1<br>最大长度:64</td></tr>
+<tr><td>data.haConfig.TransparentEnable</td><td>bool</td><td>主主透明开关</td></tr>
+<tr><td>data.haConfig.ctrlLink</td><td>object</td><td>配置HA控制线路</td></tr>
+<tr><td>data.haConfig.ctrlLink.ifname</td><td>string</td><td>控制线路接口名称</td></tr>
+<tr><td>data.haConfig.ctrlLink.peerAddress</td><td>string</td><td>控制线路对端IP地址<br>格式:ip-address</td></tr>
+<tr><td>data.haConfig.ctrlLink.localAddress</td><td>string</td><td>控制线路本端IP地址<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

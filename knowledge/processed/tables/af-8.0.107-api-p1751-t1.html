@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1751-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1751 | table_id=af-8.0.107-api-p1751-t1<br>上下文标题路径：5 网络 / 5.11 DHCPv6 / 5.11.1 DHCPv6配置 / 5.11.1.1 dhcp6 / 5.11.1.1.6 全量修改dhcp6服务配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>dhcp6</td></tr>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>服务名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.dhcp6Type</td><td>string</td><td>--</td><td>dhcp6服务类型<br>默认值:SERVER<br>枚举值:[<br>SERVER:服务端<br>RELAY:中继<br>]</td></tr>
+<tr><td>obj.description</td><td>string</td><td>--</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.ifname</td><td>string</td><td>--</td><td>接口引用uuid</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>--</td><td>dhcp6服务是否启禁用<br>默认值:true</td></tr>
+<tr><td>obj.dhcp6Server</td><td>object</td><td>--</td><td>dhcp6服务端</td></tr>
+<tr><td>obj.dhcp6Server.setdns</td><td>bool</td><td>--</td><td>是否使用系统dns</td></tr>
+<tr><td>obj.dhcp6Server.preference</td><td>uint16</td><td>--</td><td>服务器优先级<br>最小值:0<br>最大值:255</td></tr>
+<tr><td>obj.dhcp6Server.rapidCommit</td><td>bool</td><td>--</td><td>是否支持快速分配</td></tr>
+<tr><td>obj.dhcp6Server.dns</td><td>object</td><td>--</td><td>dns地址</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p407-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=407 | table_id=af-8.0.107-api-p407-t1<br>上下文标题路径：4 对象 / 4.4 内容识别 / 4.4.1 应用识别 / 4.4.1.6 修改应用或应用分类</p>
+<table>
+<thead><tr><th>data.name</th><th>string</th><th>应用名称<br>最小长度:1<br>最大长度:96</th></tr></thead>
+<tbody>
+<tr><td>data.description</td><td>string</td><td>应用描述<br>最小长度:0<br>最大长度:1024</td></tr>
+<tr><td>data.objType</td><td>string</td><td>应用类型, 枚举型。<br>枚举值:[<br>TYPE OBJ:应用大类对象<br>_<br>SUB TYPE OBJ:应用中间类对象<br>_ _<br>APP OBJ:应用对象<br>_<br>]</td></tr>
+<tr><td>data.libType</td><td>string</td><td>应用所属库类型, 枚举型。可选参数[FEATURE,INTE<br>LL,CUSTOM,FEATURE-INTELL,RESERVE], FE<br>ATURE:特征库,INTELL:智能库,CUSTOM:自定义库,<br>FEATURE-INTELL:同时属于特征库与智能库,RESE<br>RVE:系统预留<br>枚举值:[<br>FEATURE:特征库<br>INTELL:智能库<br>CUSTOM:自定义库<br>FEATURE-INTELL:既属于特征库,又属于智能库<br>RESERVE:系统保留(全部,其他应用)<br>]</td></tr>
+<tr><td>data.appPath</td><td>string</td><td>应用路径名,如应用Custom a1,所属类型是Custom t<br>_ _<br>1,appPath就是Custom t1/Custom a1<br>_ _<br>最小长度:1<br>最大长度:287</td></tr>
+<tr><td>data.userdefCategory</td><td>string</td><td>自定义应用所属分类</td></tr>
+<tr><td>data.appNum</td><td>int32</td><td>一个应用分类下面具体的应用个数</td></tr>
+<tr><td>data.appStatus</td><td>object</td><td>应用名称所需参数</td></tr>
+<tr><td>data.appStatus.ruleNum</td><td>uint16</td><td>所包含的应用规则数量</td></tr>
+<tr><td>data.appStatus.enableNum</td><td>uint16</td><td>已经启用的应用规则数量</td></tr>
+<tr><td>data.hasref</td><td>bool</td><td>标识是否被引用</td></tr>
+<tr><td>data.bbc</td><td>bool</td><td>appIdentify:RULE BBC<br>_</td></tr>
+<tr><td>data.bbcObjCrc</td><td>uint32</td><td>应用crc</td></tr>
+</tbody>
+</table>
+</body>
+</html>

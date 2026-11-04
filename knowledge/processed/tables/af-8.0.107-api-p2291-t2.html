@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2291-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2291 | table_id=af-8.0.107-api-p2291-t2<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.5 添加安全防护策略</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>security</td><td>object</td><td>是</td><td>安全防护策略</td></tr>
+<tr><td>security.name</td><td>string</td><td>--</td><td>唯一标识名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>security.description</td><td>string</td><td>--</td><td>描述<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>security.enable</td><td>bool</td><td>--</td><td>是否启用<br>默认值:true</td></tr>
+<tr><td>security.policyType</td><td>string</td><td>--</td><td>安全防护策略类型<br>枚举值:[<br>SERVER:业务防护策略<br>INTERNET ACCESS:用户防护策略<br>_<br>]</td></tr>
+<tr><td>security.srcZones</td><td>string[]</td><td>--</td><td>源区域</td></tr>
+<tr><td>security.srcAddrs</td><td>object</td><td>--</td><td>源网络对象/用户</td></tr>
+<tr><td>security.srcAddrs.srcAddrType</td><td>string</td><td>--</td><td>源地址类型<br>默认值:NETOBJECT<br>枚举值:[<br>NETOBJECT:网络对象<br>USERS:用户/组<br>]</td></tr>
+<tr><td>security.srcAddrs.users</td><td>string[]</td><td>--</td><td>源用户</td></tr>
+<tr><td>security.srcAddrs.userGroups</td><td>string[]</td><td>--</td><td>源用户组</td></tr>
+<tr><td>security.srcAddrs.securityGroups</td><td>string[]</td><td>--</td><td>源安全组</td></tr>
+<tr><td>security.srcAddrs.srcIpGroups</td><td>string[]</td><td>--</td><td>源网络对象</td></tr>
+<tr><td>security.dstZones</td><td>string[]</td><td>--</td><td>目的区域</td></tr>
+<tr><td>security.dstIpGroups</td><td>string[]</td><td>--</td><td>目的网络对象</td></tr>
+<tr><td>security.strategy</td><td>string</td><td>--</td><td>业务访问场景<br>默认值:NOT VIA SNAT CDN<br>_ _ _<br>枚举值:[<br>NOT VIA SNAT CDN:访问未经过源地<br>_ _ _<br>址转换或CDN<br>VIA SNAT CDN:访问经过源地址转换或<br>_ _<br>CDN<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

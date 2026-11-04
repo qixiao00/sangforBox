@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1847-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1847 | table_id=af-8.0.107-api-p1847-t2<br>上下文标题路径：5 网络 / 5.15 RSTP / 5.15.1 获取RSTP详细配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>rstp配置</td></tr>
+<tr><td>data.bridgeState</td><td>bool</td><td>设备是否开启rstp</td></tr>
+<tr><td>data.bridgePriority</td><td>uint16</td><td>设备优先级<br>最小值:0<br>最大值:61440</td></tr>
+<tr><td>data.bridgeMaxage</td><td>uint8</td><td>报文最大生存时间，秒<br>最小值:6<br>最大值:40</td></tr>
+<tr><td>data.bridgeHello</td><td>uint8</td><td>hello间隔时间，秒<br>最小值:1<br>最大值:10</td></tr>
+<tr><td>data.bridgeFdelay</td><td>uint8</td><td>转发延迟时间，秒<br>最小值:4<br>最大值:30</td></tr>
+<tr><td>data.bridgeForceSlow</td><td>bool</td><td>退化为STP</td></tr>
+</tbody>
+</table>
+</body>
+</html>

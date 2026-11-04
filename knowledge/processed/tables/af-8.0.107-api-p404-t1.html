@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p404-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=404 | table_id=af-8.0.107-api-p404-t1<br>上下文标题路径：4 对象 / 4.4 内容识别 / 4.4.1 应用识别 / 4.4.1.5 新增自定义应用或应用分类，需注意必须先新增自定义应用分类，然后再新增自定义应用</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>应用对象</td></tr>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>应用描述<br>最小长度:0<br>最大长度:1024</td></tr>
+<tr><td>obj.objType</td><td>string</td><td>是</td><td>应用类型, 枚举型。<br>枚举值:[<br>TYPE OBJ:应用大类对象<br>_<br>SUB TYPE OBJ:应用中间类对象<br>_ _<br>APP OBJ:应用对象<br>_<br>]</td></tr>
+<tr><td>obj.appPath</td><td>string</td><td>是</td><td>应用路径名,如应用Custom a1,所属类型<br>_<br>是Custom t1,appPath就是Custom t1/<br>_ _<br>Custom a1<br>_<br>最小长度:1<br>最大长度:287</td></tr>
+<tr><td>obj.bbc</td><td>bool</td><td>否</td><td>appIdentify:RULE BBC<br>_</td></tr>
+<tr><td>obj.bbcObjCrc</td><td>uint32</td><td>否</td><td>应用crc</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2800-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2800 | table_id=af-8.0.107-api-p2800-t1<br>上下文标题路径：7 系统 / 7.1 通用设置 / 7.1.2 邮件服务器 / 7.1.2.1 获取邮件服务器配置信息</p>
+<table>
+<thead><tr><th>data.sender</th><th>string</th><th>发件人邮箱<br>最小长度:6<br>最大长度:64</th></tr></thead>
+<tbody>
+<tr><td>data.SMTPServer</td><td>string</td><td>SMTP邮件服务器域名或地址<br>最小长度:3<br>最大长度:1024</td></tr>
+<tr><td>data.serverPort</td><td>uint32</td><td>端口<br>最小值:1<br>最大值:65535</td></tr>
+<tr><td>data.sslType</td><td>string</td><td>加密方式<br>枚举值:[<br>plaintext:不加密<br>ssl:强制使用ssl/tls加密<br>starttls:使用starttls加密<br>]</td></tr>
+<tr><td>data.account</td><td>string</td><td>用户名<br>最小长度:0<br>最大长度:96</td></tr>
+<tr><td>data.password</td><td>string</td><td>密码<br>最小长度:0<br>最大长度:512</td></tr>
+<tr><td>data.useDefault</td><td>bool</td><td>是否使用默认邮件配置</td></tr>
+<tr><td>data.emailServerEnable</td><td>bool</td><td>是否启用邮件服务器配置</td></tr>
+<tr><td>data.userDefinedDefault</td><td>bool</td><td>是否使用自定义邮箱默认配置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

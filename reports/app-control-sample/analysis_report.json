@@ -1,0 +1,92 @@
+{
+  "policy_file": "D:\\chrome_downloads\\appcontrol_1789703366048.csv",
+  "object_file": "D:\\chrome_downloads\\ipgroup.csv",
+  "policy_count": 2,
+  "object_count": 12,
+  "limitations": [
+    "仅完成离线静态分析，未调用设备或项目固有工具链",
+    "未建模设备特有的动态应用识别、继续匹配等语义",
+    "未知字段和未知对象关系不会被当作任意或空集合"
+  ],
+  "outputs": [
+    "merge_candidates.csv",
+    "name_candidates.csv",
+    "object_candidates.csv",
+    "overlaps.csv",
+    "policy_analysis.csv",
+    "review.csv",
+    "analysis_report.json"
+  ],
+  "analysis": {
+    "policy_analysis": [
+      {
+        "position": 1,
+        "name": "deny-douyin-vwire",
+        "enabled": "是",
+        "status": "正常",
+        "covering_same_effect": "",
+        "covering_different_effect": "",
+        "partial_overlap": "",
+        "unknown_overlap": "",
+        "suggested_name": "拒绝_Web流媒体-抖音_All_All_7690b472"
+      },
+      {
+        "position": 2,
+        "name": "default",
+        "enabled": "是",
+        "status": "正常",
+        "covering_same_effect": "",
+        "covering_different_effect": "",
+        "partial_overlap": "",
+        "unknown_overlap": "",
+        "suggested_name": "允许_全部_All_All_05acf302"
+      }
+    ],
+    "overlaps": [
+      {
+        "prior_position": 1,
+        "prior_name": "deny-douyin-vwire",
+        "later_position": 2,
+        "later_name": "default",
+        "relation": "无重叠",
+        "prior_effect": "n||y|n|y|0",
+        "later_effect": "y||n|n|y|0",
+        "evidence": "src_zone:Virtual_trust_A→bridge,lan,wan；dst_zone:Virtual_untrust_A→bridge,lan,wan；application:Web流媒体/抖音→任意"
+      }
+    ],
+    "merge_candidates": [],
+    "object_candidates": [],
+    "name_candidates": [
+      {
+        "candidate_id": "NAME-0001",
+        "position": 1,
+        "policy_name": "deny-douyin-vwire",
+        "suggested_name": "拒绝_Web流媒体-抖音_All_All_7690b472",
+        "verification": "仅名称变化；需确认设备是否存在按名称引用"
+      },
+      {
+        "candidate_id": "NAME-0002",
+        "position": 2,
+        "policy_name": "default",
+        "suggested_name": "允许_全部_All_All_05acf302",
+        "verification": "仅名称变化；需确认设备是否存在按名称引用"
+      }
+    ],
+    "review": [
+      {
+        "candidate_id": "NAME-0001",
+        "type": "命名规范化",
+        "verification": "仅名称变化；需确认设备是否存在按名称引用",
+        "status": "待确认",
+        "details": "deny-douyin-vwire → 拒绝_Web流媒体-抖音_All_All_7690b472"
+      },
+      {
+        "candidate_id": "NAME-0002",
+        "type": "命名规范化",
+        "verification": "仅名称变化；需确认设备是否存在按名称引用",
+        "status": "待确认",
+        "details": "default → 允许_全部_All_All_05acf302"
+      }
+    ]
+  }
+}

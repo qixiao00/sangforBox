@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p416-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=416 | table=af-8.0.107-api-p416-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>fileobj</td><td>object</td><td>是</td><td>文件类型组对象</td></tr>
+<tr><td>fileobj.name</td><td>string</td><td>--</td><td>文件类型组名字<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>fileobj.description</td><td>string</td><td>--</td><td>描述字段<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>fileobj.filetype</td><td>string[]</td><td>--</td><td>文件类型组</td></tr>
+<tr><td>fileobj.type</td><td>uint8</td><td>--</td><td>内容安全策略专用，0其他，1邮件附件过<br>滤，2文件杀毒<br>最小值:0<br>最大值:2</td></tr>
+<tr><td>fileobj.hasref</td><td>bool</td><td>--</td><td>标识是否被引用</td></tr>
+<tr><td>fileobj.size</td><td>uint16</td><td>--</td><td>文件类型组的大小, 单位 M<br>最小值:1<br>最大值:20</td></tr>
+</tbody>
+</table>
+</body>
+</html>

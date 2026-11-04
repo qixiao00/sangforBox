@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2430-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2430 | table_id=af-8.0.107-api-p2430-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.3 云安全访问服务策略 / 6.2.3.1 线路配置 / 6.2.3.1.5 添加一条线路配置信息</p>
+<table>
+<thead><tr><th>obj.enable</th><th>bool</th><th>--</th><th>启用状态</th></tr></thead>
+<tbody>
+<tr><td>obj.name</td><td>string</td><td>--</td><td>线路名称<br>最小长度:1<br>最大长度:80</td></tr>
+<tr><td>obj.outIfMode</td><td>string</td><td>--</td><td>出接口类型<br>枚举值:[<br>SWITCH:透明<br>ROUTE:路由<br>VIRTUALLINE:虚拟网线<br>BYPASSMIRROR:旁路镜像<br>AUTO:自动<br>]</td></tr>
+<tr><td>obj.outIfName</td><td>string</td><td>--</td><td>出接口名称</td></tr>
+<tr><td>obj.detectIfName</td><td>string</td><td>--</td><td>检测接口名称</td></tr>
+<tr><td>obj.popOperator</td><td>string</td><td>--</td><td>POP运营商<br>默认值:AUTO<br>枚举值:[<br>AUTO:根据出接口自动分配<br>TELECOM:中国电信<br>MOBILE:中国移动<br>UNICOM:中国联通<br>]</td></tr>
+<tr><td>obj.popConfig</td><td>object</td><td>--</td><td>SASE端POP节点配置</td></tr>
+<tr><td>obj.popConfig.popLineList</td><td>object[]</td><td>--</td><td>SASE端POP节点线路列表配置</td></tr>
+<tr><td>obj.popConfig.popLineList.popLocation</td><td>string</td><td>--</td><td>POP归属地</td></tr>
+<tr><td>obj.popConfig.popLineList.popIp</td><td>string</td><td>--</td><td>POP运营商IP地址</td></tr>
+<tr><td>obj.popConfig.popLineList.popId</td><td>string</td><td>--</td><td>PoP ID</td></tr>
+<tr><td>obj.popConfig.popLineList.popIsp</td><td>string</td><td>--</td><td>POP运营商</td></tr>
+<tr><td>obj.popConfig.enable</td><td>bool</td><td>--</td><td>SASE端POP节点启用状态</td></tr>
+<tr><td>obj.popConfig.RT</td><td>object</td><td>--</td><td>后台RT包相关字段</td></tr>
+<tr><td>obj.popConfig.RT.rtKey</td><td>uint32</td><td>--</td><td>RTkey</td></tr>
+<tr><td>obj.hasref</td><td>bool</td><td>--</td><td>标识是否被引用</td></tr>
+</tbody>
+</table>
+</body>
+</html>

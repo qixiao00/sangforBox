@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2793-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2793 | table_id=af-8.0.107-api-p2793-t1<br>上下文标题路径：6 策略 / 6.6 大象流 / 6.6.3 获取大象流检测配置</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>大象流检测配置</td></tr>
+<tr><td>data.enable</td><td>string</td><td>大象流检测开启状态<br>枚举值:[<br>ENABLE:开启<br>DISABLE:关闭<br>UNSET:未设置<br>]</td></tr>
+<tr><td>data.defaultEnable</td><td>string</td><td>大象流检测默认开启状态<br>枚举值:[<br>ENABLE:开启<br>DISABLE:关闭<br>]</td></tr>
+<tr><td>data.totalRate</td><td>uint32</td><td>大象流检测总流量阈值<br>最小值:0<br>最大值:102400</td></tr>
+<tr><td>data.instantaneousRate</td><td>uint32</td><td>大象流检测瞬时速率阈值<br>最小值:0<br>最大值:5000</td></tr>
+<tr><td>data.packetPerSec</td><td>uint32</td><td>大象流检测每秒最大包数阈值<br>最小值:0<br>最大值:5000</td></tr>
+<tr><td>data.sessionDuration</td><td>uint32</td><td>大象流检测会话持续时间<br>最小值:0<br>最大值:100</td></tr>
+</tbody>
+</table>
+</body>
+</html>

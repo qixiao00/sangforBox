@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2786-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2786 | table_id=af-8.0.107-api-p2786-t2<br>上下文标题路径：6 策略 / 6.5 流控 / 6.5.5 排除策略 / 6.5.5.10 获取指定的排除策略统计信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>排除策略收发包统计</td></tr>
+<tr><td>data.name</td><td>string</td><td>线路名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.uuid</td><td>string</td><td>线路uuid</td></tr>
+<tr><td>data.time</td><td>uint64</td><td>生效时间,单位秒</td></tr>
+<tr><td>data.uplink</td><td>object</td><td>上行线路</td></tr>
+<tr><td>data.uplink.pkts</td><td>uint64</td><td>线路接收报文数量</td></tr>
+<tr><td>data.uplink.bytes</td><td>uint64</td><td>线路接收报文字节数</td></tr>
+<tr><td>data.downlink</td><td>object</td><td>下行线路</td></tr>
+<tr><td>data.downlink.pkts</td><td>uint64</td><td>线路接收报文数量</td></tr>
+<tr><td>data.downlink.bytes</td><td>uint64</td><td>线路接收报文字节数</td></tr>
+</tbody>
+</table>
+</body>
+</html>

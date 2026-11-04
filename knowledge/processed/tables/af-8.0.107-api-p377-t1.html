@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p377-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=377 | table_id=af-8.0.107-api-p377-t1<br>上下文标题路径：4 对象 / 4.3 服务器识别 / 4.3.3 获取服务器识别结果</p>
+<table>
+<thead><tr><th>data.itemsOffset</th><th>int32</th><th>当前条目偏移，从 0 开始</th></tr></thead>
+<tbody>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.ip</td><td>string</td><td>服务器ip<br>格式:ip-address</td></tr>
+<tr><td>data.items.business</td><td>string</td><td>所属业务</td></tr>
+<tr><td>data.items.important</td><td>string</td><td>标识核心业务/普通业务或者标识普通用户/核心用户<br>枚举值:[<br>COMMON:普通用户或普通业务<br>CORE:核心用户或核心业务<br>]</td></tr>
+<tr><td>data.items.identifyMethod</td><td>string</td><td>发现方式<br>枚举值:[<br>USERDEFINED:自定义服务器<br>AUTOFIND:自动识别服务器<br>]</td></tr>
+<tr><td>data.items.serviceType</td><td>uint32</td><td>服务类型</td></tr>
+<tr><td>data.items.pageNum</td><td>uint32</td><td>敏感数据个数</td></tr>
+<tr><td>data.items.updateTime</td><td>string</td><td>更新时间</td></tr>
+<tr><td>data.items.svrTypeInfo</td><td>string</td><td>服务类型</td></tr>
+</tbody>
+</table>
+</body>
+</html>

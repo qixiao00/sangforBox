@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1064-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1064 | table_id=af-8.0.107-api-p1064-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.5 策略路由IPV6 / 5.8.5.21 获取后台策略路由表二ipv6策略路由信息列表</p>
+<table>
+<thead><tr><th>data.items.dstPort.end</th><th>int32</th><th>网络端口结束值<br>最小值:0<br>最大值:65535</th></tr></thead>
+<tbody>
+<tr><td>data.items.applications</td><td>uint32[]</td><td>策略路由关联应用识别列表</td></tr>
+<tr><td>data.items.nexthopType</td><td>string</td><td>出接口信息的选择接口还是下一跳<br>枚举值:[<br>INTERFACE:接口<br>GATEWAY:下一跳<br>]</td></tr>
+<tr><td>data.items.lbMethod</td><td>string</td><td>多线路模式下，接口选择策略<br>枚举值:[<br>POLL:轮询<br>BANDWIDTH:带宽比例<br>WEIGHTED MINIMUM FLOW:加权最小流量<br>_ _<br>PRIORITY FRONT LINE:优先使用前面线路<br>_ _<br>]</td></tr>
+<tr><td>data.items.tableId</td><td>uint32</td><td>策略路由表id.参考nfp中af实现的pbr，范围还需确定</td></tr>
+<tr><td>data.items.status</td><td>uint8</td><td>策略路由的状态值</td></tr>
+<tr><td>data.items.position</td><td>int32</td><td>策略的位置</td></tr>
+<tr><td>data.items.outif</td><td>object[]</td><td>下一跳列表.(源地址模式只能填一个)</td></tr>
+<tr><td>data.items.outif.outifName</td><td>string</td><td>出接口名称</td></tr>
+<tr><td>data.items.outif.gateway</td><td>string</td><td>下一跳IP地址<br>格式:ip6-address</td></tr>
+<tr><td>data.items.outif.linkdt</td><td>string</td><td>策略路由引用链路探测名字</td></tr>
+<tr><td>data.items.outif.linkdtStatus</td><td>bool</td><td>链路探测状态</td></tr>
+</tbody>
+</table>
+</body>
+</html>

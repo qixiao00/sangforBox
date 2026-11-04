@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p633-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=633 | table_id=af-8.0.107-api-p633-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.3 添加接口信息</p>
+<table>
+<thead><tr><th>data.ipv6.ipv6Param.nd.ra prefix.perferredLifeti_me</th><th>uint32</th><th>首选生存时间<br>最小值:0<br>最大值:4294967295</th></tr></thead>
+<tbody>
+<tr><td>data.ipv6.ipv6Param.nd.ra prefix.noAutoconfig_</td><td>bool</td><td>IPV6 ND前缀autoconfig选项</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.ra prefix.offLink_</td><td>bool</td><td>控制IPV6 ND前缀分配给本地链路开关选项</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.ra prefix.noAdvertise_</td><td>bool</td><td>控制IPV6 ND前缀是否包含在RA消息中开关选项</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.route prefix_</td><td>object[]</td><td>ipv6 ROUTE参数</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.route prefix.prefix_</td><td>string</td><td>IPV6 路由前缀信息</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.route prefix.lifetime_</td><td>uint32</td><td>生存时间<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.route prefix.prefence_</td><td>string</td><td>路由前缀的优先级<br>枚举值:[<br>HIGH:高优先级<br>LOW:低优先级<br>MEDIUM:中优先级<br>]</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.ns interval_</td><td>uint32</td><td>NS重传间隔,单位为毫秒<br>最小值:1000<br>最大值:4294967295</td></tr>
+<tr><td>data.wanEnable</td><td>bool</td><td>是否开启接口的wan模式，接口类型为物理口和聚合口<br>时使用</td></tr>
+<tr><td>data.defaultGateway</td><td>object</td><td>接口默认网关</td></tr>
+<tr><td>data.defaultGateway.ipv4Gateway</td><td>string</td><td>ipv4 gateway</td></tr>
+<tr><td>data.defaultGateway.ipv6Gateway</td><td>string</td><td>ipv6 gateway<br>格式:ip6-address</td></tr>
+<tr><td>data.reverseRoute</td><td>object</td><td>接口源进源出下一跳</td></tr>
+<tr><td>data.reverseRoute.ipv4Nexthop</td><td>string</td><td>reverse route ipv4 gnexthop</td></tr>
+<tr><td>data.reverseRoute.ipv6Nexthop</td><td>string</td><td>reverse route ipv6 gnexthop<br>格式:ip6-address</td></tr>
+<tr><td>data.reverseRouteEnable</td><td>bool</td><td>标识接口是否开启源进源出</td></tr>
+<tr><td>data.bandSwitch</td><td>object</td><td>接口接收或发送的带宽限制，物理口和聚合口的路由模<br>式时使用</td></tr>
+<tr><td>data.bandSwitch.ingressbandSwitch</td><td>object</td><td>接口接收的带宽限制</td></tr>
+<tr><td>data.bandSwitch.ingressbandSwitch.value</td><td>uint64</td><td>数值大小<br>最小值:0<br>最大值:1099511627776</td></tr>
+</tbody>
+</table>
+</body>
+</html>

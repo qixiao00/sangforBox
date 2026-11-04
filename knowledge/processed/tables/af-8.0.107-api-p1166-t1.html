@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1166-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1166 | table_id=af-8.0.107-api-p1166-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.13 动态路由 / 5.8.13.1 动态路由BGP / 5.8.13.1.1 BGP / 5.8.13.1.1.9 获取BGP路由详细状态</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>BGP路由详细信息表</td></tr>
+<tr><td>data.network</td><td>string</td><td>BGP路由网络地址</td></tr>
+<tr><td>data.count</td><td>uint32</td><td>BGP路由路径个数</td></tr>
+<tr><td>data.best</td><td>uint32</td><td>最优路径个数</td></tr>
+<tr><td>data.announceType</td><td>string</td><td>依赖于团体属性的路由通告类型<br>枚举值:[<br>NO ADVERTISE:不通告给任何邻居<br>_<br>NO EXPORT:不通告给EBGP邻居<br>_<br>LOCAL AS:不在本地AS外做通告<br>_<br>ANY:通告给任何邻居<br>]</td></tr>
+<tr><td>data.reallyAdvertised</td><td>bool</td><td>通告路由表中是否存在路由</td></tr>
+<tr><td>data.detailInfo</td><td>object[]</td><td>BGP路由详细信息</td></tr>
+<tr><td>data.detailInfo.status</td><td>string</td><td>路由状态</td></tr>
+<tr><td>data.detailInfo.path</td><td>string</td><td>AS路径号</td></tr>
+<tr><td>data.detailInfo.aggregatorRouterId</td><td>string</td><td>聚合路由routerId属性</td></tr>
+<tr><td>data.detailInfo.aggregatorAs</td><td>uint32</td><td>聚合路由AS号</td></tr>
+<tr><td>data.detailInfo.rsClient</td><td>bool</td><td>路由是否来自RS-client</td></tr>
+<tr><td>data.detailInfo.from</td><td>string</td><td>路由来源</td></tr>
+<tr><td>data.detailInfo.fromId</td><td>string</td><td>路由来源ID</td></tr>
+<tr><td>data.detailInfo.inAccessible</td><td>bool</td><td>路由状态为inAccessible</td></tr>
+<tr><td>data.detailInfo.igpMetric</td><td>uint32</td><td>IGP路由度量值</td></tr>
+<tr><td>data.detailInfo.nextHop</td><td>string</td><td>路由的下一跳地址</td></tr>
+<tr><td>data.detailInfo.nextHopLocal</td><td>string</td><td>IPv6路由下一跳link-local地址</td></tr>
+<tr><td>data.detailInfo.origin</td><td>string</td><td>Origin属性</td></tr>
+<tr><td>data.detailInfo.localPreference</td><td>uint32</td><td>本地优先级</td></tr>
+<tr><td>data.detailInfo.med</td><td>uint32</td><td>路由度量值</td></tr>
+<tr><td>data.detailInfo.weight</td><td>uint32</td><td>本地权重</td></tr>
+<tr><td>data.detailInfo.tag</td><td>uint32</td><td>tag属性</td></tr>
+</tbody>
+</table>
+</body>
+</html>

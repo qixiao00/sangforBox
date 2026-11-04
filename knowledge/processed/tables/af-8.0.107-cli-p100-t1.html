@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p100-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=100 | table_id=af-8.0.107-cli-p100-t1<br>上下文标题路径：5 策略 / 5.1 地址转换 / 5.1.2 IPV6地址转换 / 5.1.2.8 show snat6</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>iprange</td><td>-</td><td>A:B:C:D::E-F:G:H:I::J<br>IPv6地址范围</td><td>转换后-源IP范围</td></tr>
+<tr><td>ipgroup</td><td>-</td><td>STRING</td><td>转换后-IP组</td></tr>
+<tr><td>ip</td><td>-</td><td>A:B:C:D::E IPv6 地址</td><td>转换后-源地址</td></tr>
+<tr><td>&lt;snat6-rule-dst-ipgroup&gt;</td><td>-</td><td>STRING</td><td>原始-目的IP组</td></tr>
+<tr><td>&lt;snat6-rule-service&gt;</td><td>-</td><td>STRING</td><td>原始-服务</td></tr>
+<tr><td>&lt;snat6-rule-dst-if&gt;</td><td>-</td><td>STRING</td><td>原始-目的接口</td></tr>
+<tr><td>&lt;snat6-rule-schedule&gt;</td><td>-</td><td>STRING</td><td>生效时间</td></tr>
+<tr><td>&lt;snat6-rule-status&gt;</td><td>枚举值:[<br>enable: 启用策略<br>disable: 禁用策略<br>]</td><td>ENUM</td><td>启用状态</td></tr>
+<tr><td>&lt;snat6-rule-dst-zone&gt;</td><td>-</td><td>STRING</td><td>原始-目的区域</td></tr>
+<tr><td>&lt;snat6-rule-name-filter&gt;</td><td>-</td><td>STRING</td><td>策略名称，模糊查询</td></tr>
+<tr><td>&lt;snat6-rule-description-filter&gt;</td><td>-</td><td>STRING</td><td>描述</td></tr>
+<tr><td>&lt;snat6-rule-src-zone&gt;</td><td>-</td><td>STRING</td><td>原始-源区域</td></tr>
+<tr><td>&lt;snat6-rule-src-ipv6&gt;</td><td>-</td><td>A:B:C:D::E/M<br>IPv6地址</td><td>原始-源IPv6地址</td></tr>
+<tr><td>&lt;snat6-rule-name&gt;</td><td>length:(1-95)</td><td>STRING</td><td>名称</td></tr>
+<tr><td>&lt;snat6-rule-dst-ipv6&gt;</td><td>-</td><td>A:B:C:D::E/M<br>IPv6地址</td><td>原始-目的IPv6地址</td></tr>
+<tr><td>&lt;snat6-rule-transfer-src&gt;</td><td>-</td><td>A:B:C:D::E IPv6 地址</td><td>转换后-源地址</td></tr>
+<tr><td>&lt;snat6-rule-src-ipgroup&gt;</td><td>-</td><td>STRING</td><td>原始-源IP组</td></tr>
+</tbody>
+</table>
+</body>
+</html>

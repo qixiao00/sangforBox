@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p20-t1</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=20 | table=af-8.0.107-api-p20-t1</p>
+<table>
+<thead><tr><th>obj.filterObject</th><th>object</th><th>否</th><th>选择过滤对象，若不选择，则默认不进行过<br>滤，返回全部</th></tr></thead>
+<tbody>
+<tr><td>obj.filterObject.objectTy<br>pe</td><td>string</td><td>是</td><td>要过滤的对象类型<br>枚举值:[<br>GROUP:以用户组过滤<br>USER:以用户过滤<br>IP:以ip地址过滤<br>]</td></tr>
+<tr><td>obj.filterObject.groups</td><td>string[]</td><td>否</td><td>用户组列表,objectType需指定为GROUP<br>才生效</td></tr>
+<tr><td>obj.filterObject.users</td><td>string[]</td><td>否</td><td>用户名列表,objectType需指定为USER才<br>生效</td></tr>
+<tr><td>obj.filterObject.ip</td><td>string[]</td><td>否</td><td>IP列表,objectType需指定为IP才生效</td></tr>
+</tbody>
+</table>
+</body>
+</html>

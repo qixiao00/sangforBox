@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p108-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=108 | table_id=af-8.0.107-api-p108-t1<br>上下文标题路径：3 监控 / 3.1 会话 / 3.1.4 会话列表 / 3.1.4.3 获取会话信息</p>
+<table>
+<thead><tr><th>data.items.flow0.dstXlatePort</th><th>int32</th><th>目的端口转换端口<br>最小值:0<br>最大值:65535</th></tr></thead>
+<tbody>
+<tr><td>data.items.flow0.nextHopVlanId</td><td>uint32</td><td>下一跳Vlan id</td></tr>
+<tr><td>data.items.flow0.inVsys</td><td>string</td><td>进口的虚拟系统名称</td></tr>
+<tr><td>data.items.flow0.outVsys</td><td>string</td><td>出口的虚拟系统名称</td></tr>
+<tr><td>data.items.flow0.srcZone</td><td>string</td><td>源区域</td></tr>
+<tr><td>data.items.flow0.dstZone</td><td>string</td><td>目的区域</td></tr>
+<tr><td>data.items.flow0.nextHopRouteTable</td><td>uint32</td><td>下一跳路由表信息</td></tr>
+<tr><td>data.items.flow0.offload</td><td>uint8</td><td>卸载状态</td></tr>
+<tr><td>data.items.flow0.sip</td><td>bool</td><td>sip 协议</td></tr>
+<tr><td>data.items.flow0.h323</td><td>bool</td><td>h323 协议</td></tr>
+<tr><td>data.items.flow0.elephantFlow</td><td>bool</td><td>大象流</td></tr>
+<tr><td>data.items.flow1</td><td>object</td><td>flow1 信息</td></tr>
+<tr><td>data.items.flow1.proto</td><td>uint8</td><td>协议号</td></tr>
+<tr><td>data.items.flow1.srcIp</td><td>string</td><td>源地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.flow1.dstIp</td><td>string</td><td>目的地址<br>格式:ip-address</td></tr>
+<tr><td>data.items.flow1.srcPort</td><td>int32</td><td>源端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.flow1.dstPort</td><td>int32</td><td>目的端口<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.items.flow1.greKey</td><td>uint32</td><td>gre流key字段</td></tr>
+<tr><td>data.items.flow1.espSpi</td><td>uint32</td><td>esp流spi字段</td></tr>
+<tr><td>data.items.flow1.ahSpi</td><td>uint32</td><td>ah流spi字段</td></tr>
+<tr><td>data.items.flow1.icmpId</td><td>uint16</td><td>icmp id</td></tr>
+<tr><td>data.items.flow1.icmpCode</td><td>uint16</td><td>icmp code</td></tr>
+<tr><td>data.items.flow1.icmpType</td><td>uint16</td><td>icmp type</td></tr>
+<tr><td>data.items.flow1.flag</td><td>uint32</td><td>标记是否被手动修改过</td></tr>
+<tr><td>data.items.flow1.fastPathBitMap</td><td>uint32</td><td>快转发路bitmap</td></tr>
+<tr><td>data.items.flow1.forwardBitmap</td><td>uint32</td><td>服务链转发bitmap</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p355-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=355 | table=af-8.0.107-api-p355-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>uint32</td><td>总条数</td></tr>
+<tr><td>data.totalPages</td><td>uint32</td><td>总页数</td></tr>
+<tr><td>data.pageNumber</td><td>uint32</td><td>当前第多少页</td></tr>
+<tr><td>data.pageSize</td><td>uint32</td><td>每一页的条数</td></tr>
+<tr><td>data.itemsOffset</td><td>uint32</td><td>当前偏移量</td></tr>
+<tr><td>data.itemLength</td><td>uint32</td><td>当前返回条数</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>返回的数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一标识id</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>应用名称<br>最小长度:1<br>最大长度:96</td></tr>
+<tr><td>data.items.description</td><td>string</td><td>应用描述<br>最小长度:0<br>最大长度:1024</td></tr>
+<tr><td>data.items.objType</td><td>string</td><td>应用类型, 枚举型。<br>枚举值:[<br>TYPE OBJ:应用大类对象<br>_<br>SUB TYPE OBJ:应用中间类对象<br>_ _<br>APP OBJ:应用对象<br>_<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

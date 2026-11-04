@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2669-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2669 | table_id=af-8.0.107-api-p2669-t1<br>上下文标题路径：6 策略 / 6.4 解密 / 6.4.2 解密证书 / 6.4.2.5 导入一对公私钥接口</p>
+<table>
+<thead><tr><th>obj.name</th><th>string</th><th>--</th><th>证书名字<br>最小长度:1<br>最大长度:95</th></tr></thead>
+<tbody>
+<tr><td>obj.privateKey</td><td>object</td><td>--</td><td>私钥</td></tr>
+<tr><td>obj.privateKey.keyType</td><td>string</td><td>--</td><td>类型<br>默认值:file<br>枚举值:[<br>file:文件<br>text:文本<br>]</td></tr>
+<tr><td>obj.privateKey.file id_</td><td>object</td><td>--</td><td>上传证书名和临时文件名</td></tr>
+<tr><td>obj.privateKey.file id.file_</td><td>string</td><td>--</td><td>证书文件名</td></tr>
+<tr><td>obj.privateKey.file id.id_</td><td>string</td><td>--</td><td>证书临时文件名</td></tr>
+<tr><td>obj.privateKey.text</td><td>string</td><td>--</td><td>证书内容</td></tr>
+<tr><td>obj.publicKey</td><td>object</td><td>--</td><td>公钥</td></tr>
+<tr><td>obj.publicKey.keyType</td><td>string</td><td>--</td><td>类型<br>默认值:file<br>枚举值:[<br>file:文件<br>text:文本<br>]</td></tr>
+<tr><td>obj.publicKey.file id_</td><td>object</td><td>--</td><td>上传证书名和临时文件名</td></tr>
+<tr><td>obj.publicKey.file id.file_</td><td>string</td><td>--</td><td>证书原文件名</td></tr>
+<tr><td>obj.publicKey.file id.id_</td><td>string</td><td>--</td><td>证书临时文件名</td></tr>
+<tr><td>obj.publicKey.text</td><td>string</td><td>--</td><td>证书内容</td></tr>
+<tr><td>obj.passwd</td><td>string</td><td>--</td><td>证书密码<br>最小长度:4</td></tr>
+</tbody>
+</table>
+</body>
+</html>

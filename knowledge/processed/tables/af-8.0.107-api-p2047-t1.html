@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2047-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2047 | table_id=af-8.0.107-api-p2047-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.11 获取后台dnat6信息列表</p>
+<table>
+<thead><tr><th>data.items</th><th>object[]</th><th>有效数据列表</th></tr></thead>
+<tbody>
+<tr><td>data.items.tableid</td><td>int32</td><td>规则在全部NAT6的ID</td></tr>
+<tr><td>data.items.ruleid</td><td>int32</td><td>规则ID</td></tr>
+<tr><td>data.items.natType</td><td>string</td><td>nat6类型,可选项有SNAT|DNAT|BNAT<br>枚举值:[<br>SNAT:转换类型为源地址转换<br>DNAT:转换类型为目的地址转换<br>BNAT:转换类型为双向地址转换<br>]</td></tr>
+<tr><td>data.items.natMode</td><td>string</td><td>ipv6-nat模式,可选项有NAT66|NPTV6<br>枚举值:[<br>NAT66:转换类型为NAT66<br>NPTV6:转换类型为NPTV6<br>]</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一标识id</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>nat名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.enable</td><td>bool</td><td>是否启用</td></tr>
+<tr><td>data.items.hitCount</td><td>uint64</td><td>命中次数</td></tr>
+<tr><td>data.items.ruleStatus</td><td>string</td><td>规则有效性</td></tr>
+<tr><td>data.items.schedule</td><td>string</td><td>时间计划</td></tr>
+<tr><td>data.items.scheduleStatus</td><td>string</td><td>时间计划状态</td></tr>
+<tr><td>data.items.srcIPTable</td><td>string[]</td><td>源IP entry表</td></tr>
+<tr><td>data.items.dstIPTable</td><td>string[]</td><td>目的IP entry表</td></tr>
+<tr><td>data.items.srcIPCount</td><td>int32</td><td>源IP entry数量</td></tr>
+<tr><td>data.items.dstIPCount</td><td>int32</td><td>目的IP entry数量</td></tr>
+<tr><td>data.items.srcIfAll</td><td>bool</td><td>标识源接口为所有</td></tr>
+<tr><td>data.items.dstIfAll</td><td>bool</td><td>标识目的接口为所有</td></tr>
+<tr><td>data.items.srcIfCount</td><td>int32</td><td>标识源接口个数</td></tr>
+<tr><td>data.items.srcIfList</td><td>string[]</td><td>源接口表</td></tr>
+<tr><td>data.items.dstIfCount</td><td>int32</td><td>标识源接口个数</td></tr>
+<tr><td>data.items.dstIfList</td><td>string[]</td><td>源接口表</td></tr>
+<tr><td>data.items.ignoreAcl</td><td>bool</td><td>是否忽略acl策略</td></tr>
+<tr><td>data.items.srcTransType</td><td>string</td><td>源地址转换类型<br>枚举值:[<br>OUTIF IP:OUTIF IP<br>_ _<br>IP RANGE:IP段<br>_<br>IP:ip<br>IPGROUP:IP组<br>NO TRANS:不转换<br>_<br>]</td></tr>
+<tr><td>data.items.srcTransInfo</td><td>string[]</td><td>源转换信息IP entry表</td></tr>
+</tbody>
+</table>
+</body>
+</html>

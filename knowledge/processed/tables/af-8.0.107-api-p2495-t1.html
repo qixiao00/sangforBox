@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2495-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2495 | table_id=af-8.0.107-api-p2495-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.5 仿冒接入检测策略 / 6.2.5.2 修改仿冒接入检测策略接口</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>仿冒接入检测策略</td></tr>
+<tr><td>data.enable</td><td>bool</td><td>开启仿冒接入检测策略</td></tr>
+<tr><td>data.policys</td><td>object[]</td><td>检测方式列表</td></tr>
+<tr><td>data.policys.forgeryType</td><td>string</td><td>检测方式类型<br>枚举值:[<br>IP:ip forgery<br>MAC:mac forgery<br>DEVTYPE:device type forgery<br>]</td></tr>
+<tr><td>data.policys.enable</td><td>bool</td><td>检测方式开关</td></tr>
+<tr><td>data.policys.block</td><td>bool</td><td>检测方式联动封锁开关</td></tr>
+<tr><td>data.advance</td><td>object</td><td>高级配置</td></tr>
+<tr><td>data.advance.exclude</td><td>object</td><td>高级配置例外排除</td></tr>
+<tr><td>data.advance.exclude.iplist</td><td>object[]</td><td>IP列表</td></tr>
+<tr><td>data.advance.exclude.iplist.start</td><td>string</td><td>ip范围的起始位置</td></tr>
+<tr><td>data.advance.exclude.iplist.end</td><td>string</td><td>ip范围的终止位置</td></tr>
+<tr><td>data.advance.exclude.iplist.bits</td><td>uint8</td><td>ip掩码简写<br>最小值:0<br>最大值:32</td></tr>
+</tbody>
+</table>
+</body>
+</html>

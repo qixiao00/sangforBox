@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p53-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=53 | table_id=af-8.0.107-cli-p53-t1<br>上下文标题路径：4 监控 / 4.1 会话 / 4.1.2 会话排行 / 4.1.2.2 show session</p>
+<table>
+<thead><tr><th>名称</th><th>范围</th><th>输入格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>reply-core &lt;reply-core-value&gt;</td><td>0-4294967295</td><td>NUMBER</td><td>回复核心号码</td></tr>
+<tr><td>dst-ip &lt;ip46-address&gt;</td><td>-</td><td>A.B.C.D/M<br>地址格式为A.B.C.D/M<br>A.B.C.D/E.F.G.H 地址<br>格式为A.B.C.D/E.F.G.<br>H<br>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H<br>A.B.C.D<br>地址格式为A.B.C.D<br>A:B:C:D::E<br>地址格式为A:B:C:D::E<br>A:B:C:D::E/M 地址格<br>式为A:B:C:D::E/M<br>A:B:C:D::E-F:G:H:I::J<br>地址格式为A:B:C:D::E<br>-F:G:H:I::J</td><td>目的ip范围</td></tr>
+<tr><td>reverse-bytes less-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>reverse-bytes equal &lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>reverse-bytes more-than&lt;bytes-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>src-zone &lt;zone-name&gt;</td><td>-</td><td>STRING</td><td>源区域名称</td></tr>
+<tr><td>src-xlate-ip &lt;ip46-address&gt;</td><td>-</td><td>A.B.C.D/M<br>地址格式为A.B.C.D/M<br>A.B.C.D/E.F.G.H 地址<br>格式为A.B.C.D/E.F.G.<br>H<br>A.B.C.D-E.F.G.H 地<br>址格式为A.B.C.D-E.F.<br>G.H<br>A.B.C.D<br>地址格式为A.B.C.D<br>A:B:C:D::E<br>地址格式为A:B:C:D::E<br>A:B:C:D::E/M 地址格<br>式为A:B:C:D::E/M<br>A:B:C:D::E-F:G:H:I::J<br>地址格式为A:B:C:D::E<br>-F:G:H:I::J</td><td>nat后源ip范围</td></tr>
+<tr><td>src-if &lt;interface-name&gt;</td><td>-</td><td>STRING</td><td>入接口</td></tr>
+<tr><td>vsys &lt;vsys-name&gt;</td><td>length:(1-15)</td><td>STRING</td><td>vsys name(虚拟系统不支持该命令)</td></tr>
+<tr><td>dst-if &lt;interface-name&gt;</td><td>-</td><td>STRING</td><td>出接口</td></tr>
+<tr><td>last-create minute &lt;time-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>最近多少分钟创建</td></tr>
+<tr><td>last-create hour &lt;time-value&gt;</td><td>1-1092</td><td>NUMBER</td><td>最近多少小时创建</td></tr>
+<tr><td>last-create day &lt;time-value&gt;</td><td>1-45</td><td>NUMBER</td><td>最近多少天创建</td></tr>
+<tr><td>dst-zone &lt;zone-name&gt;</td><td>-</td><td>STRING</td><td>目的区域名称</td></tr>
+<tr><td>forward-packet less-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-packet equal&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+<tr><td>forward-packet more-than&lt;packet-number&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>大于等于</td></tr>
+<tr><td>src-xlate-port &lt;port-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>nat后源端口</td></tr>
+<tr><td>dst-xlate-port &lt;port-value&gt;</td><td>1-65535</td><td>NUMBER</td><td>nat后目的端口</td></tr>
+<tr><td>forward-kpps less-than &lt;kpps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>小于等于</td></tr>
+<tr><td>forward-kpps equal &lt;kpps&gt;</td><td>0-99999999999999</td><td>NUMBER</td><td>等于</td></tr>
+</tbody>
+</table>
+</body>
+</html>

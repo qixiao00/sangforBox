@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p817-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=817 | table_id=af-8.0.107-api-p817-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.17 获取CPU过载保护接口信息列表</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.lcore id_</td><td>uint8</td><td>逻辑核ID</td></tr>
+<tr><td>data.items.rx spin time_ _</td><td>uint32</td><td>收包空载率</td></tr>
+<tr><td>data.items.rx zero pkt_ _count_</td><td>uint32</td><td>周期内的0包个数</td></tr>
+<tr><td>data.items.rx total pkt_ _count_</td><td>uint32</td><td>周期内的总包个数</td></tr>
+<tr><td>data.items.current colo_r</td><td>string</td><td>当前的颜色</td></tr>
+<tr><td>data.items.drops</td><td>uint64</td><td>丢包个数</td></tr>
+<tr><td>data.items.drop rate_</td><td>int32</td><td>丢包率</td></tr>
+<tr><td>data.items.drop rate in_ _c</td><td>int32</td><td>丢包增量</td></tr>
+<tr><td>data.items.olp on_</td><td>uint32</td><td>cpu过载保护开启</td></tr>
+<tr><td>data.items.olp cal peri_ _od</td><td>uint64</td><td>cpu过载保护计算周期</td></tr>
+<tr><td>data.items.olp drop pk_ _ts on_</td><td>uint32</td><td>cpu过载保护丢包开启</td></tr>
+</tbody>
+</table>
+</body>
+</html>

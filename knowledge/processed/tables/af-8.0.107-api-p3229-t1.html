@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3229-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3229 | table_id=af-8.0.107-api-p3229-t1<br>上下文标题路径：10 虚拟系统 / 10.1 获取资源池数据</p>
+<table>
+<thead><tr><th>data.pageNumber</th><th>int32</th><th>当前页码，从 1 开始</th></tr></thead>
+<tbody>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.id</td><td>uint16</td><td>autoid</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一标识id</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>名称<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.ipv4SessionReserved</td><td>uint32</td><td>IPv4会话保留数</td></tr>
+<tr><td>data.items.ipv4SessionMaximum</td><td>uint32</td><td>IPv4会话最大数<br>最大值:4294967295</td></tr>
+<tr><td>data.items.ipv6SessionReserved</td><td>uint32</td><td>IPv6会话保留数</td></tr>
+<tr><td>data.items.ipv6SessionMaximum</td><td>uint32</td><td>IPv6会话最大数<br>最大值:4294967295</td></tr>
+<tr><td>data.items.appPolicyReserved</td><td>uint32</td><td>应用控制策略数保留数<br>最小值:0<br>最大值:1000000</td></tr>
+<tr><td>data.items.appPolicyMaximum</td><td>uint32</td><td>应用控制策略数保留数<br>最小值:0<br>最大值:1000000</td></tr>
+<tr><td>data.items.nat44PolicyReserved</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.nat44PolicyMaximum</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.nat64PolicyReserved</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.nat64PolicyMaximum</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.nat66PolicyReserved</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.nat66PolicyMaximum</td><td>uint32</td><td>NAT策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+<tr><td>data.items.areaPolicyReserved</td><td>uint32</td><td>地域访问控制策略数保留数<br>最小值:0<br>最大值:4096</td></tr>
+</tbody>
+</table>
+</body>
+</html>

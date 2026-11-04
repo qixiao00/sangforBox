@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p297-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=297 | table_id=af-8.0.107-api-p297-t1<br>上下文标题路径：4 对象 / 4.1 网络对象 / 4.1.6 批量删除ip组信息</p>
+<table>
+<thead><tr><th>obj.ipRanges</th><th>object[]</th><th>按条件选<br>择</th><th>ip表项组 --<br>请求时该参数和参数refIpGroup二选一</th></tr></thead>
+<tbody>
+<tr><td>obj.ipRanges.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.ipRanges.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.ipRanges.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.important</td><td>string</td><td>否</td><td>标识核心业务/普通业务或者标识普通用户/<br>核心用户<br>默认值:COMMON<br>枚举值:[<br>COMMON:普通用户或普通业务<br>CORE:核心用户或核心业务<br>]</td></tr>
+<tr><td>obj.refIpGroup</td><td>string[]</td><td>按条件选<br>择</td><td>地址组引用的IP组对象列表 --<br>请求时该参数和参数ipRanges二选一</td></tr>
+<tr><td>obj.dataStatus</td><td>string</td><td>否</td><td>标识敏感数据识别方式是自动识别或者存在<br>或者不存在<br>枚举值:[<br>AUTO:系统自动识别<br>EXIST:存在<br>NOT-EXIST:不存在<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p321-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=321 | table_id=af-8.0.107-api-p321-t1<br>上下文标题路径：4 对象 / 4.2 链路探测 / 4.2.4 批量添加单个链路探测配置</p>
+<table>
+<thead><tr><th>obj.detectMethod</th><th>string</th><th>--</th><th>配置检测方式<br>默认值:ALL<br>枚举值:[<br>ALL:同时满足<br>ANY:任一满足<br>]</th></tr></thead>
+<tbody>
+<tr><td>obj.hasref</td><td>bool</td><td>--</td><td>标识是否被引用</td></tr>
+<tr><td>obj.ping</td><td>object</td><td>--</td><td>PING探测策略</td></tr>
+<tr><td>obj.ping.enable</td><td>bool</td><td>--</td><td>ping探测开关</td></tr>
+<tr><td>obj.ping.address1</td><td>string</td><td>--</td><td>目标地址1<br>格式:ip-address</td></tr>
+<tr><td>obj.ping.address2</td><td>string</td><td>--</td><td>目标地址2<br>格式:ip-address</td></tr>
+<tr><td>obj.ping.interface</td><td>string</td><td>--</td><td>探测出接口<br>最大长度:64</td></tr>
+<tr><td>obj.ping.interval</td><td>uint32</td><td>--</td><td>检测间隔<br>最小值:2<br>最大值:255<br>默认值:2</td></tr>
+<tr><td>obj.ping.threshold</td><td>uint32</td><td>--</td><td>失败阈值<br>最小值:2<br>最大值:255<br>默认值:3</td></tr>
+<tr><td>obj.dns</td><td>object</td><td>--</td><td>DNS探测策略</td></tr>
+<tr><td>obj.dns.enable</td><td>bool</td><td>--</td><td>dns探测开关</td></tr>
+<tr><td>obj.dns.address1</td><td>string</td><td>--</td><td>目标地址1<br>格式:ip-address</td></tr>
+<tr><td>obj.dns.address2</td><td>string</td><td>--</td><td>目标地址2<br>格式:ip-address</td></tr>
+<tr><td>obj.dns.domain</td><td>string</td><td>--</td><td>解析域名<br>最大长度:255</td></tr>
+<tr><td>obj.dns.interface</td><td>string</td><td>--</td><td>探测出接口<br>最大长度:64</td></tr>
+<tr><td>obj.dns.interval</td><td>uint32</td><td>--</td><td>检测间隔<br>最小值:2<br>最大值:255<br>默认值:2</td></tr>
+<tr><td>obj.dns.threshold</td><td>uint32</td><td>--</td><td>失败阈值<br>最小值:2<br>最大值:255<br>默认值:3</td></tr>
+<tr><td>obj.arp</td><td>object</td><td>--</td><td>ARP探测策略</td></tr>
+<tr><td>obj.arp.enable</td><td>bool</td><td>--</td><td>arp探测开关</td></tr>
+<tr><td>obj.arp.address1</td><td>string</td><td>--</td><td>目标地址1<br>格式:ip-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

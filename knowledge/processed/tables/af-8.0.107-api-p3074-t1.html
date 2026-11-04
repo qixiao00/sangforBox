@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p3074-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=3074 | table_id=af-8.0.107-api-p3074-t1<br>上下文标题路径：7 系统 / 7.6 安全能力更新 / 7.6.1 获取规则库列表</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>code</td><td>int</td><td>错误码</td></tr>
+<tr><td>message</td><td>string</td><td>错误信息</td></tr>
+<tr><td>data</td><td>object</td><td>分页数据</td></tr>
+<tr><td>data.totalItems</td><td>int32</td><td>总共多少项目</td></tr>
+<tr><td>data.totalPages</td><td>int32</td><td>总共多少页</td></tr>
+<tr><td>data.pageNumber</td><td>int32</td><td>当前页码，从 1 开始</td></tr>
+<tr><td>data.pageSize</td><td>int32</td><td>每页多大</td></tr>
+<tr><td>data.itemsOffset</td><td>int32</td><td>当前条目偏移，从 0 开始</td></tr>
+<tr><td>data.itemLength</td><td>int32</td><td>数据列表长度</td></tr>
+<tr><td>data.privateOffset</td><td>uint64</td><td>内部偏移</td></tr>
+<tr><td>data.items</td><td>object[]</td><td>有效数据列表</td></tr>
+<tr><td>data.items.uuid</td><td>string</td><td>唯一资源id</td></tr>
+<tr><td>data.items.name</td><td>string</td><td>规则库名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.showname</td><td>string</td><td>规则库名<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>data.items.enable</td><td>bool</td><td>启用自动检查更新</td></tr>
+<tr><td>data.items.hiden</td><td>bool</td><td>是否隐藏</td></tr>
+<tr><td>data.items.allowRollback</td><td>bool</td><td>允许回滚</td></tr>
+<tr><td>data.items.groupIndex</td><td>uint8</td><td>RULEBASE OBJ GROUPINDEX<br>_ _</td></tr>
+<tr><td>data.items.groupInfo</td><td>string</td><td>组信息</td></tr>
+<tr><td>data.items.isdefault</td><td>bool</td><td>默认配置</td></tr>
+<tr><td>data.items.hasDownload</td><td>bool</td><td>有效期</td></tr>
+<tr><td>data.items.expire</td><td>string</td><td>有效期</td></tr>
+<tr><td>data.items.curVersion</td><td>string</td><td>当前版本</td></tr>
+<tr><td>data.items.newVersion</td><td>string</td><td>最新版本</td></tr>
+<tr><td>data.items.lastCheck</td><td>string</td><td>上次检查更新时间</td></tr>
+</tbody>
+</table>
+</body>
+</html>

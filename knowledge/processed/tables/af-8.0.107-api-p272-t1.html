@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p272-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=272 | table_id=af-8.0.107-api-p272-t1<br>上下文标题路径：3 监控 / 3.4 设置 / 3.4.3 告警设置 / 3.4.3.6 信息模板 / 3.4.3.6.5 获取信息模板的配置</p>
+<table>
+<thead><tr><th>data.originId</th><th>string</th><th>模板在服务商的ID，有的服务商没有这个字段，直接使<br>用content发送<br>最小长度:0<br>最大长度:256</th></tr></thead>
+<tbody>
+<tr><td>data.content</td><td>string</td><td>信息格式字符串<br>最小长度:0<br>最大长度:4096</td></tr>
+<tr><td>data.proto</td><td>string</td><td>所属的服务商协议，关联<br>枚举值:[<br>sms aliyun:阿里云短信服务商<br>_<br>sms wangyiyun:网易云短信服务商<br>_<br>sms tengxunyun:腾讯云短信服务商<br>_<br>sms chuanglan:创蓝短信服务商<br>_<br>sms common:其他通用短信服务商<br>_<br>mail:通用邮件服务商<br>]</td></tr>
+<tr><td>data.extra</td><td>object[]</td><td>信息模板配置的扩展字段，方便不同服务商进行个性化<br>配置，注意键值都为字符串</td></tr>
+<tr><td>data.extra.key</td><td>string</td><td>扩展字段的键<br>最小长度:0<br>最大长度:128</td></tr>
+<tr><td>data.extra.value</td><td>string</td><td>扩展键对应的值<br>最小长度:0<br>最大长度:1024</td></tr>
+<tr><td>data.isdefault</td><td>bool</td><td>标识是否是默认配置</td></tr>
+</tbody>
+</table>
+</body>
+</html>

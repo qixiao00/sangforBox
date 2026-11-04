@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p912-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=912 | table_id=af-8.0.107-api-p912-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.3 静态路由IPV6 / 5.8.3.3 添加一条IPv6静态路由信息</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>IPv6静态路由表项</td></tr>
+<tr><td>obj.enable</td><td>bool</td><td>否</td><td>静态路由启禁用开关<br>默认值:true</td></tr>
+<tr><td>obj.description</td><td>string</td><td>否</td><td>描述信息<br>最小长度:0<br>最大长度:95</td></tr>
+<tr><td>obj.prefix</td><td>string</td><td>是</td><td>目的IPv6地址/掩码</td></tr>
+<tr><td>obj.gateway</td><td>string</td><td>是</td><td>下一跳IPv6地址<br>格式:ip6-address</td></tr>
+<tr><td>obj.ifname</td><td>string</td><td>否</td><td>出接口名称<br>最小长度:1<br>最大长度:48<br>默认值:auto</td></tr>
+<tr><td>obj.metric</td><td>uint32</td><td>否</td><td>路由度量值<br>最小值:256<br>最大值:1023<br>默认值:256</td></tr>
+<tr><td>obj.linkdtEnable</td><td>bool</td><td>否</td><td>静态路由关联接口链路探测启禁用开关，默<br>认false，不可修改</td></tr>
+<tr><td>obj.linkdt</td><td>string</td><td>否</td><td>静态路由关联链路探测</td></tr>
+</tbody>
+</table>
+</body>
+</html>

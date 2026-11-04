@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p50-t2</title>
+<style>table{border-collapse:collapse;font-family:'Microsoft YaHei',sans-serif;font-size:13px}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | page=50 | table=af-8.0.107-api-p50-t2</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>session过滤对象</td></tr>
+<tr><td>obj.displayMode</td><td>uint8</td><td>--</td><td>显示模式<br>枚举值:[<br>0:概要显示<br>1:详细显示<br>]</td></tr>
+<tr><td>obj.filterMode</td><td>string</td><td>--</td><td>过滤模式<br>枚举值:[<br>TWO WAY:双向过滤<br>_<br>FORWARD:正向过滤<br>REVERSE:反向过滤<br>]</td></tr>
+<tr><td>obj.id</td><td>uint32</td><td>--</td><td>会话 id</td></tr>
+<tr><td>obj.originCore</td><td>uint32</td><td>--</td><td>flow0 绑定的内核的编号</td></tr>
+<tr><td>obj.replyCore</td><td>uint32</td><td>--</td><td>flow1 绑定的内核的编号</td></tr>
+<tr><td>obj.family</td><td>uint8</td><td>--</td><td>ip 地址类型<br>枚举值:[<br>1:IPV4地址<br>2:IPv6<br>]</td></tr>
+<tr><td>obj.srcIp</td><td>object</td><td>--</td><td>源地址<br>格式:ip-range</td></tr>
+<tr><td>obj.srcIp.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.srcIp.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.srcIp.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+<tr><td>obj.dstIp</td><td>object</td><td>--</td><td>目的地址<br>格式:ip-range</td></tr>
+<tr><td>obj.dstIp.start</td><td>string</td><td>是</td><td>ip范围的起始位置<br>格式:ip-address</td></tr>
+<tr><td>obj.dstIp.end</td><td>string</td><td>否</td><td>ip范围的终止位置<br>格式:ip-address</td></tr>
+<tr><td>obj.dstIp.bits</td><td>uint8</td><td>否</td><td>ip掩码简写</td></tr>
+</tbody>
+</table>
+</body>
+</html>

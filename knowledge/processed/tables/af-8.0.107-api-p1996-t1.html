@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1996-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1996 | table_id=af-8.0.107-api-p1996-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.4 添加nat6策略</p>
+<table>
+<thead><tr><th>data.bnat.srcTransfer.forceTransfer.transferType</th><th>string</th><th>转换类型 enum<br>枚举值:[<br>OUTIF IP:OUTIF IP<br>_ _<br>IP RANGE:IP段<br>_<br>IP:ip<br>IPGROUP:IP组<br>NO TRANS:不转换<br>_<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.bnat.srcTransfer.forceTransfer.ipRange</td><td>object</td><td>ipv6范围<br>格式:ip-range</td></tr>
+<tr><td>data.bnat.srcTransfer.forceTransfer.ipRange.start</td><td>string</td><td>ip范围下界<br>格式:ip6-address</td></tr>
+<tr><td>data.bnat.srcTransfer.forceTransfer.ipRange.end</td><td>string</td><td>ip范围上界<br>格式:ip6-address</td></tr>
+<tr><td>data.bnat.srcTransfer.forceTransfer.specifyIp</td><td>string</td><td>单个ipv6<br>格式:ip6-address</td></tr>
+<tr><td>data.bnat.srcTransfer.forceTransfer.ipGroups</td><td>string[]</td><td>ip组</td></tr>
+<tr><td>data.bnat.dstTransfer</td><td>object</td><td>转换信息</td></tr>
+<tr><td>data.bnat.dstTransfer.dstPortTrans</td><td>object[]</td><td>转换端口,0 表示不转换端口</td></tr>
+<tr><td>data.bnat.dstTransfer.dstPortTrans.start</td><td>int32</td><td>网络端口起始值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.bnat.dstTransfer.dstPortTrans.end</td><td>int32</td><td>网络端口结束值<br>最小值:0<br>最大值:65535</td></tr>
+<tr><td>data.bnat.dstTransfer.forceTransfer</td><td>object</td><td>转换相关</td></tr>
+<tr><td>data.bnat.dstTransfer.forceTransfer.transferType</td><td>string</td><td>转换类型枚举<br>IP RANGE|IP|IPGROUP|NO TRANS<br>_ _<br>枚举值:[<br>IP RANGE:IP段<br>_<br>IP:ip<br>IPGROUP:IP组<br>NO TRANS:不转换<br>_<br>SLB POOL:slb地址池转换<br>_<br>]</td></tr>
+<tr><td>data.bnat.dstTransfer.forceTransfer.ipRange</td><td>object</td><td>ip范围<br>格式:ip-range</td></tr>
+<tr><td>data.bnat.dstTransfer.forceTransfer.ipRange.start</td><td>string</td><td>ip范围下界<br>格式:ip6-address</td></tr>
+<tr><td>data.bnat.dstTransfer.forceTransfer.ipRange.end</td><td>string</td><td>ip范围上界<br>格式:ip6-address</td></tr>
+</tbody>
+</table>
+</body>
+</html>

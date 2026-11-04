@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p1971-t2</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=1971 | table_id=af-8.0.107-api-p1971-t2<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.2 获取筛选后的nat6策略</p>
+<table>
+<thead><tr><th>参数</th><th>类型</th><th>是否必选</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>obj</td><td>object</td><td>是</td><td>NAT策略过滤请求负载</td></tr>
+<tr><td>obj. start_</td><td>int32</td><td>--</td><td>起始位置，从 0 开始<br>最小值:0<br>最大值:2000000</td></tr>
+<tr><td>obj. length_</td><td>int32</td><td>--</td><td>获取最大长度，限制最大值，如果数据不够<br>可能返回小于 length<br>最小值:1<br>最大值:200<br>默认值:100</td></tr>
+<tr><td>obj.transType</td><td>string</td><td>--</td><td>用于指定转换类型,<br>可选SNAT,DNAT,BNAT<br>枚举值:[<br>SNAT:转换类型为源地址转换<br>DNAT:转换类型为目的地址转换<br>BNAT:转换类型为双向地址转换<br>]</td></tr>
+<tr><td>obj. search_</td><td>string</td><td>--</td><td>模糊搜索关键字<br>最小长度:1<br>最大长度:95</td></tr>
+<tr><td>obj.filter</td><td>object</td><td>--</td><td>NAT策略过滤条件</td></tr>
+<tr><td>obj.filter.name</td><td>object</td><td>--</td><td>过滤字段名称</td></tr>
+<tr><td>obj.filter.name.compare</td><td>string</td><td>--</td><td>nat.policys.param: filter type<br>默认值:eq<br>枚举值:[<br>eq:包含过滤值<br>ne:不包含过滤值<br>]</td></tr>
+<tr><td>obj.filter.name.paras</td><td>string[]</td><td>--</td><td>过滤值的集合</td></tr>
+<tr><td>obj.filter.schedule</td><td>object</td><td>--</td><td>过滤字段名称</td></tr>
+</tbody>
+</table>
+</body>
+</html>

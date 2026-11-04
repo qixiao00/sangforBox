@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2317-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2317 | table_id=af-8.0.107-api-p2317-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.1 安全防护策略 / 6.2.1.8 批量修改安全防护策略</p>
+<table>
+<thead><tr><th>securitys.defence.ips.enable</th><th>bool</th><th>--</th><th>开启漏洞攻击防护<br>默认值:true</th></tr></thead>
+<tbody>
+<tr><td>securitys.defence.ips.template</td><td>string</td><td>--</td><td>漏洞攻击防护模板</td></tr>
+<tr><td>securitys.defence.ips.action</td><td>string</td><td>--</td><td>动作<br>默认值:DENY<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>securitys.defence.contextsafe</td><td>object</td><td>--</td><td>内容安全</td></tr>
+<tr><td>securitys.defence.contextsafe.enable</td><td>bool</td><td>--</td><td>开启内容安全<br>默认值:true</td></tr>
+<tr><td>securitys.defence.contextsafe.template</td><td>string</td><td>--</td><td>内容安全模板</td></tr>
+<tr><td>securitys.defence.contextsafe.action</td><td>string</td><td>--</td><td>动作<br>默认值:DENY<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>securitys.defence.waf</td><td>object</td><td>--</td><td>WEB应用防护</td></tr>
+<tr><td>securitys.defence.waf.enable</td><td>bool</td><td>--</td><td>开启WEB应用防护<br>默认值:true</td></tr>
+<tr><td>securitys.defence.waf.template</td><td>string</td><td>--</td><td>WEB应用防护模板</td></tr>
+<tr><td>securitys.defence.waf.action</td><td>string</td><td>--</td><td>动作<br>默认值:DENY<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>securitys.response</td><td>object</td><td>--</td><td>检测响应</td></tr>
+<tr><td>securitys.response.utm</td><td>object</td><td>--</td><td>僵尸网络</td></tr>
+<tr><td>securitys.response.utm.enable</td><td>bool</td><td>--</td><td>开启僵尸网络<br>默认值:true</td></tr>
+<tr><td>securitys.response.utm.template</td><td>string</td><td>--</td><td>僵尸网络模板</td></tr>
+<tr><td>securitys.response.utm.action</td><td>string</td><td>--</td><td>动作<br>默认值:DENY<br>枚举值:[<br>ALLOW:允许<br>DENY:拒绝<br>]</td></tr>
+<tr><td>securitys.response.localDnsIp</td><td>string[]</td><td>--</td><td>内网DNS服务器</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2339-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2339 | table_id=af-8.0.107-api-p2339-t1<br>上下文标题路径：6 策略 / 6.2 安全策略 / 6.2.2 DDOS / 6.2.2.2 创建一条DDOS防护策略</p>
+<table>
+<thead><tr><th>data.lan.attackDefend.packetAttackDefend</th><th>uint32[]</th><th>基于数据包攻击</th></tr></thead>
+<tbody>
+<tr><td>data.wan</td><td>object</td><td>外网对内攻击防护</td></tr>
+<tr><td>data.wan.arpDefend</td><td>object</td><td>arp洪水攻击配置</td></tr>
+<tr><td>data.wan.arpDefend.enable</td><td>bool</td><td>开关</td></tr>
+<tr><td>data.wan.arpDefend.ifThresh</td><td>uint32</td><td>阻断阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend</td><td>object</td><td>洪水攻击防护配置</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood</td><td>object</td><td>SYNC洪水攻击防护</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood.enable</td><td>bool</td><td>开关</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood.perDstIpDropThreshold</td><td>uint32</td><td>每目的IP丢包阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood.srcIpBlockThreshold</td><td>uint32</td><td>源IP封锁阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood.blockTime</td><td>uint32</td><td>封锁时间(带时间单位:m/h/d)<br>最小值:1<br>最大值:1800</td></tr>
+<tr><td>data.wan.ddosDefend.syncFlood.perIpActiveThreshold</td><td>uint32</td><td>每目的IP激活阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend.udpFlood</td><td>object</td><td>UDP洪水攻击防护</td></tr>
+<tr><td>data.wan.ddosDefend.udpFlood.enable</td><td>bool</td><td>开关</td></tr>
+<tr><td>data.wan.ddosDefend.udpFlood.perDstIpDropThreshold</td><td>uint32</td><td>每目的IP丢包阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend.udpFlood.srcIpBlockThreshold</td><td>uint32</td><td>源IP封锁阈值<br>最小值:1<br>最大值:999999999</td></tr>
+<tr><td>data.wan.ddosDefend.udpFlood.blockTime</td><td>uint32</td><td>封锁时间(带时间单位:m/h/d)<br>最小值:1<br>最大值:1800</td></tr>
+<tr><td>data.wan.ddosDefend.dnsFlood</td><td>object</td><td>DNS洪水攻击防护</td></tr>
+<tr><td>data.wan.ddosDefend.dnsFlood.enable</td><td>bool</td><td>开关</td></tr>
+<tr><td>data.wan.ddosDefend.dnsFlood.perDstIpDropThreshold</td><td>uint32</td><td>每目的IP丢包阈值<br>最小值:1<br>最大值:999999999</td></tr>
+</tbody>
+</table>
+</body>
+</html>

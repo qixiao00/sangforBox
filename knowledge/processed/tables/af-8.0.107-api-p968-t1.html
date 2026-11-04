@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p968-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=968 | table_id=af-8.0.107-api-p968-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.4 策略路由IPV4 / 5.8.4.13 策略路由表二批量添加ipv4策略路由信息</p>
+<table>
+<thead><tr><th>obj.dstIsp</th><th>string[]</th><th>按条件选<br>择</th><th>目的地址引用ISP列表，目的中3选1</th></tr></thead>
+<tbody>
+<tr><td>obj.dstCountryArea</td><td>string[]</td><td>按条件选<br>择</td><td>目的地址引用国家/地区列表，目的中3选1</td></tr>
+<tr><td>obj.services</td><td>string[]</td><td>是</td><td>服务对象列表</td></tr>
+<tr><td>obj.applications</td><td>string[]</td><td>否</td><td>关联应用列表</td></tr>
+<tr><td>obj.lbMethod</td><td>string</td><td>否</td><td>多线路模式下，接口选择策略<br>枚举值:[<br>POLL:轮询<br>BANDWIDTH:带宽比例<br>WEIGHTED MINIMUM FLOW:加权最<br>_ _<br>小流量<br>PRIORITY FRONT LINE:优先使用前<br>_ _<br>面线路<br>]</td></tr>
+<tr><td>obj.tableId</td><td>uint32</td><td>否</td><td>策略路由表ID，默认为0<br>最小值:0<br>最大值:1</td></tr>
+<tr><td>obj.position</td><td>int32</td><td>否</td><td>策略的位置，状态字段不可设置或修改</td></tr>
+<tr><td>obj.outif</td><td>object[]</td><td>是</td><td>策略路由出接口列表</td></tr>
+<tr><td>obj.outif.outifName</td><td>string</td><td>按条件选<br>择</td><td>出接口名称</td></tr>
+<tr><td>obj.outif.gateway</td><td>string</td><td>按条件选<br>择</td><td>下一跳IP地址</td></tr>
+<tr><td>obj.outif.linkdt</td><td>string</td><td>否</td><td>引用链路探测对象名称</td></tr>
+</tbody>
+</table>
+</body>
+</html>

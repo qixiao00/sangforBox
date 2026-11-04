@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p2044-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=2044 | table_id=af-8.0.107-api-p2044-t1<br>上下文标题路径：6 策略 / 6.1 地址转换 / 6.1.2 NAT6策略 / 6.1.2.10 获取后台snat6信息列表</p>
+<table>
+<thead><tr><th>data.items.sticky</th><th>string</th><th>sticky开关</th></tr></thead>
+<tbody>
+<tr><td>data.items.srcIpGroup</td><td>string[]</td><td>对应多个ip段</td></tr>
+<tr><td>data.items.srcIp</td><td>string</td><td>源地址转换类型,单个ip</td></tr>
+<tr><td>data.items.dstTransType</td><td>string</td><td>目的端口转换类型，可选项有PORT|NO TRANS<br>_<br>枚举值:[<br>IP RANGE:IP段<br>_<br>IP:ip<br>IPGROUP:IP组<br>NO TRANS:不转换<br>_<br>SLB POOL:SLB POOL<br>_ _<br>]</td></tr>
+<tr><td>data.items.dstTransInfo</td><td>string[]</td><td>目的转换信息IP entry表</td></tr>
+<tr><td>data.items.dstTransSlbInfo</td><td>string</td><td>目的转换负载均衡地址池信息表</td></tr>
+<tr><td>data.items.Port</td><td>string[]</td><td>对应转换端口</td></tr>
+<tr><td>data.items.dstIp</td><td>string</td><td>目的地址转换为指定ip</td></tr>
+<tr><td>data.items.dstIprange</td><td>string</td><td>目的地址转换类型,IP范围</td></tr>
+<tr><td>data.items.dstIpGroupCount</td><td>int32</td><td>对应多个ip段的个数</td></tr>
+<tr><td>data.items.dstIpGroup</td><td>string[]</td><td>对应多个ip段</td></tr>
+<tr><td>data.items.dstPortRange</td><td>string</td><td>端口号列表</td></tr>
+<tr><td>data.items.dstPortRangeCount</td><td>int32</td><td>端口号列表数量</td></tr>
+<tr><td>data.items.srcInnerPrefix</td><td>string</td><td>nptv6 源转换</td></tr>
+<tr><td>data.items.srcOuterPrefix</td><td>string</td><td>nptv6 源转换</td></tr>
+<tr><td>data.items.dstInnerPrefix</td><td>string</td><td>nptv6 目的转换</td></tr>
+<tr><td>data.items.dstOuterPrefix</td><td>string</td><td>nptv6 目的转换</td></tr>
+<tr><td>data.items.TcpProportion</td><td>uint16</td><td>TCP百分比</td></tr>
+<tr><td>data.items.UdpProportion</td><td>uint16</td><td>UDP百分比</td></tr>
+<tr><td>data.items.TcpPortNmber</td><td>uint32</td><td>TCP端口数量</td></tr>
+<tr><td>data.items.UdpPortNmber</td><td>uint32</td><td>UDP端口数量</td></tr>
+</tbody>
+</table>
+</body>
+</html>

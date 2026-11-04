@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-cli-p813-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-cli | pdf_page=813 | table_id=af-8.0.107-cli-p813-t1<br>上下文标题路径：8 系统 / 8.8 高可用性 / 8.8.3 ha</p>
+<table>
+<thead><tr><th>disable</th><th>-</th><th>-</th><th>禁用高可用非对称模式</th></tr></thead>
+<tbody>
+<tr><td>&lt;bgp-cost-value&gt;</td><td>0-65535</td><td>NUMBER</td><td>调整BGP通告路由cost</td></tr>
+<tr><td>&lt;mode-type&gt;</td><td>枚举值:[<br>active-active: 主主模式<br>active-passive: 主备模式<br>mirror: 镜像模式<br>]</td><td>ENUM</td><td>高可用全局模式</td></tr>
+<tr><td>&lt;neighbour-value&gt;</td><td>5-30</td><td>NUMBER</td><td>状态切换后发送的arp/ns数量</td></tr>
+<tr><td>data-link &lt;interface-name&gt;</td><td>-</td><td>STRING</td><td>数据口接口</td></tr>
+<tr><td>link &lt;interface-name&gt;</td><td>-</td><td>STRING</td><td>心跳口接口</td></tr>
+<tr><td>&lt;adjust-ospf-cost-value&gt;</td><td>0-65535</td><td>NUMBER</td><td>调整OSPF通告路由cost</td></tr>
+<tr><td>&lt;group-number&gt;</td><td>0-1</td><td>NUMBER</td><td>高可用组</td></tr>
+<tr><td>&lt;rip-cost-value&gt;</td><td>0-65535</td><td>NUMBER</td><td>调整RIP通告路由cost</td></tr>
+<tr><td>&lt;role-type&gt;</td><td>枚举值:[<br>master: 配置为主控<br>slave: 配置为备控<br>]</td><td>ENUM</td><td>主备控角色</td></tr>
+<tr><td>fast-session</td><td>-</td><td>-</td><td>高可用快速会话同步开关</td></tr>
+<tr><td>session</td><td>-</td><td>-</td><td>高可用连接跟踪同步开关</td></tr>
+<tr><td>ospf-info</td><td>-</td><td>-</td><td>高可用ospf信息同步开关</td></tr>
+<tr><td>&lt;switch-threshold-value&gt;</td><td>0-1800</td><td>NUMBER</td><td>切换延时</td></tr>
+</tbody>
+</table>
+</body>
+</html>

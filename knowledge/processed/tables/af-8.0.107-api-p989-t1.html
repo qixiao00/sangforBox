@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p989-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=989 | table_id=af-8.0.107-api-p989-t1<br>上下文标题路径：5 网络 / 5.8 路由 / 5.8.4 策略路由IPV4 / 5.8.4.19 获取后台ipv4策略路由信息列表</p>
+<table>
+<thead><tr><th>data.items.lbMethod</th><th>string</th><th>多线路模式下，接口选择策略<br>枚举值:[<br>POLL:轮询<br>BANDWIDTH:带宽比例<br>WEIGHTED MINIMUM FLOW:加权最小流量<br>_ _<br>PRIORITY FRONT LINE:优先使用前面线路<br>_ _<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.items.tableId</td><td>uint32</td><td>策略路由表id.参考nfp中af实现的pbr，范围还需确定</td></tr>
+<tr><td>data.items.status</td><td>uint8</td><td>策略路由的状态值</td></tr>
+<tr><td>data.items.position</td><td>int32</td><td>策略的位置</td></tr>
+<tr><td>data.items.outif</td><td>object[]</td><td>下一跳列表.(源地址模式只能填一个)</td></tr>
+<tr><td>data.items.outif.outifName</td><td>string</td><td>出接口名称</td></tr>
+<tr><td>data.items.outif.gateway</td><td>string</td><td>下一跳IP地址</td></tr>
+<tr><td>data.items.outif.linkdt</td><td>string</td><td>策略路由引用链路探测名字</td></tr>
+<tr><td>data.items.outif.linkdtStatus</td><td>bool</td><td>链路探测状态</td></tr>
+</tbody>
+</table>
+</body>
+</html>

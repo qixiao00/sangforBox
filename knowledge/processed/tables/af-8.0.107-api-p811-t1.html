@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p811-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=811 | table_id=af-8.0.107-api-p811-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.16 获取后台接口统计信息列表</p>
+<table>
+<thead><tr><th>data.items.speedDuplex.duplex</th><th>string</th><th>接口的模式<br>枚举值:[<br>unknow:非法值<br>half:半双工模式<br>full:全双工模式<br>]</th></tr></thead>
+<tbody>
+<tr><td>data.items.speedDuplex.fixedAuto</td><td>bool</td><td>接口指定速率时自协商情况</td></tr>
+<tr><td>data.items.channelif</td><td>object</td><td>聚合口相关配置</td></tr>
+<tr><td>data.items.channelif.channelMode</td><td>string</td><td>汇聚口的工作模式配置<br>枚举值:[<br>STATIC:静态<br>LACP:动态<br>]</td></tr>
+<tr><td>data.items.channelif.channelStatic</td><td>object</td><td>汇聚口静态模式下的相关配置</td></tr>
+<tr><td>data.items.channelif.channelStatic.staticMode</td><td>string</td><td>模式选择<br>枚举值:[<br>FAILOVER:故障转移<br>LOADBALANCE:负载均衡<br>]</td></tr>
+<tr><td>data.items.channelif.channelStatic.failover</td><td>object</td><td>故障转移</td></tr>
+<tr><td>data.items.channelif.channelStatic.failover.preempt</td><td>bool</td><td>主备模式下的抢占或非抢占</td></tr>
+<tr><td>data.items.channelif.channelStatic.failover.channelPrimary</td><td>string</td><td>选择一个物理口作为聚合口主备模式的主接口</td></tr>
+<tr><td>data.items.channelif.channelStatic.failover.primaryPort</td><td>string</td><td>聚合口主备模式的主接口</td></tr>
+<tr><td>data.items.channelif.channelStatic.loadbalance</td><td>string</td><td>负载均衡的方法<br>枚举值:[<br>ROUNDROBIN:平衡轮询策略<br>L2HASH:hash负载分担平衡策略<br>L3HASH:hash负载分担平衡策略<br>L4HASH:hash负载分担平衡策略<br>TLB:tlb策略<br>]</td></tr>
+<tr><td>data.items.channelif.channelLacp</td><td>object</td><td>动态模式下的相关配置</td></tr>
+<tr><td>data.items.channelif.channelLacp.hashMode</td><td>string</td><td>哈希策略<br>枚举值:[<br>MAC:源与目的IP<br>2TUPLE:源与目的IP、mac<br>3TUPLE:源与目的IP、mac、port<br>]</td></tr>
+</tbody>
+</table>
+</body>
+</html>

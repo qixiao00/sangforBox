@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>af-8.0.107-api-p686-t1</title>
+<style>body{font-family:'Microsoft YaHei',sans-serif;font-size:13px}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px 8px;vertical-align:top}th{background:#f0f0f0}.meta{color:#555;font-size:12px}caption{caption-side:top;text-align:left;font-weight:bold;padding:6px 0}</style>
+</head>
+<body>
+<p class="meta">doc_id=af-8.0.107-api | pdf_page=686 | table_id=af-8.0.107-api-p686-t1<br>上下文标题路径：5 网络 / 5.2 接口 / 5.2.6 全量修改指定接口信息</p>
+<table>
+<thead><tr><th>data.ipv6.ipv6Param.nd.nud.reachable time_</th><th>uint32</th><th>判断ipv6节点是否可达的最大时间，超过则认为不可达<br>最小值:1000<br>最大值:3600000</th></tr></thead>
+<tbody>
+<tr><td>data.ipv6.ipv6Param.nd.router</td><td>object</td><td>ipv6，路由相关配置</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.ra interval optio_ _n</td><td>bool</td><td>ra中公告间隔选项是否打开</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.prefence</td><td>string</td><td>路由器的优先级<br>枚举值:[<br>HIGH:高优先级<br>LOW:低优先级<br>MEDIUM:中优先级<br>]</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.ra min interval_ _</td><td>uint32</td><td>RA发送最小间隔，单位s<br>最小值:3<br>最大值:1800</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.ra max interval_ _</td><td>uint32</td><td>RA发送最大间隔，单位s，max必须大于min<br>最小值:4<br>最大值:1800</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.ra lifetime_</td><td>uint32</td><td>RA中路由器的生命周期<br>最小值:0<br>最大值:9000</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.ra supress_</td><td>string</td><td>ra的抑制配置<br>枚举值:[<br>ALL:周期性发送RA<br>PART:不主动发送RA，收到RS会回应<br>DISABLE:不主动发送，也不应答<br>]</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.manage flag_</td><td>bool</td><td>RA报文中M标记位，主机收到RA报文M为1时会发起d<br>hcp6请求地址</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.other flag_</td><td>bool</td><td>RA报文中O标记位，主机收到RA报文O为1时会发起d<br>hcp6请求其他网络配置（如dns），为0则使用RA中<br>的</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.no linkmtu_</td><td>bool</td><td>用来配置RA消息中不携带MTU选项,true时不携带选项<br>，false时携带MTU选项</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.dns server_</td><td>object</td><td>RA消息中dns服务器配置</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.dns server.ipv6_Address</td><td>string</td><td>dns服务器地址<br>格式:ip6-address</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.dns server.lifeti_me</td><td>uint32</td><td>首选生存时间<br>最小值:0<br>最大值:4294967295</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.dns domain_</td><td>object</td><td>RA消息中dns域名</td></tr>
+<tr><td>data.ipv6.ipv6Param.nd.router.dns domain.na_me</td><td>string</td><td>dns域名<br>最大长度:127</td></tr>
+</tbody>
+</table>
+</body>
+</html>
